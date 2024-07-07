@@ -19,71 +19,52 @@ def filter_studies_by_date(start_month, end_month):
     # Filter the dataframe by date range
     filtered_df = df[(df['fecha'] >= start_date) & (df['fecha'] <= end_date)]
     return filtered_df
-# ... existing code ...
 
-# Function to merge .sav files
-def merge_sav_files(codes):
+def convert_sav_to_csv(sav_path, csv_path):
+    # Read the .sav file
+    df, meta = pyreadstat.read_sav(sav_path)
+    
+    # Create a copy of the DataFrame to store the labeled values
+    df_labeled = df.copy()
+    
+    # Replace values with their labels for each variable
+    for col in df.columns:
+        if col in meta.variable_value_labels:
+            value_labels = meta.variable_value_labels[col]
+            df_labeled[col] = df[col].map(value_labels).fillna(df[col])
+    
+    # Replace variable names with their labels
+    df_labeled.columns = [meta.column_names_to_labels.get(col, col) for col in df_labeled.columns]
+    
+    # Save the labeled DataFrame to a .csv file
+    df_labeled.to_csv(csv_path, index=False)
+    
+    return df_labeled
+
+def merge_sav_files(file_codes):
     merged_df = None
     common_columns = None
-
-    for codigo in codes:
-        folder_path = f'download_barometros/barometros_raw/MD{codigo}'
-        for file in os.listdir(folder_path):
-            if file.endswith('.sav'):
-                file_path = os.path.join(folder_path, file)
-                df, meta = pyreadstat.read_sav(file_path)
-                
-                # Check if meta.column_labels is a dictionary or a list
-                if isinstance(meta.column_labels, dict):
-                    df.columns = [meta.column_labels.get(col, col) for col in df.columns]
-                elif isinstance(meta.column_labels, list):
-                    df.columns = meta.column_labels
-                
-                # Ensure unique column names
-                original_columns = df.columns.tolist()
-                df.columns = pd.Series(df.columns).apply(lambda x: x if df.columns.tolist().count(x) == 1 else f"{x}_{df.columns.tolist().index(x)}")
-                
-                # Debug print to check column names and value labels
-                print(f"Processing file: {file_path}")
-                print(f"Original columns: {original_columns}")
-                print(f"New columns: {df.columns.tolist()}")
-                print(f"Variable value labels keys: {list(meta.variable_value_labels.keys())}")
-                
-                # Create a mapping from long column names to short column names
-                long_to_short_col_map = {long: short for long, short in zip(original_columns, meta.variable_value_labels.keys())}
-                print(f"Long to short column map: {long_to_short_col_map}")
-                
-                # Temporarily rename columns using the short names
-                df.rename(columns=long_to_short_col_map, inplace=True)
-                print(f"Columns after renaming to short names: {df.columns.tolist()}")
-                
-                # Replace values with their labels using short column names
-                for short_col in meta.variable_value_labels.keys():
-                    if short_col in df.columns:
-                        print(f"Applying mapping to column: {short_col}")
-                        df[short_col] = df[short_col].map(meta.variable_value_labels[short_col])
-                        # Debug print to check the mapping
-                        print(f"Mapping applied to column: {short_col}")
-                        print(df[short_col].head())
-                        print("-------")
-                    else:
-                        print(f"No mapping found for column: {short_col}")
-                
-                # Revert to original long column names
-                #df.rename(columns={v: k for k, v in long_to_short_col_map.items()}, inplace=True)
-                #print(f"Columns after reverting to long names: {df.columns.tolist()}")
-                
-                # Convert all columns to string to avoid type mismatch during merge
-                df = df.astype(str)
-                
-                if merged_df is None:
-                    merged_df = df
-                    common_columns = set(df.columns)
-                else:
-                    common_columns &= set(df.columns)
-                    merged_df = pd.merge(merged_df, df, on=list(common_columns), how='outer')
     
-    # Debug print to check the final merged DataFrame
+    for code in file_codes:
+        sav_path = f'download_barometros/barometros_raw/MD{code}/{code}.sav'
+        print(f"Processing file: {sav_path}")
+        
+        # Convert SAV to CSV
+        df = convert_sav_to_csv(sav_path, None)
+        
+        # Rename duplicate columns
+        df = df.loc[:, ~df.columns.duplicated(keep='first')]
+        df.columns = [f'{col}_{i}' if df.columns.tolist().count(col) > 1 else col for i, col in enumerate(df.columns)]
+        
+        print(f"Columns: {df.columns.tolist()}")
+        
+        if merged_df is None:
+            merged_df = df
+            common_columns = set(df.columns)
+        else:
+            common_columns &= set(df.columns)
+            merged_df = pd.merge(merged_df, df, on=list(common_columns), how='outer', suffixes=('', f'_{code}'))
+    
     print("Final merged DataFrame:")
     print(merged_df.head())
     
