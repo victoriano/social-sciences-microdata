@@ -70,6 +70,6 @@ def main(start_month, end_month, clear_folder=True):
 
 # Example usage
 if __name__ == "__main__":
-    start_month = "04/24"  
+    start_month = "07/23"  
     end_month = "07/24"
     main(start_month, end_month)
