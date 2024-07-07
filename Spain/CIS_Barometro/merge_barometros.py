@@ -24,13 +24,28 @@ def filter_studies_by_date(start_month, end_month):
 def merge_sav_files(codes):
     merged_df = None
     common_columns = None
-    
+    label_dict = {}
+
     for codigo in codes:
         folder_path = f'download_barometros/barometros_raw/MD{codigo}'
         for file in os.listdir(folder_path):
             if file.endswith('.sav'):
                 file_path = os.path.join(folder_path, file)
                 df, meta = pyreadstat.read_sav(file_path)
+                
+                # Check if meta.column_labels is a dictionary or a list
+                if isinstance(meta.column_labels, dict):
+                    df.columns = [meta.column_labels.get(col, col) for col in df.columns]
+                elif isinstance(meta.column_labels, list):
+                    df.columns = meta.column_labels
+                
+                # Ensure unique column names
+                df.columns = pd.Series(df.columns).apply(lambda x: x if df.columns.tolist().count(x) == 1 else f"{x}_{df.columns.tolist().index(x)}")
+                
+                # Replace values with their labels
+                for col in df.columns:
+                    if col in meta.variable_value_labels:
+                        df[col] = df[col].map(meta.variable_value_labels[col])
                 
                 if merged_df is None:
                     merged_df = df
