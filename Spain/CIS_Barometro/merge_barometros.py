@@ -49,9 +49,13 @@ def merge_sav_files(codes):
                 print(f"New columns: {df.columns.tolist()}")
                 print(f"Variable value labels keys: {list(meta.variable_value_labels.keys())}")
                 
-                # Temporarily replace original column names with short ones
-                short_to_long_col_map = {short: long for short, long in zip(meta.variable_value_labels.keys(), original_columns)}
-                df.rename(columns={v: k for k, v in short_to_long_col_map.items()}, inplace=True)
+                # Create a mapping from long column names to short column names
+                long_to_short_col_map = {long: short for long, short in zip(original_columns, meta.variable_value_labels.keys())}
+                print(f"Long to short column map: {long_to_short_col_map}")
+                
+                # Temporarily rename columns using the short names
+                df.rename(columns=long_to_short_col_map, inplace=True)
+                print(f"Columns after renaming to short names: {df.columns.tolist()}")
                 
                 # Replace values with their labels using short column names
                 for short_col in meta.variable_value_labels.keys():
@@ -61,11 +65,13 @@ def merge_sav_files(codes):
                         # Debug print to check the mapping
                         print(f"Mapping applied to column: {short_col}")
                         print(df[short_col].head())
+                        print("-------")
                     else:
                         print(f"No mapping found for column: {short_col}")
                 
                 # Revert to original long column names
-                df.rename(columns=short_to_long_col_map, inplace=True)
+                #df.rename(columns={v: k for k, v in long_to_short_col_map.items()}, inplace=True)
+                #print(f"Columns after reverting to long names: {df.columns.tolist()}")
                 
                 # Convert all columns to string to avoid type mismatch during merge
                 df = df.astype(str)
