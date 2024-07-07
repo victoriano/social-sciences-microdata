@@ -63,6 +63,12 @@ def merge_sav_files(file_codes):
             common_columns = set(df.columns)
         else:
             common_columns &= set(df.columns)
+            
+            # Ensure consistent data types for merge keys
+            for col in common_columns:
+                merged_df[col] = merged_df[col].astype(str)
+                df[col] = df[col].astype(str)
+            
             merged_df = pd.merge(merged_df, df, on=list(common_columns), how='outer', suffixes=('', f'_{code}'))
     
     print("Final merged DataFrame:")
@@ -84,6 +90,6 @@ def main(start_month, end_month):
 
 # Example usage
 if __name__ == "__main__":
-    start_month = "04/24"  
+    start_month = "08/23"  
     end_month = "07/24"
     main(start_month, end_month)
