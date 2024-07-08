@@ -59,6 +59,10 @@ ordered_columns = [var for var in all_variables if var in existing_variables]
 # Reorder the DataFrame columns
 df_ordered = df_filtered[ordered_columns]
 
+# Clean and convert the "Edad de la persona entrevistada" column
+if "Edad de la persona entrevistada" in df_ordered.columns:
+    df_ordered["Edad de la persona entrevistada"] = pd.to_numeric(df_ordered["Edad de la persona entrevistada"].astype(str).str.replace(',', '.'), errors='coerce')
+
 # Save the filtered and ordered DataFrame as a Parquet file
 output_file = 'processed_barometros.parquet'
 df_ordered.to_parquet(output_file, index=False)

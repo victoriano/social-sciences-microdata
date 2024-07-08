@@ -90,6 +90,6 @@ def main(start_month, end_month):
 
 # Example usage
 if __name__ == "__main__":
-    start_month = "01/2008"  
+    start_month = "01/2018"  
     end_month = "07/2024"
     main(start_month, end_month)
