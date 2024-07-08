@@ -19,14 +19,20 @@ def download_and_unzip_file(codigo):
             file.write(response.content)
         print(f"Downloaded: {zip_path}")
         
-        # Unzip the file
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(f"barometros_raw/MD{codigo}")
-        print(f"Unzipped: {zip_path}")
-        
-        # Remove the zip file
-        os.remove(zip_path)
-        print(f"Removed: {zip_path}")
+        try:
+            # Attempt to unzip the file
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall(f"barometros_raw/MD{codigo}")
+            print(f"Unzipped: {zip_path}")
+            
+            # Remove the zip file
+            os.remove(zip_path)
+            print(f"Removed: {zip_path}")
+        except zipfile.BadZipFile:
+            print(f"Error: {zip_path} is not a valid zip file. Skipping extraction.")
+            # Optionally, you can remove the invalid file
+            os.remove(zip_path)
+            print(f"Removed invalid file: {zip_path}")
     else:
         print(f"Failed to download: MD{codigo}")
 
@@ -36,8 +42,8 @@ def download_studies(start_month, end_month):
     df['fecha'] = pd.to_datetime(df['fecha'])
     
     # Parse the input date strings
-    start_date = datetime.strptime(start_month, "%m/%y")
-    end_date = datetime.strptime(end_month, "%m/%y") + relativedelta(months=1) - relativedelta(days=1)
+    start_date = datetime.strptime(start_month, "%m/%Y")
+    end_date = datetime.strptime(end_month, "%m/%Y") + relativedelta(months=1) - relativedelta(days=1)
     
     # Filter the dataframe by date range
     filtered_df = df[(df['fecha'] >= start_date) & (df['fecha'] <= end_date)]
@@ -70,6 +76,6 @@ def main(start_month, end_month, clear_folder=True):
 
 # Example usage
 if __name__ == "__main__":
-    start_month = "07/23"  
-    end_month = "07/24"
+    start_month = "01/2008"
+    end_month = "07/2024"
     main(start_month, end_month)

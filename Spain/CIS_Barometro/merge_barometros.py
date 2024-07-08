@@ -13,8 +13,8 @@ def filter_studies_by_date(start_month, end_month):
     df['fecha'] = pd.to_datetime(df['fecha'])
     
     # Parse the input date strings
-    start_date = datetime.strptime(start_month, "%m/%y")
-    end_date = datetime.strptime(end_month, "%m/%y") + relativedelta(months=1) - relativedelta(days=1)
+    start_date = datetime.strptime(start_month, "%m/%Y")
+    end_date = datetime.strptime(end_month, "%m/%Y") + relativedelta(months=1) - relativedelta(days=1)
     
     # Filter the dataframe by date range
     filtered_df = df[(df['fecha'] >= start_date) & (df['fecha'] <= end_date)]
@@ -90,6 +90,6 @@ def main(start_month, end_month):
 
 # Example usage
 if __name__ == "__main__":
-    start_month = "08/23"  
-    end_month = "07/24"
+    start_month = "01/2008"  
+    end_month = "07/2024"
     main(start_month, end_month)
