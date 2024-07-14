@@ -1,6 +1,13 @@
 # Exclude files inside barometros_raw folder
 Spain/CIS_Barometro/download_barometros/barometros_raw/
 
+# Untrack all CSV files except barometros_index.csv
+*.csv
+!barometros_index.csv
+
+# Ignore Parquet Files:
+*.parquet
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

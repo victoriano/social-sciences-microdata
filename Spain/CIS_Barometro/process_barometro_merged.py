@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Read the CSV file
-df = pd.read_csv('merged_barometros.csv')
+df = pd.read_csv('filtered_barometros_files.csv')
 
 # Define the groups and their variables
 groups = {

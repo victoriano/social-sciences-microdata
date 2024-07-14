@@ -20,7 +20,7 @@ def filter_studies_by_date(start_month, end_month):
     filtered_df = df[(df['fecha'] >= start_date) & (df['fecha'] <= end_date)]
     return filtered_df
 
-def convert_sav_to_csv(sav_path, csv_path):
+def convert_sav_to_csv(sav_path):
     # Read the .sav file
     df, meta = pyreadstat.read_sav(sav_path)
     
@@ -36,60 +36,72 @@ def convert_sav_to_csv(sav_path, csv_path):
     # Replace variable names with their labels
     df_labeled.columns = [meta.column_names_to_labels.get(col, col) for col in df_labeled.columns]
     
-    # Save the labeled DataFrame to a .csv file
-    df_labeled.to_csv(csv_path, index=False)
-    
     return df_labeled
 
-def merge_sav_files(file_codes):
-    merged_df = None
-    common_columns = None
+def merge_sav_files(file_codes, output_file):
+    first_file = True
     
     for code in file_codes:
         sav_path = f'download_barometros/barometros_raw/MD{code}/{code}.sav'
         print(f"Processing file: {sav_path}")
         
-        # Convert SAV to CSV
-        df = convert_sav_to_csv(sav_path, None)
+        # Convert SAV to DataFrame
+        df = convert_sav_to_csv(sav_path)
         
         # Rename duplicate columns
         df = df.loc[:, ~df.columns.duplicated(keep='first')]
         df.columns = [f'{col}_{i}' if df.columns.tolist().count(col) > 1 else col for i, col in enumerate(df.columns)]
         
-        print(f"Columns: {df.columns.tolist()}")
+        # Ensure all columns are converted to string to preserve value labels
+        df = df.astype(str)
         
-        if merged_df is None:
-            merged_df = df
-            common_columns = set(df.columns)
+        if first_file:
+            df.to_csv(output_file, index=False, mode='w')
+            first_file = False
         else:
-            common_columns &= set(df.columns)
+            # Read existing CSV with dtype=object to treat all columns as strings
+            existing_df = pd.read_csv(output_file, dtype=object, low_memory=False)
             
-            # Ensure consistent data types for merge keys
-            for col in common_columns:
-                merged_df[col] = merged_df[col].astype(str)
-                df[col] = df[col].astype(str)
+            # Merge DataFrames
+            merged_df = pd.concat([existing_df, df], axis=0, ignore_index=True)
             
-            merged_df = pd.merge(merged_df, df, on=list(common_columns), how='outer', suffixes=('', f'_{code}'))
+            # Write merged DataFrame back to CSV
+            merged_df.to_csv(output_file, index=False, mode='w')
+        
+        print(f"Merged {code} into {output_file}")
+
+# Update the filter_columns_with_nans function as well
+def filter_columns_with_nans(input_file, output_file, threshold=0.5):
+    df = pd.read_csv(input_file, dtype=object, low_memory=False)
     
-    print("Final merged DataFrame:")
-    print(merged_df.head())
+    # Calculate the percentage of NaN values in each column
+    nan_percentages = df.isnull().mean()
     
-    return merged_df[list(common_columns)]
+    # Filter columns based on the threshold
+    columns_to_keep = nan_percentages[nan_percentages < threshold].index.tolist()
+    
+    # Create a new DataFrame with only the kept columns
+    filtered_df = df[columns_to_keep]
+    
+    # Save the filtered DataFrame
+    filtered_df.to_csv(output_file, index=False)
+    print(f"Filtered data saved to {output_file}")
 
 # Main function to be called from another file
-def main(start_month, end_month):
+def main(start_month, end_month, filter_nans=False, nan_threshold=0.5):
     filtered_df = filter_studies_by_date(start_month, end_month)
-    merged_df = merge_sav_files(filtered_df['codigo'])
     
-    # Ensure all columns are converted to string to preserve value labels
-    merged_df = merged_df.astype(str)
+    output_file = 'merged_barometros_files.csv'
+    merge_sav_files(filtered_df['codigo'], output_file)
     
-    # Save the merged dataframe to a CSV file
-    merged_df.to_csv('merged_barometros.csv', index=False)
-    print("Merged data saved to merged_barometros.csv")
+    if filter_nans:
+        filtered_output_file = 'filtered_barometros_files.csv'
+        filter_columns_with_nans(output_file, filtered_output_file, nan_threshold)
+    else:
+        print(f"Merged data saved to {output_file}")
 
 # Example usage
 if __name__ == "__main__":
-    start_month = "01/2018"  
+    start_month = "01/2023"
     end_month = "07/2024"
-    main(start_month, end_month)
+    main(start_month, end_month, filter_nans=True, nan_threshold=0.5)
