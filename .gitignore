@@ -1,9 +1,14 @@
 # Exclude files inside barometros_raw folder
 Spain/CIS_Barometro/download_barometros/barometros_raw/
 
-# Untrack all CSV files except barometros_index.csv
+# Ignore all CSV files
 *.csv
-!barometros_index.csv
+
+# But don't ignore this specific file
+!Spain/CIS_Barometro/barometros_index.csv
+
+# Specifically ignore the large CSV file
+Spain/CIS_Barometro/merged_barometros.csv
 
 # Ignore Parquet Files:
 *.parquet
