@@ -106,7 +106,7 @@ if "Ponderación autonómica" in df_ordered.columns:
 
 # Save the filtered and ordered DataFrame as a Parquet file
 output_file = 'processed_barometros.parquet'
-df_ordered.to_parquet(output_file, index=False, engine='pyarrow', compression='snappy', overwrite=True)
+df_ordered.to_parquet(output_file, index=False, engine='pyarrow', compression='snappy')
 print(f"\nProcessed data saved to {output_file}")
 
 # Print missing columns from the defined groups
