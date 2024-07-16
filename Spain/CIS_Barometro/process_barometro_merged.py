@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os
 
 # Read the CSV file
 df = pd.read_csv('filtered_barometros_files.csv')
@@ -31,11 +32,13 @@ groups = {
     ],
     "Demografía": [
         "Sexo de la persona entrevistada", "Edad de la persona entrevistada",
-        "Nacionalidad de la persona entrevistada", "Religiosidad de la persona entrevistada",
-        "Estado civil de la persona entrevistada", "Estudios de la persona entrevistada",
-        "Situación laboral de la persona entrevistada", 
-        "Clase social subjetiva de la persona entrevistada",
-        "Nivel de ingresos netos del hogar", "Escala de autoubicación ideológica (1-10)",
+        "Religiosidad de la persona entrevistada", "Frecuencia de asistencia a oficios religiosos",
+        "Estado civil de la persona entrevistada", "Estudios de la persona entrevistada", "Nivel de estudios alcanzado por la persona entrevistada",
+        "Escolarización de la persona entrevistada",
+        "Población activa e inactiva", "Situación laboral de la persona entrevistada", 
+        "Ocupación de la persona entrevistada",
+        "Clase social subjetiva de la persona entrevistada", "Identificación subjetiva de clase",
+        "Nivel de ingresos netos del hogar", "Escala de autoubicación ideológica (1-10)", "Nacionalidad de la persona entrevistada",
         "Provincia", "Municipio", "Comunidad autónoma", "Tamaño de municipio"
     ],
     "Opiniones": [
@@ -45,10 +48,14 @@ groups = {
         "Valoración de la situación económica general de España"
     ],
     "Voto": [
+        "Intención de voto en unas supuestas elecciones generales",
         "Intención de voto en unas supuestas elecciones generales [recodificada]",
         "Recuerdo de voto en las elecciones generales de 2023",
+        "Recuerdo de voto en las elecciones generales de 2023 de los votantes [recodificada]",
         "Partido político que considera más cercano a sus ideas",
-        "Preferencia personal como presidente del Gobierno central"
+        "Preferencia personal como presidente del Gobierno central",
+        "Intención de voto alternativo en supuestas elecciones generales",
+        "Intención de voto alternativo en supuestas elecciones generales [recodificada]",
     ]
 }
 
@@ -72,13 +79,22 @@ all_variables = [var for group in groups.values() for var in group]
 # Get all columns from the DataFrame
 all_columns = df.columns.tolist()
 
+# Remove 'Mes_numero' and the columns we want to move to the end
+columns_to_move = ['Número de registro','Código del estudio', 'Año de realización', 'Mes de realización']
+for col in columns_to_move + ['Mes_numero']:
+    if col in all_columns:
+        all_columns.remove(col)
+
 # Order the columns based on the groups, then add the remaining columns
-ordered_columns = ['date_of_study', 'Mes_numero'] + [var for var in all_variables if var in all_columns]
-remaining_columns = [col for col in all_columns if col not in ordered_columns]
+ordered_columns = ['date_of_study'] + [var for var in all_variables if var in all_columns and var not in columns_to_move]
+remaining_columns = [col for col in all_columns if col not in ordered_columns and col not in columns_to_move]
 ordered_columns.extend(remaining_columns)
 
+# Add the specified columns to the end
+ordered_columns.extend(columns_to_move)
+
 # Reorder the DataFrame columns
-df_ordered = df[ordered_columns]
+df_ordered = df[ordered_columns].copy()
 
 # Clean and convert the "Edad de la persona entrevistada" column
 if "Edad de la persona entrevistada" in df_ordered.columns:
@@ -88,15 +104,9 @@ if "Edad de la persona entrevistada" in df_ordered.columns:
 if "Ponderación autonómica" in df_ordered.columns:
     df_ordered["Ponderación autonómica"] = pd.to_numeric(df_ordered["Ponderación autonómica"].astype(str).str.replace(',', '.'), errors='coerce')
 
-# Convert all object columns to string type, except 'Principales Problemas'
-object_columns = df_ordered.select_dtypes(include=['object']).columns
-for col in object_columns:
-    if col != 'Principales Problemas':
-        df_ordered[col] = df_ordered[col].astype(str)
-
 # Save the filtered and ordered DataFrame as a Parquet file
 output_file = 'processed_barometros.parquet'
-df_ordered.to_parquet(output_file, index=False)
+df_ordered.to_parquet(output_file, index=False, engine='pyarrow', compression='snappy', overwrite=True)
 print(f"\nProcessed data saved to {output_file}")
 
 # Print missing columns from the defined groups
