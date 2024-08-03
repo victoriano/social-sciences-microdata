@@ -17,6 +17,9 @@ Spain/CIS_Barometro/merged_barometros.csv
 # Ignore Parquet Files:
 *.parquet
 
+# Ignore .vscode directory
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
