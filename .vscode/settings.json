@@ -1,0 +1,22 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "name": "graphextpublic - us",
+            "authenticator": "SERVICE_ACCOUNT",
+            "location": "us",
+            "previewLimit": 50,
+            "driver": "BigQuery",
+            "keyfile": "/Users/victoriano/Code/access_accounts keyfiles/bigquery/graphextpublic/graphextpublic-ee99cb3c5426.json"
+        },
+        {
+            "name": "graphextpublic - europe-southwest1",
+            "authenticator": "SERVICE_ACCOUNT",
+            "location": "europe-southwest1",
+            "previewLimit": 50,
+            "driver": "BigQuery",
+            "keyfile": "/Users/victoriano/Code/access_accounts keyfiles/bigquery/graphextpublic/graphextpublic-ee99cb3c5426.json"
+        }
+    ],
+    "dbt.dbtIntegration": "cloud"
+}

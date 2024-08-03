@@ -3,6 +3,7 @@ Spain/CIS_Barometro/download_barometros/barometros_raw/
 
 # Ignore all CSV files
 *.csv
+*.txt
 
 # But don't ignore this specific file
 !Spain/CIS_Barometro/barometros_index.csv
