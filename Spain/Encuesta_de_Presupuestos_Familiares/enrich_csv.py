@@ -4,16 +4,19 @@ import os
 # Define the mappings based on the image
 mappings = {
     'SUSPRIN': {1: 'Sí', 6: 'No'},
+    'NINODEP': {1: 'Sí', 6: 'No'},
+    'HIJODEP': {1: 'Sí', 6: 'No'},
+    'ADULTO': {1: 'Sí', 6: 'No'},
     'PERCEP': {1: 'Sí', 6: 'No', 9: 'No Consta' },
     'INTERINP': {
-        1: 'Menos de 500 euros',
-        2: 'De 500 a menos de 1000 euros',
-        3: 'De 1000 a menos de 1500 euros',
-        4: 'De 1500 a menos de 2000 euros',
-        5: 'De 2000 a menos de 2500 euros',
-        6: 'De 2500 a menos de 3000 euros',
-        7: '3000 euros o más',
-        9: 'No Consta'
+        1.00: 'Menos de 500 euros',
+        2.00: 'De 500 a menos de 1000 euros',
+        3.00: 'De 1000 a menos de 1500 euros',
+        4.00: 'De 1500 a menos de 2000 euros',
+        5.00: 'De 2000 a menos de 2500 euros',
+        6.00: 'De 2500 a menos de 3000 euros',
+        7.00: '3000 euros o más',
+        9: 'No consta'
     },
     'CATEGMH': {
         1: 'Miembro del hogar',
@@ -95,13 +98,41 @@ mappings = {
 
     'SITURED': {1: 'Activo', 2: 'Inactivo', 9: 'No Consta'},
     'OCU': {1: 'Ocupado', 2: 'No ocupado', 9: 'No Consta'},
-    'JORNADA': {1: 'Completa', 6: 'Parcial', 9: 'No Consta'},
+    'JORNADA': {1: 'Completa', 2: 'Parcial', 9: 'No Consta'},
     'IMPEXACP': {-9.0: ''},
     'INTERINP': {-9.0: ''},
     'NORDENCO': {99: ''},
     'NORDENPA': {99: ''},
-    'NORDENMA': {99: ''}
-
+    'NORDENMA': {99: ''},
+    'ESTUDIOS': {
+        1: 'No sabe leer o escribir o fue menos de 5 años a la escuela',
+        2: 'Educación primaria completa o fue a la escuela 5 o más años',
+        3: 'ESO, EGB o Bachiller Elemental (con título o sin título)',
+        4: 'Bachiller, BUP, COU, Bachiller Superior, FP de Grado Medio',
+        5: 'FP de Grado Superior, FPII y equivalentes',
+        6: 'Grado de 240 ECTS, Diplomatura, Arquitectura o Ingeniería Técnica',
+        7: 'Grado de más de 240 ECTS, Licenciatura, Arquitectura o Ingeniería',
+        8: 'Doctorado universitario',
+        -9: 'No consta'
+    },
+    'ESTUDRED': {
+        1: 'Inferior a la primera etapa de Educación Secundaria',
+        2: 'Primera etapa de Educación secundaria',
+        3: 'Segunda etapa de Educación secundaria',
+        4: 'Educación superior',
+        -9: 'No consta'
+    },
+    'SITUACT': {
+        1: 'Trabajando al menos una hora',
+        2: 'Con trabajo del que está ausente (por enfermedad, vacaciones, etc.)',
+        3: 'Parado/a',
+        4: 'Jubilado/a, retirado/a anticipadamente',
+        5: 'Estudiante',
+        6: 'Dedicado/a a las labores del hogar',
+        7: 'Con incapacidad laboral permanente',
+        8: 'Otra situación de inactividad económica',
+        -9: 'No consta'
+    }
 }
 
 def enrich_csv(input_file, output_file):

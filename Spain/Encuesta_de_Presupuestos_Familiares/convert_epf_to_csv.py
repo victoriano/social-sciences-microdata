@@ -280,7 +280,7 @@ def convert_miembros():
         (40, 42), # NORDENMA
         (42, 44), # PAISMADRE
         (44, 46), # ESTUDIOS
-        (46, 48), # ESTUDIORED
+        (46, 48), # ESTUDRED
         (48, 50), # SITUACT
         (50, 52), # SITURED
         (52, 54), # OCU
@@ -298,7 +298,7 @@ def convert_miembros():
         'ANOENC', 'NUMERO', 'NORDEN', 'CATEGMH', 'SUSPRIN', 'RELASP', 'EDAD', 'SEXO',
         'PAISNACIM', 'NACIONA', 'PAISNACION', 'SITURES', 'ECIVILLEGAL', 'NORDENCO', 'UNION',
         'CONVIVENCIA', 'NORDENPA', 'PAISPADRE', 'NORDENMA', 'PAISMADRE', 'ESTUDIOS',
-        'ESTUDIORED', 'SITUACT', 'SITURED', 'OCU', 'JORNADA', 'PERCEP', 'IMPEXACP',
+        'ESTUDRED', 'SITUACT', 'SITURED', 'OCU', 'JORNADA', 'PERCEP', 'IMPEXACP',
         'INTERINP', 'NINODEP', 'HIJODEP', 'ADULTO', 'FACTOR'
     ]
     
