@@ -5,6 +5,9 @@ Spain/CIS_Barometro/download_barometros/barometros_raw/
 *.csv
 *.txt
 
+# Ignore the large file
+Spain/Encuesta_de_Presupuestos_Familiares/Fichero de usuario de gastos a2023AJUSTE.txt
+
 # But don't ignore this specific file
 !Spain/CIS_Barometro/barometros_index.csv
 
