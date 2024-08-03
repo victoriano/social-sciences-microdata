@@ -32,12 +32,30 @@ def generate_summary(file_name):
     for column in df.columns:
         null_percentage = (df[column].isnull().sum() / len(df) * 100).round(2)
         non_null_values = df[column].dropna()
-        numeric_percentage = (non_null_values.apply(lambda x: isinstance(x, (int, float))).sum() / len(non_null_values) * 100).round(2)
+        
+        # Check if the column contains mixed types
+        numeric_count = non_null_values.apply(lambda x: pd.api.types.is_numeric_dtype(type(x)) or (isinstance(x, str) and x.replace('.', '').isdigit())).sum()
+        numeric_percentage = (numeric_count / len(non_null_values) * 100).round(2)
         string_percentage = (100 - numeric_percentage).round(2)
         
-        print(f"  {column}:")
+        # Calculate cardinality for numeric columns
+        cardinality = non_null_values.nunique() if numeric_percentage == 100 else None
+        
+        # Determine column name color
+        if 0 < numeric_percentage < 100:
+            column_name = f"\033[91m{column}\033[0m"  # Red color for mixed types
+        elif cardinality is not None and 1 < cardinality < 20 and "NORDEN" not in column:
+            column_name = f"\033[94m{column}\033[0m"  # Electric blue for specified condition
+        else:
+            column_name = column
+
+        print(f"  {column_name}:")
         print(f"    Null: {null_percentage}%")
         print(f"    Non-null: {100 - null_percentage}% ({numeric_percentage}% numeric, {string_percentage}% string)")
+        
+        # Add cardinality for 100% numeric columns
+        if cardinality is not None:
+            print(f"    Cardinality: {cardinality}")
 
 def wait_for_file(file_name, timeout=60):
     start_time = time.time()
