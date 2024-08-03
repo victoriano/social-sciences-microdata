@@ -6,19 +6,225 @@ def read_fixed_width_file(file_path, col_specs, col_names):
 
 def convert_hogares():
     col_specs = [
-        (0, 4), (4, 6), (6, 8), (8, 10), (10, 11), (11, 13), (13, 14), (14, 15),
-        (15, 16), (16, 17), (17, 18), (18, 19), (19, 20), (20, 21), (21, 22),
-        (22, 23), (23, 24), (24, 25), (25, 26), (26, 27), (27, 28), (28, 29),
-        (29, 37), (37, 45), (45, 53), (53, 61), (61, 69), (69, 77), (77, 85),
-        (85, 93), (93, 101), (101, 109), (109, 117), (117, 125), (125, 133)
+        (0, 4),    # ANOENC
+        (4, 9),    # NUMERO
+        (9, 11),   # CCAA
+        (11, 12),  # NUTS1
+        (12, 13),  # CAPROV
+        (13, 14),  # TAMAMU
+        (14, 15),  # DENSIDAD
+        (15, 16),  # CLAVE
+        (16, 17),  # CLATEO
+        (17, 28),  # FACTOR
+        (28, 30),  # NMIEMB
+        (30, 32),  # TAMANO
+        (32, 34),  # NMIEMSD
+        (34, 36),  # NMIEMHU
+        (36, 38),  # NMIEMIN
+        (38, 40),  # NMIEM1
+        (40, 42),  # NMIEM2
+        (42, 44),  # NMIEM3
+        (44, 46),  # NMIEM4
+        (46, 48),  # NMIEM5
+        (48, 50),  # NMIEM6
+        (50, 52),  # NMIEM7
+        (52, 54),  # NMIEM8
+        (54, 56),  # NMIEM9
+        (56, 58),  # NMIEM10
+        (58, 60),  # NMIEM11
+        (60, 62),  # NMIEM12
+        (62, 64),  # NMIEM13
+        (64, 66),  # NUMACTI
+        (66, 68),  # NUMINACTI
+        (68, 70),  # NUMOCU
+        (70, 72),  # NUMNOCU
+        (72, 74),  # NUMESTU
+        (74, 76),  # NUMNOESTU
+        (76, 78),  # NNINOSD
+        (78, 80),  # NHIJOSD
+        (80, 83),  # UC1
+        (83, 86),  # UC2
+        (86, 88),  # PF2TEO
+        (88, 90),  # PF2RECO
+        (90, 92),  # TIPHOGAR1
+        (92, 94),  # TIPHOGAR2
+        (94, 96),  # TIPHOGAR3
+        (96, 98),  # TIPHOGAR4
+        (98, 100), # TIPHOGAR5
+        (100, 102), # TIPHOGAR6
+        (102, 104), # TIPHOGAR7
+        (104, 106), # TIPHOGAR8
+        (106, 108), # TIPHOGAR9
+        (108, 110), # TIPHOGAR10
+        (110, 112), # TIPHOGAR11
+        (112, 114), # SITUOCUHOG
+        (114, 116), # SITUACTHOG
+        (116, 118), # NORDENSP
+        (118, 120), # EDADSP
+        (120, 122), # SEXOSP
+        (122, 124), # PAISNACSP
+        (124, 126), # NACIONASP
+        (126, 128), # PAISSP
+        (128, 130), # SITURESSP
+        (130, 132), # ECIVILLEGALSP
+        (132, 134), # NORDENCOSP
+        (134, 136), # UNIONSP
+        (136, 138), # CONVIVENCIASP
+        (138, 140), # NORDENPASP
+        (140, 142), # PAISPADRESP
+        (142, 144), # NORDENMASP
+        (144, 146), # PAISMADRESP
+        (146, 148), # ESTUDIOSSP
+        (148, 150), # ESTUDREDSP
+        (150, 152), # SITUACTSP
+        (152, 154), # SITUREDSP
+        (154, 156), # OCUSP
+        (156, 158), # JORNADASP
+        (158, 160), # PERCEPSP
+        (160, 165), # IMPEXACPSP
+        (165, 167), # INTERINPSP
+        (167, 169), # TRABAJO
+        (169, 171), # OCUPA
+        (171, 173), # OCUPARED
+        (173, 175), # ACTESTB
+        (175, 177), # ACTESTBRED
+        (177, 179), # SITPROF
+        (179, 181), # SECTOR
+        (181, 183), # CONTRATO
+        (183, 185), # TIPOCONT
+        (185, 187), # SITSOCI
+        (187, 189), # SITSOCIRE
+        (189, 190), # REGTEN
+        (190, 192), # TIPOEDIF
+        (192, 194), # ZONARES
+        (194, 196), # TIPOCASA
+        (196, 198), # NHABIT
+        (198, 200), # ANNOCON
+        (200, 203), # SUPERF
+        (203, 205), # AGUACALI
+        (205, 207), # FUENAGUA
+        (207, 209), # CALEF
+        (209, 211), # FUENCALE
+        (211, 212), # DISPOSIOV
+        (212, 213), # NUMOVD
+        (213, 215), # REGTENV1
+        (215, 217), # MESESV1
+        (217, 219), # DIASV1
+        (219, 221), # AGUACV1
+        (221, 223), # FUENACV1
+        (223, 225), # CALEFV1
+        (225, 227), # FUENCAV1
+        (227, 229), # REGTENV2
+        (229, 231), # MESESV2
+        (231, 233), # DIASV2
+        (233, 235), # AGUACV2
+        (235, 237), # FUENACV2
+        (237, 239), # CALEFV2
+        (239, 241), # FUENCAV2
+        (241, 243), # REGTENV3
+        (243, 245), # MESESV3
+        (245, 247), # DIASV3
+        (247, 249), # AGUACV3
+        (249, 251), # FUENACV3
+        (251, 253), # CALEFV3
+        (253, 255), # FUENCAV3
+        (255, 257), # REGTENV4
+        (257, 259), # MESESV4
+        (259, 261), # DIASV4
+        (261, 263), # AGUACV4
+        (263, 265), # FUENACV4
+        (265, 267), # CALEFV4
+        (267, 269), # FUENCAV4
+        (269, 271), # REGTENV5
+        (271, 273), # MESESV5
+        (273, 275), # DIASV5
+        (275, 277), # AGUACV5
+        (277, 279), # FUENACV5
+        (279, 281), # CALEFV5
+        (281, 283), # FUENCAV5
+        (283, 285), # REGTENV6
+        (285, 287), # MESESV6
+        (287, 289), # DIASV6
+        (289, 291), # AGUACV6
+        (291, 293), # FUENACV6
+        (293, 295), # CALEFV6
+        (295, 297), # FUENCAV6
+        (297, 299), # REGTENV7
+        (299, 301), # MESESV7
+        (301, 303), # DIASV7
+        (303, 305), # AGUACV7
+        (305, 307), # FUENACV7
+        (307, 309), # CALEFV7
+        (309, 311), # FUENCAV7
+        (311, 313), # REGTENV8
+        (313, 315), # MESESV8
+        (315, 317), # DIASV8
+        (317, 319), # AGUACV8
+        (319, 321), # FUENACV8
+        (321, 323), # CALEFV8
+        (323, 325), # FUENCAV8
+        (325, 327), # REGTENV9
+        (327, 329), # MESESV9
+        (329, 331), # DIASV9
+        (331, 333), # AGUACV9
+        (333, 335), # FUENACV9
+        (335, 337), # CALEFV9
+        (337, 339), # FUENCAV9
+        (339, 355), # GASTOT
+        (355, 360), # IMPUTGAS
+        (360, 376), # GASTMON
+        (376, 389), # GASTNOM1
+        (389, 402), # GASTNOM2
+        (402, 415), # GASTNOM3
+        (415, 428), # GASTNOM4
+        (428, 430), # CAPROP
+        (430, 432), # CAJENA
+        (432, 434), # PENSIO
+        (434, 436), # DESEM
+        (436, 438), # OTRSUB
+        (438, 440), # RENTAS
+        (440, 442), # OTROIN
+        (442, 444), # FUENPRIN
+        (444, 446), # FUENPRINRED
+        (446, 451), # IMPEXAC
+        (451, 453), # INTERIN
+        (453, 455), # NUMPERI
+        (455, 458), # COMIMH
+        (458, 461), # COMISD
+        (461, 464), # COMIHU
+        (464, 467), # COMIINV
+        (467, 470)  # COMITOT
     ]
+    
     col_names = [
-        'ANOENC', 'CCAA', 'PROV', 'MUNI', 'DISTR', 'SECCION', 'VIVI', 'NIVEL',
-        'NHOGARES', 'NMIEMB', 'NMIEMB614', 'NMIEMB1415', 'FACTOREH', 'TIPHOGAR',
-        'NMESENC', 'SUSTENT', 'IMPEXAC', 'FACTORHA', 'FACTORHM', 'FACTORT',
-        'NPERIODO', 'NMES', 'GASTMON', 'GASTNOMON', 'GASTOT', 'IMPUTALQ',
-        'GASTMON_NM', 'GASTNOMON_NM', 'GASTOT_NM', 'GASTMON_R', 'GASTNOMON_R',
-        'GASTOT_R', 'GASTMON_NM_R', 'GASTNOMON_NM_R', 'GASTOT_NM_R'
+        'ANOENC', 'NUMERO', 'CCAA', 'NUTS1', 'CAPROV', 'TAMAMU', 'DENSIDAD', 'CLAVE',
+        'CLATEO', 'FACTOR', 'NMIEMB', 'TAMANO', 'NMIEMSD', 'NMIEMHU', 'NMIEMIN',
+        'NMIEM1', 'NMIEM2', 'NMIEM3', 'NMIEM4', 'NMIEM5', 'NMIEM6', 'NMIEM7',
+        'NMIEM8', 'NMIEM9', 'NMIEM10', 'NMIEM11', 'NMIEM12', 'NMIEM13', 'NUMACTI',
+        'NUMINACTI', 'NUMOCU', 'NUMNOCU', 'NUMESTU', 'NUMNOESTU', 'NNINOSD', 'NHIJOSD',
+        'UC1', 'UC2', 'PF2TEO', 'PF2RECO', 'TIPHOGAR1', 'TIPHOGAR2', 'TIPHOGAR3',
+        'TIPHOGAR4', 'TIPHOGAR5', 'TIPHOGAR6', 'TIPHOGAR7', 'TIPHOGAR8', 'TIPHOGAR9',
+        'TIPHOGAR10', 'TIPHOGAR11', 'SITUOCUHOG', 'SITUACTHOG', 'NORDENSP', 'EDADSP',
+        'SEXOSP', 'PAISNACSP', 'NACIONASP', 'PAISSP', 'SITURESSP', 'ECIVILLEGALSP',
+        'NORDENCOSP', 'UNIONSP', 'CONVIVENCIASP', 'NORDENPASP', 'PAISPADRESP',
+        'NORDENMASP', 'PAISMADRESP', 'ESTUDIOSSP', 'ESTUDREDSP', 'SITUACTSP',
+        'SITUREDSP', 'OCUSP', 'JORNADASP', 'PERCEPSP', 'IMPEXACPSP', 'INTERINPSP',
+        'TRABAJO', 'OCUPA', 'OCUPARED', 'ACTESTB', 'ACTESTBRED', 'SITPROF', 'SECTOR',
+        'CONTRATO', 'TIPOCONT', 'SITSOCI', 'SITSOCIRE', 'REGTEN', 'TIPOEDIF',
+        'ZONARES', 'TIPOCASA', 'NHABIT', 'ANNOCON', 'SUPERF', 'AGUACALI', 'FUENAGUA',
+        'CALEF', 'FUENCALE', 'DISPOSIOV', 'NUMOVD', 'REGTENV1', 'MESESV1', 'DIASV1',
+        'AGUACV1', 'FUENACV1', 'CALEFV1', 'FUENCAV1', 'REGTENV2', 'MESESV2', 'DIASV2',
+        'AGUACV2', 'FUENACV2', 'CALEFV2', 'FUENCAV2', 'REGTENV3', 'MESESV3', 'DIASV3',
+        'AGUACV3', 'FUENACV3', 'CALEFV3', 'FUENCAV3', 'REGTENV4', 'MESESV4', 'DIASV4',
+        'AGUACV4', 'FUENACV4', 'CALEFV4', 'FUENCAV4', 'REGTENV5', 'MESESV5', 'DIASV5',
+        'AGUACV5', 'FUENACV5', 'CALEFV5', 'FUENCAV5', 'REGTENV6', 'MESESV6', 'DIASV6',
+        'AGUACV6', 'FUENACV6', 'CALEFV6', 'FUENCAV6', 'REGTENV7', 'MESESV7', 'DIASV7',
+        'AGUACV7', 'FUENACV7', 'CALEFV7', 'FUENCAV7', 'REGTENV8', 'MESESV8', 'DIASV8',
+        'AGUACV8', 'FUENACV8', 'CALEFV8', 'FUENCAV8', 'REGTENV9', 'MESESV9', 'DIASV9',
+        'AGUACV9', 'FUENACV9', 'CALEFV9', 'FUENCAV9', 'GASTOT', 'IMPUTGAS', 'GASTMON',
+        'GASTNOM1', 'GASTNOM2', 'GASTNOM3', 'GASTNOM4', 'CAPROP', 'CAJENA', 'PENSIO',
+        'DESEM', 'OTRSUB', 'RENTAS', 'OTROIN', 'FUENPRIN', 'FUENPRINRED', 'IMPEXAC',
+        'INTERIN', 'NUMPERI', 'COMIMH', 'COMISD', 'COMIHU', 'COMIINV', 'COMITOT'
     ]
     
     df = read_fixed_width_file('Fichero de usuario de hogar a2023IMPAJUSTE.txt', col_specs, col_names)
@@ -26,14 +232,26 @@ def convert_hogares():
 
 def convert_gastos():
     col_specs = [
-        (0, 4), (4, 6), (6, 8), (8, 10), (10, 11), (11, 13), (13, 14), (14, 15),
-        (15, 16), (16, 24), (24, 30), (30, 38), (38, 46), (46, 54), (54, 62),
-        (62, 70), (70, 78)
+        (0, 4),   # ANOENC
+        (4, 9),   # NUMERO
+        (9, 14),  # CODIGO
+        (14, 29), # GASTO
+        (29, 34), # PORCENDES
+        (34, 39), # PORCENIMP
+        (39, 51), # CANTIDAD
+        (51, 66), # GASTOMON
+        (66, 79), # GASTNOM1
+        (79, 92), # GASTNOM2
+        (92, 105),# GASTNOM3
+        (105, 118),# GASTNOM4
+        (118, 131),# GASTNOM5
+        (131, 142) # FACTOR
     ]
+    
     col_names = [
-        'ANOENC', 'CCAA', 'PROV', 'MUNI', 'DISTR', 'SECCION', 'VIVI', 'NIVEL',
-        'NHOGARES', 'CODIGO', 'CANTIDAD', 'VALORGASTO', 'FACTORGC', 'FACTORGA',
-        'FACTORGM', 'VALORGASTO_R', 'FACTORGC_R'
+        'ANOENC', 'NUMERO', 'CODIGO', 'GASTO', 'PORCENDES', 'PORCENIMP',
+        'CANTIDAD', 'GASTOMON', 'GASTNOM1', 'GASTNOM2', 'GASTNOM3',
+        'GASTNOM4', 'GASTNOM5', 'FACTOR'
     ]
     
     df = read_fixed_width_file('Fichero de usuario de gastos a2023AJUSTE.txt', col_specs, col_names)
@@ -41,83 +259,48 @@ def convert_gastos():
 
 def convert_miembros():
     col_specs = [
-        (0, 4), (4, 6), (6, 8), (8, 11), (11, 13), (13, 15), (15, 17),
-        (17, 18), (18, 19), (19, 20), (20, 21), (21, 22), (22, 23),
-        (23, 24), (24, 25), (25, 26), (26, 27), (27, 28), (28, 29),
-        (29, 30), (30, 31), (31, 32), (32, 33), (33, 34), (34, 35),
-        (35, 36), (36, 37), (37, 38), (38, 39), (39, 40), (40, 41),
-        (41, 42), (42, 43), (43, 44), (44, 45), (45, 46), (46, 47),
-        (47, 48), (48, 49), (49, 50), (50, 51), (51, 52), (52, 53),
-        (53, 54), (54, 55), (55, 56), (56, 57), (57, 58), (58, 59),
-        (59, 60), (60, 61), (61, 62), (62, 63), (63, 64), (64, 65),
-        (65, 66), (66, 67), (67, 68), (68, 69), (69, 70), (70, 71),
-        (71, 72), (72, 73), (73, 74), (74, 75), (75, 76), (76, 77),
-        (77, 78), (78, 79), (79, 80), (80, 81), (81, 82), (82, 83),
-        (83, 84), (84, 85), (85, 86), (86, 87), (87, 88), (88, 89),
-        (89, 90), (90, 91), (91, 92), (92, 93), (93, 94), (94, 95),
-        (95, 96), (96, 97), (97, 98), (98, 99), (99, 100), (100, 101),
-        (101, 102), (102, 103), (103, 104), (104, 105), (105, 106),
-        (106, 107), (107, 108), (108, 109), (109, 110), (110, 111),
-        (111, 112), (112, 113), (113, 114), (114, 115), (115, 116),
-        (116, 117), (117, 118), (118, 119), (119, 120), (120, 121),
-        (121, 122), (122, 123), (123, 124), (124, 125), (125, 126),
-        (126, 127), (127, 128), (128, 129), (129, 130), (130, 131),
-        (131, 132), (132, 133), (133, 134), (134, 135), (135, 136),
-        (136, 137), (137, 138), (138, 139), (139, 140), (140, 141),
-        (141, 142), (142, 143), (143, 144), (144, 145), (145, 146),
-        (146, 147), (147, 148), (148, 149), (149, 150), (150, 151),
-        (151, 152), (152, 153), (153, 154), (154, 155), (155, 156),
-        (156, 157), (157, 158), (158, 159), (159, 160), (160, 161),
-        (161, 162), (162, 163), (163, 164), (164, 165), (165, 166),
-        (166, 167), (167, 168), (168, 169), (169, 170), (170, 171),
-        (171, 172), (172, 173), (173, 174), (174, 175), (175, 176),
-        (176, 177), (177, 178), (178, 179), (179, 180)
+        (0, 4),   # ANOENC
+        (4, 9),   # NUMERO
+        (9, 11),  # NORDEN
+        (11, 13), # CATEGMH
+        (13, 14), # SUSPRIN
+        (14, 16), # RELASP
+        (16, 18), # EDAD
+        (18, 20), # SEXO
+        (20, 22), # PAISNACIM
+        (22, 24), # NACIONA
+        (24, 26), # PAISNACION
+        (26, 28), # SITURES
+        (28, 30), # ECIVILLEGAL
+        (30, 32), # NORDENCO
+        (32, 34), # UNION
+        (34, 36), # CONVIVENCIA
+        (36, 38), # NORDENPA
+        (38, 40), # PAISPADRE
+        (40, 42), # NORDEN4
+        (42, 44), # PAISMADRE
+        (44, 46), # ESTUDIOS
+        (46, 48), # ESTUDIORED
+        (48, 50), # SITUACT
+        (50, 52), # SITURED
+        (52, 54), # OCU
+        (54, 56), # JORNADA
+        (56, 58), # PERCEP
+        (58, 63), # IMPEXACP
+        (63, 65), # INTERINP
+        (65, 67), # NINODEP
+        (67, 69), # HIJODEP
+        (69, 71), # ADULTO
+        (71, 82)  # FACTOR
     ]
-    
-    # Add more column specifications to match the number of col_names
-    # You'll need to determine the correct column widths for these additional columns
-    for i in range(len(col_specs), 185):
-        last_end = col_specs[-1][1]
-        col_specs.append((last_end, last_end + 1))  # Assuming 1-character width for each new column
     
     col_names = [
-        'ANOENC', 'CCAA', 'PROV', 'MUNI', 'DISTR', 'SECCION', 'VIVI',
-        'NIVEL', 'NORDEN', 'SEXO', 'EDAD', 'NACIONP', 'ESTCIVI',
-        'PARESCO', 'ESTUDIO', 'OCUPA', 'SITUA', 'SECTOR', 'TIPOCONT',
-        'TIPOCON2', 'JORNADA', 'HORASTR', 'INGRE1', 'INGRE2', 'INGRE3',
-        'INGRE4', 'INGRE5', 'INGRE6', 'INGRE7', 'INGRE8', 'INGRE9',
-        'INGRE10', 'INGRE11', 'INGRE12', 'INGRE13', 'INGRE14', 'INGRE15',
-        'INGRE16', 'INGRE17', 'INGRE18', 'INGRE19', 'INGRE20', 'INGRE21',
-        'INGRE22', 'INGRE23', 'INGRE24', 'INGRE25', 'INGRE26', 'INGRE27',
-        'INGRE28', 'INGRE29', 'INGRE30', 'INGRE31', 'INGRE32', 'INGRE33',
-        'INGRE34', 'INGRE35', 'INGRE36', 'INGRE37', 'INGRE38', 'INGRE39',
-        'INGRE40', 'INGRE41', 'INGRE42', 'INGRE43', 'INGRE44', 'INGRE45',
-        'INGRE46', 'INGRE47', 'INGRE48', 'INGRE49', 'INGRE50', 'INGRE51',
-        'INGRE52', 'INGRE53', 'INGRE54', 'INGRE55', 'INGRE56', 'INGRE57',
-        'INGRE58', 'INGRE59', 'INGRE60', 'INGRE61', 'INGRE62', 'INGRE63',
-        'INGRE64', 'INGRE65', 'INGRE66', 'INGRE67', 'INGRE68', 'INGRE69',
-        'INGRE70', 'INGRE71', 'INGRE72', 'INGRE73', 'INGRE74', 'INGRE75',
-        'INGRE76', 'INGRE77', 'INGRE78', 'INGRE79', 'INGRE80', 'INGRE81',
-        'INGRE82', 'INGRE83', 'INGRE84', 'INGRE85', 'INGRE86', 'INGRE87',
-        'INGRE88', 'INGRE89', 'INGRE90', 'INGRE91', 'INGRE92', 'INGRE93',
-        'INGRE94', 'INGRE95', 'INGRE96', 'INGRE97', 'INGRE98', 'INGRE99',
-        'INGRE100', 'INGRE101', 'INGRE102', 'INGRE103', 'INGRE104',
-        'INGRE105', 'INGRE106', 'INGRE107', 'INGRE108', 'INGRE109',
-        'INGRE110', 'INGRE111', 'INGRE112', 'INGRE113', 'INGRE114',
-        'INGRE115', 'INGRE116', 'INGRE117', 'INGRE118', 'INGRE119',
-        'INGRE120', 'INGRE121', 'INGRE122', 'INGRE123', 'INGRE124',
-        'INGRE125', 'INGRE126', 'INGRE127', 'INGRE128', 'INGRE129',
-        'INGRE130', 'INGRE131', 'INGRE132', 'INGRE133', 'INGRE134',
-        'INGRE135', 'INGRE136', 'INGRE137', 'INGRE138', 'INGRE139',
-        'INGRE140', 'INGRE141', 'INGRE142', 'INGRE143', 'INGRE144',
-        'INGRE145', 'INGRE146', 'INGRE147', 'INGRE148', 'INGRE149',
-        'INGRE150', 'INGRE151', 'INGRE152', 'INGRE153', 'INGRE154',
-        'INGRE155', 'INGRE156', 'INGRE157', 'INGRE158', 'INGRE159',
-        'INGRE160', 'INGRE161', 'INGRE162', 'INGRE163'
+        'ANOENC', 'NUMERO', 'NORDEN', 'CATEGMH', 'SUSPRIN', 'RELASP', 'EDAD', 'SEXO',
+        'PAISNACIM', 'NACIONA', 'PAISNACION', 'SITURES', 'ECIVILLEGAL', 'NORDENCO', 'UNION',
+        'CONVIVENCIA', 'NORDENPA', 'PAISPADRE', 'NORDEN4', 'PAISMADRE', 'ESTUDIOS',
+        'ESTUDIORED', 'SITUACT', 'SITURED', 'OCU', 'JORNADA', 'PERCEP', 'IMPEXACP',
+        'INTERINP', 'NINODEP', 'HIJODEP', 'ADULTO', 'FACTOR'
     ]
-    
-    # Ensure that col_specs and col_names have the same length
-    assert len(col_specs) == len(col_names), f"Length mismatch: col_specs ({len(col_specs)}) != col_names ({len(col_names)})"
     
     # Update the file name to include the correct extension
     file_name = 'Fichero de usuario de miembros a2023IMPAJUSTE.txt'
@@ -126,7 +309,7 @@ def convert_miembros():
     df.to_csv('miembros_2023.csv', index=False)
 
 if __name__ == "__main__":
-    convert_hogares()
-    convert_gastos()
+    #convert_hogares()
+    #convert_gastos()
     convert_miembros()
     print("Conversión completada. Se han creado los archivos CSV correspondientes.")
