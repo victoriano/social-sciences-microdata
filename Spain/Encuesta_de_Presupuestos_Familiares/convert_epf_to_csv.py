@@ -232,17 +232,17 @@ def convert_hogares():
 
 def convert_gastos():
     col_specs = [
-        (0, 4),   # ANOENC
-        (4, 9),   # NUMERO
-        (9, 14),  # CODIGO
-        (14, 29), # GASTO
-        (29, 34), # PORCENDES
-        (34, 39), # PORCENIMP
-        (39, 51), # CANTIDAD
-        (51, 66), # GASTOMON
-        (66, 79), # GASTNOM1
-        (79, 92), # GASTNOM2
-        (92, 105),# GASTNOM3
+        (0, 4),    # ANOENC
+        (4, 9),    # NUMERO
+        (9, 14),   # CODIGO
+        (14, 29),  # GASTO
+        (29, 34),  # PORCENDES
+        (34, 39),  # PORCENIMP
+        (39, 51),  # CANTIDAD
+        (51, 66),  # GASTOMON
+        (66, 79),  # GASTNOM1
+        (79, 92),  # GASTNOM2
+        (92, 105), # GASTNOM3
         (105, 118),# GASTNOM4
         (118, 131),# GASTNOM5
         (131, 142) # FACTOR
@@ -255,6 +255,7 @@ def convert_gastos():
     ]
     
     df = read_fixed_width_file('Fichero de usuario de gastos a2023AJUSTE.txt', col_specs, col_names)
+    
     df.to_csv('gastos_2023.csv', index=False)
 
 def convert_miembros():

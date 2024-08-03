@@ -91,8 +91,8 @@ def main():
     # Step 3: Generate summaries for enriched datasets and open files
     enriched_files = [
         #"hogares_2023_enriched.csv",
-        #"gastos_2023_enriched.csv",
-        "miembros_2023_enriched.csv"
+        "gastos_2023_enriched.csv",
+        #"miembros_2023_enriched.csv"
     ]
 
     for file in enriched_files:
