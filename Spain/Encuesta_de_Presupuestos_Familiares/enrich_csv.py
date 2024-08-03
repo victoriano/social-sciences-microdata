@@ -16,7 +16,7 @@ mappings = {
         9: 'No Consta'
     },
     'CATEGMH': {
-        1: 'Miembro del hogar (no servicio doméstico, huésped ni invitado)',
+        1: 'Miembro del hogar',
         2: 'Servicio doméstico',
         3: 'Huésped',
         4: 'Invitado',
@@ -97,7 +97,11 @@ mappings = {
     'OCU': {1: 'Ocupado', 2: 'No ocupado', 9: 'No Consta'},
     'JORNADA': {1: 'Completa', 6: 'Parcial', 9: 'No Consta'},
     'IMPEXACP': {-9.0: ''},
-    'INTERINP': {-9.0: ''}
+    'INTERINP': {-9.0: ''},
+    'NORDENCO': {99: ''},
+    'NORDENPA': {99: ''},
+    'NORDENMA': {99: ''}
+
 }
 
 def enrich_csv(input_file, output_file):

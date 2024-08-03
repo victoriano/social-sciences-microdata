@@ -277,7 +277,7 @@ def convert_miembros():
         (34, 36), # CONVIVENCIA
         (36, 38), # NORDENPA
         (38, 40), # PAISPADRE
-        (40, 42), # NORDEN4
+        (40, 42), # NORDENMA
         (42, 44), # PAISMADRE
         (44, 46), # ESTUDIOS
         (46, 48), # ESTUDIORED
@@ -297,7 +297,7 @@ def convert_miembros():
     col_names = [
         'ANOENC', 'NUMERO', 'NORDEN', 'CATEGMH', 'SUSPRIN', 'RELASP', 'EDAD', 'SEXO',
         'PAISNACIM', 'NACIONA', 'PAISNACION', 'SITURES', 'ECIVILLEGAL', 'NORDENCO', 'UNION',
-        'CONVIVENCIA', 'NORDENPA', 'PAISPADRE', 'NORDEN4', 'PAISMADRE', 'ESTUDIOS',
+        'CONVIVENCIA', 'NORDENPA', 'PAISPADRE', 'NORDENMA', 'PAISMADRE', 'ESTUDIOS',
         'ESTUDIORED', 'SITUACT', 'SITURED', 'OCU', 'JORNADA', 'PERCEP', 'IMPEXACP',
         'INTERINP', 'NINODEP', 'HIJODEP', 'ADULTO', 'FACTOR'
     ]

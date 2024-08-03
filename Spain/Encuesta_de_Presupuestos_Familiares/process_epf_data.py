@@ -22,16 +22,22 @@ def generate_summary(file_name):
     total_columns = len(df.columns)
     numeric_columns = df.select_dtypes(include=[np.number]).columns.tolist()
     categorical_columns = df.select_dtypes(exclude=[np.number]).columns.tolist()
-    null_percentages = (df.isnull().sum() / len(df) * 100).round(2)
 
     print(f"\nSummary for {file_name}:")
     print(f"Total columns: {total_columns}")
     print(f"Numeric columns: {len(numeric_columns)}")
     print(f"Categorical columns: {len(categorical_columns)}")
-    print(f"Percentage of null values:")
-    for column, percentage in null_percentages.items():
-        if percentage > 0:
-            print(f"  {column}: {percentage}%")
+    
+    print("\nColumn details:")
+    for column in df.columns:
+        null_percentage = (df[column].isnull().sum() / len(df) * 100).round(2)
+        non_null_values = df[column].dropna()
+        numeric_percentage = (non_null_values.apply(lambda x: isinstance(x, (int, float))).sum() / len(non_null_values) * 100).round(2)
+        string_percentage = (100 - numeric_percentage).round(2)
+        
+        print(f"  {column}:")
+        print(f"    Null: {null_percentage}%")
+        print(f"    Non-null: {100 - null_percentage}% ({numeric_percentage}% numeric, {string_percentage}% string)")
 
 def wait_for_file(file_name, timeout=60):
     start_time = time.time()
