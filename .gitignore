@@ -19,7 +19,13 @@ Spain/Barometro_CIS/merged_barometros.csv
 # Ignore files inside epf_microdatos_raw_since_2016 folder
 Spain/Encuesta_de_Presupuestos_Familiares_INE/download_epfs_since2016/SPSS_raw_files/*
 Spain/Encuesta_de_Presupuestos_Familiares_INE/download_epfs_since2016/csv_raw_files/*
-Spain/Encuesta_de_Presupuestos_Familiares_INE/download_epfs_since2016/parquet_raw_files/*
+
+# Include all files in the parquet_raw_files folder
+!Spain/Encuesta_de_Presupuestos_Familiares_INE/download_epfs_since2016/parquet_raw_files/
+!Spain/Encuesta_de_Presupuestos_Familiares_INE/download_epfs_since2016/parquet_raw_files/**
+
+# Ignore .DS_Store file in the parquet_raw_files folder
+Spain/Encuesta_de_Presupuestos_Familiares_INE/download_epfs_since2016/parquet_raw_files/.DS_Store
 
 # Ignore .vscode directory
 .vscode/
@@ -151,4 +157,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-

@@ -1,6 +1,7 @@
 import os
 import pyreadstat
 import pandas as pd
+import numpy as np
 import argparse
 from pathlib import Path
 
@@ -41,6 +42,11 @@ def convert_spss_files(year=None, output_format='csv'):
             if column in meta.variable_value_labels:
                 df[column] = df[column].map(meta.variable_value_labels[column]).fillna(df[column])
 
+        # Convert problematic columns to string type
+        for col in df.columns:
+            if df[col].dtype == 'object':
+                df[col] = df[col].astype(str)
+
         if output_format == 'csv':
             # Create a dictionary of variable labels
             labels = {col: meta.column_names_to_labels.get(col, col) for col in df.columns}
@@ -57,7 +63,7 @@ def convert_spss_files(year=None, output_format='csv'):
 def main():
     parser = argparse.ArgumentParser(description="Convert SPSS files to CSV or Parquet")
     parser.add_argument("--year", type=int, help="Specific year of SPSS files to convert (optional)")
-    parser.add_argument("--format", choices=['csv', 'parquet'], default='csv', help="Output format (default: parquet)")
+    parser.add_argument("--format", choices=['csv', 'parquet'], default='parquet', help="Output format (default: parquet)")
     
     args = parser.parse_args()
     
