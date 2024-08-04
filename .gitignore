@@ -1,18 +1,17 @@
-# Exclude files inside barometros_raw folder
-Spain/CIS_Barometro/download_barometros/barometros_raw/
-
 # Ignore all CSV files
-*.csv
 *.txt
+*.csv
+*.parquet
 
 # But don't ignore this specific file
-!Spain/CIS_Barometro/barometros_index.csv
+!Spain/Barometro_CIS/download_barometros/barometros_index.csv
+!Spain/Barometro_CIS/processed_barometros.parquet
+
+# Exclude files inside barometros_raw folder
+Spain/Barometro_CIS/download_barometros/barometros_raw/
 
 # Specifically ignore the large CSV file
-Spain/CIS_Barometro/merged_barometros.csv
-
-# Ignore Parquet Files:
-*.parquet
+Spain/Barometro_CIS/merged_barometros.csv
 
 # Ignore .vscode directory
 .vscode/
