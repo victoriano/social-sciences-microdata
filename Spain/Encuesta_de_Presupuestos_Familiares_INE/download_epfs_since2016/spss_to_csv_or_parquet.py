@@ -29,7 +29,12 @@ def convert_spss_files(year=None, output_format='csv'):
                 print(f"Skipping {spss_file.name}")
                 continue
         
-        output_file = output_dir / f"{spss_file.stem}.{output_format}"
+        # Extract year from filename
+        file_year = spss_file.stem.split('_')[-1]
+        year_dir = output_dir / file_year
+        year_dir.mkdir(exist_ok=True)
+        
+        output_file = year_dir / f"{spss_file.stem}.{output_format}"
         
         # Replace numeric codes with value labels
         for column in df.columns:
@@ -52,7 +57,7 @@ def convert_spss_files(year=None, output_format='csv'):
 def main():
     parser = argparse.ArgumentParser(description="Convert SPSS files to CSV or Parquet")
     parser.add_argument("--year", type=int, help="Specific year of SPSS files to convert (optional)")
-    parser.add_argument("--format", choices=['csv', 'parquet'], default='csv', help="Output format (default: csv)")
+    parser.add_argument("--format", choices=['csv', 'parquet'], default='csv', help="Output format (default: parquet)")
     
     args = parser.parse_args()
     
