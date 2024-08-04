@@ -17,7 +17,7 @@ Spain/Barometro_CIS/download_barometros/barometros_raw/
 Spain/Barometro_CIS/merged_barometros.csv
 
 # Ignore files inside epf_microdatos_raw_since_2016 folder
-Spain/Encuesta_de_Presupuestos_Familiares_INE/download_and_merge_spss_files_since2016/epf_microdatos_raw_since_2016/*
+Spain/Encuesta_de_Presupuestos_Familiares_INE/download_and_merge_spss_files_since2016/SPSS_raw_files/*
 
 # Ignore .vscode directory
 .vscode/
