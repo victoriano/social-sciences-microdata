@@ -2,6 +2,9 @@
 *.txt
 *.csv
 *.parquet
+*zip
+*.sav
+*.dta
 
 # But don't ignore this specific file
 !Spain/Barometro_CIS/download_barometros/barometros_index.csv
@@ -12,6 +15,9 @@ Spain/Barometro_CIS/download_barometros/barometros_raw/
 
 # Specifically ignore the large CSV file
 Spain/Barometro_CIS/merged_barometros.csv
+
+# Ignore files inside epf_microdatos_raw_since_2016 folder
+Spain/Encuesta_de_Presupuestos_Familiares_INE/download_and_merge_spss_files_since2016/epf_microdatos_raw_since_2016/*
 
 # Ignore .vscode directory
 .vscode/
