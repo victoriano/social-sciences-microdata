@@ -23,3 +23,4 @@ I respect that many people, especially in academia, prefer not to share these ki
 |---------|-------------|-----------|
 | ***Barometro_CIS*** | Periodic survey on public opinion in Spain | Automatic donwload of all barómetros since 2013 and merging of SPSS files into a CSV or Parquet format | process_barometro_merged.py |
 | ***Encuesta_de_Presupuestos_Familiares_INE*** | Annual household budget survey | Automatic downloading of all surveys since 2016 until the present, merging the SPSS into CSVs and Parquet and scrip to convert for 2023 fixed width file into CSV enriched with labels | 
+| ***Microdatos Elecciones Generales al Parlamento*** | Pending | Pending | Pending |
