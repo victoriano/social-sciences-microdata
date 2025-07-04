@@ -1,14 +1,12 @@
-#!/usr/bin/env python3
-"""
+# Data Sources Guide
+
+This guide provides information about various social sciences data sources.
+
 Comprehensive Guide to Youth Work and Study Data Sources
 ========================================================
 
 This script provides detailed information about accessing high-quality microdata
 for analyzing youth work and study patterns, with a focus on Spain.
-"""
-
-def print_pisa_microdata_guide():
-    """Detailed guide for accessing PISA microdata."""
     print("🎓 PISA MICRODATA - Programme for International Student Assessment")
     print("=" * 70)
     print("\n📊 Why PISA is Perfect for Your Analysis:")
@@ -58,35 +56,6 @@ def print_pisa_microdata_guide():
     print("- Control for socioeconomic status (ESCS variable)")
 
 def print_eurostat_microdata_guide():
-    """Guide for Eurostat microdata access."""
-    print("\n\n🇪🇺 EUROSTAT MICRODATA - European Statistical System")
-    print("=" * 60)
-    
-    print("\n📊 Key Datasets for Youth Analysis:")
-    print("1. EU-LFS: European Union Labour Force Survey")
-    print("   - Quarterly employment data for ages 15-24")
-    print("   - Work patterns, job search behavior")
-    print("   - Education-work transitions")
-    print("   - Access: https://ec.europa.eu/eurostat/web/microdata")
-    
-    print("\n2. EU-SILC: Statistics on Income and Living Conditions")
-    print("   - Household income and social conditions")
-    print("   - Educational participation")
-    print("   - Youth not in employment, education or training (NEET)")
-    
-    print("\n3. Adult Education Survey (AES)")
-    print("   - Lifelong learning participation")
-    print("   - Skills development attitudes")
-    
-    print("\n🔑 Key Variables for Work Attitudes:")
-    print("- SEEKWORK: Job search intensity")
-    print("- AVAISTAR: Availability to start work")
-    print("- EDUCSTAT: Education status")
-    print("- WORKTIME: Working time preferences")
-    print("- TEMPREAS: Reasons for temporary work")
-
-def print_oecd_additional_sources():
-    """Information about additional OECD data sources."""
     print("\n\n📈 ADDITIONAL OECD DATA SOURCES")
     print("=" * 45)
     
@@ -109,32 +78,6 @@ def print_oecd_additional_sources():
     print("   - Life satisfaction measures")
 
 def print_time_use_surveys():
-    """Information about time use surveys."""
-    print("\n\n⏰ TIME USE SURVEYS - Direct Measurement of 'Laziness'")
-    print("=" * 55)
-    
-    print("\n📊 Why Time Use Data is Crucial:")
-    print("- Objective measurement of how young people spend their time")
-    print("- Shows actual behavior vs. reported attitudes")
-    print("- Can identify leisure vs. productive activities")
-    
-    print("\n🇪🇸 Spanish Time Use Survey (Encuesta de Empleo del Tiempo)")
-    print("- Conducted by INE (Instituto Nacional de Estadística)")
-    print("- Latest: 2009-2010 (new one planned)")
-    print("- Shows time spent on:")
-    print("  * Study and homework")
-    print("  * Work (paid and unpaid)")
-    print("  * Leisure activities")
-    print("  * Social activities")
-    print("  * Screen time")
-    
-    print("\n🌍 International Time Use Database:")
-    print("- Centre for Time Use Research (Oxford)")
-    print("- Harmonized multinational time use data")
-    print("- Allows direct Spain vs. international comparisons")
-
-def print_alternative_indicators():
-    """Creative indicators for measuring work/study engagement."""
     print("\n\n💡 CREATIVE INDICATORS OF WORK/STUDY ENGAGEMENT")
     print("=" * 55)
     
@@ -161,32 +104,6 @@ def print_alternative_indicators():
     print("- Innovation indices")
 
 def print_analysis_methodology():
-    """Methodology recommendations for the analysis."""
-    print("\n\n🔬 RECOMMENDED ANALYSIS METHODOLOGY")
-    print("=" * 45)
-    
-    print("\n1. DESCRIPTIVE ANALYSIS:")
-    print("   - Compare Spain to OECD average and peer countries")
-    print("   - Trend analysis over time (2015-2023)")
-    print("   - Regional analysis within Spain")
-    
-    print("\n2. MULTIVARIATE ANALYSIS:")
-    print("   - Control for socioeconomic factors (ESCS)")
-    print("   - Gender and age differences")
-    print("   - School/institutional effects")
-    
-    print("\n3. CAUSAL INFERENCE:")
-    print("   - Propensity score matching")
-    print("   - Instrumental variables if available")
-    print("   - Difference-in-differences for policy changes")
-    
-    print("\n4. ROBUSTNESS CHECKS:")
-    print("   - Multiple datasets (PISA + Eurostat + Time Use)")
-    print("   - Different measures of 'laziness/engagement'")
-    print("   - Sensitivity to outliers and missing data")
-
-def print_ethical_considerations():
-    """Important ethical considerations for the analysis."""
     print("\n\n⚖️  ETHICAL CONSIDERATIONS")
     print("=" * 30)
     
@@ -203,31 +120,3 @@ def print_ethical_considerations():
     print("- Provide actionable insights for policy")
 
 def main():
-    """Run the complete data sources guide."""
-    print("🔍 COMPREHENSIVE GUIDE TO YOUTH WORK & STUDY DATA")
-    print("=" * 60)
-    print("Objective Analysis of Youth Engagement Patterns in Spain")
-    print("=" * 60)
-    
-    print_pisa_microdata_guide()
-    print_eurostat_microdata_guide()
-    print_oecd_additional_sources()
-    print_time_use_surveys()
-    print_alternative_indicators()
-    print_analysis_methodology()
-    print_ethical_considerations()
-    
-    print("\n\n🚀 GETTING STARTED:")
-    print("1. Start with PISA 2022 microdata (strongest for your research question)")
-    print("2. Supplement with Eurostat youth employment data")
-    print("3. Add time use data if available")
-    print("4. Use the analysis framework in youth_analysis.py")
-    print("5. Consider cultural context in your interpretation")
-    
-    print("\n📧 Need Help? Contact:")
-    print("- OECD PISA team: pisa@oecd.org")
-    print("- Eurostat: estat-user-support@ec.europa.eu")
-    print("- Spanish INE: www.ine.es")
-
-if __name__ == "__main__":
-    main() 
