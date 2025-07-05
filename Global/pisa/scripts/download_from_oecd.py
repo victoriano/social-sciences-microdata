@@ -26,10 +26,11 @@ from tqdm import tqdm
 # Base URL for OECD PISA data
 OECD_BASE_URL = "https://webfs.oecd.org/"
 
-# PISA data configurations by year
+# PISA Download Configuration - URL pattern and file naming for different years
 PISA_CONFIG = {
     2022: {
         'url_pattern': 'https://webfs.oecd.org/pisa2022/{filename}',
+        'format': 'compressed',
         'files': {
             'student_questionnaire': 'STU_QQQ_SPSS.zip',
             'student_performance': 'STU_PER_SPSS.zip',
@@ -42,6 +43,7 @@ PISA_CONFIG = {
     },
     2018: {
         'url_pattern': 'https://webfs.oecd.org/pisa2018/{filename}',
+        'format': 'compressed',
         'files': {
             'student_questionnaire': 'SPSS_STU_QQQ.zip',
             'student_performance': 'SPSS_STU_PER.zip',
@@ -53,64 +55,136 @@ PISA_CONFIG = {
     },
     2015: {
         'url_pattern': 'https://webfs.oecd.org/pisa2015/{filename}',
+        'format': 'compressed',
         'files': {
-            'student_questionnaire': 'CY6_MS_STU_QQQ_v2.zip',
-            'student_performance': 'CY6_MS_STU_PER_v2.zip',
-            'school_questionnaire': 'CY6_MS_SCH_QQQ_v2.zip',
-            'teacher_questionnaire': 'CY6_MS_TCH_QQQ_v2.zip',
-            'parent_questionnaire': 'CY6_MS_PAR_QQQ_v2.zip',
-            'financial_literacy': 'CY6_MS_FIN_LIT_v2.zip'
+            'student_questionnaire': 'SPSS_STU_QQQ.zip',
+            'school_questionnaire': 'SPSS_SCH_QQQ.zip',
+            'teacher_questionnaire': 'SPSS_TCH_QQQ.zip',
+            'cognitive_item': 'SPSS_STU_COG.zip',
+            'questionnaire_timing': 'SPSS_STU_TIM.zip',
+            'financial_literacy': 'SPSS_FIN_LIT.zip'
         }
     },
     2012: {
-        'url_pattern': 'https://webfs.oecd.org/pisa2012/{filename}',
+        'base_url': 'https://www.oecd.org/content/dam/oecd/en/data/datasets/pisa/pisa-2012-datasets/',
+        'format': 'txt_with_control',
         'files': {
-            'student_questionnaire': 'PISA2012_SPSS_student_questionnaire.zip',
-            'student_performance': 'PISA2012_SPSS_student_performance.zip',
-            'school_questionnaire': 'PISA2012_SPSS_school_questionnaire.zip',
-            'teacher_questionnaire': 'PISA2012_SPSS_teacher_questionnaire.zip',
-            'parent_questionnaire': 'PISA2012_SPSS_parent_questionnaire.zip',
-            'financial_literacy': 'PISA2012_SPSS_financial_literacy.zip'
+            'student_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_STU12_DEC03.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2012_SPSS_student.txt'
+            },
+            'school_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_SCH12_DEC03.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2012_SPSS_school.txt'
+            },
+            'parent_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_PAR12_DEC03.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2012_SPSS_parent.txt'
+            },
+            'cognitive_item': {
+                'txt': 'data-sets-in-txt-format/INT_COG12_DEC03.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2012_SPSS_cognitive_item.txt'
+            },
+            'scored_cognitive': {
+                'txt': 'data-sets-in-txt-format/INT_COG12_S_DEC03.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2012_SPSS_scored_cognitive.txt'
+            }
         }
     },
     2009: {
-        'url_pattern': 'https://webfs.oecd.org/pisa2009/{filename}',
+        'base_url': 'https://www.oecd.org/content/dam/oecd/en/data/datasets/pisa/pisa-2009-datasets/',
+        'format': 'txt_with_control',
         'files': {
-            'student_questionnaire': 'PISA2009_SPSS_student_questionnaire.zip',
-            'student_performance': 'PISA2009_SPSS_student_performance.zip',
-            'school_questionnaire': 'PISA2009_SPSS_school_questionnaire.zip',
-            'teacher_questionnaire': 'PISA2009_SPSS_teacher_questionnaire.zip',
-            'parent_questionnaire': 'PISA2009_SPSS_parent_questionnaire.zip'
+            'student_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_STU09_DEC11.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2009_SPSS_student.txt'
+            },
+            'school_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_SCH09_DEC11.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2009_SPSS_school.txt'
+            },
+            'parent_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_PAR09_DEC11.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2009_SPSS_parent.txt'
+            },
+            'cognitive_item': {
+                'txt': 'data-sets-in-txt-format/INT_COG09_TD_DEC11.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2009_SPSS_cognitive_item.txt'
+            },
+            'scored_cognitive': {
+                'txt': 'data-sets-in-txt-format/INT_COG09_S_DEC11.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2009_SPSS_scored_cognitive.txt'
+            }
         }
     },
     2006: {
-        'url_pattern': 'https://webfs.oecd.org/pisa2006/{filename}',
+        'base_url': 'https://www.oecd.org/content/dam/oecd/en/data/datasets/pisa/pisa-2006-datasets/',
+        'format': 'txt_with_control',
         'files': {
-            'student_questionnaire': 'PISA2006_SPSS_student_questionnaire.zip',
-            'student_performance': 'PISA2006_SPSS_student_performance.zip',
-            'school_questionnaire': 'PISA2006_SPSS_school_questionnaire.zip',
-            'teacher_questionnaire': 'PISA2006_SPSS_teacher_questionnaire.zip',
-            'parent_questionnaire': 'PISA2006_SPSS_parent_questionnaire.zip'
+            'student_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_STU06_DEC07.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2006_SPSS_student.txt'
+            },
+            'school_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_SCH06_DEC07.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2006_SPSS_school.txt'
+            },
+            'parent_questionnaire': {
+                'txt': 'data-sets-in-txt-format/INT_PAR06_DEC07.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2006_SPSS_parent.txt'
+            },
+            'cognitive_item': {
+                'txt': 'data-sets-in-txt-format/INT_COG06_T_DEC07.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2006_SPSS_cognitive_item.txt'
+            },
+            'scored_cognitive': {
+                'txt': 'data-sets-in-txt-format/INT_COG06_S_DEC07.txt',
+                'spss_control': 'sas-and-spss-control-files/PISA2006_SPSS_scored_cognitive.txt'
+            }
         }
     },
     2003: {
-        'url_pattern': 'https://webfs.oecd.org/pisa2003/{filename}',
+        'base_url': 'https://www.oecd.org/content/dam/oecd/en/data/datasets/pisa/pisa-2003-datasets/',
+        'format': 'zip_with_control',
         'files': {
-            'student_questionnaire': 'PISA2003_SPSS_student_questionnaire.zip',
-            'student_performance': 'PISA2003_SPSS_student_performance.zip',
-            'school_questionnaire': 'PISA2003_SPSS_school_questionnaire.zip',
-            'teacher_questionnaire': 'PISA2003_SPSS_teacher_questionnaire.zip',
-            'parent_questionnaire': 'PISA2003_SPSS_parent_questionnaire.zip'
+            'student_questionnaire': {
+                'zip': 'data-sets-in-txt-formats/INT_stui_2003_v2.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2003_SPSS_student.txt'
+            },
+            'school_questionnaire': {
+                'zip': 'data-sets-in-txt-formats/INT_schi_2003.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2003_SPSS_school.txt'
+            },
+            'cognitive_item': {
+                'zip': 'data-sets-in-txt-formats/INT_cogn_2003.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2003_SPSS_cognitive_item.txt'
+            }
         }
     },
     2000: {
-        'url_pattern': 'https://webfs.oecd.org/pisa2000/{filename}',
+        'base_url': 'https://www.oecd.org/content/dam/oecd/en/data/datasets/pisa/pisa-2000-datasets/',
+        'format': 'zip_with_control',
         'files': {
-            'student_questionnaire': 'PISA2000_SPSS_student_questionnaire.zip',
-            'student_performance': 'PISA2000_SPSS_student_performance.zip',
-            'school_questionnaire': 'PISA2000_SPSS_school_questionnaire.zip',
-            'teacher_questionnaire': 'PISA2000_SPSS_teacher_questionnaire.zip',
-            'parent_questionnaire': 'PISA2000_SPSS_parent_questionnaire.zip'
+            'student_math': {
+                'zip': 'data-sets-in-txt-formats/intstud_math.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2000_SPSS_student_math.txt'
+            },
+            'student_reading': {
+                'zip': 'data-sets-in-txt-formats/intstud_read.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2000_SPSS_student_reading.txt'
+            },
+            'student_science': {
+                'zip': 'data-sets-in-txt-formats/intstud_scie.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2000_SPSS_student_science.txt'
+            },
+            'school_questionnaire': {
+                'zip': 'data-sets-in-txt-formats/intscho.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2000_SPSS_school.txt'
+            },
+            'cognitive_item': {
+                'zip': 'data-sets-in-txt-formats/intcogn_v4.zip',
+                'spss_control': 'sas-and-spss-control-files/PISA2000_SPSS_cognitive_item.txt'
+            }
         }
     }
 }
@@ -210,6 +284,7 @@ class PISAOECDDownloader:
         print(f"📥 Downloading PISA {year} data...")
         print(f"   Output directory: {year_path}")
         print(f"   File types: {', '.join(file_types)}")
+        print(f"   Format: {config['format']}")
         
         # Create year directory
         year_path.mkdir(parents=True, exist_ok=True)
@@ -217,48 +292,157 @@ class PISAOECDDownloader:
         success_count = 0
         
         for file_type in file_types:
-            filename = config['files'][file_type]
-            url = config['url_pattern'].format(filename=filename)
+            file_info = config['files'][file_type]
             
             # Create subdirectory for this file type
             type_dir = year_path / file_type
             type_dir.mkdir(exist_ok=True)
             
-            # Download file
-            zip_path = type_dir / filename
-            
             print(f"\n  📁 {file_type}:")
-            print(f"     URL: {url}")
-            print(f"     Saving to: {zip_path}")
             
             try:
-                response = requests.get(url, stream=True)
-                response.raise_for_status()
+                if config['format'] == 'compressed':
+                    # Handle ZIP files (2015, 2018, 2022)
+                    filename = file_info
+                    url = config['url_pattern'].format(filename=filename)
+                    zip_path = type_dir / filename
+                    
+                    print(f"     URL: {url}")
+                    print(f"     Saving to: {zip_path}")
+                    
+                    response = requests.get(url, stream=True)
+                    response.raise_for_status()
+                    
+                    # Write file with progress feedback
+                    total_size = int(response.headers.get('content-length', 0))
+                    with open(zip_path, 'wb') as f:
+                        downloaded = 0
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                                downloaded += len(chunk)
+                                if total_size > 0:
+                                    percent = (downloaded / total_size) * 100
+                                    print(f"     Progress: {percent:.1f}%", end='\r')
+                    
+                    print(f"     ✅ Downloaded: {zip_path}")
+                    
+                    # Extract ZIP file
+                    print(f"     📦 Extracting {filename}...")
+                    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                        zip_ref.extractall(type_dir)
+                    
+                    print(f"     ✅ Extracted to: {type_dir}")
+                    
+                    # Delete ZIP file after successful extraction
+                    zip_path.unlink()
+                    print(f"     🗑️  Deleted ZIP file: {zip_path}")
+                    
+                elif config['format'] == 'txt_with_control':
+                    # Handle TXT files with control files (2000-2012)
+                    base_url = config['base_url']
+                    txt_path = file_info['txt']
+                    control_path = file_info['spss_control']
+                    
+                    # Download TXT data file
+                    txt_url = base_url + txt_path
+                    txt_filename = Path(txt_path).name
+                    txt_local_path = type_dir / txt_filename
+                    
+                    print(f"     TXT URL: {txt_url}")
+                    print(f"     TXT Saving to: {txt_local_path}")
+                    
+                    response = requests.get(txt_url, stream=True)
+                    response.raise_for_status()
+                    
+                    with open(txt_local_path, 'wb') as f:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                    
+                    print(f"     ✅ Downloaded TXT: {txt_local_path}")
+                    
+                    # Download SPSS control file
+                    control_url = base_url + control_path
+                    control_filename = Path(control_path).name
+                    control_local_path = type_dir / control_filename
+                    
+                    print(f"     Control URL: {control_url}")
+                    print(f"     Control Saving to: {control_local_path}")
+                    
+                    response = requests.get(control_url, stream=True)
+                    response.raise_for_status()
+                    
+                    with open(control_local_path, 'wb') as f:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                    
+                    print(f"     ✅ Downloaded Control: {control_local_path}")
                 
-                # Write file with progress feedback
-                total_size = int(response.headers.get('content-length', 0))
-                with open(zip_path, 'wb') as f:
-                    downloaded = 0
-                    for chunk in response.iter_content(chunk_size=8192):
-                        if chunk:
-                            f.write(chunk)
-                            downloaded += len(chunk)
-                            if total_size > 0:
-                                percent = (downloaded / total_size) * 100
-                                print(f"     Progress: {percent:.1f}%", end='\r')
+                elif config['format'] == 'zip_with_control':
+                    # Handle ZIP files with control files (2003, possibly others)
+                    base_url = config['base_url']
+                    zip_path = file_info['zip']
+                    control_path = file_info['spss_control']
+                    
+                    # Download ZIP data file
+                    zip_url = base_url + zip_path
+                    zip_filename = Path(zip_path).name
+                    zip_local_path = type_dir / zip_filename
+                    
+                    print(f"     ZIP URL: {zip_url}")
+                    print(f"     ZIP Saving to: {zip_local_path}")
+                    
+                    response = requests.get(zip_url, stream=True)
+                    response.raise_for_status()
+                    
+                    # Write file with progress feedback
+                    total_size = int(response.headers.get('content-length', 0))
+                    with open(zip_local_path, 'wb') as f:
+                        downloaded = 0
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                                downloaded += len(chunk)
+                                if total_size > 0:
+                                    percent = (downloaded / total_size) * 100
+                                    print(f"     Progress: {percent:.1f}%", end='\r')
+                    
+                    print(f"     ✅ Downloaded ZIP: {zip_local_path}")
+                    
+                    # Extract ZIP file
+                    print(f"     📦 Extracting {zip_filename}...")
+                    with zipfile.ZipFile(zip_local_path, 'r') as zip_ref:
+                        zip_ref.extractall(type_dir)
+                    
+                    print(f"     ✅ Extracted to: {type_dir}")
+                    
+                    # Delete ZIP file after successful extraction
+                    zip_local_path.unlink()
+                    print(f"     🗑️  Deleted ZIP file: {zip_local_path}")
+                    
+                    # Download SPSS control file
+                    control_url = base_url + control_path
+                    control_filename = Path(control_path).name
+                    control_local_path = type_dir / control_filename
+                    
+                    print(f"     Control URL: {control_url}")
+                    print(f"     Control Saving to: {control_local_path}")
+                    
+                    response = requests.get(control_url, stream=True)
+                    response.raise_for_status()
+                    
+                    with open(control_local_path, 'wb') as f:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                    
+                    print(f"     ✅ Downloaded Control: {control_local_path}")
                 
-                print(f"     ✅ Downloaded: {zip_path}")
-                
-                # Extract ZIP file
-                print(f"     📦 Extracting {filename}...")
-                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                    zip_ref.extractall(type_dir)
-                
-                print(f"     ✅ Extracted to: {type_dir}")
-                
-                # Delete ZIP file after successful extraction
-                zip_path.unlink()
-                print(f"     🗑️  Deleted ZIP file: {zip_path}")
+                else:
+                    print(f"     ❌ Unknown format: {config['format']}")
+                    continue
                 
                 success_count += 1
                 
@@ -314,7 +498,6 @@ class PISAOECDDownloader:
         """Get available file types for a specific year."""
         if year not in PISA_CONFIG:
             return []
-        
         return list(PISA_CONFIG[year]['files'].keys())
     
     def status(self) -> Dict[str, Any]:
@@ -391,65 +574,202 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
     print(f"Downloading PISA {year} data...")
     print(f"Output directory: {output_dir_path}")
     print(f"File types: {', '.join(file_types)}")
+    print(f"Format: {config['format']}")
     
     success = True
     
     for file_type in file_types:
-        filename = config['files'][file_type]
-        url = config['url_pattern'].format(filename=filename)
+        file_info = config['files'][file_type]
         
         # Create subdirectory for this file type
         type_dir = output_dir_path / file_type
         type_dir.mkdir(parents=True, exist_ok=True)
         
-        # Download file
-        zip_path = type_dir / filename
-        
         print(f"\nDownloading {file_type}...")
-        print(f"  URL: {url}")
-        print(f"  Saving to: {zip_path}")
         
-        try:
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
+        if config['format'] == 'compressed':
+            # Handle ZIP files (2015, 2018, 2022)
+            filename = file_info
+            url = config['url_pattern'].format(filename=filename)
+            zip_path = type_dir / filename
             
-            # Write file with progress bar
-            total_size = int(response.headers.get('content-length', 0))
-            with open(zip_path, 'wb') as f:
-                if total_size > 0:
-                    with tqdm(total=total_size, unit='B', unit_scale=True, desc=f"  {filename}") as pbar:
+            print(f"  URL: {url}")
+            print(f"  Saving to: {zip_path}")
+            
+            try:
+                response = requests.get(url, stream=True)
+                response.raise_for_status()
+                
+                # Write file with progress bar
+                total_size = int(response.headers.get('content-length', 0))
+                with open(zip_path, 'wb') as f:
+                    if total_size > 0:
+                        with tqdm(total=total_size, unit='B', unit_scale=True, desc=f"  {filename}") as pbar:
+                            for chunk in response.iter_content(chunk_size=8192):
+                                if chunk:
+                                    f.write(chunk)
+                                    pbar.update(len(chunk))
+                    else:
                         for chunk in response.iter_content(chunk_size=8192):
                             if chunk:
                                 f.write(chunk)
-                                pbar.update(len(chunk))
-                else:
+                
+                print(f"  ✓ Downloaded: {zip_path}")
+                
+                # Extract ZIP file
+                print(f"  Extracting {filename}...")
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(type_dir)
+                
+                print(f"  ✓ Extracted to: {type_dir}")
+                
+                # Delete ZIP file after successful extraction
+                zip_path.unlink()
+                print(f"  ✓ Deleted ZIP file: {zip_path}")
+                
+            except requests.exceptions.RequestException as e:
+                print(f"  ✗ Failed to download {file_type}: {e}")
+                success = False
+                continue
+            except zipfile.BadZipFile as e:
+                print(f"  ✗ Failed to extract {file_type}: {e}")
+                success = False
+                continue
+            except Exception as e:
+                print(f"  ✗ Unexpected error with {file_type}: {e}")
+                success = False
+                continue
+                
+        elif config['format'] == 'txt_with_control':
+            # Handle TXT files with control files (2000-2012)
+            base_url = config['base_url']
+            txt_path = file_info['txt']
+            control_path = file_info['spss_control']
+            
+            # Download TXT data file
+            txt_url = base_url + txt_path
+            txt_filename = Path(txt_path).name
+            txt_local_path = type_dir / txt_filename
+            
+            print(f"  TXT URL: {txt_url}")
+            print(f"  TXT Saving to: {txt_local_path}")
+            
+            try:
+                response = requests.get(txt_url, stream=True)
+                response.raise_for_status()
+                
+                with open(txt_local_path, 'wb') as f:
                     for chunk in response.iter_content(chunk_size=8192):
                         if chunk:
                             f.write(chunk)
+                
+                print(f"  ✓ Downloaded TXT: {txt_local_path}")
+                
+                # Download SPSS control file
+                control_url = base_url + control_path
+                control_filename = Path(control_path).name
+                control_local_path = type_dir / control_filename
+                
+                print(f"  Control URL: {control_url}")
+                print(f"  Control Saving to: {control_local_path}")
+                
+                response = requests.get(control_url, stream=True)
+                response.raise_for_status()
+                
+                with open(control_local_path, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+                
+                print(f"  ✓ Downloaded Control: {control_local_path}")
+                
+            except requests.exceptions.RequestException as e:
+                print(f"  ✗ Failed to download {file_type}: {e}")
+                success = False
+                continue
+            except Exception as e:
+                print(f"  ✗ Unexpected error with {file_type}: {e}")
+                success = False
+                continue
+        
+        elif config['format'] == 'zip_with_control':
+            # Handle ZIP files with control files (2003, possibly others)
+            base_url = config['base_url']
+            zip_path = file_info['zip']
+            control_path = file_info['spss_control']
             
-            print(f"  ✓ Downloaded: {zip_path}")
+            # Download ZIP data file
+            zip_url = base_url + zip_path
+            zip_filename = Path(zip_path).name
+            zip_local_path = type_dir / zip_filename
             
-            # Extract ZIP file
-            print(f"  Extracting {filename}...")
-            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                zip_ref.extractall(type_dir)
+            print(f"  ZIP URL: {zip_url}")
+            print(f"  ZIP Saving to: {zip_local_path}")
             
-            print(f"  ✓ Extracted to: {type_dir}")
-            
-            # Delete ZIP file after successful extraction
-            zip_path.unlink()
-            print(f"  ✓ Deleted ZIP file: {zip_path}")
-            
-        except requests.exceptions.RequestException as e:
-            print(f"  ✗ Failed to download {file_type}: {e}")
-            success = False
-            continue
-        except zipfile.BadZipFile as e:
-            print(f"  ✗ Failed to extract {file_type}: {e}")
-            success = False
-            continue
-        except Exception as e:
-            print(f"  ✗ Unexpected error with {file_type}: {e}")
+            try:
+                response = requests.get(zip_url, stream=True)
+                response.raise_for_status()
+                
+                # Write file with progress bar
+                total_size = int(response.headers.get('content-length', 0))
+                with open(zip_local_path, 'wb') as f:
+                    if total_size > 0:
+                        with tqdm(total=total_size, unit='B', unit_scale=True, desc=f"  {zip_filename}") as pbar:
+                            for chunk in response.iter_content(chunk_size=8192):
+                                if chunk:
+                                    f.write(chunk)
+                                    pbar.update(len(chunk))
+                    else:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                
+                print(f"  ✓ Downloaded ZIP: {zip_local_path}")
+                
+                # Extract ZIP file
+                print(f"  Extracting {zip_filename}...")
+                with zipfile.ZipFile(zip_local_path, 'r') as zip_ref:
+                    zip_ref.extractall(type_dir)
+                
+                print(f"  ✓ Extracted to: {type_dir}")
+                
+                # Delete ZIP file after successful extraction
+                zip_local_path.unlink()
+                print(f"  ✓ Deleted ZIP file: {zip_local_path}")
+                
+                # Download SPSS control file
+                control_url = base_url + control_path
+                control_filename = Path(control_path).name
+                control_local_path = type_dir / control_filename
+                
+                print(f"  Control URL: {control_url}")
+                print(f"  Control Saving to: {control_local_path}")
+                
+                response = requests.get(control_url, stream=True)
+                response.raise_for_status()
+                
+                with open(control_local_path, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+                
+                print(f"  ✓ Downloaded Control: {control_local_path}")
+                
+            except requests.exceptions.RequestException as e:
+                print(f"  ✗ Failed to download {file_type}: {e}")
+                success = False
+                continue
+            except zipfile.BadZipFile as e:
+                print(f"  ✗ Failed to extract {file_type}: {e}")
+                success = False
+                continue
+            except Exception as e:
+                print(f"  ✗ Unexpected error with {file_type}: {e}")
+                success = False
+                continue
+        
+        else:
+            print(f"  ✗ Unknown format: {config['format']}")
             success = False
             continue
     
