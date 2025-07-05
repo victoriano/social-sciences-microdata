@@ -19,6 +19,7 @@ social-sciences-microdata/
 │   │   ├── analysis/                      ← Analysis scripts and notebooks
 │   │   ├── docs/                         ← Documentation and guides
 │   │   ├── pipelines/                    ← Data processing pipelines
+│   │   ├── scripts/                      ← PISA-specific utility scripts
 │   │   └── utils/                        ← Utility functions
 │   └── oecd/                             ← OECD statistics and indicators
 │       ├── analysis/
@@ -35,9 +36,7 @@ social-sciences-microdata/
 │   └── [Future Spain-specific datasets]
 ├── USA/                                   ← USA-specific data sources
 │   └── [Future USA-specific datasets]
-├── shared/                                ← Shared utilities and constants
-├── scripts/                               ← Cross-source analysis scripts
-├── tests/                                 ← Unit and integration tests
+├── utils/                                 ← Shared utilities and constants
 └── docs/                                  ← Project-level documentation
 ```
 
@@ -73,8 +72,9 @@ mkdir -p data/Global/pisa data/Europe/eurostat data/Spain data/USA
 ```bash
 # Download PISA data
 cd Global/pisa
-python pipelines/download_raw.py
+python scripts/download_all.py             # Download from HuggingFace
 python pipelines/preprocess.py
+python scripts/run_pisa_pipeline.py        # Run complete pipeline
 
 # Run analysis
 python analysis/spain_trends.py
@@ -91,9 +91,10 @@ python pipelines/preprocess.py
 
 ### 3. **Cross-Regional Analysis**
 ```bash
-# Run comparative analysis across regions
-cd scripts
-python run_comparative_analysis.py
+# Future: Cross-source analysis scripts will be added at root level
+# when we have multiple data sources available
+# python run_comparative_analysis.py
+# python run_cross_regional_study.py
 ```
 
 ## 📊 Available Datasets
@@ -160,6 +161,7 @@ Compare educational outcomes across:
 - **Data Processing**: Polars (performance) + Pandas (compatibility)
 - **Storage**: HuggingFace repositories for large datasets
 - **Format**: Parquet (efficient) + CSV (compatibility)
+- **Shared Utilities**: Common constants and functions in `utils/`
 
 ## 🚀 Getting Started by Research Interest
 
@@ -183,8 +185,10 @@ cd Spain
 
 ### **🌍 Cross-Regional Comparative Research**
 ```bash
-cd scripts
-# Use cross-source analysis scripts
+# Future: Cross-source analysis scripts will be added at root level
+# when we have multiple data sources available
+# python run_comparative_analysis.py
+# python run_cross_regional_study.py
 ```
 
 ## 📈 Future Expansion

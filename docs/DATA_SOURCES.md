@@ -47,7 +47,7 @@ This repository organizes data sources by geographical scope:
 1. **Choose your geographical scope**
 2. **Navigate to the appropriate folder**
 3. **Follow the source-specific documentation**
-4. **Use shared utilities from `shared/` for common operations**
+4. **Use shared utilities from `utils/` for common operations**
 
 print("🎓 PISA MICRODATA - Programme for International Student Assessment")
 print("=" * 70)
