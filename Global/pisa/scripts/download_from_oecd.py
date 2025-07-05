@@ -23,8 +23,29 @@ import time
 import argparse
 from tqdm import tqdm
 
-# Base URL for OECD PISA data
+# Download configuration
+DOWNLOAD_DELAY = 1.0  # Be respectful to OECD servers
 OECD_BASE_URL = "https://webfs.oecd.org/"
+
+# Browser headers to avoid anti-bot blocking
+BROWSER_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+    'Sec-CH-UA': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+    'Sec-CH-UA-Mobile': '?0',
+    'Sec-CH-UA-Platform': '"macOS"',
+    'Sec-CH-UA-Platform-Version': '"13.0.0"',
+    'Cache-Control': 'max-age=0',
+    'DNT': '1'
+}
 
 # PISA Download Configuration - URL pattern and file naming for different years
 PISA_CONFIG = {
@@ -200,9 +221,7 @@ class PISAOECDDownloader:
         
         # Create session for efficient downloading
         self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        })
+        self.session.headers.update(BROWSER_HEADERS)
     
     def download_file(self, url: str, local_path: Path, description: str = "") -> bool:
         """Download a file from URL to local path."""
@@ -310,7 +329,7 @@ class PISAOECDDownloader:
                     print(f"     URL: {url}")
                     print(f"     Saving to: {zip_path}")
                     
-                    response = requests.get(url, stream=True)
+                    response = requests.get(url, stream=True, headers=BROWSER_HEADERS)
                     response.raise_for_status()
                     
                     # Write file with progress feedback
@@ -352,7 +371,7 @@ class PISAOECDDownloader:
                     print(f"     TXT URL: {txt_url}")
                     print(f"     TXT Saving to: {txt_local_path}")
                     
-                    response = requests.get(txt_url, stream=True)
+                    response = requests.get(txt_url, stream=True, headers=BROWSER_HEADERS)
                     response.raise_for_status()
                     
                     with open(txt_local_path, 'wb') as f:
@@ -362,6 +381,9 @@ class PISAOECDDownloader:
                     
                     print(f"     ✅ Downloaded TXT: {txt_local_path}")
                     
+                    # Add delay before next request
+                    time.sleep(DOWNLOAD_DELAY)
+                    
                     # Download SPSS control file
                     control_url = base_url + control_path
                     control_filename = Path(control_path).name
@@ -370,7 +392,7 @@ class PISAOECDDownloader:
                     print(f"     Control URL: {control_url}")
                     print(f"     Control Saving to: {control_local_path}")
                     
-                    response = requests.get(control_url, stream=True)
+                    response = requests.get(control_url, stream=True, headers=BROWSER_HEADERS)
                     response.raise_for_status()
                     
                     with open(control_local_path, 'wb') as f:
@@ -394,7 +416,7 @@ class PISAOECDDownloader:
                     print(f"     ZIP URL: {zip_url}")
                     print(f"     ZIP Saving to: {zip_local_path}")
                     
-                    response = requests.get(zip_url, stream=True)
+                    response = requests.get(zip_url, stream=True, headers=BROWSER_HEADERS)
                     response.raise_for_status()
                     
                     # Write file with progress feedback
@@ -422,6 +444,9 @@ class PISAOECDDownloader:
                     zip_local_path.unlink()
                     print(f"     🗑️  Deleted ZIP file: {zip_local_path}")
                     
+                    # Add delay before next request
+                    time.sleep(DOWNLOAD_DELAY)
+                    
                     # Download SPSS control file
                     control_url = base_url + control_path
                     control_filename = Path(control_path).name
@@ -430,7 +455,7 @@ class PISAOECDDownloader:
                     print(f"     Control URL: {control_url}")
                     print(f"     Control Saving to: {control_local_path}")
                     
-                    response = requests.get(control_url, stream=True)
+                    response = requests.get(control_url, stream=True, headers=BROWSER_HEADERS)
                     response.raise_for_status()
                     
                     with open(control_local_path, 'wb') as f:
@@ -445,6 +470,10 @@ class PISAOECDDownloader:
                     continue
                 
                 success_count += 1
+                
+                # Add delay between file types
+                if success_count < len(file_types):
+                    time.sleep(DOWNLOAD_DELAY)
                 
             except requests.exceptions.RequestException as e:
                 print(f"     ❌ Failed to download {file_type}: {e}")
@@ -462,6 +491,9 @@ class PISAOECDDownloader:
             print(f"\n⚠️  Downloaded {success_count}/{len(file_types)} file types for {year}")
         else:
             print(f"\n❌ Failed to download any data for {year}")
+            # Show manual download instructions for protected years
+            if show_manual_download_instructions(year):
+                print(f"\n💡 **Tip**: Older PISA years require manual download due to website protection.")
         
         return success_count > 0
     
@@ -597,7 +629,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
             print(f"  Saving to: {zip_path}")
             
             try:
-                response = requests.get(url, stream=True)
+                response = requests.get(url, stream=True, headers=BROWSER_HEADERS)
                 response.raise_for_status()
                 
                 # Write file with progress bar
@@ -655,7 +687,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
             print(f"  TXT Saving to: {txt_local_path}")
             
             try:
-                response = requests.get(txt_url, stream=True)
+                response = requests.get(txt_url, stream=True, headers=BROWSER_HEADERS)
                 response.raise_for_status()
                 
                 with open(txt_local_path, 'wb') as f:
@@ -665,6 +697,9 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
                 
                 print(f"  ✓ Downloaded TXT: {txt_local_path}")
                 
+                # Add delay before next request
+                time.sleep(DOWNLOAD_DELAY)
+                
                 # Download SPSS control file
                 control_url = base_url + control_path
                 control_filename = Path(control_path).name
@@ -673,7 +708,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
                 print(f"  Control URL: {control_url}")
                 print(f"  Control Saving to: {control_local_path}")
                 
-                response = requests.get(control_url, stream=True)
+                response = requests.get(control_url, stream=True, headers=BROWSER_HEADERS)
                 response.raise_for_status()
                 
                 with open(control_local_path, 'wb') as f:
@@ -707,7 +742,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
             print(f"  ZIP Saving to: {zip_local_path}")
             
             try:
-                response = requests.get(zip_url, stream=True)
+                response = requests.get(zip_url, stream=True, headers=BROWSER_HEADERS)
                 response.raise_for_status()
                 
                 # Write file with progress bar
@@ -737,6 +772,9 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
                 zip_local_path.unlink()
                 print(f"  ✓ Deleted ZIP file: {zip_local_path}")
                 
+                # Add delay before next request
+                time.sleep(DOWNLOAD_DELAY)
+                
                 # Download SPSS control file
                 control_url = base_url + control_path
                 control_filename = Path(control_path).name
@@ -745,7 +783,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
                 print(f"  Control URL: {control_url}")
                 print(f"  Control Saving to: {control_local_path}")
                 
-                response = requests.get(control_url, stream=True)
+                response = requests.get(control_url, stream=True, headers=BROWSER_HEADERS)
                 response.raise_for_status()
                 
                 with open(control_local_path, 'wb') as f:
@@ -777,6 +815,9 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
         print(f"\n✓ Successfully downloaded all PISA {year} data!")
     else:
         print(f"\n✗ Some downloads failed for PISA {year}")
+        # Show manual download instructions for protected years
+        if show_manual_download_instructions(year):
+            print(f"\n💡 **Tip**: Older PISA years require manual download due to website protection.")
     
     return success
 
@@ -799,6 +840,46 @@ def download_multiple_years(years: List[int], file_types: Optional[List[str]] = 
         print("✗ Some downloads failed. Check the output above for details.")
     
     return overall_success
+
+def show_manual_download_instructions(year: int):
+    """Show manual download instructions for Cloudflare-protected years."""
+    if year not in PISA_CONFIG:
+        return
+    
+    config = PISA_CONFIG[year]
+    
+    if config['format'] in ['txt_with_control', 'zip_with_control']:
+        print(f"\n📋 **Manual Download Required for PISA {year}**")
+        print(f"   Due to Cloudflare anti-bot protection, these files must be downloaded manually:")
+        
+        base_url = config['base_url']
+        
+        print(f"\n🔗 **Download Links:**")
+        for file_type, file_info in config['files'].items():
+            if config['format'] == 'txt_with_control':
+                data_url = base_url + file_info['txt']
+                control_url = base_url + file_info['spss_control']
+                print(f"   {file_type}:")
+                print(f"     📄 Data: {data_url}")
+                print(f"     📋 Control: {control_url}")
+            elif config['format'] == 'zip_with_control':
+                data_url = base_url + file_info['zip']
+                control_url = base_url + file_info['spss_control']
+                print(f"   {file_type}:")
+                print(f"     📦 Data: {data_url}")
+                print(f"     📋 Control: {control_url}")
+        
+        print(f"\n💾 **Save Files To:**")
+        print(f"   {Path(__file__).parent.parent / 'data' / 'raw' / str(year) / '[file_type]'}")
+        
+        print(f"\n🎯 **Instructions:**")
+        print(f"   1. Click each link above in your browser")
+        print(f"   2. Save files to the specified directory structure")
+        print(f"   3. Extract ZIP files if needed")
+        print(f"   4. Use control files (.txt) to load data into SPSS/SAS")
+        
+        return True
+    return False
 
 def main():
     """Main function to handle command line arguments."""
