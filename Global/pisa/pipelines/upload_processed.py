@@ -93,7 +93,7 @@ def create_metadata_file(processed_dir: Path) -> Path:
 
 def main() -> None:
     """Main upload process for processed data."""
-    processed_dir = Path("data/pisa/processed")
+    processed_dir = Path("data/Global/pisa/processed")
     repo_id = "victoriano/social-sciences-microdata"
     target_folder = "global/pisa"
     

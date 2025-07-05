@@ -4,7 +4,7 @@ PISA Data Conversion Script
 ===========================
 
 This script converts PISA 2022 SPSS (.sav) files to Parquet format for fast analysis with Polars.
-Run this script after downloading PISA data files to data/pisa/raw/
+Run this script after downloading PISA data files to data/Global/pisa/raw/
 
 Usage:
     uv run python convert_pisa_data.py
@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 class PISADataConverter:
     """Convert PISA SPSS files to Parquet format."""
     
-    def __init__(self, raw_dir: str = "data/pisa/raw", processed_dir: str = "data/pisa/processed"):
+    def __init__(self, raw_dir: str = "data/Global/pisa/raw", processed_dir: str = "data/Global/pisa/processed"):
         """Initialize converter with input and output directories."""
         self.raw_dir = Path(raw_dir)
         self.processed_dir = Path(processed_dir)

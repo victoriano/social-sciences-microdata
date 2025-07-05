@@ -35,9 +35,9 @@ class YouthAnalysis:
         self.data_dir.mkdir(exist_ok=True)
         
         # Create subdirectories for different data sources
-        (self.data_dir / "pisa").mkdir(exist_ok=True)
-        (self.data_dir / "oecd").mkdir(exist_ok=True)
-        (self.data_dir / "eurostat").mkdir(exist_ok=True)
+        (self.data_dir / "Global" / "pisa").mkdir(parents=True, exist_ok=True)
+        (self.data_dir / "Global" / "oecd").mkdir(parents=True, exist_ok=True)
+        (self.data_dir / "Europe" / "eurostat").mkdir(parents=True, exist_ok=True)
         (self.data_dir / "processed").mkdir(exist_ok=True)
         
         # Set up plotting style
@@ -80,7 +80,7 @@ class YouthAnalysis:
         logger.info(f"https://www.oecd.org/pisa/data/{year}database/")
         
         # Create instructions file
-        instructions_file = self.data_dir / "pisa" / f"pisa_{year}_download_instructions.txt"
+        instructions_file = self.data_dir / "Global" / "pisa" / f"pisa_{year}_download_instructions.txt"
         with open(instructions_file, 'w') as f:
             f.write(f"PISA {year} Data Download Instructions\n")
             f.write("=" * 40 + "\n\n")
@@ -90,7 +90,7 @@ class YouthAnalysis:
             f.write("   - Student performance data\n")
             f.write("   - Student background questionnaire\n")
             f.write("   - School questionnaire\n")
-            f.write("4. Save files in the data/pisa/ directory\n")
+            f.write("4. Save files in the data/Global/pisa/ directory\n")
             f.write("5. Key variables to focus on:\n")
             f.write("   - ESCS: Economic, social and cultural status\n")
             f.write("   - TMINS: Time spent on homework\n")
@@ -277,7 +277,7 @@ def main():
     report = analysis.generate_report()
     
     print("\n✅ Setup complete! Next steps:")
-    print("1. Download PISA data manually (see instructions in data/pisa/)")
+    print("1. Download PISA data manually (see instructions in data/Global/pisa/)")
     print("2. Run the analysis with: python youth_analysis.py")
     print("3. Review the generated report and visualizations")
     print("\n🎯 This framework provides a solid foundation for objective analysis of youth work and study patterns!")

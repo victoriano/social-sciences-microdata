@@ -6,7 +6,7 @@ from pathlib import Path
 def analyze_spain_trends():
     """Analyze Spain's performance trends across PISA years."""
     # Download processed data from HuggingFace
-    data_path = Path("data/pisa/processed/spain_trends/spain_trends_2006_2022.parquet")
+    data_path = Path("data/Global/pisa/processed/spain_trends/spain_trends_2006_2022.parquet")
     
     if data_path.exists():
         df = pl.read_parquet(data_path)

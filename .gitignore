@@ -114,7 +114,7 @@ ehthumbs.db
 Thumbs.db
 
 # Raw PISA data (now downloaded from HuggingFace)
-data/pisa/raw/
+data/Global/pisa/raw/
 data/cache/
 
 # ALL data files - these should be stored in HuggingFace, not GitHub

@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 class SPSSSyntaxProcessor:
     """Process PISA SPSS syntax files and TXT data."""
     
-    def __init__(self, raw_dir: str = "data/pisa/raw"):
+    def __init__(self, raw_dir: str = "data/Global/pisa/raw"):
         """Initialize processor."""
         self.raw_dir = Path(raw_dir)
         
@@ -323,7 +323,7 @@ class SPSSSyntaxProcessor:
             logger.error("❌ No SPSS syntax + TXT files found!")
             logger.error("Please download PISA syntax files and place them in:")
             for year in self.syntax_years:
-                logger.error(f"  data/pisa/raw/{year}/ (for PISA {year} files)")
+                logger.error(f"  data/Global/pisa/raw/{year}/ (for PISA {year} files)")
             logger.error("\nRequired for each year:")
             logger.error("  - SPSS syntax files (.sps)")
             logger.error("  - TXT data files (.txt)")

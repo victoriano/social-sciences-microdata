@@ -52,7 +52,7 @@ def upload_to_hf(archive_path: Path, repo_id: str, folder_in_repo: str = "") -> 
 
 def main() -> None:
     """Main upload process."""
-    raw_data_path = Path("data/pisa/raw")
+    raw_data_path = Path("data/Global/pisa/raw")
     repo_id = "victoriano/pisa-raw"
     
     # Ensure the HF repo exists

@@ -1,59 +1,101 @@
 # Data Sources Guide
 
-This guide provides information about various social sciences data sources.
+## 🌍 Geographic Organization
 
-Comprehensive Guide to Youth Work and Study Data Sources
-========================================================
+This repository organizes data sources by geographical scope:
 
-This script provides detailed information about accessing high-quality microdata
-for analyzing youth work and study patterns, with a focus on Spain.
-    print("🎓 PISA MICRODATA - Programme for International Student Assessment")
-    print("=" * 70)
-    print("\n📊 Why PISA is Perfect for Your Analysis:")
-    print("- Measures actual student performance (not self-reported)")
-    print("- Includes detailed background questionnaires")
-    print("- Has specific variables on study time, motivation, and effort")
-    print("- Covers 80+ countries including Spain")
-    print("- Microdata allows individual-level analysis")
-    
-    print("\n🔑 Key Variables for 'Laziness' Analysis:")
-    print("EDUCATIONAL ENGAGEMENT:")
-    print("- TMINS: Minutes spent on homework per week")
-    print("- MMINS: Minutes spent on mathematics homework")
-    print("- LMINS: Minutes spent on language homework")
-    print("- SMINS: Minutes spent on science homework")
-    print("- ATTEND: School attendance patterns")
-    print("- LATE: Frequency of arriving late to school")
-    
-    print("\nMOTIVATION & ATTITUDES:")
-    print("- MOTIVAT: Motivation to learn")
-    print("- PERSEV: Perseverance")
-    print("- OPENPS: Openness to problem solving")
-    print("- COMPETE: Competitiveness")
-    print("- WORKMAST: Work mastery orientation")
-    
-    print("\nEFFORT & ENGAGEMENT:")
-    print("- BELONG: Sense of belonging at school")
-    print("- DISCLIMA: Disciplinary climate")
-    print("- STUDYEF: Study effort indicators")
-    print("- JOYREAD: Enjoyment of reading")
-    
-    print("\n📥 How to Access PISA 2022 Microdata:")
-    print("1. Visit: https://www.oecd.org/pisa/data/2022database/")
-    print("2. Register for free access")
-    print("3. Download these files:")
-    print("   - Student questionnaire data file (CY08_MSU_STU_QQQ.sas7bdat)")
-    print("   - Student cognitive data (CY08_MSU_STU_COG.sas7bdat)")
-    print("   - Codebook (CY08_MSU_STU_QQQ_Codebook.xlsx)")
-    print("4. Convert to CSV/Parquet for analysis with Polars")
-    
-    print("\n🇪🇸 Spain-Specific Analysis Opportunities:")
-    print("- Compare Spanish students (CNT='ESP') with:")
-    print("  * OECD average")
-    print("  * Other Southern European countries (Italy, Portugal, Greece)")
-    print("  * Northern European countries (Finland, Netherlands)")
-    print("- Analyze by regions within Spain (available in microdata)")
-    print("- Control for socioeconomic status (ESCS variable)")
+### 🌐 Global Sources (`Global/`)
+- **PISA**: Programme for International Student Assessment (2006-2022)
+- **OECD**: Organisation for Economic Co-operation and Development statistics
+
+### 🇪🇺 European Sources (`Europe/`)  
+- **Eurostat**: European Union statistics and indicators
+
+### 🇪🇸 Spain-Specific Sources (`Spain/`)
+- *Future datasets focusing on Spanish education, labor, and social policies*
+
+### 🇺🇸 USA-Specific Sources (`USA/`)
+- *Future datasets focusing on US education, labor, and social policies*
+
+## 📊 Available Datasets
+
+### PISA (Global/pisa/)
+**Source**: OECD Programme for International Student Assessment
+**Coverage**: 2006, 2009, 2012, 2015, 2018, 2022
+**Countries**: 80+ countries including Spain and European peers
+**Key Variables**: Academic performance, student motivation, homework time, socioeconomic status
+
+### Eurostat (Europe/eurostat/)
+**Source**: European Union statistics office
+**Coverage**: EU member states, various social and economic indicators
+**Granularity**: National and regional levels
+
+## 🔄 Data Access Patterns
+
+### By Research Scope
+- **Global comparisons**: Use `Global/pisa/` for international educational analysis
+- **European policy**: Use `Europe/eurostat/` for EU-specific research
+- **National focus**: Use country-specific folders for detailed national analysis
+
+### By Data Type
+- **Educational outcomes**: `Global/pisa/`
+- **Labor market**: `Europe/eurostat/`, future USA sources
+- **Social indicators**: Multiple sources across geographical folders
+
+## 🚀 Getting Started
+
+1. **Choose your geographical scope**
+2. **Navigate to the appropriate folder**
+3. **Follow the source-specific documentation**
+4. **Use shared utilities from `shared/` for common operations**
+
+print("🎓 PISA MICRODATA - Programme for International Student Assessment")
+print("=" * 70)
+print("\n📊 Why PISA is Perfect for Your Analysis:")
+print("- Measures actual student performance (not self-reported)")
+print("- Includes detailed background questionnaires")
+print("- Has specific variables on study time, motivation, and effort")
+print("- Covers 80+ countries including Spain")
+print("- Microdata allows individual-level analysis")
+
+print("\n🔑 Key Variables for 'Laziness' Analysis:")
+print("EDUCATIONAL ENGAGEMENT:")
+print("- TMINS: Minutes spent on homework per week")
+print("- MMINS: Minutes spent on mathematics homework")
+print("- LMINS: Minutes spent on language homework")
+print("- SMINS: Minutes spent on science homework")
+print("- ATTEND: School attendance patterns")
+print("- LATE: Frequency of arriving late to school")
+
+print("\nMOTIVATION & ATTITUDES:")
+print("- MOTIVAT: Motivation to learn")
+print("- PERSEV: Perseverance")
+print("- OPENPS: Openness to problem solving")
+print("- COMPETE: Competitiveness")
+print("- WORKMAST: Work mastery orientation")
+
+print("\nEFFORT & ENGAGEMENT:")
+print("- BELONG: Sense of belonging at school")
+print("- DISCLIMA: Disciplinary climate")
+print("- STUDYEF: Study effort indicators")
+print("- JOYREAD: Enjoyment of reading")
+
+print("\n📥 How to Access PISA 2022 Microdata:")
+print("1. Visit: https://www.oecd.org/pisa/data/2022database/")
+print("2. Register for free access")
+print("3. Download these files:")
+print("   - Student questionnaire data file (CY08_MSU_STU_QQQ.sas7bdat)")
+print("   - Student cognitive data (CY08_MSU_STU_COG.sas7bdat)")
+print("   - Codebook (CY08_MSU_STU_QQQ_Codebook.xlsx)")
+print("4. Convert to CSV/Parquet for analysis with Polars")
+
+print("\n🇪🇸 Spain-Specific Analysis Opportunities:")
+print("- Compare Spanish students (CNT='ESP') with:")
+print("  * OECD average")
+print("  * Other Southern European countries (Italy, Portugal, Greece)")
+print("  * Northern European countries (Finland, Netherlands)")
+print("- Analyze by regions within Spain (available in microdata)")
+print("- Control for socioeconomic status (ESCS variable)")
 
 def print_eurostat_microdata_guide():
     print("\n\n📈 ADDITIONAL OECD DATA SOURCES")

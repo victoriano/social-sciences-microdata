@@ -50,14 +50,15 @@ After downloading, place files in your project like this:
 ```
 young_lazy_people/
 ├── data/
-│   └── pisa/
-│       ├── raw/                          ← Place downloaded files here
-│       │   ├── CY08_MSU_STU_QQQ.sav     ← Student questionnaire (unzipped)
-│       │   ├── CY08_MSU_STU_COG.sav     ← Cognitive data (unzipped)
-│       │   ├── CY08_MSU_SCH_QQQ.sav     ← School questionnaire (unzipped)
-│       │   ├── CY08_MSU_STU_QQQ_Codebook.xlsx
-│       │   └── CY08_MSU_STU_COG_Codebook.xlsx
-│       └── processed/                    ← Converted files will go here
+│   └── Global/
+│       └── pisa/
+│           ├── raw/                          ← Place downloaded files here
+│           │   ├── CY08_MSU_STU_QQQ.sav     ← Student questionnaire (unzipped)
+│           │   ├── CY08_MSU_STU_COG.sav     ← Cognitive data (unzipped)
+│           │   ├── CY08_MSU_SCH_QQQ.sav     ← School questionnaire (unzipped)
+│           │   ├── CY08_MSU_STU_QQQ_Codebook.xlsx
+│           │   └── CY08_MSU_STU_COG_Codebook.xlsx
+│           └── processed/                    ← Converted files will go here
 ├── youth_analysis.py
 └── data_sources_guide.py
 ```
@@ -72,9 +73,9 @@ import pandas as pd
 import polars as pl
 
 # Convert SPSS to Parquet
-df_pandas = pd.read_spss('data/pisa/raw/CY08_MSU_STU_QQQ.sav')
+df_pandas = pd.read_spss('data/Global/pisa/raw/CY08_MSU_STU_QQQ.sav')
 df_polars = pl.from_pandas(df_pandas)
-df_polars.write_parquet('data/pisa/processed/student_questionnaire.parquet')
+df_polars.write_parquet('data/Global/pisa/processed/student_questionnaire.parquet')
 ```
 
 #### Option 2: Using R (Alternative)
@@ -82,8 +83,8 @@ df_polars.write_parquet('data/pisa/processed/student_questionnaire.parquet')
 library(haven)
 library(arrow)
 
-data <- read_sav("data/pisa/raw/CY08_MSU_STU_QQQ.sav")
-write_parquet(data, "data/pisa/processed/student_questionnaire.parquet")
+data <- read_sav("data/Global/pisa/raw/CY08_MSU_STU_QQQ.sav")
+write_parquet(data, "data/Global/pisa/processed/student_questionnaire.parquet")
 ```
 
 ### 🇪🇸 **Key Variables for Spain Analysis**
@@ -118,10 +119,10 @@ Once you have the data, focus on these variables:
 
 1. **Create the directory structure:**
 ```bash
-mkdir -p data/pisa/raw data/pisa/processed
+mkdir -p data/Global/pisa/raw data/Global/pisa/processed
 ```
 
-2. **Place your downloaded .sav files in `data/pisa/raw/`**
+2. **Place your downloaded .sav files in `data/Global/pisa/raw/`**
 
 3. **Run the conversion script** (I'll create this for you)
 
@@ -233,30 +234,31 @@ mkdir -p data/pisa/raw data/pisa/processed
 ```
 young_lazy_people/
 ├── data/
-│   └── pisa/
-│       ├── raw/
-│       │   ├── 2022/                    ← .sav files (easy)
-│       │   │   ├── CY08_MSU_STU_QQQ.sav
-│       │   │   └── CY08_MSU_STU_COG.sav
-│       │   ├── 2018/                    ← .sav files (easy)
-│       │   │   ├── CY07_MSU_STU_QQQ.sav
-│       │   │   └── CY07_MSU_STU_COG.sav
-│       │   ├── 2015/                    ← .sav files (easy)
-│       │   │   └── [2015 .sav files]
-│       │   ├── 2012/                    ← SYNTAX + TXT (needs processing)
-│       │   │   ├── INT_STU12_DEC03.txt  ← Student data (TXT)
-│       │   │   ├── INT_STU12_DEC03.sps  ← SPSS syntax
-│       │   │   ├── INT_COG12_DEC03.txt  ← Cognitive data (TXT)  
-│       │   │   └── INT_COG12_DEC03.sps  ← SPSS syntax
-│       │   ├── 2009/                    ← SYNTAX + TXT (needs processing)
-│       │   │   ├── [Student TXT + SPS files]
-│       │   │   └── [Cognitive TXT + SPS files]
-│       │   └── 2006/                    ← SYNTAX + TXT (needs processing)
-│       │       ├── [Student TXT + SPS files]
-│       │       └── [Cognitive TXT + SPS files]
-│       └── processed/
-│           ├── trend_analysis/
-│           └── spain_trends/
+│   └── Global/
+│       └── pisa/
+│           ├── raw/
+│           │   ├── 2022/                    ← .sav files (easy)
+│           │   │   ├── CY08_MSU_STU_QQQ.sav
+│           │   │   └── CY08_MSU_STU_COG.sav
+│           │   ├── 2018/                    ← .sav files (easy)
+│           │   │   ├── CY07_MSU_STU_QQQ.sav
+│           │   │   └── CY07_MSU_STU_COG.sav
+│           │   ├── 2015/                    ← .sav files (easy)
+│           │   │   └── [2015 .sav files]
+│           │   ├── 2012/                    ← SYNTAX + TXT (needs processing)
+│           │   │   ├── INT_STU12_DEC03.txt  ← Student data (TXT)
+│           │   │   ├── INT_STU12_DEC03.sps  ← SPSS syntax
+│           │   │   ├── INT_COG12_DEC03.txt  ← Cognitive data (TXT)  
+│           │   │   └── INT_COG12_DEC03.sps  ← SPSS syntax
+│           │   ├── 2009/                    ← SYNTAX + TXT (needs processing)
+│           │   │   ├── [Student TXT + SPS files]
+│           │   │   └── [Cognitive TXT + SPS files]
+│           │   └── 2006/                    ← SYNTAX + TXT (needs processing)
+│           │       ├── [Student TXT + SPS files]
+│           │       └── [Cognitive TXT + SPS files]
+│           └── processed/
+│               ├── trend_analysis/
+│               └── spain_trends/
 ├── convert_pisa_trend_data.py           ← Handles all formats (2006-2022)
 ├── process_spss_syntax.py               ← For 2012 and earlier
 └── youth_trends_demo.ipynb

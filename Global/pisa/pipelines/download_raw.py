@@ -26,7 +26,7 @@ def download_pisa_year(year: int, output_dir: Path) -> Path:
     print(f"✅ Extracted PISA {year} to {extract_path}")
     return extract_path
 
-def download_all_pisa_data(output_dir: Path = Path("data/pisa/raw")) -> None:
+def download_all_pisa_data(output_dir: Path = Path("data/Global/pisa/raw")) -> None:
     """Download all PISA years."""
     output_dir.mkdir(parents=True, exist_ok=True)
     

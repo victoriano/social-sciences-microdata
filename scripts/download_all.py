@@ -29,8 +29,8 @@ class PISADataDownloader:
         self.PROCESSED_REPO = "victoriano/social-sciences-microdata"
         
         # Local data paths
-        self.raw_data_path = Path("data/pisa/raw")
-        self.processed_data_path = Path("data/pisa/processed")
+        self.raw_data_path = Path("data/Global/pisa/raw")
+        self.processed_data_path = Path("data/Global/pisa/processed")
         
         self.raw_data_path.mkdir(parents=True, exist_ok=True)
         self.processed_data_path.mkdir(parents=True, exist_ok=True)
@@ -142,8 +142,8 @@ class PISADataDownloader:
         if processed_success and raw_success:
             print("\n🎉 **Environment setup complete!**")
             print("✅ Both raw and processed PISA data are available locally")
-            print("📁 Raw data: data/pisa/raw/")
-            print("📁 Processed data: data/pisa/processed/")
+            print("📁 Raw data: data/Global/pisa/raw/")
+            print("📁 Processed data: data/Global/pisa/processed/")
             return True
         else:
             print("\n⚠️  **Environment setup incomplete**")

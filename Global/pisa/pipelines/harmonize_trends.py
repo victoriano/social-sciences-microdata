@@ -44,7 +44,7 @@ logger = logging.getLogger(__name__)
 class PISATrendConverter:
     """Convert multi-year PISA data for trend analysis."""
     
-    def __init__(self, raw_dir: str = "data/pisa/raw", processed_dir: str = "data/pisa/processed"):
+    def __init__(self, raw_dir: str = "data/Global/pisa/raw", processed_dir: str = "data/Global/pisa/processed"):
         """Initialize converter with data directories."""
         self.raw_dir = Path(raw_dir)
         self.processed_dir = Path(processed_dir)
@@ -412,7 +412,7 @@ class PISATrendConverter:
             logger.error("Please download PISA data files and place them in:")
             for year in self.available_years:
                 format_info = "(.sav files)" if self.file_formats.get(year) == 'sav' else "(converted files from syntax processing)"
-                logger.error(f"  data/pisa/raw/{year}/ {format_info}")
+                logger.error(f"  data/Global/pisa/raw/{year}/ {format_info}")
             logger.error("\nFor years 2012 and earlier, run this first:")
             logger.error("  uv run python process_spss_syntax.py")
             return
