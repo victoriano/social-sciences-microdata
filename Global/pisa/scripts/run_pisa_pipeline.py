@@ -30,9 +30,27 @@ def main():
     print("🚀 Starting PISA data pipeline...")
     print("=" * 60)
     
-    # Define pipeline steps (relative to Global/pisa/scripts/)
+    # Ask user for data source
+    print("Select data source:")
+    print("1. HuggingFace (requires access to private repository)")
+    print("2. OECD (public access)")
+    
+    while True:
+        choice = input("Enter choice (1 or 2): ").strip()
+        if choice in ["1", "2"]:
+            break
+        print("Please enter 1 or 2")
+    
+    # Define pipeline steps based on choice
+    if choice == "1":
+        download_script = "download_from_hf.py"
+        download_desc = "📥 Step 1: Downloading data from HuggingFace"
+    else:
+        download_script = "download_from_oecd.py"
+        download_desc = "📥 Step 1: Downloading data from OECD"
+    
     pipeline_steps = [
-        ("../pipelines/download_raw.py", "📥 Step 1: Downloading raw data from HuggingFace"),
+        (download_script, download_desc),
         ("../pipelines/preprocess.py", "⚙️  Step 2: Preprocessing data"),
         ("../pipelines/harmonize_trends.py", "🔄 Step 3: Harmonizing trends across years"),
         ("../pipelines/upload_processed.py", "📤 Step 4: Uploading processed data to HuggingFace"),

@@ -6,7 +6,7 @@ PROCESSED_DATA_REPO = "victoriano/social-sciences-microdata"
 PROCESSED_DATA_PATH = "global/pisa"
 
 # PISA years
-PISA_YEARS = [2006, 2009, 2012, 2015, 2018, 2022]
+PISA_YEARS = [2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022]
 
 # Key variables for analysis
 KEY_VARIABLES = {
