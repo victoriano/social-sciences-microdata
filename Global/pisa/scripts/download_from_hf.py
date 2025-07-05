@@ -69,15 +69,15 @@ class PISAHFDownloader:
         
         try:
             files = list_repo_files(RAW_REPO, repo_type="dataset")
-            year_prefix = f"data/raw/{year}/"
+            year_prefix = f"{year}/"
             file_types = set()
             
             for file_path in files:
                 if file_path.startswith(year_prefix):
-                    # Extract file type: data/raw/2022/student_questionnaire/file.sav
+                    # Extract file type: 2022/student_questionnaire/file.sav
                     path_parts = file_path.split('/')
-                    if len(path_parts) >= 4:
-                        file_type = path_parts[3]  # student_questionnaire, etc.
+                    if len(path_parts) >= 2:
+                        file_type = path_parts[1]  # student_questionnaire, etc.
                         file_types.add(file_type)
             
             return sorted(list(file_types))
@@ -104,7 +104,7 @@ class PISAHFDownloader:
             
             # Get all files for this year/file_type
             files = list_repo_files(RAW_REPO, repo_type="dataset")
-            year_type_prefix = f"data/raw/{year}/{file_type}/"
+            year_type_prefix = f"{year}/{file_type}/"
             target_files = [f for f in files if f.startswith(year_type_prefix)]
             
             if not target_files:
@@ -278,12 +278,13 @@ class PISAHFDownloader:
             # Organize by year and file type
             structure = {}
             for file_path in files:
-                if file_path.startswith('data/raw/'):
+                # Skip files that don't follow the {year}/{file_type}/filename pattern
+                if '/' in file_path and not file_path.startswith('.'):
                     parts = file_path.split('/')
-                    if len(parts) >= 4:
-                        year = parts[2]
-                        file_type = parts[3]
-                        filename = parts[4] if len(parts) > 4 else ''
+                    if len(parts) >= 2 and parts[0].isdigit():
+                        year = parts[0]
+                        file_type = parts[1]
+                        filename = parts[2] if len(parts) > 2 else ''
                         
                         if year not in structure:
                             structure[year] = {}
