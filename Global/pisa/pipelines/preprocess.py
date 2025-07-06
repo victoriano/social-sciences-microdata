@@ -180,7 +180,7 @@ class PISADataEnhancer:
         
         df_enhanced = df
         
-        # Convert sex codes to meaningful strings
+        # Convert sex codes to meaningful strings and replace gender column
         if 'gender' in df.columns:
             df_enhanced = df_enhanced.with_columns([
                 pl.when(pl.col('gender') == 1)
@@ -189,10 +189,10 @@ class PISADataEnhancer:
                 .then(pl.lit('Male'))
                 .otherwise(pl.lit('Unknown'))
                 .alias('sex')
-            ])
-            logger.info("✅ Added 'sex' variable (Female/Male)")
+            ]).drop('gender')  # Remove original gender column
+            logger.info("✅ Replaced 'gender' with 'sex' variable (Female/Male)")
         
-        # Add country names
+        # Add country names and replace country codes
         if 'country' in df.columns:
             country_mapping_expr = pl.col('country')
             for code, name in self.country_mappings.items():
@@ -200,8 +200,8 @@ class PISADataEnhancer:
             
             df_enhanced = df_enhanced.with_columns([
                 country_mapping_expr.alias('country_name')
-            ])
-            logger.info("✅ Added 'country_name' variable with full country names")
+            ]).drop('country')  # Remove original country column
+            logger.info("✅ Replaced 'country' codes with 'country_name' full names")
         
         return df_enhanced
     
@@ -234,7 +234,7 @@ class PISADataEnhancer:
         
         if available_vars:
             logger.info(f"✅ Found motivation variables: {', '.join(available_vars)}")
-        else:
+            else:
             logger.warning("⚠️ No standard motivation variables found in dataset")
         
         # Add effort thermometer variable if available
@@ -476,7 +476,7 @@ class PISADataEnhancer:
         
         # Show sample of new variables
         logger.info("\n📋 Sample of enhanced data:")
-        sample_cols = ['country', 'country_name', 'sex', 'age_group', 'performance_level', 'pisa_year']
+        sample_cols = ['country_name', 'sex', 'age_group', 'performance_level', 'escs', 'wealth', 'pisa_year']
         available_sample_cols = [col for col in sample_cols if col in df.columns]
         
         if available_sample_cols:

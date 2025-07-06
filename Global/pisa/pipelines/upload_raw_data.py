@@ -134,15 +134,15 @@ class IntelligentUploader:
                 self.api.upload_file(
                     path_or_fileobj=str(local_file),
                     path_in_repo=remote_path,
-                    repo_id=repo_id,
+            repo_id=repo_id,
                     repo_type=repo_type,
                     commit_message=f"Upload {local_file.name}"
-                )
+        )
                 
                 self.stats['uploaded'] += 1
                 self.stats['total_size'] += file_size
                 print(f"✅ Successfully uploaded {local_file.name}")
-                return True
+        return True
                 
             except HfHubHTTPError as e:
                 if e.response.status_code == 429:  # Rate limit
@@ -154,7 +154,7 @@ class IntelligentUploader:
                     print(f"❌ HTTP error uploading {local_file.name}: {e}")
                     break
                     
-            except Exception as e:
+    except Exception as e:
                 print(f"❌ Error uploading {local_file.name}: {e}")
                 if attempt < self.config.max_retries - 1:
                     wait_time = self.config.retry_delay * (2 ** attempt)
@@ -179,7 +179,7 @@ class IntelligentUploader:
             except Exception as e:
                 print(f"❌ Failed to create repository {repo_id}: {e}")
                 return False
-        except Exception as e:
+    except Exception as e:
             print(f"⚠️  Error checking repository {repo_id}: {e}")
             return True  # Assume it exists and continue
     
@@ -271,7 +271,7 @@ class IntelligentUploader:
             if not self.should_upload_file(file_path, remote_path, remote_info):
                 print(f"⏩ Skipping {file_path.name} (unchanged)")
                 self.stats['skipped'] += 1
-                continue
+            continue
             
             # Upload file
             self.upload_file_with_retry(file_path, remote_path, self.config.processed_repo)

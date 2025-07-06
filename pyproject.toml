@@ -17,6 +17,8 @@ dependencies = [
     "xlrd>=2.0.0",
     "dvc[s3]>=3.0.0",
     "huggingface_hub>=0.19.0",
+    "pyarrow>=20.0.0",
+    "polars-u64-idx>=1.31.0",
 ]
 
 [tool.uv]
