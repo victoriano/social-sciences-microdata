@@ -53,7 +53,7 @@ class PISAHFDownloader:
     
     def __init__(self, base_path: Optional[Path] = None):
         """Initialize downloader with paths."""
-        self.base_path = base_path or Path(".")
+        self.base_path = base_path or Path("..")
         self.data_path = self.base_path / "data"
         self.raw_path = self.data_path / "raw"
         self.processed_path = self.base_path / "processed"

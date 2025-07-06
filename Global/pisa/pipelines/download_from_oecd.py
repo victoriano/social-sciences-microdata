@@ -215,7 +215,7 @@ class PISAOECDDownloader:
     
     def __init__(self, base_path: Optional[Path] = None):
         """Initialize downloader with paths."""
-        self.base_path = base_path or Path(".")
+        self.base_path = base_path or Path("..")
         self.raw_path = self.base_path / "data" / "raw"
         self.raw_path.mkdir(parents=True, exist_ok=True)
         
