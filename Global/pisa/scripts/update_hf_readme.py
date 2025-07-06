@@ -23,7 +23,74 @@ RAW_REPO = "victoriano/pisa-raw"
 def create_readme_content() -> str:
     """Create the README content."""
     
-    readme_content = """# PISA Raw Data Repository
+    readme_content = """---
+license: other
+task_categories:
+- other
+language:
+- en
+tags:
+- education
+- assessment
+- international
+- survey
+- microdata
+- student-achievement
+- cross-national
+- comparative-education
+size_categories:
+- 10M<n<100M
+source_datasets:
+- original
+dataset_info:
+  features:
+  - name: student_questionnaire
+    dtype: 
+      - int64
+      - float64
+      - string
+    description: Student background questionnaire responses
+  - name: school_questionnaire  
+    dtype:
+      - int64
+      - float64
+      - string
+    description: School background questionnaire responses
+  - name: cognitive_item
+    dtype:
+      - int64
+      - float64
+      - string
+    description: Cognitive assessment item responses
+  configs:
+  - config_name: default
+    data_files:
+    - split: train
+      path: "*/student_questionnaire/*"
+    - split: validation
+      path: "*/school_questionnaire/*"
+    - split: test
+      path: "*/cognitive_item/*"
+extra_gated_prompt: >
+  This dataset contains PISA (Programme for International Student Assessment) raw data 
+  from the OECD. By accessing this dataset, you agree to:
+  
+  1. Use the data for academic and research purposes only
+  2. Properly attribute the OECD as the original data source
+  3. Comply with OECD's terms of use for PISA data
+  4. Not redistribute the raw data without proper attribution
+  
+  For commercial use, please contact the OECD directly.
+extra_gated_fields:
+  Name: text
+  Email: text
+  Affiliation: text
+  Research Purpose: text
+  I agree to use this data responsibly and cite the OECD appropriately: checkbox
+pretty_name: PISA Raw Data Repository
+---
+
+# PISA Raw Data Repository
 
 [![License: Custom](https://img.shields.io/badge/License-Custom-blue.svg)](https://www.oecd.org/pisa/data/)
 [![Data Source: OECD](https://img.shields.io/badge/Data%20Source-OECD-green.svg)](https://www.oecd.org/pisa/)
