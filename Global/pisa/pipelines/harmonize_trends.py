@@ -3,10 +3,11 @@
 PISA Multi-Year Data Converter (Optimized)
 ==========================================
 
-Converts PISA data from multiple years (2006-2022) to standardized Parquet format
-for trend analysis. Optimized for speed using Polars lazy evaluation.
+Converts PISA data from multiple years to standardized Parquet format
+for trend analysis. Automatically detects all available years in raw data folder.
 
 Features:
+- Automatically detects all years available in raw data folder
 - Processes multiple PISA years in batch
 - Handles different file formats (2015-2022: .sav, 2012 and earlier: converted files)
 - Creates harmonized variable mappings across years
@@ -14,7 +15,7 @@ Features:
 - Optimized for large files using Polars lazy frames
 
 Usage:
-    uv run python convert_pisa_trend_data.py
+    uv run python harmonize_trends.py
 """
 
 import polars as pl
@@ -26,6 +27,7 @@ import json
 from typing import Dict, List, Optional, Tuple, Union
 import sys
 import time
+import re
 
 try:
     import pyreadstat
@@ -34,8 +36,7 @@ except ImportError:
     HAS_PYREADSTAT = False
     print("⚠️ pyreadstat not found - will attempt CSV fallback for converted files")
 
-# Import our new data downloader
-from data_downloader import PISADataDownloader
+# Note: This script works with locally available data in the raw folder
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -44,7 +45,7 @@ logger = logging.getLogger(__name__)
 class PISATrendConverter:
     """Convert multi-year PISA data for trend analysis."""
     
-    def __init__(self, raw_dir: str = "data/Global/pisa/raw", processed_dir: str = "data/Global/pisa/processed"):
+    def __init__(self, raw_dir: str = "../data/raw", processed_dir: str = "../data/processed"):
         """Initialize converter with data directories."""
         self.raw_dir = Path(raw_dir)
         self.processed_dir = Path(processed_dir)
@@ -56,18 +57,11 @@ class PISATrendConverter:
         for dir_path in [self.processed_dir, self.trend_dir, self.spain_dir]:
             dir_path.mkdir(parents=True, exist_ok=True)
         
-        # PISA years to process
-        self.available_years = [2006, 2009, 2012, 2015, 2018, 2022]
+        # Automatically detect available years from raw data folder
+        self.available_years = self.detect_available_years()
         
-        # File format by year (affects how we read them)
-        self.file_formats = {
-            2022: 'sav',       # Direct .sav files
-            2018: 'sav',       # Direct .sav files
-            2015: 'sav',       # Direct .sav files
-            2012: 'converted', # Converted from syntax+TXT
-            2009: 'converted', # Converted from syntax+TXT
-            2006: 'converted'  # Converted from syntax+TXT
-        }
+        # File format detection (will be determined dynamically)
+        self.file_formats = self.determine_file_formats()
         
         # Key variables to harmonize across years
         self.key_variables = {
@@ -97,6 +91,92 @@ class PISATrendConverter:
             'read_score': ['PV1READ', 'PV2READ', 'PV3READ', 'PV4READ', 'PV5READ'],
             'science_score': ['PV1SCIE', 'PV2SCIE', 'PV3SCIE', 'PV4SCIE', 'PV5SCIE'],
         }
+        
+        logger.info(f"Initialized PISA converter with {len(self.available_years)} available years: {sorted(self.available_years)}")
+    
+    def detect_available_years(self) -> List[int]:
+        """Automatically detect available PISA years from raw data directory."""
+        if not self.raw_dir.exists():
+            logger.warning(f"Raw data directory does not exist: {self.raw_dir}")
+            return []
+        
+        available_years = []
+        
+        # Look for year directories (numeric folder names)
+        for item in self.raw_dir.iterdir():
+            if item.is_dir():
+                # Check if directory name looks like a year (4 digits between 2000-2030)
+                if re.match(r'^20[0-3][0-9]$', item.name):
+                    try:
+                        year = int(item.name)
+                        # Check if directory contains PISA data files
+                        if self.has_pisa_files(item):
+                            available_years.append(year)
+                            logger.info(f"Detected PISA year: {year}")
+                        else:
+                            logger.warning(f"Year directory {year} exists but contains no PISA data files")
+                    except ValueError:
+                        continue
+        
+        return sorted(available_years)
+    
+    def has_pisa_files(self, year_dir: Path) -> bool:
+        """Check if a year directory contains PISA data files."""
+        # Look for common PISA file patterns
+        pisa_patterns = [
+            # Modern .sav files
+            '*STU_QQQ*.sav', '*STU_QQQ*.SAV',
+            '*STU_COG*.sav', '*STU_COG*.SAV', 
+            '*STU*.sav', '*STU*.SAV',
+            '*COG*.sav', '*COG*.SAV',
+            # Converted files
+            'stu_*_converted.sav', 'stu_*_converted.csv',
+            'cog_*_converted.sav', 'cog_*_converted.csv',
+            # Any .sav files (fallback)
+            '*.sav', '*.SAV'
+        ]
+        
+        for pattern in pisa_patterns:
+            if list(year_dir.glob(pattern)):
+                return True
+        
+        # Also check subdirectories (organized by file type)
+        for subdir in year_dir.iterdir():
+            if subdir.is_dir():
+                for pattern in pisa_patterns:
+                    if list(subdir.glob(pattern)):
+                        return True
+        
+        return False
+    
+    def determine_file_formats(self) -> Dict[int, str]:
+        """Determine file format for each available year based on actual files."""
+        formats = {}
+        
+        for year in self.available_years:
+            year_dir = self.raw_dir / str(year)
+            
+            # Check for converted files first (more specific)
+            converted_files = (
+                list(year_dir.glob('stu_*_converted.*')) + 
+                list(year_dir.glob('cog_*_converted.*'))
+            )
+            
+            # Check subdirectories too
+            for subdir in year_dir.iterdir():
+                if subdir.is_dir():
+                    converted_files.extend(list(subdir.glob('stu_*_converted.*')))
+                    converted_files.extend(list(subdir.glob('cog_*_converted.*')))
+            
+            if converted_files:
+                formats[year] = 'converted'
+                logger.info(f"Year {year}: detected 'converted' format")
+            else:
+                # Default to .sav format for modern files
+                formats[year] = 'sav'
+                logger.info(f"Year {year}: detected 'sav' format")
+        
+        return formats
     
     def find_year_files(self, year: int) -> Dict[str, Optional[Path]]:
         """Find available PISA files for a given year."""
@@ -109,53 +189,72 @@ class PISATrendConverter:
         found_files = {}
         file_format = self.file_formats.get(year, 'sav')
         
+        # Search both main directory and subdirectories
+        search_dirs = [year_dir]
+        for subdir in year_dir.iterdir():
+            if subdir.is_dir():
+                search_dirs.append(subdir)
+        
         if file_format == 'sav':
             # Modern PISA years with direct .sav files
             
             # Student questionnaire patterns by year (case-insensitive)
             stu_patterns = {
-                2022: ['CY08MSP_STU_QQQ.SAV', 'CY08MSP_STU_QQQ.sav', 'CY08_MSU_STU_QQQ.sav', '*STU_QQQ*.sav', '*STU_QQQ*.SAV'],
-                2018: ['CY07_MSU_STU_QQQ.sav', 'CY07_MSU_STU_QQQ.SAV', '*STU_QQQ*.sav', '*STU_QQQ*.SAV'], 
-                2015: ['CY6_MS_CMB_STU_QQQ.sav', 'CY6_MS_CMB_STU_QQQ.SAV', '*STU_QQQ*.sav', '*STU_QQQ*.SAV'],
+                2022: ['CY08MSP_STU_QQQ.SAV', 'CY08MSP_STU_QQQ.sav', 'CY08_MSU_STU_QQQ.sav'],
+                2018: ['CY07_MSU_STU_QQQ.sav', 'CY07_MSU_STU_QQQ.SAV'], 
+                2015: ['CY6_MS_CMB_STU_QQQ.sav', 'CY6_MS_CMB_STU_QQQ.SAV'],
             }
             
             # Cognitive data patterns
             cog_patterns = {
-                2022: ['CY08MSP_STU_COG.SAV', 'CY08MSP_STU_COG.sav', 'CY08_MSU_STU_COG.sav', '*STU_COG*.sav', '*STU_COG*.SAV'],
-                2018: ['CY07_MSU_STU_COG.sav', 'CY07_MSU_STU_COG.SAV', '*STU_COG*.sav', '*STU_COG*.SAV'],
-                2015: ['CY6_MS_CMB_STU_COG.sav', 'CY6_MS_CMB_STU_COG.SAV', '*STU_COG*.sav', '*STU_COG*.SAV'],
+                2022: ['CY08MSP_STU_COG.SAV', 'CY08MSP_STU_COG.sav', 'CY08_MSU_STU_COG.sav'],
+                2018: ['CY07_MSU_STU_COG.sav', 'CY07_MSU_STU_COG.SAV'],
+                2015: ['CY6_MS_CMB_STU_COG.sav', 'CY6_MS_CMB_STU_COG.SAV'],
             }
             
+            # Generic fallback patterns
+            generic_stu_patterns = ['*STU_QQQ*.sav', '*STU_QQQ*.SAV', '*STU*.sav', '*STU*.SAV']
+            generic_cog_patterns = ['*STU_COG*.sav', '*STU_COG*.SAV', '*COG*.sav', '*COG*.SAV']
+            
             # Find student questionnaire
-            for pattern in stu_patterns.get(year, ['*STU_QQQ*.sav', '*STU_QQQ*.SAV', '*STU*.sav', '*STU*.SAV']):
-                files = list(year_dir.glob(pattern))
-                if files:
-                    found_files['student'] = files[0]
+            search_patterns = stu_patterns.get(year, []) + generic_stu_patterns
+            for search_dir in search_dirs:
+                for pattern in search_patterns:
+                    files = list(search_dir.glob(pattern))
+                    if files:
+                        found_files['student'] = files[0]
+                        break
+                if 'student' in found_files:
                     break
             
             # Find cognitive data
-            for pattern in cog_patterns.get(year, ['*STU_COG*.sav', '*STU_COG*.SAV', '*COG*.sav', '*COG*.SAV']):
-                files = list(year_dir.glob(pattern))
-                if files:
-                    found_files['cognitive'] = files[0]
+            search_patterns = cog_patterns.get(year, []) + generic_cog_patterns
+            for search_dir in search_dirs:
+                for pattern in search_patterns:
+                    files = list(search_dir.glob(pattern))
+                    if files:
+                        found_files['cognitive'] = files[0]
+                        break
+                if 'cognitive' in found_files:
                     break
             
         elif file_format == 'converted':
             # Converted files from syntax processing
             
-            # Look for converted files (from process_spss_syntax.py)
-            stu_files = list(year_dir.glob('stu_*_converted.sav')) or list(year_dir.glob('stu_*_converted.csv'))
-            cog_files = list(year_dir.glob('cog_*_converted.sav')) or list(year_dir.glob('cog_*_converted.csv'))
-            
-            if stu_files:
-                found_files['student'] = stu_files[0]
-            if cog_files:
-                found_files['cognitive'] = cog_files[0]
+            # Look for converted files
+            for search_dir in search_dirs:
+                stu_files = list(search_dir.glob('stu_*_converted.sav')) or list(search_dir.glob('stu_*_converted.csv'))
+                cog_files = list(search_dir.glob('cog_*_converted.sav')) or list(search_dir.glob('cog_*_converted.csv'))
+                
+                if stu_files and 'student' not in found_files:
+                    found_files['student'] = stu_files[0]
+                if cog_files and 'cognitive' not in found_files:
+                    found_files['cognitive'] = cog_files[0]
         
         # Log findings
         for file_type, file_path in found_files.items():
             if file_path:
-                logger.info(f"Found {year} {file_type}: {file_path.name}")
+                logger.info(f"Found {year} {file_type}: {file_path}")
             else:
                 logger.warning(f"Missing {year} {file_type} file")
         
@@ -292,8 +391,8 @@ class PISATrendConverter:
                 # Merge on student ID if available
                 merge_keys = ['student_id'] if 'student_id' in df.columns else []
                 if merge_keys and merge_keys[0] in year_data.columns:
-                    # Use outer join to keep all data
-                    year_data = year_data.join(df, on=merge_keys, how='outer', suffix='_right')
+                    # Use full join to keep all data
+                    year_data = year_data.join(df, on=merge_keys, how='full', suffix='_right')
                     
                     # Remove duplicate columns from right side
                     for col in df.columns:
@@ -337,19 +436,44 @@ class PISATrendConverter:
             logger.error("No data available for trend analysis")
             return
         
+        # Harmonize data types across years before combining
+        harmonized_data = []
+        for df in all_years_data:
+            # Convert key ID columns to string for consistency
+            df_harmonized = df.clone()
+            for col in ['student_id', 'school_id', 'country']:
+                if col in df_harmonized.columns:
+                    df_harmonized = df_harmonized.with_columns(
+                        pl.col(col).cast(pl.String, strict=False).alias(col)
+                    )
+            
+            # Convert score columns to float for consistency
+            score_cols = ['math_score', 'read_score', 'science_score']
+            for col in score_cols:
+                if col in df_harmonized.columns:
+                    df_harmonized = df_harmonized.with_columns(
+                        pl.col(col).cast(pl.Float64, strict=False).alias(col)
+                    )
+            
+            harmonized_data.append(df_harmonized)
+        
         # Combine all years - use diagonal to handle different schemas
-        combined_df = pl.concat(all_years_data, how='diagonal')
+        combined_df = pl.concat(harmonized_data, how='diagonal')
         logger.info(f"Combined dataset: {len(combined_df)} total students across {len(all_years_data)} years")
         
+        # Get year range for filename
+        years = sorted(combined_df['pisa_year'].unique().to_list())
+        year_range = f"{min(years)}_{max(years)}" if len(years) > 1 else str(years[0])
+        
         # Save combined international data
-        combined_file = self.trend_dir / "pisa_combined_2006_2022.parquet"
+        combined_file = self.trend_dir / f"pisa_combined_{year_range}.parquet"
         combined_df.write_parquet(combined_file)
         logger.info(f"Saved combined data: {combined_file.name}")
         
         # Create Spain-only trend data
         spain_combined = self.filter_spain_data(combined_df)
         if len(spain_combined) > 0:
-            spain_file = self.spain_dir / "spain_trends_2006_2022.parquet"
+            spain_file = self.spain_dir / f"spain_trends_{year_range}.parquet"
             spain_combined.write_parquet(spain_file)
             logger.info(f"Saved Spain trends: {spain_file.name}")
             
@@ -364,32 +488,37 @@ class PISATrendConverter:
                            ])
                            .sort('pisa_year'))
             
-            summary_file = self.spain_dir / "spain_summary_by_year.csv"
+            summary_file = self.spain_dir / f"spain_summary_{year_range}.csv"
             spain_summary.write_csv(summary_file)
             logger.info(f"Saved Spain summary: {summary_file.name}")
     
     def create_metadata_files(self, processed_years: List[int]) -> None:
         """Create metadata and documentation files."""
         
+        # Create year range for file naming
+        year_range = f"{min(processed_years)}_{max(processed_years)}" if len(processed_years) > 1 else str(processed_years[0])
+        
         metadata = {
             'processing_date': datetime.now().isoformat(),
             'processed_years': processed_years,
+            'year_range': year_range,
             'file_formats': {str(year): self.file_formats.get(year, 'unknown') for year in processed_years},
             'key_variables': self.key_variables,
             'output_files': {
-                'combined_international': 'trend_analysis/pisa_combined_2006_2022.parquet',
-                'spain_trends': 'spain_trends/spain_trends_2006_2022.parquet', 
-                'spain_summary': 'spain_trends/spain_summary_by_year.csv'
+                'combined_international': f'trend_analysis/pisa_combined_{year_range}.parquet',
+                'spain_trends': f'spain_trends/spain_trends_{year_range}.parquet', 
+                'spain_summary': f'spain_trends/spain_summary_{year_range}.csv'
             },
             'notes': {
                 'harmonization': 'Variables harmonized across years using key_variables mapping',
                 'spain_filtering': 'Spain identified using country codes: ESP, ES, 724',
                 'missing_data': 'Missing values preserved as null/NaN in Parquet format',
-                'optimization': 'Uses column selection and Polars for efficient processing'
+                'optimization': 'Uses column selection and Polars for efficient processing',
+                'auto_detection': 'Years automatically detected from raw data directory'
             }
         }
         
-        metadata_file = self.processed_dir / "processing_metadata.json"
+        metadata_file = self.processed_dir / f"processing_metadata_{year_range}.json"
         with open(metadata_file, 'w') as f:
             json.dump(metadata, f, indent=2)
         
@@ -462,48 +591,42 @@ class PISATrendConverter:
         else:
             logger.error("⚠️ All conversions failed. Check error messages above.")
 
-def ensure_data_available(years: List[str]) -> bool:
-    """Ensure required PISA data is available, download if necessary."""
-    downloader = PISADataDownloader()
+def get_available_years_from_raw(raw_dir: str = "../data/raw") -> List[str]:
+    """Get list of available years from raw data directory."""
+    raw_path = Path(raw_dir)
+    if not raw_path.exists():
+        return []
     
-    print("🔍 **Checking data availability...**")
-    info = downloader.get_download_info()
+    available_years = []
+    for item in raw_path.iterdir():
+        if item.is_dir() and re.match(r'^20[0-3][0-9]$', item.name):
+            # Quick check for PISA files
+            pisa_patterns = ['*.sav', '*.SAV', '*STU*.sav', '*COG*.sav']
+            has_files = False
+            for pattern in pisa_patterns:
+                if list(item.glob(pattern)) or any(list(subdir.glob(pattern)) for subdir in item.iterdir() if subdir.is_dir()):
+                    has_files = True
+                    break
+            if has_files:
+                available_years.append(item.name)
     
-    # Safely get available years and ensure it's a list
-    available_raw_years = info.get("available_raw_years", [])
-    if isinstance(available_raw_years, list):
-        available_years = set(available_raw_years)
-    else:
-        available_years = set()
-    
-    needed_years = set(years)
-    missing_years = needed_years - available_years
-    
-    if missing_years:
-        print(f"📥 **Downloading missing years: {', '.join(missing_years)}**")
-        results = downloader.download_all_raw_data(list(missing_years))
-        
-        failed_downloads = [year for year, success in results.items() if not success]
-        if failed_downloads:
-            print(f"❌ Failed to download: {', '.join(failed_downloads)}")
-            return False
-    
-    print("✅ All required data is available")
-    return True
+    return sorted(available_years)
 
 def main():
     """Main function."""
-    print("🚀 **PISA Trend Data Converter (2015-2022)**")
-    print("📊 Converting PISA data to standardized format with HuggingFace integration")
+    print("🚀 **PISA Trend Data Converter (All Available Years)**")
+    print("📊 Converting PISA data to standardized format for trend analysis")
     
-    # List of years to process
-    years_to_process = ["2015", "2018", "2022"]
-    
-    # Ensure data is available
-    if not ensure_data_available(years_to_process):
-        print("❌ **Data availability check failed**")
-        print("Please check your internet connection and HuggingFace authentication")
+    # Check what years are available
+    available_years = get_available_years_from_raw()
+    if not available_years:
+        print("❌ **No PISA data found in ../data/raw/**")
+        print("Please ensure PISA data files are available in:")
+        print("  ../data/raw/2015/, ../data/raw/2018/, ../data/raw/2022/, etc.")
+        print("Download data using: uv run python download_raw.py")
         return
+    
+    print(f"📂 **Found data for years: {', '.join(available_years)}**")
     
     converter = PISATrendConverter()
     converter.run_trend_conversion()
