@@ -4388,10 +4388,13 @@ dependencies = [
     { name = "polars-u64-idx" },
     { name = "pyarrow" },
     { name = "pyreadstat" },
+    { name = "python-dateutil" },
+    { name = "requests" },
     { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "scipy", version = "1.16.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "seaborn" },
     { name = "statsmodels" },
+    { name = "tqdm" },
     { name = "xlrd" },
 ]
 
@@ -4407,9 +4410,12 @@ requires-dist = [
     { name = "polars-u64-idx", specifier = ">=1.31.0" },
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "pyreadstat", specifier = ">=1.2.0" },
+    { name = "python-dateutil", specifier = ">=2.8.2" },
+    { name = "requests", specifier = ">=2.31.0" },
     { name = "scipy", specifier = ">=1.11.0" },
     { name = "seaborn", specifier = ">=0.12.0" },
     { name = "statsmodels", specifier = ">=0.14.0" },
+    { name = "tqdm", specifier = ">=4.66.0" },
     { name = "xlrd", specifier = ">=2.0.0" },
 ]
 

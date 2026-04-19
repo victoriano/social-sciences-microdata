@@ -7,10 +7,25 @@ RAW_DATA_REPO = "victoriano/barometro-cis-raw"
 PROCESSED_DATA_REPO = "victoriano/social-sciences-microdata"
 PROCESSED_DATA_PATH = "spain/barometro_cis"
 
-# CIS catalog / download endpoints
-CATALOG_URL = "https://www.cis.es/o/cis/estudios"
-DOWNLOAD_URL = "https://www.cis.es/documents/d/cis/MD{codigo}?download=true"
-REFERER_URL = "https://www.cis.es/catalogo-estudios/resultados-definidos/barometros"
+# CIS site endpoints (site redesigned in 2025 — see docs/data_sources.md).
+# Catalogue pages are server-side rendered HTML; pagination via ``&start=N``
+# (1-based) with ``&delta=200`` items per page (capped at 200). Each estudio
+# detail page contains the direct ``MD{codigo}.zip`` document link that we
+# use to download the microdata.
+BASE_URL = "https://www.cis.es"
+CATALOG_URL = f"{BASE_URL}/es/estudios/catalogo"
+CATALOG_QUERY = {
+    "catalogo": "estudio",
+    "sort": "createDateBDE-",
+    "t": "0",
+    "delta": "200",
+}
+ESTUDIO_URL = f"{BASE_URL}/es/estudios/{{slug}}"
+REFERER_URL = f"{CATALOG_URL}?catalogo=estudio"
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+)
 
 # Default local data layout (mirrors new repo convention: data/ outside of source tree)
 REPO_ROOT = Path(__file__).resolve().parents[2]

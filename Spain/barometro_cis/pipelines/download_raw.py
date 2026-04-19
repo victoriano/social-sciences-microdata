@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 """Download raw CIS Barómetro microdata packages for a given date range.
 
-Reads the catalogue produced by ``fetch_index.py``, filters it by month, and
-downloads + unzips every ``MD{codigo}.zip`` file into the raw data directory.
+For every Barómetro whose ``fecha`` falls in the requested window, this
+pipeline:
+
+1. Opens the detail page ``/es/estudios/{slug}`` (whose URL was captured by
+   ``fetch_index.py``).
+2. Extracts the direct ``MD{codigo}.zip`` link from the Liferay document
+   service — the href has the form
+   ``/documents/{groupId}/{folderId}/MD{codigo}.zip/{uuid}?version=…&t=…``.
+3. Downloads and unzips the archive into ``RAW_DIR/MD{codigo}``.
 """
 
 import argparse
-import os
+import re
 import shutil
 import zipfile
 from datetime import datetime
@@ -16,31 +23,81 @@ import pandas as pd
 import requests
 from dateutil.relativedelta import relativedelta
 
-from Spain.barometro_cis.config import DOWNLOAD_URL, INDEX_FILE, RAW_DIR
+from Spain.barometro_cis.config import (
+    BASE_URL,
+    ESTUDIO_URL,
+    INDEX_FILE,
+    RAW_DIR,
+    USER_AGENT,
+)
 
 
-def download_and_unzip(codigo: str, raw_dir: Path) -> bool:
-    url = DOWNLOAD_URL.format(codigo=codigo)
-    zip_path = raw_dir / f"MD{codigo}.zip"
+HEADERS = {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "accept-language": "es-ES,es;q=0.9,en;q=0.8",
+    "user-agent": USER_AGENT,
+}
 
-    response = requests.get(url, timeout=300)
-    if response.status_code != 200:
-        print(f"❌ Failed to download MD{codigo} (status {response.status_code})")
+# The estudio page embeds the signed download URL in a custom element
+# ``<data-file url="…/MD{codigo}.zip/{uuid}?version=…&amp;t=…">``. Each UUID +
+# timestamp is specific to the estudio so we capture the whole URL verbatim.
+ZIP_HREF_RE_TEMPLATE = (
+    r'(?P<href>https?://[^"]*?/documents/\d+/\d+/MD{codigo}\.zip/[0-9a-f-]+\?[^"]*)"'
+)
+
+
+def find_zip_url(session: requests.Session, slug: str, codigo: int) -> str | None:
+    url = ESTUDIO_URL.format(slug=slug)
+    response = session.get(url, headers=HEADERS, timeout=60)
+    response.raise_for_status()
+    pattern = re.compile(ZIP_HREF_RE_TEMPLATE.format(codigo=codigo))
+    match = pattern.search(response.text)
+    if not match:
+        return None
+    href = match.group("href").replace("&amp;", "&")
+    if not href.startswith("http"):
+        href = BASE_URL + href
+    return href
+
+
+def download_and_unzip(
+    session: requests.Session,
+    codigo: int,
+    slug: str,
+    raw_dir: Path,
+) -> bool:
+    target_dir = raw_dir / f"MD{codigo}"
+    if target_dir.exists() and any(target_dir.iterdir()):
+        print(f"⏩ MD{codigo} already present in {target_dir}")
+        return True
+
+    zip_url = find_zip_url(session, slug, codigo)
+    if not zip_url:
+        print(f"❌ No MD{codigo}.zip link found on estudio page ({slug})")
         return False
 
-    zip_path.write_bytes(response.content)
-    print(f"📥 Downloaded {zip_path.name}")
+    response = session.get(zip_url, headers=HEADERS, timeout=600, stream=True)
+    if response.status_code != 200:
+        print(f"❌ Download MD{codigo} returned status {response.status_code}")
+        return False
+
+    zip_path = raw_dir / f"MD{codigo}.zip"
+    with open(zip_path, "wb") as fh:
+        for chunk in response.iter_content(chunk_size=1 << 15):
+            fh.write(chunk)
+    print(f"📥 Downloaded {zip_path.name} ({zip_path.stat().st_size / 1024 / 1024:.1f} MB)")
 
     try:
-        with zipfile.ZipFile(zip_path, "r") as zip_ref:
-            zip_ref.extractall(raw_dir / f"MD{codigo}")
-        print(f"✅ Unzipped MD{codigo}")
-        zip_path.unlink()
-        return True
+        with zipfile.ZipFile(zip_path, "r") as zf:
+            zf.extractall(target_dir)
     except zipfile.BadZipFile:
-        print(f"⚠️  MD{codigo}.zip is not a valid zip, skipping")
+        print(f"⚠️  MD{codigo}.zip is not a valid archive, skipping")
         zip_path.unlink()
         return False
+
+    zip_path.unlink()
+    print(f"✅ Unzipped MD{codigo} into {target_dir}")
+    return True
 
 
 def filter_index(index_file: Path, start_month: str, end_month: str) -> pd.DataFrame:
@@ -78,8 +135,15 @@ def download_range(
     filtered = filter_index(index_file, start_month, end_month)
     print(f"📊 {len(filtered)} Barómetros in range {start_month} → {end_month}")
 
-    for codigo in filtered["codigo"]:
-        download_and_unzip(str(codigo), raw_dir)
+    session = requests.Session()
+    session.headers.update({"user-agent": USER_AGENT})
+
+    successes = 0
+    for row in filtered.itertuples():
+        if download_and_unzip(session, int(row.codigo), row.slug, raw_dir):
+            successes += 1
+
+    print(f"🎉 Done — {successes}/{len(filtered)} Barómetros downloaded")
 
 
 def main() -> None:
