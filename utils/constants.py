@@ -4,7 +4,9 @@
 HF_RAW_REPOS = {
     "pisa": "victoriano/pisa-raw",
     "eurostat": "victoriano/eurostat-raw",  # Future
-    "oecd": "victoriano/oecd-raw"  # Future
+    "oecd": "victoriano/oecd-raw",  # Future
+    "barometro_cis": "victoriano/barometro-cis-raw",
+    "epf_ine": "victoriano/epf-ine-raw",
 }
 
 HF_PROCESSED_REPO = "victoriano/social-sciences-microdata"

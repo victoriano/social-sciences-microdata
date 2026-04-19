@@ -33,7 +33,16 @@ social-sciences-microdata/
 │       ├── pipelines/
 │       └── utils/
 ├── Spain/                                 ← Spain-specific data sources
-│   └── [Future Spain-specific datasets]
+│   ├── barometro_cis/                     ← CIS Barómetros (monthly public-opinion microdata)
+│   │   ├── analysis/
+│   │   ├── docs/
+│   │   ├── pipelines/
+│   │   └── utils/
+│   └── epf_ine/                           ← INE Encuesta de Presupuestos Familiares
+│       ├── analysis/
+│       ├── docs/
+│       ├── pipelines/
+│       └── utils/
 ├── USA/                                   ← USA-specific data sources
 │   └── [Future USA-specific datasets]
 ├── utils/                                 ← Shared utilities and constants
@@ -50,7 +59,8 @@ social-sciences-microdata/
 - **Eurostat**: European Union statistics and indicators
 
 ### 🇪🇸 Spain-Specific Sources
-- *Future datasets focusing on Spanish education, labor, and social policies*
+- **Barómetro del CIS**: Monthly public-opinion microdata published by the Centro de Investigaciones Sociológicas (since 2013)
+- **Encuesta de Presupuestos Familiares (INE)**: Annual household budget survey with ECOICOP expenditure codes (since 2016, including fixed-width 2023)
 
 ### 🇺🇸 USA-Specific Sources
 - *Future datasets focusing on US education, labor, and social policies*
@@ -179,8 +189,16 @@ cd Europe/eurostat
 
 ### **🇪🇸 Spain-Specific Research**
 ```bash
-cd Spain
-# Future: Spain-specific datasets and analysis
+# CIS Barómetros — public-opinion microdata
+uv run python -m Spain.barometro_cis.pipelines.fetch_index
+uv run python -m Spain.barometro_cis.pipelines.download_raw --start 01/2023 --end 07/2024
+uv run python -m Spain.barometro_cis.pipelines.merge_sav --start 01/2023 --end 07/2024 --filter-nans
+uv run python -m Spain.barometro_cis.pipelines.preprocess
+
+# INE Encuesta de Presupuestos Familiares
+uv run python -m Spain.epf_ine.pipelines.download_raw --years 2016 2017 2018 2019 2020 2021 2022
+uv run python -m Spain.epf_ine.pipelines.spss_to_parquet --format parquet
+uv run python -m Spain.epf_ine.pipelines.build_gastos_master
 ```
 
 ### **🌍 Cross-Regional Comparative Research**
@@ -194,7 +212,7 @@ cd Spain
 ## 📈 Future Expansion
 
 The geographical structure allows for easy addition of new data sources:
-- **Spain/**: INE (National Statistics Institute), Ministry of Education data
+- **Spain/**: ported *Barómetro del CIS* and *Encuesta de Presupuestos Familiares*; next up: Microdatos Elecciones Generales
 - **USA/**: NAEP, Census Bureau, Department of Education data
 - **Global/**: World Bank, UNESCO, other international sources
 
