@@ -133,6 +133,44 @@ def attach_tipo_barometro(df: pd.DataFrame, index_file: Path) -> pd.DataFrame:
     return df
 
 
+# Fingerprint values that only appear when the "tres problemas principales"
+# question is asked at the international level (one documented case so far:
+# MD3468 in July 2024). A handful of estudios recycle the same column names
+# for a monographic international-problems module; we flag those so the viz
+# doesn't mix them with the standard Spain-focused series.
+_INTERNATIONAL_PROBLEM_FINGERPRINTS = {
+    "Las guerras y los conflictos bélicos",
+    "La pobreza y la desigualdad entre países pobres y ricos",
+    "El terrorismo internacional",
+    "La falta de empleo en los países pobres",
+    "Las migraciones internacionales",
+}
+
+
+def attach_problemas_ambito(df: pd.DataFrame) -> pd.DataFrame:
+    """Tag each row with the scope of the "tres problemas principales"
+    question: ``españa`` for the default domestic question or
+    ``internacional`` for the rare monographic modules (MD3468 et al.)."""
+    if "codigo_cis" not in df.columns or "Primer problema" not in df.columns:
+        return df
+
+    # Per-estudio: does the top-5 of Primer problema intersect the
+    # international fingerprint? If so, that estudio's problems columns are
+    # about international problems, not Spain.
+    intl: set[int] = set()
+    for codigo, sub in df.groupby("codigo_cis"):
+        if len(sub) < 100:
+            continue
+        top = set(sub["Primer problema"].value_counts().head(5).index)
+        if top & _INTERNATIONAL_PROBLEM_FINGERPRINTS:
+            intl.add(int(codigo))
+
+    df["problemas_ambito"] = df["codigo_cis"].astype(int).map(
+        lambda c: "internacional" if int(c) in intl else "españa"
+    )
+    return df
+
+
 def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FILE) -> None:
     print(f"📥 Reading merged barómetros from {input_file}")
     if input_file.suffix == ".parquet":
@@ -144,6 +182,7 @@ def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FIL
     df = build_principal_problems(df)
     df = coerce_numeric(df, ["Edad de la persona entrevistada", "Ponderación autonómica"])
     df = attach_tipo_barometro(df, index_file)
+    df = attach_problemas_ambito(df)
     df_ordered = order_columns(df)
 
     output_file.parent.mkdir(parents=True, exist_ok=True)
