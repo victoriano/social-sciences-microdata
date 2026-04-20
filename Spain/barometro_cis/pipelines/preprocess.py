@@ -109,6 +109,30 @@ def summarize_null_columns(df: pd.DataFrame) -> None:
     print(f"📊 {len(no_nulls)} columns without nulls, {len(with_nulls)} with nulls")
 
 
+def classify_barometro(titulo: str) -> str:
+    """Label each estudio so downstream consumers can isolate the monthly
+    Barómetro de opinión (``mensual``) from the health-focused Barómetro
+    Sanitario, the aggregated "total oleadas" files, or other specials.
+    """
+    low = (titulo or "").lower().strip()
+    if "sanitario" in low or "sanidad" in low:
+        return "sanitario"
+    if "total oleadas" in low:
+        return "agregado_oleadas"
+    if low.startswith("barómetro"):
+        return "mensual"
+    return "especial"
+
+
+def attach_tipo_barometro(df: pd.DataFrame, index_file: Path) -> pd.DataFrame:
+    if "codigo_cis" not in df.columns or not index_file.exists():
+        return df
+    idx = pd.read_csv(index_file, usecols=["codigo", "titulo"])
+    lookup = {int(c): classify_barometro(t) for c, t in zip(idx["codigo"], idx["titulo"])}
+    df["tipo_barometro"] = df["codigo_cis"].astype(int).map(lookup).fillna("otro")
+    return df
+
+
 def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FILE) -> None:
     print(f"📥 Reading merged barómetros from {input_file}")
     if input_file.suffix == ".parquet":
@@ -119,6 +143,7 @@ def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FIL
     df = build_date_of_study(df, index_file)
     df = build_principal_problems(df)
     df = coerce_numeric(df, ["Edad de la persona entrevistada", "Ponderación autonómica"])
+    df = attach_tipo_barometro(df, index_file)
     df_ordered = order_columns(df)
 
     output_file.parent.mkdir(parents=True, exist_ok=True)
