@@ -201,6 +201,52 @@ def attach_problemas_ambito(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def deduplicate_facet_labels(df: pd.DataFrame) -> pd.DataFrame:
+    """Fold wording variants that refer to the same response option into a
+    single canonical label. Multiple barómetros ship slightly different
+    strings for what is functionally the same answer (e.g. "La nacionalidad
+    española" and "Española"), and one SPSS export run used HTML-escaped
+    euro signs in the income brackets — both end up as duplicated slices in
+    the viz until canonicalised here."""
+    if "Nacionalidad de la persona entrevistada" in df.columns:
+        df["Nacionalidad de la persona entrevistada"] = df[
+            "Nacionalidad de la persona entrevistada"
+        ].replace(
+            {
+                "La nacionalidad española": "Española",
+                "La nacionalidad española y otra": "Española y otra",
+                "Otra nacionalidad": "Otra",
+            }
+        )
+
+    if "Nivel de ingresos netos del hogar" in df.columns:
+        col = df["Nivel de ingresos netos del hogar"].astype("string")
+        col = col.str.replace("&euro;", "€", regex=False)
+        col = col.str.replace("â?¬", "€", regex=False)
+        col = col.str.replace("\ufffd", "€", regex=False)
+        col = col.str.replace("  €", " €", regex=False).str.strip()
+        df["Nivel de ingresos netos del hogar"] = col
+
+    if "Situación laboral de la persona entrevistada" in df.columns:
+        df["Situación laboral de la persona entrevistada"] = df[
+            "Situación laboral de la persona entrevistada"
+        ].replace(
+            {
+                "Parado/a y ha trabajado antes": "En paro y ha trabajado antes",
+                "Parado/a y busca su primer empleo": "En paro y busca su primer empleo",
+            }
+        )
+
+    for col in (
+        "Valoración de la situación económica personal actual",
+        "Valoración de la situación económica general de España",
+    ):
+        if col in df.columns:
+            df[col] = df[col].replace({"(NO LEER) Regular": "Regular"})
+
+    return df
+
+
 def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FILE) -> None:
     print(f"📥 Reading merged barómetros from {input_file}")
     if input_file.suffix == ".parquet":
@@ -211,6 +257,7 @@ def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FIL
     df = build_date_of_study(df, index_file)
     df = build_principal_problems(df)
     df = coerce_numeric(df, ["Edad de la persona entrevistada", "Ponderación autonómica"])
+    df = deduplicate_facet_labels(df)
     df = attach_tipo_barometro(df, index_file)
     df = attach_problemas_ambito(df)
     df_ordered = order_columns(df)
