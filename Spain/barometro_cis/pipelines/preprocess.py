@@ -18,6 +18,7 @@ from pathlib import Path
 import pandas as pd
 
 from Spain.barometro_cis.config import (
+    INDEX_FILE,
     INTERIM_DIR,
     MONTH_MAP,
     PROCESSED_DIR,
@@ -25,10 +26,37 @@ from Spain.barometro_cis.config import (
 )
 
 
-def build_date_of_study(df: pd.DataFrame) -> pd.DataFrame:
-    df["Mes_numero"] = df["Mes de realización"].map(MONTH_MAP)
-    df["date_of_study"] = df["Mes_numero"] + "/" + df["Año de realización"].astype(str) + "/01"
-    df["date_of_study"] = pd.to_datetime(df["date_of_study"], format="%m/%Y/%d", errors="coerce")
+def build_date_of_study(df: pd.DataFrame, index_file: Path) -> pd.DataFrame:
+    """Reconstruct ``date_of_study`` with fallbacks for older barómetros.
+
+    Priority:
+      1. ``Mes/Año de realización`` columns (present in newer barómetros).
+      2. The ``codigo_cis`` column joined onto the catalogue index
+         (``fetch_index.py`` output) — this covers every Barómetro.
+    """
+    # Primary: mes + año columns
+    if "Mes de realización" in df.columns and "Año de realización" in df.columns:
+        df["Mes_numero"] = df["Mes de realización"].map(MONTH_MAP)
+        primary = pd.to_datetime(
+            df["Mes_numero"].astype(str) + "/" + df["Año de realización"].astype(str) + "/01",
+            format="%m/%Y/%d",
+            errors="coerce",
+        )
+    else:
+        primary = pd.Series(pd.NaT, index=df.index)
+
+    df["date_of_study"] = primary
+
+    # Fallback: join codigo_cis onto the catalogue index to pull `fecha`.
+    if "codigo_cis" in df.columns and index_file.exists():
+        idx = pd.read_csv(index_file, usecols=["codigo", "fecha"])
+        idx["fecha"] = pd.to_datetime(idx["fecha"], errors="coerce")
+        lookup = dict(zip(idx["codigo"].astype(int), idx["fecha"]))
+        fallback = df["codigo_cis"].astype(int).map(lookup)
+        # Force the 1st day of the month so monthly series are clean.
+        fallback = fallback.dt.to_period("M").dt.to_timestamp()
+        df["date_of_study"] = df["date_of_study"].fillna(fallback)
+
     return df
 
 
@@ -81,11 +109,14 @@ def summarize_null_columns(df: pd.DataFrame) -> None:
     print(f"📊 {len(no_nulls)} columns without nulls, {len(with_nulls)} with nulls")
 
 
-def preprocess(input_file: Path, output_file: Path) -> None:
+def preprocess(input_file: Path, output_file: Path, index_file: Path = INDEX_FILE) -> None:
     print(f"📥 Reading merged barómetros from {input_file}")
-    df = pd.read_csv(input_file)
+    if input_file.suffix == ".parquet":
+        df = pd.read_parquet(input_file)
+    else:
+        df = pd.read_csv(input_file)
 
-    df = build_date_of_study(df)
+    df = build_date_of_study(df, index_file)
     df = build_principal_problems(df)
     df = coerce_numeric(df, ["Edad de la persona entrevistada", "Ponderación autonómica"])
     df_ordered = order_columns(df)
@@ -102,8 +133,8 @@ def main() -> None:
     parser.add_argument(
         "--input",
         type=Path,
-        default=INTERIM_DIR / "filtered_merged_barometros.csv",
-        help="Input merged CSV (defaults to the filtered output of merge_sav.py)",
+        default=INTERIM_DIR / "filtered_merged_barometros.parquet",
+        help="Input merged file (Parquet preferred; falls back to CSV by extension)",
     )
     parser.add_argument(
         "--output",
@@ -111,8 +142,14 @@ def main() -> None:
         default=PROCESSED_DIR / "processed_barometros.parquet",
         help="Output Parquet file",
     )
+    parser.add_argument(
+        "--index",
+        type=Path,
+        default=INDEX_FILE,
+        help="Catalogue CSV used as fallback to recover the study date",
+    )
     args = parser.parse_args()
-    preprocess(args.input, args.output)
+    preprocess(args.input, args.output, args.index)
 
 
 if __name__ == "__main__":
