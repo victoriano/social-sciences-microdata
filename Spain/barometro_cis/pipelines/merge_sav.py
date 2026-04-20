@@ -125,6 +125,96 @@ def write_outputs(
         print(f"✅ Wrote {filtered_csv}", flush=True)
 
 
+def outputs_up_to_date(
+    out_parquet: Path,
+    labeled_paths: list[Path],
+    also: list[Path],
+) -> bool:
+    """True when ``out_parquet`` exists and is newer than every labeled parquet.
+
+    ``also`` is a list of other artefacts that must also exist (e.g. the
+    filtered parquet when ``--filter-nans`` is requested) for the cache to be
+    considered valid.
+    """
+    if not out_parquet.exists():
+        return False
+    for path in also:
+        if not path.exists():
+            return False
+    latest_input = max((p.stat().st_mtime for p in labeled_paths), default=0)
+    return out_parquet.stat().st_mtime >= latest_input
+
+
+def run_merge(
+    start: str,
+    end: str,
+    *,
+    index_file: Path = INDEX_FILE,
+    raw_dir: Path = RAW_DIR,
+    output_parquet: Path = INTERIM_DIR / "merged_barometros.parquet",
+    write_csv: bool = False,
+    filter_nans: bool = False,
+    nan_threshold: float = 0.5,
+    force: bool = False,
+) -> dict:
+    """Convert + merge every Barómetro SAV in the date range.
+
+    Returns a summary dict with ``merged`` (int), ``failures`` (int) and
+    ``skipped_concat`` (bool) keys.
+    """
+    filtered_index = filter_studies_by_date(index_file, start, end)
+    print(f"📊 {len(filtered_index)} Barómetros in range {start} → {end}", flush=True)
+
+    parquet_paths: list[Path] = []
+    failures = 0
+    for codigo in filtered_index["codigo"]:
+        path = sav_to_parquet(int(codigo), raw_dir, LABELED_DIR)
+        if path is None:
+            failures += 1
+            continue
+        parquet_paths.append(path)
+
+    if not parquet_paths:
+        print("⚠️  Nothing to merge; aborting", flush=True)
+        return {"merged": 0, "failures": failures, "skipped_concat": False}
+
+    out_csv = output_parquet.with_suffix(".csv") if write_csv else None
+    filtered_parquet = (
+        output_parquet.with_name(f"filtered_{output_parquet.name}") if filter_nans else None
+    )
+    filtered_csv = (
+        output_parquet.with_name(f"filtered_{output_parquet.stem}.csv")
+        if filter_nans and write_csv
+        else None
+    )
+
+    required = [p for p in (out_csv, filtered_parquet, filtered_csv) if p is not None]
+    if not force and outputs_up_to_date(output_parquet, parquet_paths, required):
+        print(
+            f"⏩ Outputs already current ({output_parquet.name} newer than every labeled parquet); "
+            f"skipping concat",
+            flush=True,
+        )
+        return {"merged": len(parquet_paths), "failures": failures, "skipped_concat": True}
+
+    print(f"🔗 Merging {len(parquet_paths)} labeled parquets", flush=True)
+    merged = concat_parquets(parquet_paths)
+
+    write_outputs(
+        merged,
+        output_parquet,
+        out_csv,
+        filtered_parquet,
+        filtered_csv,
+        nan_threshold if filter_nans else None,
+    )
+    print(
+        f"🎉 Merge complete — {len(parquet_paths)} barómetros merged, {failures} skipped",
+        flush=True,
+    )
+    return {"merged": len(parquet_paths), "failures": failures, "skipped_concat": False}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Merge CIS Barómetro .sav files into a dataset")
     parser.add_argument("--start", required=True, help="Start month in MM/YYYY format")
@@ -149,46 +239,24 @@ def main() -> None:
         default=0.5,
         help="Column-wise null share above which the column is dropped (default: 0.5)",
     )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-run the concat step even when outputs are already newer than every labeled parquet",
+    )
     args = parser.parse_args()
 
-    filtered_index = filter_studies_by_date(args.index, args.start, args.end)
-    print(f"📊 {len(filtered_index)} Barómetros in range {args.start} → {args.end}", flush=True)
-
-    parquet_paths: list[Path] = []
-    failures = 0
-    for codigo in filtered_index["codigo"]:
-        path = sav_to_parquet(int(codigo), args.raw_dir, LABELED_DIR)
-        if path is None:
-            failures += 1
-            continue
-        parquet_paths.append(path)
-
-    if not parquet_paths:
-        print("⚠️  Nothing to merge; aborting", flush=True)
-        return
-
-    print(f"🔗 Merging {len(parquet_paths)} labeled parquets", flush=True)
-    merged = concat_parquets(parquet_paths)
-
-    out_parquet = args.output_parquet
-    out_csv = out_parquet.with_suffix(".csv") if args.write_csv else None
-    filtered_parquet = out_parquet.with_name(f"filtered_{out_parquet.name}") if args.filter_nans else None
-    filtered_csv = (
-        out_parquet.with_name(f"filtered_{out_parquet.stem}.csv")
-        if args.filter_nans and args.write_csv
-        else None
+    run_merge(
+        start=args.start,
+        end=args.end,
+        index_file=args.index,
+        raw_dir=args.raw_dir,
+        output_parquet=args.output_parquet,
+        write_csv=args.write_csv,
+        filter_nans=args.filter_nans,
+        nan_threshold=args.nan_threshold,
+        force=args.force,
     )
-
-    write_outputs(
-        merged,
-        out_parquet,
-        out_csv,
-        filtered_parquet,
-        filtered_csv,
-        args.nan_threshold if args.filter_nans else None,
-    )
-
-    print(f"🎉 Merge complete — {len(parquet_paths)} barómetros merged, {failures} skipped", flush=True)
 
 
 if __name__ == "__main__":
