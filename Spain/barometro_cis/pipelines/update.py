@@ -32,6 +32,7 @@ from Spain.barometro_cis.pipelines.download_raw import download_range
 from Spain.barometro_cis.pipelines.fetch_index import fetch_index
 from Spain.barometro_cis.pipelines.merge_sav import run_merge
 from Spain.barometro_cis.pipelines.preprocess import preprocess
+from Spain.barometro_cis.pipelines.upload_hf import upload_processed, upload_raw
 
 MERGED_PARQUET = INTERIM_DIR / "merged_barometros.parquet"
 FILTERED_MERGED_PARQUET = INTERIM_DIR / "filtered_merged_barometros.parquet"
@@ -88,6 +89,14 @@ def main() -> None:
         default=0.5,
         help="Column-wise null share above which the column is dropped (default: 0.5)",
     )
+    parser.add_argument(
+        "--upload",
+        choices=["none", "processed", "raw", "all"],
+        default="none",
+        help="After preprocessing, publish to HuggingFace: "
+        "'processed' → public social-sciences-microdata, "
+        "'raw' → private barometro-cis-raw, 'all' → both.",
+    )
     args = parser.parse_args()
 
     start = parse_month(args.since)
@@ -127,6 +136,16 @@ def main() -> None:
         )
     else:
         preprocess(FILTERED_MERGED_PARQUET, PROCESSED_PARQUET, INDEX_FILE)
+
+    if args.upload != "none":
+        print(f"\n─── Step 5/5: upload to HuggingFace ({args.upload}) ───", flush=True)
+        from huggingface_hub import HfApi  # lazy import so the token is only required when uploading
+
+        api = HfApi()
+        if args.upload in ("processed", "all"):
+            upload_processed(api, PROCESSED_DIR, INDEX_FILE)
+        if args.upload in ("raw", "all"):
+            upload_raw(api, RAW_DIR)
 
     print(
         f"\n✅ Done. Merged {summary['merged']} barómetros"
