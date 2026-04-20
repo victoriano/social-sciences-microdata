@@ -134,10 +134,7 @@ def attach_tipo_barometro(df: pd.DataFrame, index_file: Path) -> pd.DataFrame:
 
 
 # Fingerprint values that only appear when the "tres problemas principales"
-# question is asked at the international level (one documented case so far:
-# MD3468 in July 2024). A handful of estudios recycle the same column names
-# for a monographic international-problems module; we flag those so the viz
-# doesn't mix them with the standard Spain-focused series.
+# question is reframed at the international level (e.g. MD3468 in July 2024).
 _INTERNATIONAL_PROBLEM_FINGERPRINTS = {
     "Las guerras y los conflictos bélicos",
     "La pobreza y la desigualdad entre países pobres y ricos",
@@ -146,28 +143,61 @@ _INTERNATIONAL_PROBLEM_FINGERPRINTS = {
     "Las migraciones internacionales",
 }
 
+# Canonical "problemas de España" answers. Every normal mensual barómetro has
+# at least one of these in the top-5 of each problem column. Estudios whose
+# column top-5 shows zero overlap are asking a different question entirely
+# (agricultural/rural, sanitario, etc.) and should be excluded.
+_CANONICAL_SPAIN_PROBLEMS = {
+    "El paro", "La vivienda", "La sanidad", "La inmigración", "La educación",
+    "La corrupción y el fraude", "El cambio climático",
+    "El mal comportamiento de los/as políticos/as",
+    "Los problemas políticos en general",
+    "El Gobierno y partidos o políticos/as concretos/as",
+    "Los problemas relacionados con la calidad del empleo",
+    "La crisis económica, los problemas de índole económica",
+    "La crisis económica, los problemas de índole económicos",
+    "Lo que hacen los partidos políticos",
+    "Los peligros para la salud: COVID-19. El coronavirus. Falta",
+    "Los problemas de índole social", "La inseguridad ciudadana",
+    "La crisis de valores", "Los extremismos",
+    "Las desigualdades, incluida la de género, las diferencias de clases, la pobreza",
+    "La falta de acuerdos, unidad y capacidad de colaboración. Situación e inestabilidad política",
+    "Otros problemas", "N.C.", "N.S.", "Ninguno", "Ninguno, en especial", "Otras respuestas",
+}
+
 
 def attach_problemas_ambito(df: pd.DataFrame) -> pd.DataFrame:
     """Tag each row with the scope of the "tres problemas principales"
-    question: ``españa`` for the default domestic question or
-    ``internacional`` for the rare monographic modules (MD3468 et al.)."""
+    question: ``españa`` for the default domestic question, ``internacional``
+    for the monographic international modules (MD3468 et al.), or
+    ``hibrido`` for estudios where at least one of Primer/Segundo/Tercer
+    problema was reused for a sector-specific monograph (e.g. MD3445's
+    Segundo problema was about problems in the agricultural sector)."""
     if "codigo_cis" not in df.columns or "Primer problema" not in df.columns:
         return df
 
-    # Per-estudio: does the top-5 of Primer problema intersect the
-    # international fingerprint? If so, that estudio's problems columns are
-    # about international problems, not Spain.
     intl: set[int] = set()
+    hybrid: set[int] = set()
     for codigo, sub in df.groupby("codigo_cis"):
         if len(sub) < 100:
             continue
-        top = set(sub["Primer problema"].value_counts().head(5).index)
-        if top & _INTERNATIONAL_PROBLEM_FINGERPRINTS:
+        tops = {
+            col: set(sub[col].value_counts().head(5).index)
+            for col in ("Primer problema", "Segundo problema", "Tercer problema")
+        }
+        if any(tops[c] & _INTERNATIONAL_PROBLEM_FINGERPRINTS for c in tops):
             intl.add(int(codigo))
+            continue
+        if any(top and not (top & _CANONICAL_SPAIN_PROBLEMS) for top in tops.values()):
+            hybrid.add(int(codigo))
 
-    df["problemas_ambito"] = df["codigo_cis"].astype(int).map(
-        lambda c: "internacional" if int(c) in intl else "españa"
-    )
+    def classify(c: int) -> str:
+        c = int(c)
+        if c in intl: return "internacional"
+        if c in hybrid: return "hibrido"
+        return "españa"
+
+    df["problemas_ambito"] = df["codigo_cis"].astype(int).map(classify)
     return df
 
 
