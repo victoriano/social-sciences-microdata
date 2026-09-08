@@ -35,15 +35,20 @@ except ImportError:
 # Configuration
 RAW_REPO = "victoriano/pisa-raw"
 PROCESSED_REPO = "victoriano/social-sciences-microdata"
-AVAILABLE_YEARS = ["2000", "2003", "2006", "2009", "2012", "2015", "2018", "2022"]
+AVAILABLE_YEARS = ["2000", "2003", "2006", "2009", "2012", "2015", "2018", "2022", "2025"]
+REPO_ROOT = Path(__file__).resolve().parents[3]
+DEFAULT_PISA_DATA_DIR = REPO_ROOT / "data" / "Global" / "pisa"
 
 # File type mappings to match OECD structure
 FILE_TYPE_MAPPINGS = {
     'student_questionnaire': 'Student questionnaire data and control files',
     'school_questionnaire': 'School questionnaire data and control files', 
     'cognitive_item': 'Cognitive item response data and control files',
+    'cognitive_process': 'Cognitive process data',
     'parent_questionnaire': 'Parent questionnaire data and control files',
     'questionnaire_additional': 'Additional questionnaire data',
+    'questionnaire_timing': 'Questionnaire timing data',
+    'teacher_questionnaire': 'Teacher questionnaire data',
     'documentation': 'README files, manuals, and documentation',
     'other': 'Converted files and other data'
 }
@@ -53,9 +58,8 @@ class PISAHFDownloader:
     
     def __init__(self, base_path: Optional[Path] = None):
         """Initialize downloader with paths."""
-        self.base_path = base_path or Path("..")
-        self.data_path = self.base_path / "data"
-        self.raw_path = self.data_path / "raw"
+        self.base_path = Path(base_path) if base_path else DEFAULT_PISA_DATA_DIR
+        self.raw_path = self.base_path / "raw"
         self.processed_path = self.base_path / "processed"
         
         # Create directories
@@ -127,7 +131,7 @@ class PISAHFDownloader:
                         repo_id=RAW_REPO,
                         filename=file_path,
                         repo_type="dataset",
-                        local_dir=self.base_path,
+                        local_dir=self.raw_path,
                         local_dir_use_symlinks=False
                     )
                     
@@ -404,4 +408,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()

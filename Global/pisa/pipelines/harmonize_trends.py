@@ -9,7 +9,7 @@ for trend analysis. Automatically detects all available years in raw data folder
 Features:
 - Automatically detects all years available in raw data folder
 - Processes multiple PISA years in batch
-- Handles different file formats (2015-2022: .sav, 2012 and earlier: converted files)
+- Handles different file formats (2015-2025: .sav, 2012 and earlier: converted files)
 - Creates harmonized variable mappings across years
 - Efficient Parquet output with metadata
 - Optimized for large files using Polars lazy frames
@@ -41,14 +41,16 @@ except ImportError:
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+REPO_ROOT = Path(__file__).resolve().parents[3]
+DEFAULT_PISA_DATA_DIR = REPO_ROOT / "data" / "Global" / "pisa"
 
 class PISATrendConverter:
     """Convert multi-year PISA data for trend analysis."""
     
-    def __init__(self, raw_dir: str = "../data/raw", processed_dir: str = "../data/processed"):
+    def __init__(self, raw_dir: Optional[str] = None, processed_dir: Optional[str] = None):
         """Initialize converter with data directories."""
-        self.raw_dir = Path(raw_dir)
-        self.processed_dir = Path(processed_dir)
+        self.raw_dir = Path(raw_dir) if raw_dir else DEFAULT_PISA_DATA_DIR / "raw"
+        self.processed_dir = Path(processed_dir) if processed_dir else DEFAULT_PISA_DATA_DIR / "processed"
         
         # Create output directories
         self.trend_dir = self.processed_dir / "trend_analysis"
@@ -200,6 +202,7 @@ class PISATrendConverter:
             
             # Student questionnaire patterns by year (case-insensitive)
             stu_patterns = {
+                2025: ['CY09_MS_STU_PUF.sav', 'CY09_MS_STU_PUF.SAV'],
                 2022: ['CY08MSP_STU_QQQ.SAV', 'CY08MSP_STU_QQQ.sav', 'CY08_MSU_STU_QQQ.sav'],
                 2018: ['CY07_MSU_STU_QQQ.sav', 'CY07_MSU_STU_QQQ.SAV'], 
                 2015: ['CY6_MS_CMB_STU_QQQ.sav', 'CY6_MS_CMB_STU_QQQ.SAV'],
@@ -207,6 +210,7 @@ class PISATrendConverter:
             
             # Cognitive data patterns
             cog_patterns = {
+                2025: ['CY09_MS_COG_PUF.sav', 'CY09_MS_COG_PUF.SAV'],
                 2022: ['CY08MSP_STU_COG.SAV', 'CY08MSP_STU_COG.sav', 'CY08_MSU_STU_COG.sav'],
                 2018: ['CY07_MSU_STU_COG.sav', 'CY07_MSU_STU_COG.SAV'],
                 2015: ['CY6_MS_CMB_STU_COG.sav', 'CY6_MS_CMB_STU_COG.SAV'],
@@ -371,8 +375,14 @@ class PISATrendConverter:
         # Get required columns for optimization
         required_cols = self.get_required_columns_for_year(year)
         
-        # Load and merge files
-        for file_type, file_path in year_files.items():
+        # The student questionnaire already contains plausible values and the
+        # background variables used by this student-level trend dataset.  The
+        # cognitive item file is unnecessary here. Joining on student_id alone
+        # across countries/schools can multiply student records.
+        student_file = year_files.get('student')
+        files_to_load = [('student', student_file)] if student_file else []
+
+        for file_type, file_path in files_to_load:
             if file_path is None:
                 continue
                 
@@ -387,21 +397,6 @@ class PISATrendConverter:
             if year_data is None:
                 year_data = df
                 logger.info(f"Initialized with {file_type} data")
-            else:
-                # Merge on student ID if available
-                merge_keys = ['student_id'] if 'student_id' in df.columns else []
-                if merge_keys and merge_keys[0] in year_data.columns:
-                    # Use full join to keep all data
-                    year_data = year_data.join(df, on=merge_keys, how='full', suffix='_right')
-                    
-                    # Remove duplicate columns from right side
-                    for col in df.columns:
-                        if col + '_right' in year_data.columns and col in year_data.columns:
-                            year_data = year_data.drop(col + '_right')
-                    
-                    logger.info(f"Merged {file_type} data")
-                else:
-                    logger.warning(f"Cannot merge {file_type} - no common student ID")
         
         if year_data is not None:
             logger.info(f"✅ PISA {year}: {len(year_data)} students, {len(year_data.columns)} variables")
@@ -459,6 +454,17 @@ class PISATrendConverter:
         
         # Combine all years - use diagonal to handle different schemas
         combined_df = pl.concat(harmonized_data, how='diagonal')
+
+        # Student identifiers are not globally unique: they can repeat across
+        # countries and, in older cycles, across schools.  This composite key
+        # is the minimum safe identity for a student record.
+        identity = ['pisa_year', 'country', 'school_id', 'student_id']
+        if all(col in combined_df.columns for col in identity):
+            duplicate_count = combined_df.height - combined_df.select(
+                pl.struct(identity).n_unique()
+            ).item()
+            if duplicate_count:
+                raise ValueError(f'{duplicate_count} duplicate student identities; inspect source files')
         logger.info(f"Combined dataset: {len(combined_df)} total students across {len(all_years_data)} years")
         
         # Get year range for filename
@@ -591,9 +597,9 @@ class PISATrendConverter:
         else:
             logger.error("⚠️ All conversions failed. Check error messages above.")
 
-def get_available_years_from_raw(raw_dir: str = "../data/raw") -> List[str]:
+def get_available_years_from_raw(raw_dir: Optional[str] = None) -> List[str]:
     """Get list of available years from raw data directory."""
-    raw_path = Path(raw_dir)
+    raw_path = Path(raw_dir) if raw_dir else DEFAULT_PISA_DATA_DIR / "raw"
     if not raw_path.exists():
         return []
     
@@ -632,4 +638,4 @@ def main():
     converter.run_trend_conversion()
 
 if __name__ == "__main__":
-    main() 
+    main()

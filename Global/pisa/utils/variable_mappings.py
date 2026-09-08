@@ -31,6 +31,12 @@ VARIABLE_MAPPINGS = {
         "student_id": "CNTSTUID",
         "country": "CNTRYID",
         "math_score": ["PV1MATH", "PV2MATH", "PV3MATH", "PV4MATH", "PV5MATH"],
+    },
+    2025: {
+        "student_id": "CNTSTUID",
+        "country": "CNT",
+        "math_score": ["PV1MATH", "PV2MATH", "PV3MATH", "PV4MATH", "PV5MATH",
+                       "PV6MATH", "PV7MATH", "PV8MATH", "PV9MATH", "PV10MATH"],
     }
 }
 

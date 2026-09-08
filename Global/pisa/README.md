@@ -3,7 +3,14 @@
 ## Overview
 This directory contains tools and pipelines for managing PISA (Programme for International Student Assessment) data. PISA assesses 15-year-old students' abilities in mathematics, reading, and science literacy, along with their motivation, engagement, and learning strategies.
 
-**Complete Historical Coverage**: All PISA cycles from 2000 to 2022 (8 cycles over 22+ years)
+**Configured coverage**: cycles 2000–2025. Configuration is not evidence that a cycle has been downloaded or validated. The local legacy trend archive covers 2006–2022; the new pipeline adds 2025 and a separate survey-design-aware Spain comparison for 2022–2025.
+
+## September 2026 update
+
+See [Spain 2022–2025: reproducibility and methodology](analysis/README_2025.md)
+for the validated workflow. Use that workflow instead of the legacy examples
+below for survey-weighted comparisons. New PUF data are kept local; adding 2025
+to a downloader's configuration does not mean it is present on Hugging Face.
 
 ## Data Storage Strategy
 PISA data is stored in HuggingFace repositories for efficient access and version control:
@@ -64,7 +71,7 @@ python scripts/download_from_oecd.py --list-file-types 2022
 
 ### Available File Types by Year
 
-**Recent Years (2015-2022)** - SPSS compressed files:
+**Recent Years (2015-2025)** - SPSS compressed files:
 - `student_questionnaire` - Student questionnaire data
 - `school_questionnaire` - School questionnaire data  
 - `teacher_questionnaire` - Teacher questionnaire data
@@ -72,6 +79,7 @@ python scripts/download_from_oecd.py --list-file-types 2022
 - `questionnaire_timing` - Questionnaire timing data
 - `creative_thinking` - Creative thinking data (2022 only)
 - `financial_literacy` - Financial literacy data
+- `cognitive_process` - Cognitive process data (2025)
 
 **Historical Years (2003-2012)** - TXT files + SPSS syntax:
 - `student_questionnaire_data` + `student_questionnaire_syntax`
@@ -103,6 +111,7 @@ python scripts/download_from_oecd.py --list-file-types 2022
 ## Available PISA Years and Focus Areas
 
 ### Recent Years (SPSS .sav format - Easy Processing)
+- **PISA 2025** ⭐ Science focus
 - **PISA 2022** ⭐ Mathematics focus
 - **PISA 2018** ⭐ Reading focus  
 - **PISA 2015** ⭐ Science focus
@@ -321,4 +330,4 @@ comparison = df.filter(
 
 ---
 
-**Last Updated**: December 2024 
+**Last Updated**: September 2026

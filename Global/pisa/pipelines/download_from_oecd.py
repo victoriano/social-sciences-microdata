@@ -6,10 +6,10 @@ This script downloads PISA data directly from the OECD website.
 Source: https://webfs.oecd.org/pisa2022/index.html
 
 Data Format by Year:
-- 2015-2022: SPSS/SAS compressed files (.zip)
+- 2015-2025: SPSS/SAS compressed files (.zip)
 - 2000-2012: TXT files + SPSS/SAS control files (.txt)
 
-Coverage: All PISA cycles from 2000 to 2022
+Coverage: All PISA cycles from 2000 to 2025
 """
 
 import os
@@ -26,6 +26,8 @@ from tqdm import tqdm
 # Download configuration
 DOWNLOAD_DELAY = 1.0  # Be respectful to OECD servers
 OECD_BASE_URL = "https://webfs.oecd.org/"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+DEFAULT_PISA_DATA_DIR = REPO_ROOT / "data" / "Global" / "pisa"
 
 # Browser headers to avoid anti-bot blocking
 BROWSER_HEADERS = {
@@ -49,6 +51,18 @@ BROWSER_HEADERS = {
 
 # PISA Download Configuration - URL pattern and file naming for different years
 PISA_CONFIG = {
+    2025: {
+        'url_pattern': 'https://webfs.oecd.org/pisa2022/2025/{filename}',
+        'format': 'compressed',
+        'files': {
+            'student_questionnaire': 'CY09_MS_STU_PUF.zip',
+            'school_questionnaire': 'CY09_MS_SCH_PUF.zip',
+            'teacher_questionnaire': 'CY09_MS_TCH_PUF.zip',
+            'cognitive_item': 'CY09_MS_COG_PUF.zip',
+            'cognitive_process': 'CY09_MS_COG_PROCESS_PUF.zip',
+            'questionnaire_timing': 'CY09_MS_STU_TT_PUF.zip',
+        }
+    },
     2022: {
         'url_pattern': 'https://webfs.oecd.org/pisa2022/{filename}',
         'format': 'compressed',
@@ -215,8 +229,8 @@ class PISAOECDDownloader:
     
     def __init__(self, base_path: Optional[Path] = None):
         """Initialize downloader with paths."""
-        self.base_path = base_path or Path("..")
-        self.raw_path = self.base_path / "data" / "raw"
+        self.base_path = Path(base_path) if base_path else DEFAULT_PISA_DATA_DIR
+        self.raw_path = self.base_path / "raw"
         self.raw_path.mkdir(parents=True, exist_ok=True)
         
         # Create session for efficient downloading
@@ -321,7 +335,7 @@ class PISAOECDDownloader:
             
             try:
                 if config['format'] == 'compressed':
-                    # Handle ZIP files (2015, 2018, 2022)
+                    # Handle ZIP files (2015, 2018, 2022, 2025)
                     filename = file_info
                     url = config['url_pattern'].format(filename=filename)
                     zip_path = type_dir / filename
@@ -587,7 +601,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
     
     # Use default output directory if not specified
     if output_dir is None:
-        output_dir_path = Path(__file__).parent.parent / "data" / "raw" / str(year)
+        output_dir_path = DEFAULT_PISA_DATA_DIR / "raw" / str(year)
     else:
         output_dir_path = Path(output_dir)
     
@@ -620,7 +634,7 @@ def download_year(year: int, file_types: Optional[List[str]] = None, output_dir:
         print(f"\nDownloading {file_type}...")
         
         if config['format'] == 'compressed':
-            # Handle ZIP files (2015, 2018, 2022)
+            # Handle ZIP files (2015, 2018, 2022, 2025)
             filename = file_info
             url = config['url_pattern'].format(filename=filename)
             zip_path = type_dir / filename
@@ -829,7 +843,8 @@ def download_multiple_years(years: List[int], file_types: Optional[List[str]] = 
     
     for year in years:
         print(f"\n{'='*50}")
-        success = download_year(year, file_types, output_dir)
+        year_output = str(Path(output_dir) / str(year)) if output_dir else None
+        success = download_year(year, file_types, year_output)
         if not success:
             overall_success = False
     
@@ -870,7 +885,7 @@ def show_manual_download_instructions(year: int):
                 print(f"     📋 Control: {control_url}")
         
         print(f"\n💾 **Save Files To:**")
-        print(f"   {Path(__file__).parent.parent / 'data' / 'raw' / str(year) / '[file_type]'}")
+        print(f"   {DEFAULT_PISA_DATA_DIR / 'raw' / str(year) / '[file_type]'}")
         
         print(f"\n🎯 **Instructions:**")
         print(f"   1. Click each link above in your browser")
@@ -898,7 +913,7 @@ def main():
     
     if not args.years:
         # Default to downloading recent years
-        years = [2022, 2018]
+        years = [2025, 2022]
         print(f"No years specified. Downloading recent years: {', '.join(map(str, years))}")
     else:
         years = args.years
@@ -921,4 +936,4 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
-    main() 
+    main()
