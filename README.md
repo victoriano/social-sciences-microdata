@@ -226,3 +226,4 @@ The geographical structure allows for easy addition of new data sources:
 ---
 
 **Goal**: Provide a comprehensive, geographically-organized framework for social sciences research using high-quality microdata with proper statistical controls and international comparability. 
+<!-- pages-deploy-check: 2026-09-09 (verifying Cloudflare Pages git integration; safe to delete) -->
