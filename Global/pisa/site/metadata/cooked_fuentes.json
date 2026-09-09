@@ -1,0 +1,4865 @@
+[
+  {
+    "year": 2000,
+    "rows": 6214,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2000.parquet",
+    "sha256": "181f8ee3cd80464dc3e216b33c31e4413a895cd46d7558b8fb44ccb848fc86c7",
+    "raw_source": "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_read_v3.txt",
+    "control": "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_reading.txt",
+    "domains": {
+      "READ": {
+        "labels": {},
+        "missing": {
+          "ST03Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST06Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST07Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST12Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST13Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST14Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST15Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST17Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST25Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST34Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST38Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT03Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT07Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT08Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT09Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT10Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q18": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q19": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q20": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q21": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q22": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q23": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q24": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q25": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q26": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q27": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q28": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q18": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q19": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q20": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q21": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q22": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q23": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q24": [
+            "8",
+            "9",
+            "7"
+          ],
+          "FAMSTRUC": [
+            "8",
+            "9",
+            "7"
+          ],
+          "BRTHORD": [
+            "8",
+            "9",
+            "7"
+          ],
+          "FISCED": [
+            "8",
+            "9",
+            "7"
+          ],
+          "MISCED": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST02Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q03": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q05": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q02": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q03": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST37Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BMMJ": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BFMJ": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BTHR": [
+            "97",
+            "98",
+            "99"
+          ],
+          "NSIB": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ISEI": [
+            "97",
+            "98",
+            "99"
+          ],
+          "HISEI": [
+            "97",
+            "98",
+            "99"
+          ],
+          "CULTCOM": [
+            "97"
+          ],
+          "SOCCOM": [
+            "97"
+          ],
+          "FAMEDSUP": [
+            "97"
+          ],
+          "WEALTH": [
+            "97"
+          ],
+          "HEDRES": [
+            "97"
+          ],
+          "CULTACTV": [
+            "97"
+          ],
+          "CULTPOSS": [
+            "97"
+          ],
+          "HMWKTIME": [
+            "97"
+          ],
+          "TEACHSUP": [
+            "97"
+          ],
+          "DISCLIMA": [
+            "97"
+          ],
+          "STUDREL": [
+            "97"
+          ],
+          "ACHPRESS": [
+            "97"
+          ],
+          "BELONG": [
+            "97"
+          ],
+          "JOYREAD": [
+            "97"
+          ],
+          "DIVREAD": [
+            "97"
+          ],
+          "COMAB": [
+            "97"
+          ],
+          "COMUSE": [
+            "97"
+          ],
+          "COMATT": [
+            "97"
+          ],
+          "CSTRAT": [
+            "97"
+          ],
+          "EFFPER": [
+            "97"
+          ],
+          "MEMOR": [
+            "97"
+          ],
+          "SELFEF": [
+            "97"
+          ],
+          "CEXP": [
+            "97"
+          ],
+          "ELAB": [
+            "97"
+          ],
+          "INSMOT": [
+            "97"
+          ],
+          "INTMAT": [
+            "97"
+          ],
+          "MATCON": [
+            "97"
+          ],
+          "INTREA": [
+            "97"
+          ],
+          "SCACAD": [
+            "97"
+          ],
+          "SCVERB": [
+            "97"
+          ],
+          "COMLRN": [
+            "97"
+          ],
+          "COPLRN": [
+            "97"
+          ],
+          "ST41Q01": [
+            "997",
+            "998",
+            "999"
+          ],
+          "ST41Q02": [
+            "997",
+            "998",
+            "999"
+          ],
+          "ST41Q03": [
+            "997",
+            "998",
+            "999"
+          ],
+          "AGE": [
+            "997",
+            "998",
+            "999"
+          ],
+          "RMINS": [
+            "9997",
+            "9999"
+          ],
+          "MMINS": [
+            "9997",
+            "9999"
+          ],
+          "SMINS": [
+            "9997",
+            "9999"
+          ],
+          "WLEREAD": [
+            "9997"
+          ],
+          "WLERR_R": [
+            "9997"
+          ],
+          "WLEREAD1": [
+            "9997"
+          ],
+          "WLERR_R1": [
+            "9997"
+          ],
+          "WLEREAD2": [
+            "9997"
+          ],
+          "WLERR_R2": [
+            "9997"
+          ],
+          "WLEREAD3": [
+            "9997"
+          ],
+          "WLERR_R3": [
+            "9997"
+          ],
+          "PV1READ": [
+            "9997"
+          ],
+          "PV2READ": [
+            "9997"
+          ],
+          "PV3READ": [
+            "9997"
+          ],
+          "PV4READ": [
+            "9997"
+          ],
+          "PV5READ": [
+            "9997"
+          ],
+          "PV1READ1": [
+            "9997"
+          ],
+          "PV2READ1": [
+            "9997"
+          ],
+          "PV3READ1": [
+            "9997"
+          ],
+          "PV4READ1": [
+            "9997"
+          ],
+          "PV5READ1": [
+            "9997"
+          ],
+          "PV1READ2": [
+            "9997"
+          ],
+          "PV2READ2": [
+            "9997"
+          ],
+          "PV3READ2": [
+            "9997"
+          ],
+          "PV4READ2": [
+            "9997"
+          ],
+          "PV5READ2": [
+            "9997"
+          ],
+          "PV1READ3": [
+            "9997"
+          ],
+          "PV2READ3": [
+            "9997"
+          ],
+          "PV3READ3": [
+            "9997"
+          ],
+          "PV4READ3": [
+            "9997"
+          ],
+          "PV5READ3": [
+            "9997"
+          ],
+          "ST01Q02": [
+            "97",
+            "99"
+          ],
+          "ST01Q03": [
+            "9997",
+            "9999"
+          ],
+          "ST09Q01": [
+            "9997",
+            "9999"
+          ],
+          "ST11Q01": [
+            "9997",
+            "9999"
+          ],
+          "ST40Q01": [
+            "9997",
+            "9999"
+          ]
+        },
+        "source": "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_read_v3.txt",
+        "control": "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_reading.txt"
+      },
+      "MATH": {
+        "labels": {
+          "COUNTRY": "Country three-digit ISO code",
+          "SCHOOLID": "School ID (unique)",
+          "STIDSTD": "Student ID",
+          "SUBNATIO": "Subnational entities",
+          "ST01Q02": "Birth Month - Q1Month",
+          "ST01Q03": "Birth Year - Q1Year",
+          "ST02Q01": "Grade - Q2",
+          "ST03Q01": "Sex - Q3",
+          "ST04Q01": "Mother - Q4a",
+          "ST04Q02": "Female Guardian - Q4b",
+          "ST04Q03": "Father - Q4c",
+          "ST04Q04": "Male Guardian - Q4d",
+          "ST04Q05": "Brothers - Q4e",
+          "ST04Q06": "Sisters - Q4f",
+          "ST04Q07": "Grandparents - Q4g",
+          "ST04Q08": "Lives with other  - Q4h",
+          "ST05Q01": "Older - Q5a",
+          "ST05Q02": "Younger - Q5b",
+          "ST05Q03": "Same age -Q5c",
+          "ST06Q01": "Mother currently doing -Q6",
+          "ST07Q01": "Father currently doing -Q7",
+          "ST09Q01": "Mother's main job - Q8&9",
+          "ST11Q01": "Father's main job - Q10&11",
+          "ST12Q01": "Mother's secondary educ - Q12",
+          "ST13Q01": "Father's secondary educ -Q13",
+          "ST14Q01": "Mother's tertiary educ -Q14",
+          "ST15Q01": "Father's tertiary educ - Q15",
+          "ST16Q01": "Country of birth, self - Q16a",
+          "ST16Q02": "Country of birth, Mother - Q16b",
+          "ST16Q03": "Country of birth, Father - Q16c",
+          "ST17Q01": "Language at home - Q17",
+          "ST18Q01": "Movies - Q18a",
+          "ST18Q02": "Art gallery - Q18b",
+          "ST18Q03": "Pop Music - Q18c",
+          "ST18Q04": "Classics - Q18d",
+          "ST18Q05": "Theatre - Q18e",
+          "ST18Q06": "Sport - Q18f",
+          "ST19Q01": "Discuss politics - Q19a",
+          "ST19Q02": "Discuss books - Q19b",
+          "ST19Q03": "Listen classics - Q19c",
+          "ST19Q04": "Discuss sch probl - Q19d",
+          "ST19Q05": "Eat <main meal> - Q19e",
+          "ST19Q06": "Just talking - Q19f",
+          "ST20Q01": "Mother - Q20a",
+          "ST20Q02": "Father - Q20b",
+          "ST20Q03": "Siblings - Q20c",
+          "ST20Q04": "Grandparents - Q20d",
+          "ST20Q05": "Other Rel - Q20e",
+          "ST20Q06": "Parents' friends - Q20f",
+          "ST21Q01": "Dishwasher - Q21a",
+          "ST21Q02": "Own room - Q21b",
+          "ST21Q03": "Educat software - Q21c",
+          "ST21Q04": "Internet - Q21d",
+          "ST21Q05": "Dictionary - Q21e",
+          "ST21Q06": "Study place - Q21f",
+          "ST21Q07": "Desk - Q21g",
+          "ST21Q08": "Text books - Q21h",
+          "ST21Q09": "Classic literature - Q21i",
+          "ST21Q10": "Poetry - Q21j",
+          "ST21Q11": "Art works - Q21k",
+          "ST22Q01": "Phone - Q22a",
+          "ST22Q02": "Television - Q22b",
+          "ST22Q03": "Calculator - Q22c",
+          "ST22Q04": "Computer - Q22d",
+          "ST22Q05": "Piano - Q22e",
+          "ST22Q06": "Car - Q22f",
+          "ST22Q07": "Bathroom - Q22g",
+          "ST23Q01": "<Extension> - Q23a",
+          "ST23Q02": "<Remedial> in <test lang> - Q23b",
+          "ST23Q03": "<Remedial> in other subj - Q23c",
+          "ST23Q04": "Skills training - Q23d",
+          "ST24Q01": "In <test lang> - Q24a",
+          "ST24Q02": "In other subj - Q24b",
+          "ST24Q03": "<Extension> - Q24c",
+          "ST24Q04": "<Remedial> in  <test lang> - Q24d",
+          "ST24Q05": "<Remedial> in other subj - Q24e",
+          "ST24Q06": "Skills training - Q24f",
+          "ST24Q07": "<Private tutor> - Q24g",
+          "ST25Q01": "School program - Q25",
+          "ST26Q01": "Teachers wait long time - Q26a",
+          "ST26Q02": "Teachers want stud to work - Q26b",
+          "ST26Q03": "Teachers tell stud do better - Q26c",
+          "ST26Q04": "Teachers don't like  - Q26d",
+          "ST26Q05": "Teachers show interest - Q26e",
+          "ST26Q06": "Teachers give opportunity - Q26f",
+          "ST26Q07": "Teachers help with work - Q26g",
+          "ST26Q08": "Teachers cont teaching - Q26h",
+          "ST26Q09": "Teachers do a lot to help- Q26i",
+          "ST26Q10": "Teachers help with learning - Q26j",
+          "ST26Q11": "Teachers check homework - Q26k",
+          "ST26Q12": "Students cannot work well - Q26l",
+          "ST26Q13": "Students don't listen - Q26m",
+          "ST26Q14": "Students don't start - Q26n",
+          "ST26Q15": "Students learn a lot - Q26o",
+          "ST26Q16": "Noise & disorder - Q26p",
+          "ST26Q17": "Doing nothing - Q26q",
+          "ST27Q01": "Number in < test language> - Q27a",
+          "ST27Q02": "Usual in <test lang> - Q27aa",
+          "ST27Q03": "Number in Mathematics - Q27b",
+          "ST27Q04": "Usual in Mathematics - Q27bb",
+          "ST27Q05": "Number in Science - Q27c",
+          "ST27Q06": "Usual in Science - Q27cc",
+          "ST28Q01": "In < test language> - Q28a",
+          "ST28Q02": "In Mathematics - Q28b",
+          "ST28Q03": "In Science - Q28c",
+          "ST29Q01": "Miss school - Q29a",
+          "ST29Q02": "<Skip> classes - Q29b",
+          "ST29Q03": "Late for school - Q29c",
+          "ST30Q01": "Well with students - Q30a",
+          "ST30Q02": "Interested in students - Q30b",
+          "ST30Q03": "Listen to me - Q30c",
+          "ST30Q04": "Give extra help - Q30d",
+          "ST30Q05": "Treat me fairly - Q30e",
+          "ST31Q01": "Feel an outsider - Q31a",
+          "ST31Q02": "Make friends - Q31b",
+          "ST31Q03": "Feel I belong - Q31c",
+          "ST31Q04": "Feel awkward - Q31d",
+          "ST31Q05": "Think I'm liked - Q31e",
+          "ST31Q06": "Feel lonely - Q31f",
+          "ST31Q07": "Don't want to be - Q31g",
+          "ST31Q08": "Feel Bored - Q31h",
+          "ST32Q01": "I complete on time - Q32a",
+          "ST32Q02": "I do watching TV - Q32b",
+          "ST32Q03": "Teachers grade - Q32c",
+          "ST32Q04": "I finish at school - Q32d",
+          "ST32Q05": "Teachers comment on - Q32e",
+          "ST32Q06": "Is interesting - Q32f",
+          "ST32Q07": "Is counted in <mark> - Q32g",
+          "ST33Q01": "Homework <test lang> - Q33a",
+          "ST33Q02": "Homework <maths> - Q33b",
+          "ST33Q03": "Homework <science> - Q33c",
+          "ST34Q01": "Read each day - Q34",
+          "ST35Q01": "Only if I have to - Q35a",
+          "ST35Q02": "Favourite hobby - Q35b",
+          "ST35Q03": "Talking about books - Q35c",
+          "ST35Q04": "Hard to finish - Q35d",
+          "ST35Q05": "Feel happy - Q35e",
+          "ST35Q06": "Waste of time - Q35f",
+          "ST35Q07": "Enjoy library - Q35g",
+          "ST35Q08": "For information - Q35h",
+          "ST35Q09": "Few minutes only - Q35i",
+          "ST36Q01": "Magazines - Q36a",
+          "ST36Q02": "Comics - Q36b",
+          "ST36Q03": "Fictions - Q36c",
+          "ST36Q04": "Non-fiction - Q36d",
+          "ST36Q05": "E-mail & Web - Q36e",
+          "ST36Q06": "Newspapers - Q36f",
+          "ST37Q01": "How many books at home - Q37",
+          "ST38Q01": "Borrow books - Q38",
+          "ST39Q01": "How often use school library - Q39a",
+          "ST39Q02": "How often use computers - Q39b",
+          "ST39Q03": "How often use calculators - Q39c",
+          "ST39Q04": "How often use Internet - Q39d",
+          "ST39Q05": "How often use science labs - Q39e",
+          "ST40Q01": "Job at 30 - Q40",
+          "ST41Q01": "Mark in <test lang> - Q41 numeric",
+          "ST41Q02": "Mark in <maths> - Q41numeric",
+          "ST41Q03": "Mark in <science> - Q41numeric",
+          "ST41Q04": "Mark in <test lang> - Q41nominal",
+          "ST41Q05": "Mark in <maths> - Q41nominal",
+          "ST41Q06": "Mark in <science> - Q41nominal",
+          "ST41Q07": "Mark in <test lang> - Q41ordinal",
+          "ST41Q08": "Mark in <maths> - Q41ordinal",
+          "ST41Q09": "Mark in <science> - Q41ordinal",
+          "BMMJ": "Mother international social and economical index",
+          "BFMJ": "Father international social and economical index",
+          "BTHR": "Student self-expected international social and economical index",
+          "IT01Q01": "At home - IT1a",
+          "IT01Q02": "At school - IT1b",
+          "IT01Q03": "In library - IT1c",
+          "IT01Q04": "Another place - IT1d",
+          "IT02Q01": "Using - IT2a",
+          "IT02Q02": "Write paper - IT2b",
+          "IT02Q03": "Take test - IT2c",
+          "IT03Q01": "Compare - IT3",
+          "IT04Q01": "At home - IT4a",
+          "IT04Q02": "At school - IT4b",
+          "IT04Q03": "In library - IT4c",
+          "IT04Q04": "Another place - IT4d",
+          "IT05Q01": "Internet - IT5a",
+          "IT05Q02": "Communication - IT5b",
+          "IT05Q03": "Help learn - IT5c",
+          "IT05Q04": "Programming - IT5d",
+          "IT06Q01": "Games - IT6a",
+          "IT06Q02": "Word proc - IT6b",
+          "IT06Q03": "Spreadsheet - IT6c",
+          "IT06Q04": "Drawing - IT6d",
+          "IT06Q05": "Educational - IT6e",
+          "IT07Q01": "Very important - IT7",
+          "IT08Q01": "Play or work - IT8",
+          "IT09Q01": "Very interested - IT9",
+          "IT10Q01": "Forget the time - IT10",
+          "CC01Q01": "Memorise - CC1/1",
+          "CC01Q02": "Understand - CC1/2",
+          "CC01Q03": "Need to learn - CC1/3",
+          "CC01Q04": "Difficult - CC1/4",
+          "CC01Q05": "Much as possible - CC1/5",
+          "CC01Q06": "Job- CC1/6",
+          "CC01Q07": "Work as hard - CC1/7",
+          "CC01Q08": "Most Complex - CC1/8",
+          "CC01Q09": "Relate New - CC1/9",
+          "CC01Q10": "Recite - CC1/10",
+          "CC01Q11": "Bad Grades - CC1/11",
+          "CC01Q12": "Keep Working - CC1/12",
+          "CC01Q13": "Force myself - CC1/13",
+          "CC01Q14": "Future - CC1/14",
+          "CC01Q15": "Over and over - CC1/15",
+          "CC01Q16": "Problems wrong - CC1/16",
+          "CC01Q17": "Real world - CC1/17",
+          "CC01Q18": "Excellent - CC1/18",
+          "CC01Q19": "Concepts - CC1/19",
+          "CC01Q20": "Best to acquire - CC1/20",
+          "CC01Q21": "Relating - CC1/21",
+          "CC01Q22": "Good job - CC1/22",
+          "CC01Q23": "Important- CC1/23",
+          "CC01Q24": "Learn well - CC1/24",
+          "CC01Q25": "Fits in - CC1/25",
+          "CC01Q26": "Can master - CC1/26",
+          "CC01Q27": "Additional info - CC1/27",
+          "CC01Q28": "Best effort - CC1/Q28",
+          "CC02Q01": "Math absorbed - CC2/29",
+          "CC02Q02": "Like other - CC2/30",
+          "CC02Q03": "Quickly in most - CC2/31",
+          "CC02Q04": "Better - CC2/32",
+          "CC02Q05": "Hopeless - CC2/33",
+          "CC02Q06": "Reading fun - CC2/34",
+          "CC02Q07": "Good most - CC2/35",
+          "CC02Q08": "Learn most - CC2/36",
+          "CC02Q09": "Learn quickly - CC2/37",
+          "CC02Q10": "Math fun - CC2/38",
+          "CC02Q11": "Trying better - CC2/39",
+          "CC02Q12": "Good marks Math - CC2/Q40",
+          "CC02Q13": "Read spare - CC2/41",
+          "CC02Q14": "Best work - CC2/42",
+          "CC02Q15": "Math best - CC2/43",
+          "CC02Q16": "Like to be best - CC2/44",
+          "CC02Q17": "Read absorbed - CC2/45",
+          "CC02Q18": "Done well - CC2/46",
+          "CC02Q19": "Help others - CC2/47",
+          "CC02Q20": "Well in tests - CC2/48",
+          "CC02Q21": "Math important - CC2/49",
+          "CC02Q22": "Helpful ideas - CC2/50",
+          "CC02Q23": "Good marks - CC2/51",
+          "CC02Q24": "Learn faster - CC2/52",
+          "RMINS": "Number of minutes per week in language courses",
+          "MMINS": "Number of minutes per week in mathematics courses",
+          "SMINS": "Number of minutes per week in science courses",
+          "AGE": "Student age in months",
+          "FAMSTRUC": "Family structure",
+          "NSIB": "Number of siblings",
+          "BRTHORD": "Birth oder",
+          "ISEI": "In. Socio-Econ. Index of father or mother",
+          "HISEI": "Highest In. Socio-Econ. Index",
+          "FISCED": "Father ISCED qualification",
+          "MISCED": "Mother ISCED qualification",
+          "CULTCOM": "Parental Academic interest (WLE)",
+          "SOCCOM": "Patental Social interest (WLE)",
+          "FAMEDSUP": "Family educational support (WLE)",
+          "WEALTH": "Family wealth (WLE)",
+          "HEDRES": "Home educational resources (WLE)",
+          "CULTACTV": "Cultural activities of students (WLE)",
+          "CULTPOSS": "Cultural possession of the family (WLE)",
+          "HMWKTIME": "Time spent on homework (WLE)",
+          "TEACHSUP": "Teacher support (WLE)",
+          "DISCLIMA": "School disciplinary climate (WLE)",
+          "STUDREL": "Teacher-student relationship (WLE)",
+          "ACHPRESS": "Achievement press (WLE)",
+          "BELONG": "Sense of belonging (WLE)",
+          "JOYREAD": "Enjoyment of Reading (WLE)",
+          "DIVREAD": "Reading diversity (WLE)",
+          "COMAB": "Comfort and ability with computers (WLE)",
+          "COMUSE": "Computer usage and experience (WLE)",
+          "COMATT": "Attitudes towards computers (WLE)",
+          "CSTRAT": "Control strategies (WLE)",
+          "EFFPER": "Effort and Perseverance (WLE)",
+          "MEMOR": "Memorisation (WLE)",
+          "SELFEF": "Self Efficacy (WLE)",
+          "CEXP": "Control Expectation (WLE)",
+          "ELAB": "Elaboration Strategies (WLE)",
+          "INSMOT": "Instrumental Motivation (WLE)",
+          "INTMAT": "Interest in Maths (WLE)",
+          "MATCON": "Maths Self Concept (WLE)",
+          "INTREA": "Interest in Reading (WLE)",
+          "SCACAD": "Self Concept (Academic) (WLE)",
+          "SCVERB": "Self Concept (Verbal) (WLE)",
+          "COMLRN": "Competitive Learning (WLE)",
+          "COPLRN": "Co-operative Learning (WLE)",
+          "WLEMATH": "Warm estimate in mathematics",
+          "WLERR_M": "Estimation Error of WLEMATH",
+          "WLEREAD": "Warm estimate in reading",
+          "WLERR_R": "Estimation Error of WLEREAD",
+          "WLEREAD1": "Warm estimate in reading - retrieving",
+          "WLERR_R1": "Estimation Error of WLEREAD1",
+          "WLEREAD2": "Warm estimate in reading - interpreting",
+          "WLERR_R2": "Estimation Error of WLEREAD2",
+          "WLEREAD3": "Warm estimate in reading - reflecting",
+          "WLERR_R3": "Estimation Error of WLEREAD3",
+          "PV1MATH": "Plausible value in mathematics",
+          "PV2MATH": "Plausible value in mathematics",
+          "PV3MATH": "Plausible value in mathematics",
+          "PV4MATH": "Plausible value in mathematics",
+          "PV5MATH": "Plausible value in mathematics",
+          "PV1MATH1": " Plausible value in math - Space and Shape",
+          "PV2MATH1": " Plausible value in math - Space and Shape",
+          "PV3MATH1": " Plausible value in math - Space and Shape",
+          "PV4MATH1": " Plausible value in math - Space and Shape",
+          "PV5MATH1": " Plausible value in math - Space and Shape",
+          "PV1MATH2": "Plausible value in math- Change and Relationships",
+          "PV2MATH2": "Plausible value in math- Change and Relationships",
+          "PV3MATH2": "Plausible value in math- Change and Relationships",
+          "PV4MATH2": "Plausible value in math- Change and Relationships",
+          "PV5MATH2": "Plausible value in math- Change and Relationships",
+          "PV1READ": "Plausible value in reading",
+          "PV2READ": "Plausible value in reading",
+          "PV3READ": "Plausible value in reading",
+          "PV4READ": "Plausible value in reading",
+          "PV5READ": "Plausible value in reading",
+          "PV1READ1": "Plausible value in reading - retrieving",
+          "PV2READ1": "Plausible value in reading - retrieving",
+          "PV3READ1": "Plausible value in reading - retrieving",
+          "PV4READ1": "Plausible value in reading - retrieving",
+          "PV5READ1": "Plausible value in reading - retrieving",
+          "PV1READ2": "Plausible value in reading - interpreting",
+          "PV2READ2": "Plausible value in reading - interpreting",
+          "PV3READ2": "Plausible value in reading - interpreting",
+          "PV4READ2": "Plausible value in reading - interpreting",
+          "PV5READ2": "Plausible value in reading - interpreting",
+          "PV1READ3": "Plausible value in reading - reflecting",
+          "PV2READ3": "Plausible value in reading - reflecting",
+          "PV3READ3": "Plausible value in reading - reflecting",
+          "PV4READ3": "Plausible value in reading - reflecting",
+          "PV5READ3": "Plausible value in reading - reflecting",
+          "W_FSTUWT": "Student population weight",
+          "CNTMFAC": "Adjustment factor to compute Senate weights for Mathematics",
+          "W_FSTR1": "BRR replicate",
+          "W_FSTR2": "BRR replicate",
+          "W_FSTR3": "BRR replicate",
+          "W_FSTR4": "BRR replicate",
+          "W_FSTR5": "BRR replicate",
+          "W_FSTR6": "BRR replicate",
+          "W_FSTR7": "BRR replicate",
+          "W_FSTR8": "BRR replicate",
+          "W_FSTR9": "BRR replicate",
+          "W_FSTR10": "BRR replicate",
+          "W_FSTR11": "BRR replicate",
+          "W_FSTR12": "BRR replicate",
+          "W_FSTR13": "BRR replicate",
+          "W_FSTR14": "BRR replicate",
+          "W_FSTR15": "BRR replicate",
+          "W_FSTR16": "BRR replicate",
+          "W_FSTR17": "BRR replicate",
+          "W_FSTR18": "BRR replicate",
+          "W_FSTR19": "BRR replicate",
+          "W_FSTR20": "BRR replicate",
+          "W_FSTR21": "BRR replicate",
+          "W_FSTR22": "BRR replicate",
+          "W_FSTR23": "BRR replicate",
+          "W_FSTR24": "BRR replicate",
+          "W_FSTR25": "BRR replicate",
+          "W_FSTR26": "BRR replicate",
+          "W_FSTR27": "BRR replicate",
+          "W_FSTR28": "BRR replicate",
+          "W_FSTR29": "BRR replicate",
+          "W_FSTR30": "BRR replicate",
+          "W_FSTR31": "BRR replicate",
+          "W_FSTR32": "BRR replicate",
+          "W_FSTR33": "BRR replicate",
+          "W_FSTR34": "BRR replicate",
+          "W_FSTR35": "BRR replicate",
+          "W_FSTR36": "BRR replicate",
+          "W_FSTR37": "BRR replicate",
+          "W_FSTR38": "BRR replicate",
+          "W_FSTR39": "BRR replicate",
+          "W_FSTR40": "BRR replicate",
+          "W_FSTR41": "BRR replicate",
+          "W_FSTR42": "BRR replicate",
+          "W_FSTR43": "BRR replicate",
+          "W_FSTR44": "BRR replicate",
+          "W_FSTR45": "BRR replicate",
+          "W_FSTR46": "BRR replicate",
+          "W_FSTR47": "BRR replicate",
+          "W_FSTR48": "BRR replicate",
+          "W_FSTR49": "BRR replicate",
+          "W_FSTR50": "BRR replicate",
+          "W_FSTR51": "BRR replicate",
+          "W_FSTR52": "BRR replicate",
+          "W_FSTR53": "BRR replicate",
+          "W_FSTR54": "BRR replicate",
+          "W_FSTR55": "BRR replicate",
+          "W_FSTR56": "BRR replicate",
+          "W_FSTR57": "BRR replicate",
+          "W_FSTR58": "BRR replicate",
+          "W_FSTR59": "BRR replicate",
+          "W_FSTR60": "BRR replicate",
+          "W_FSTR61": "BRR replicate",
+          "W_FSTR62": "BRR replicate",
+          "W_FSTR63": "BRR replicate",
+          "W_FSTR64": "BRR replicate",
+          "W_FSTR65": "BRR replicate",
+          "W_FSTR66": "BRR replicate",
+          "W_FSTR67": "BRR replicate",
+          "W_FSTR68": "BRR replicate",
+          "W_FSTR69": "BRR replicate",
+          "W_FSTR70": "BRR replicate",
+          "W_FSTR71": "BRR replicate",
+          "W_FSTR72": "BRR replicate",
+          "W_FSTR73": "BRR replicate",
+          "W_FSTR74": "BRR replicate",
+          "W_FSTR75": "BRR replicate",
+          "W_FSTR76": "BRR replicate",
+          "W_FSTR77": "BRR replicate",
+          "W_FSTR78": "BRR replicate",
+          "W_FSTR79": "BRR replicate",
+          "W_FSTR80": "BRR replicate",
+          "CNT": "Country alphanumerical ISO code",
+          "MATH_WAF": "AUT weight adjustment factor"
+        },
+        "missing": {
+          "ST03Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST06Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST07Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST12Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST13Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST14Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST15Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST17Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST25Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST34Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST38Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT03Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT07Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT08Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT09Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT10Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q18": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q19": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q20": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q21": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q22": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q23": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q24": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q25": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q26": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q27": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q28": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q18": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q19": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q20": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q21": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q22": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q23": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q24": [
+            "8",
+            "9",
+            "7"
+          ],
+          "FAMSTRUC": [
+            "8",
+            "9",
+            "7"
+          ],
+          "BRTHORD": [
+            "8",
+            "9",
+            "7"
+          ],
+          "FISCED": [
+            "8",
+            "9",
+            "7"
+          ],
+          "MISCED": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST02Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q03": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q05": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q02": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q03": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST37Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BMMJ": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BFMJ": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BTHR": [
+            "97",
+            "98",
+            "99"
+          ],
+          "NSIB": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ISEI": [
+            "97",
+            "98",
+            "99"
+          ],
+          "HISEI": [
+            "97",
+            "98",
+            "99"
+          ],
+          "CULTCOM": [
+            "97"
+          ],
+          "SOCCOM": [
+            "97"
+          ],
+          "FAMEDSUP": [
+            "97"
+          ],
+          "WEALTH": [
+            "97"
+          ],
+          "HEDRES": [
+            "97"
+          ],
+          "CULTACTV": [
+            "97"
+          ],
+          "CULTPOSS": [
+            "97"
+          ],
+          "HMWKTIME": [
+            "97"
+          ],
+          "TEACHSUP": [
+            "97"
+          ],
+          "DISCLIMA": [
+            "97"
+          ],
+          "STUDREL": [
+            "97"
+          ],
+          "ACHPRESS": [
+            "97"
+          ],
+          "BELONG": [
+            "97"
+          ],
+          "JOYREAD": [
+            "97"
+          ],
+          "DIVREAD": [
+            "97"
+          ],
+          "COMAB": [
+            "97"
+          ],
+          "COMUSE": [
+            "97"
+          ],
+          "COMATT": [
+            "97"
+          ],
+          "CSTRAT": [
+            "97"
+          ],
+          "EFFPER": [
+            "97"
+          ],
+          "MEMOR": [
+            "97"
+          ],
+          "SELFEF": [
+            "97"
+          ],
+          "CEXP": [
+            "97"
+          ],
+          "ELAB": [
+            "97"
+          ],
+          "INSMOT": [
+            "97"
+          ],
+          "INTMAT": [
+            "97"
+          ],
+          "MATCON": [
+            "97"
+          ],
+          "INTREA": [
+            "97"
+          ],
+          "SCACAD": [
+            "97"
+          ],
+          "SCVERB": [
+            "97"
+          ],
+          "COMLRN": [
+            "97"
+          ],
+          "COPLRN": [
+            "97"
+          ],
+          "ST41Q01": [
+            "997",
+            "998",
+            "999"
+          ],
+          "ST41Q02": [
+            "997",
+            "998",
+            "999"
+          ],
+          "ST41Q03": [
+            "997",
+            "998",
+            "999"
+          ],
+          "AGE": [
+            "997",
+            "998",
+            "999"
+          ],
+          "RMINS": [
+            "9997",
+            "9999"
+          ],
+          "MMINS": [
+            "9997",
+            "9999"
+          ],
+          "SMINS": [
+            "9997",
+            "9999"
+          ],
+          "WLEMATH": [
+            "9997"
+          ],
+          "WLERR_M": [
+            "9997"
+          ],
+          "WLEREAD": [
+            "9997"
+          ],
+          "WLERR_R": [
+            "9997"
+          ],
+          "WLEREAD1": [
+            "9997"
+          ],
+          "WLERR_R1": [
+            "9997"
+          ],
+          "WLEREAD2": [
+            "9997"
+          ],
+          "WLERR_R2": [
+            "9997"
+          ],
+          "WLEREAD3": [
+            "9997"
+          ],
+          "WLERR_R3": [
+            "9997"
+          ],
+          "PV1MATH": [
+            "9997"
+          ],
+          "PV2MATH": [
+            "9997"
+          ],
+          "PV3MATH": [
+            "9997"
+          ],
+          "PV4MATH": [
+            "9997"
+          ],
+          "PV5MATH": [
+            "9997"
+          ],
+          "PV1READ": [
+            "9997"
+          ],
+          "PV2READ": [
+            "9997"
+          ],
+          "PV3READ": [
+            "9997"
+          ],
+          "PV4READ": [
+            "9997"
+          ],
+          "PV5READ": [
+            "9997"
+          ],
+          "PV1READ1": [
+            "9997"
+          ],
+          "PV2READ1": [
+            "9997"
+          ],
+          "PV3READ1": [
+            "9997"
+          ],
+          "PV4READ1": [
+            "9997"
+          ],
+          "PV5READ1": [
+            "9997"
+          ],
+          "PV1READ2": [
+            "9997"
+          ],
+          "PV2READ2": [
+            "9997"
+          ],
+          "PV3READ2": [
+            "9997"
+          ],
+          "PV4READ2": [
+            "9997"
+          ],
+          "PV5READ2": [
+            "9997"
+          ],
+          "PV1READ3": [
+            "9997"
+          ],
+          "PV2READ3": [
+            "9997"
+          ],
+          "PV3READ3": [
+            "9997"
+          ],
+          "PV4READ3": [
+            "9997"
+          ],
+          "PV5READ3": [
+            "9997"
+          ],
+          "PV1MATH1": [
+            "9997"
+          ],
+          "PV2MATH1": [
+            "9997"
+          ],
+          "PV3MATH1": [
+            "9997"
+          ],
+          "PV4MATH1": [
+            "9997"
+          ],
+          "PV5MATH1": [
+            "9997"
+          ],
+          "PV1MATH2": [
+            "9997"
+          ],
+          "PV2MATH2": [
+            "9997"
+          ],
+          "PV3MATH2": [
+            "9997"
+          ],
+          "PV4MATH2": [
+            "9997"
+          ],
+          "PV5MATH2": [
+            "9997"
+          ],
+          "ST01Q02": [
+            "97",
+            "99"
+          ],
+          "ST01Q03": [
+            "9997",
+            "9999"
+          ],
+          "ST09Q01": [
+            "9997",
+            "9999"
+          ],
+          "ST11Q01": [
+            "9997",
+            "9999"
+          ],
+          "ST40Q01": [
+            "9997",
+            "9999"
+          ]
+        },
+        "source": "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_math_v3.txt",
+        "control": "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_mathematics.txt"
+      },
+      "SCIE": {
+        "labels": {},
+        "missing": {
+          "ST03Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST04Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST05Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST06Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST07Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST12Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST13Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST14Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST15Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST16Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST17Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST18Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST19Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST20Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST21Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST22Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST23Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST24Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST25Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST26Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST27Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST29Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST30Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST31Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST32Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST33Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST34Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST35Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST36Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST38Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST39Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST41Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT01Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT02Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT03Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT04Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT05Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT06Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT07Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT08Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT09Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "IT10Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q18": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q19": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q20": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q21": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q22": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q23": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q24": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q25": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q26": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q27": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC01Q28": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q01": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q02": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q03": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q04": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q05": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q06": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q07": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q08": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q09": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q10": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q11": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q12": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q13": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q14": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q15": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q16": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q17": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q18": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q19": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q20": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q21": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q22": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q23": [
+            "8",
+            "9",
+            "7"
+          ],
+          "CC02Q24": [
+            "8",
+            "9",
+            "7"
+          ],
+          "FAMSTRUC": [
+            "8",
+            "9",
+            "7"
+          ],
+          "BRTHORD": [
+            "8",
+            "9",
+            "7"
+          ],
+          "FISCED": [
+            "8",
+            "9",
+            "7"
+          ],
+          "MISCED": [
+            "8",
+            "9",
+            "7"
+          ],
+          "ST02Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q03": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST27Q05": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q02": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST28Q03": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ST37Q01": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BMMJ": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BFMJ": [
+            "97",
+            "98",
+            "99"
+          ],
+          "BTHR": [
+            "97",
+            "98",
+            "99"
+          ],
+          "NSIB": [
+            "97",
+            "98",
+            "99"
+          ],
+          "ISEI": [
+            "97",
+            "98",
+            "99"
+          ],
+          "HISEI": [
+            "97",
+            "98",
+            "99"
+          ],
+          "CULTCOM": [
+            "97"
+          ],
+          "SOCCOM": [
+            "97"
+          ],
+          "FAMEDSUP": [
+            "97"
+          ],
+          "WEALTH": [
+            "97"
+          ],
+          "HEDRES": [
+            "97"
+          ],
+          "CULTACTV": [
+            "97"
+          ],
+          "CULTPOSS": [
+            "97"
+          ],
+          "HMWKTIME": [
+            "97"
+          ],
+          "TEACHSUP": [
+            "97"
+          ],
+          "DISCLIMA": [
+            "97"
+          ],
+          "STUDREL": [
+            "97"
+          ],
+          "ACHPRESS": [
+            "97"
+          ],
+          "BELONG": [
+            "97"
+          ],
+          "JOYREAD": [
+            "97"
+          ],
+          "DIVREAD": [
+            "97"
+          ],
+          "COMAB": [
+            "97"
+          ],
+          "COMUSE": [
+            "97"
+          ],
+          "COMATT": [
+            "97"
+          ],
+          "CSTRAT": [
+            "97"
+          ],
+          "EFFPER": [
+            "97"
+          ],
+          "MEMOR": [
+            "97"
+          ],
+          "SELFEF": [
+            "97"
+          ],
+          "CEXP": [
+            "97"
+          ],
+          "ELAB": [
+            "97"
+          ],
+          "INSMOT": [
+            "97"
+          ],
+          "INTMAT": [
+            "97"
+          ],
+          "MATCON": [
+            "97"
+          ],
+          "INTREA": [
+            "97"
+          ],
+          "SCACAD": [
+            "97"
+          ],
+          "SCVERB": [
+            "97"
+          ],
+          "COMLRN": [
+            "97"
+          ],
+          "COPLRN": [
+            "97"
+          ],
+          "ST41Q01": [
+            "997",
+            "998",
+            "999"
+          ],
+          "ST41Q02": [
+            "997",
+            "998",
+            "999"
+          ],
+          "ST41Q03": [
+            "997",
+            "998",
+            "999"
+          ],
+          "AGE": [
+            "997",
+            "998",
+            "999"
+          ],
+          "RMINS": [
+            "9997",
+            "9999"
+          ],
+          "MMINS": [
+            "9997",
+            "9999"
+          ],
+          "SMINS": [
+            "9997",
+            "9999"
+          ],
+          "WLEREAD": [
+            "9997"
+          ],
+          "WLERR_R": [
+            "9997"
+          ],
+          "WLEREAD1": [
+            "9997"
+          ],
+          "WLERR_R1": [
+            "9997"
+          ],
+          "WLEREAD2": [
+            "9997"
+          ],
+          "WLERR_R2": [
+            "9997"
+          ],
+          "WLEREAD3": [
+            "9997"
+          ],
+          "WLERR_R3": [
+            "9997"
+          ],
+          "WLESCIE": [
+            "9997"
+          ],
+          "WLERR_S": [
+            "9997"
+          ],
+          "PV1READ": [
+            "9997"
+          ],
+          "PV2READ": [
+            "9997"
+          ],
+          "PV3READ": [
+            "9997"
+          ],
+          "PV4READ": [
+            "9997"
+          ],
+          "PV5READ": [
+            "9997"
+          ],
+          "PV1READ1": [
+            "9997"
+          ],
+          "PV2READ1": [
+            "9997"
+          ],
+          "PV3READ1": [
+            "9997"
+          ],
+          "PV4READ1": [
+            "9997"
+          ],
+          "PV5READ1": [
+            "9997"
+          ],
+          "PV1READ2": [
+            "9997"
+          ],
+          "PV2READ2": [
+            "9997"
+          ],
+          "PV3READ2": [
+            "9997"
+          ],
+          "PV4READ2": [
+            "9997"
+          ],
+          "PV5READ2": [
+            "9997"
+          ],
+          "PV1READ3": [
+            "9997"
+          ],
+          "PV2READ3": [
+            "9997"
+          ],
+          "PV3READ3": [
+            "9997"
+          ],
+          "PV4READ3": [
+            "9997"
+          ],
+          "PV5READ3": [
+            "9997"
+          ],
+          "PV1SCIE": [
+            "9997"
+          ],
+          "PV2SCIE": [
+            "9997"
+          ],
+          "PV3SCIE": [
+            "9997"
+          ],
+          "PV4SCIE": [
+            "9997"
+          ],
+          "PV5SCIE": [
+            "9997"
+          ],
+          "ST01Q02": [
+            "97",
+            "99"
+          ],
+          "ST01Q03": [
+            "9997",
+            "9999"
+          ],
+          "ST09Q01": [
+            "9997",
+            "9999"
+          ],
+          "ST11Q01": [
+            "9997",
+            "9999"
+          ],
+          "ST40Q01": [
+            "9997",
+            "9999"
+          ]
+        },
+        "source": "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_scie_v3.txt",
+        "control": "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_science.txt"
+      }
+    }
+  },
+  {
+    "year": 2003,
+    "rows": 10791,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2003.parquet",
+    "sha256": "85b31023901bc1f3ef267da70d60f6ea7bb46f55379ec75c6cdfba3d9189ddbf",
+    "raw_source": "data/Global/pisa/historical_raw/2003/student_questionnaire/INT_stui_2003_v2.txt",
+    "control": "data/Global/pisa/historical_raw/2003/student_questionnaire/PISA2003_SPSS_student.txt",
+    "domains": null
+  },
+  {
+    "year": 2006,
+    "rows": 19604,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2006.parquet",
+    "sha256": "a28ac1e4390e0242140ed5a23296cfa3bba3946226a8a4043b06d3f0496692f5",
+    "raw_source": "data/Global/pisa/historical_raw/2006/student_questionnaire/INT_Stu06_Dec07.txt",
+    "control": "data/Global/pisa/historical_raw/2006/student_questionnaire/PISA2006_SPSS_student.txt",
+    "domains": null
+  },
+  {
+    "year": 2009,
+    "rows": 25887,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2009.parquet",
+    "sha256": "2b7a4e957fabe68b2ee6fef8e1354ca84af0218c7902c2c71473cda26d9d4a38",
+    "raw_source": "data/Global/pisa/historical_raw/2009/other/INT_STQ09_DEC11.txt",
+    "control": "data/Global/pisa/historical_raw/2009/student_questionnaire/PISA2009_SPSS_student.txt",
+    "domains": null
+  },
+  {
+    "year": 2012,
+    "rows": 25313,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2012.parquet",
+    "sha256": "8b36ad56c62c0839f63071097897f30877c5fd6c1ad337574c7a078226c5c6a1",
+    "raw_source": "data/Global/pisa/historical_raw/2012/student_questionnaire/INT_STU12_DEC03.txt",
+    "control": "data/Global/pisa/historical_raw/2012/other/SPSS syntax to read in student questionnaire data file.txt",
+    "domains": null
+  },
+  {
+    "year": 2015,
+    "rows": 6736,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2015.parquet",
+    "sha256": "1bf8717a5352240fc8d4fb907af88613ba5582db3c217e32506786aa4b933104",
+    "raw_source": "data/Global/pisa/historical_raw/2015/student_questionnaire/CY6_MS_CMB_STU_QQQ.sav",
+    "control": null,
+    "domains": null
+  },
+  {
+    "year": 2018,
+    "rows": 35943,
+    "extract": "data/Global/pisa/processed/historical_spain/spain_2018.parquet",
+    "sha256": "eae60a7181cda4d6a399ab6d56dc689d25aa3268406b32ba9425584d72943c19",
+    "raw_source": "data/Global/pisa/historical_raw/2018/student_questionnaire/CY07_MSU_STU_QQQ.sav",
+    "control": null,
+    "domains": null
+  },
+  {
+    "years": [
+      2022,
+      2025
+    ],
+    "source": "pisa_espana_73_variables.parquet",
+    "sha256": "9d3e8f280218b82085e03b7b828bc75bc96b1c29fb62b5e9014c334f77b1c962"
+  }
+]

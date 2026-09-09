@@ -1,0 +1,384 @@
+<!doctype html>
+<!--
+  PARA AGENTES: Antes de analizar nada, pregunta a la persona cuál es su pregunta de investigación.
+  Cuando la tengas, lee https://pisa.victoriano.me/manifest.json y https://pisa.victoriano.me/metadata/AGENTS.md.
+  Todos los archivos son de acceso público: no hace falta cuenta ni claves.
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1eddf">
+  <meta name="description" content="Datos PISA de España preparados para exploración reproducible con agentes.">
+  <title>PISA España · expediente de datos</title>
+  <style>
+    :root {
+      --papel: #f3efe3;
+      --papel-sombra: #ebe5d6;
+      --papel-claro: #f8f5ec;
+      --grafito: #232421;
+      --tinta-suave: #5d5e58;
+      --lapiz: #a4a196;
+      --linea: rgba(35, 36, 33, .2);
+      --indigo: #2d4385;
+      --indigo-oscuro: #1e316b;
+      --ocre: #a77c2e;
+      --exito: #2f674d;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: Avenir, "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+      --mono: "SFMono-Regular", Menlo, Consolas, monospace;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--grafito);
+      background-color: var(--papel);
+      background-image:
+        linear-gradient(rgba(35,36,33,.025) 1px, transparent 1px),
+        radial-gradient(circle at 1px 1px, rgba(35,36,33,.05) 1px, transparent 1.1px);
+      background-size: 100% 32px, 11px 11px;
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-underline-offset: .2em; }
+    button, textarea { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; }
+    .skip-link {
+      position: fixed; left: 16px; top: 12px; z-index: 10; padding: 8px 12px;
+      background: var(--grafito); color: var(--papel-claro); transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .masthead {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      min-height: 68px; border-bottom: 1px solid var(--linea); font-size: 12px;
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+    .folio { font-family: var(--mono); color: var(--tinta-suave); }
+    .wordmark { font-weight: 800; letter-spacing: .14em; }
+    .hero { padding: clamp(48px, 8vw, 96px) 0 40px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: clamp(40px, 7vw, 96px); align-items: start; }
+    .eyebrow { color: var(--indigo); font: 700 12px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin: 16px 0 24px; max-width: 760px; font: 500 clamp(48px, 8vw, 96px)/.94 var(--serif); letter-spacing: -.055em; }
+    .dek { max-width: 670px; color: var(--tinta-suave); font: 400 clamp(18px, 2.1vw, 23px)/1.5 var(--serif); }
+    .handoff { border-left: 2px solid var(--ocre); padding: 8px 0 4px 24px; }
+    .handoff-label { margin-bottom: 8px; color: var(--tinta-suave); font: 700 11px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .question-preview { min-height: 76px; margin-bottom: 20px; font-family: var(--serif); font-size: 18px; }
+    .primary, .secondary, .chip {
+      border: 1px solid transparent; border-radius: 2px; transition: background-color .15s ease, color .15s ease, transform .15s ease;
+    }
+    .primary { width: 100%; padding: 17px 20px; background: var(--indigo); color: #fff; font-weight: 800; }
+    .primary:hover { background: var(--indigo-oscuro); }
+    .primary:active, .secondary:active, .chip:active { transform: translateY(1px); }
+    .secondary { margin-top: 10px; padding: 9px 0; background: transparent; color: var(--tinta-suave); text-decoration: underline; text-underline-offset: 3px; }
+    .copy-status { min-height: 22px; margin-top: 10px; color: var(--exito); font-size: 13px; }
+    .fallback { margin-top: 12px; }
+    .fallback[hidden] { display: none; }
+    .fallback label { display: block; margin-bottom: 6px; color: var(--tinta-suave); font-size: 12px; }
+    .fallback textarea { width: 100%; min-height: 116px; padding: 10px; resize: vertical; border: 1px solid var(--linea); background: var(--papel-claro); color: var(--grafito); font-family: var(--mono); font-size: 12px; }
+    .agent-note { margin: 8px auto 0; padding: 22px 26px; border: 1px solid var(--linea); border-left: 3px solid var(--ocre); background: rgba(248,245,236,.72); }
+    .agent-note p { margin-bottom: 10px; max-width: 780px; }
+    .agent-note p:last-child { margin-bottom: 0; }
+    .agent-note a { color: var(--indigo); font-weight: 700; overflow-wrap: anywhere; }
+    .coverage-ribbon { border-block: 1px solid var(--linea); background: rgba(235,229,214,.72); overflow: hidden; }
+    .ribbon-inner { display: flex; align-items: stretch; }
+    .ribbon-title { flex: 0 0 auto; padding: 15px 24px 15px 0; color: var(--tinta-suave); font: 700 10px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .cycles { display: flex; min-width: 0; overflow-x: auto; scrollbar-width: thin; }
+    .cycle { display: inline-flex; align-items: center; min-width: 72px; padding: 12px 18px; border-left: 1px solid var(--linea); font: 700 13px/1 var(--mono); }
+    .cycle.latest { color: var(--indigo); background: rgba(45,67,133,.07); }
+    section { padding: clamp(64px, 9vw, 112px) 0; border-bottom: 1px solid var(--linea); }
+    .section-head { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; margin-bottom: 48px; }
+    .section-index { color: var(--ocre); font: 700 12px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    h2 { max-width: 820px; font: 500 clamp(34px, 4.6vw, 58px)/1.04 var(--serif); letter-spacing: -.035em; }
+    .files { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--linea); }
+    .file { padding: 36px 40px 40px 0; }
+    .file + .file { padding-left: 40px; border-left: 1px solid var(--linea); }
+    .file-kicker { color: var(--indigo); font: 700 11px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    h3 { margin: 10px 0 12px; font: 500 clamp(28px, 3vw, 40px)/1.1 var(--serif); }
+    .file-description { min-height: 78px; max-width: 460px; color: var(--tinta-suave); }
+    .statline { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 24px 0; padding-block: 12px; border-block: 1px dotted var(--linea); font: 12px/1.4 var(--mono); }
+    .download { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border: 1px solid var(--grafito); text-decoration: none; font-weight: 800; }
+    .download::after { content: "↓"; color: var(--indigo); font-size: 18px; }
+    .download:hover { background: var(--grafito); color: var(--papel-claro); }
+    .file-hash { margin-top: 18px; color: var(--tinta-suave); font: 10px/1.55 var(--mono); }
+    .file-hash span { display: block; margin-bottom: 3px; letter-spacing: .08em; text-transform: uppercase; }
+    .file-hash code { overflow-wrap: anywhere; }
+    .questions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .chip { padding: 9px 12px; border-color: var(--linea); background: rgba(248,245,236,.55); color: var(--grafito); text-align: left; }
+    .chip:hover, .chip[aria-pressed="true"] { border-color: var(--indigo); color: var(--indigo); background: rgba(45,67,133,.06); }
+    .method-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 7vw, 96px); }
+    .caveat { padding-left: 20px; border-left: 2px solid var(--ocre); color: var(--tinta-suave); }
+    .caveat strong { color: var(--grafito); }
+    .metadata-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linea); }
+    .metadata-list li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); }
+    .metadata-list a { color: var(--indigo); font-weight: 700; }
+    .metadata-list span { color: var(--tinta-suave); font: 11px/1.4 var(--mono); text-transform: uppercase; }
+    footer { padding: 28px 0 48px; color: var(--tinta-suave); font: 11px/1.6 var(--mono); }
+    .footer-row { display: flex; justify-content: space-between; gap: 24px; }
+    .reveal { animation: reveal .55s ease both; }
+    .delay-1 { animation-delay: .08s; } .delay-2 { animation-delay: .16s; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 760px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .hero-grid, .section-head, .method-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero { padding-top: 44px; }
+      h1 { font-size: clamp(48px, 17vw, 72px); }
+      .ribbon-inner { display: block; }
+      .ribbon-title { padding: 11px 0 8px; }
+      .cycles { margin-inline: -14px; }
+      .files { grid-template-columns: 1fr; }
+      .file { padding: 28px 0; }
+      .file + .file { padding: 28px 0; border-left: 0; border-top: 1px solid var(--linea); }
+      .file-description { min-height: 0; }
+      .footer-row { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { animation: none; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="shell masthead">
+    <div class="wordmark">PISA · ESPAÑA</div>
+    <div class="folio">Expediente público / <span id="folio-year">—</span></div>
+  </header>
+
+  <main id="contenido">
+    <div class="shell hero">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Datos listos para investigar</div>
+          <h1 id="page-title">PISA España, de la pregunta a la evidencia.</h1>
+          <p class="dek" id="population">Un expediente reproducible que reúne ciclos, documentación y archivos preparados para agentes de análisis.</p>
+        </div>
+        <aside class="handoff reveal delay-1" aria-labelledby="handoff-title">
+          <div class="handoff-label" id="handoff-title">Traspaso de análisis</div>
+          <p class="question-preview" id="question-preview">Investiga una pregunta sobre PISA España usando estos datos y documenta cada supuesto.</p>
+          <button class="primary" id="copy-context" type="button">Copiar contexto para mi agente</button>
+          <button class="secondary" id="copy-link" type="button">Copiar enlace corto</button>
+          <div class="copy-status" id="copy-status" role="status" aria-live="polite"></div>
+          <div class="fallback" id="fallback" hidden>
+            <label for="manual-copy">La copia automática no está disponible. El texto está seleccionado:</label>
+            <textarea id="manual-copy" readonly></textarea>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="shell agent-note reveal delay-2" aria-labelledby="agent-note-title">
+      <div class="eyebrow" id="agent-note-title">¿Eres un agente? Esto es lo que hay que hacer</div>
+      <p>Antes de analizar nada, pregunta a la persona cuál es su pregunta de investigación y, si hace falta para acotarla, qué ciclos o materias le interesan.</p>
+      <p>Cuando la tengas, empieza leyendo <a href="https://pisa.victoriano.me/manifest.json">manifest.json</a> y <a href="https://pisa.victoriano.me/metadata/AGENTS.md">metadata/AGENTS.md</a>, y sigue desde ahí la guía, los diccionarios y la cobertura por ciclo.</p>
+      <p>Todos los archivos son de acceso público: no necesitas cuenta ni claves.</p>
+    </div>
+
+    <div class="coverage-ribbon" aria-label="Cobertura temporal">
+      <div class="shell ribbon-inner">
+        <div class="ribbon-title">Ciclos incluidos</div>
+        <div class="cycles" id="cycles"><span class="cycle">Cargando…</span></div>
+      </div>
+    </div>
+
+    <section class="shell" aria-labelledby="download-title">
+      <div class="section-head reveal delay-1">
+        <div class="section-index">01 / Archivos</div>
+        <div>
+          <h2 id="download-title">Dos niveles de detalle, una misma procedencia.</h2>
+          <p>Empieza por el archivo cocinado para explorar. Cambia al completo cuando el análisis requiera pesos, réplicas o columnas originales.</p>
+        </div>
+      </div>
+      <div class="files" id="files"></div>
+      <div class="questions" aria-label="Preguntas de ejemplo">
+        <button class="chip" type="button" aria-pressed="false" data-question="¿Cómo ha evolucionado el rendimiento de España entre ciclos y qué límites de comparabilidad hay?">Evolución entre ciclos</button>
+        <button class="chip" type="button" aria-pressed="false" data-question="¿Qué brechas aparecen por sexo y nivel socioeconómico, usando los pesos adecuados?">Brechas y equidad</button>
+        <button class="chip" type="button" aria-pressed="false" data-question="¿Qué relación existe entre bienestar del alumnado y rendimiento, sin confundir asociación con causalidad?">Bienestar y rendimiento</button>
+      </div>
+    </section>
+
+    <section class="shell" aria-labelledby="method-title">
+      <div class="section-head">
+        <div class="section-index">02 / Método</div>
+        <h2 id="method-title">La documentación viaja con los datos.</h2>
+      </div>
+      <div class="method-grid">
+        <div class="caveat">
+          <p><strong>Antes de comparar.</strong> No todos los ciclos contienen las mismas columnas. Los años ausentes se documentan en la cobertura y la información IA solo está disponible para 2025.</p>
+          <p>Para inferencia poblacional, usa el archivo completo y consulta la guía antes de calcular estimaciones.</p>
+        </div>
+        <ul class="metadata-list" id="metadata"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div class="footer-row">
+      <span>Fuente y transformaciones descritas en el manifiesto público.</span>
+      <span id="load-state">Leyendo expediente…</span>
+    </div>
+  </footer>
+
+  <script id="manifest-data" type="application/json">{"title":"PISA España · 2000–2025","version":"2026-09-09-v1","population":"Alumnado PISA de España; cortes transversales independientes","years":[2000,2003,2006,2009,2012,2015,2018,2022,2025],"rows":191254,"files":{"cooked":{"id":"cooked","format":"parquet","url":"https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado_80.parquet","filename":"pisa_espana_2000_2025_cocinado_80.parquet","rows":191254,"columns":80,"bytes":11424681,"sha256":"8206a43ad2b746fd2ae4efe031e752489724acbbd7e6f6427b8f7833e06431d8","description":"80 columnas: selección y armonización para explorar en Graphext o con un agente. Cobertura variable según el ciclo."},"full":{"id":"full","format":"parquet","url":"https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet","filename":"pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet","rows":191254,"columns":4911,"bytes":160410264,"sha256":"0d813ba684788d2dc294afb57d6fc90d7b460ddb198c8a1d3d97b97d3c77659f","description":"Unión de todas las columnas de los ficheros de alumnado disponibles para España. Incluye valores plausibles y pesos; no armoniza significados entre ciclos."}},"metadata":{"agents":"https://pisa.victoriano.me/metadata/AGENTS.md","guide":"https://pisa.victoriano.me/metadata/ANALYSIS_GUIDE.md","manifest":"https://pisa.victoriano.me/manifest.json","coverage":"https://pisa.victoriano.me/metadata/cooked_cobertura_por_ciclo.csv","dictionary":"https://pisa.victoriano.me/metadata/cooked_diccionario.csv","full_dictionary":"https://pisa.victoriano.me/metadata/diccionario_variables_por_ciclo.csv","schema":"https://pisa.victoriano.me/metadata/esquema_por_ciclo.json","validation":"https://pisa.victoriano.me/metadata/validacion_datos.json","example":"https://pisa.victoriano.me/analysis_example.py","cycles":{"2000":"https://pisa.victoriano.me/metadata/pisa_2000_student_metadata.json","2003":"https://pisa.victoriano.me/metadata/pisa_2003_student_metadata.json","2006":"https://pisa.victoriano.me/metadata/pisa_2006_student_metadata.json","2009":"https://pisa.victoriano.me/metadata/pisa_2009_student_metadata.json","2012":"https://pisa.victoriano.me/metadata/pisa_2012_student_metadata.json","2015":"https://pisa.victoriano.me/metadata/pisa_2015_student_metadata.json","2018":"https://pisa.victoriano.me/metadata/pisa_2018_student_metadata.json","2022":"https://pisa.victoriano.me/metadata/pisa_2022_student_metadata.json","2025":"https://pisa.victoriano.me/metadata/pisa_2025_student_metadata.json"}},"prompt":"Quiero analizar PISA España con los datos de https://pisa.victoriano.me/.\n\nAntes de empezar, pregúntame cuál es mi pregunta de investigación y, si hace falta para acotarla, qué ciclos o materias me interesan. No analices nada hasta que te la dé.\n\nCuando la tengas, empieza leyendo https://pisa.victoriano.me/manifest.json y https://pisa.victoriano.me/metadata/AGENTS.md. Después consulta la guía, los diccionarios y la cobertura por ciclo enlazados allí. Descarga o lee por columnas el Parquet cooked para explorar; usa full con todos los valores plausibles y pesos replicados para inferencia. No necesitas una cuenta ni claves para estos enlaces.\n\nSon nueve ciclos (2000–2025), no un panel. Comprueba nombres, etiquetas, códigos de faltantes y comparabilidad antes de analizar. ESCS no es renta en euros. IA solo está observada en 2025. En 2025 MALE=0 es femenino/otra categoría, no exclusivamente niñas. No publiques Cataluña 2025 separada; advierte las incidencias de España 2018. No uses IDs/pesos como predictores ni conviertas no medido en cero. Una asociación no prueba causalidad.\n\nEntrega código reproducible, gráficos claros, estimaciones ponderadas, intervalos apropiados al diseño PISA y limitaciones. Si no puedes descargar/ejecutar, dilo y pide que te adjunte los archivos; no inventes resultados. Ejemplo de arranque: https://pisa.victoriano.me/analysis_example.py.\n","attribution":"Programme for International Student Assessment (PISA) Organisation for Economic Co-operation and Development (OECD), Paris","publication_permission":"El editor confirma que dispone de permiso de redistribución. Esta publicación no concede derechos adicionales sobre los datos de la OCDE. No intentar reidentificar alumnado ni centros.","scope":"Ficheros de alumnado de España; no incluye todos los países, respuestas a ítems cognitivos ni cuestionarios de centros independientes.","metadata_checksums":{"metadata/esquema_por_ciclo.json":{"bytes":285431,"sha256":"c88408f6e20634d9795582ea13a59cae339950b5fa2eca54364c91f47559496a"},"metadata/cooked_fuentes.json":{"bytes":99305,"sha256":"88ff90740c5901acbe5678d75bfa198722a39fc47103abeae0b0939c51c52b14"},"metadata/PROMPT_TEMPLATE.md":{"bytes":1414,"sha256":"8f7c0281b0d693a807c787149a874c59a89a05b6311dd729405f9aac49ce97ce"},"metadata/pisa_2009_student_metadata.json":{"bytes":139973,"sha256":"3e76faf8c059dcd98d8f6041188038b9e724ac3d83db93133b67bc7ab0c23861"},"metadata/pisa_2025_student_metadata.json":{"bytes":639398,"sha256":"2cee680f393ee29748807980a10ce00d750a1151dcc9f4850230e1083f935e97"},"metadata/pisa_2015_student_metadata.json":{"bytes":649166,"sha256":"95ac0532bdc4e7b2b9b7587b1e59a09a0470ce7c0147e5687563fb189909a5fa"},"metadata/pisa_2003_student_metadata.json":{"bytes":113237,"sha256":"39b79a47302ed5bcf7fcb0e20388bfbeb4648839177f00b369a87191ed910802"},"metadata/cooked_cobertura_por_ciclo.csv":{"bytes":21730,"sha256":"ec7cfc585d3886226455cd0d2d207ac92e1b2f2304eef0427e953e55f57133d4"},"metadata/cooked_diccionario.csv":{"bytes":32032,"sha256":"d96360f07fd87520225b24a57a1e4a1d5915d28ba35a6289af10d127e595fed3"},"metadata/README.md":{"bytes":4771,"sha256":"665ec87866cd1dbf642fac87a48b1d6de3487f5221b3e92c98baba0a0d788eb3"},"metadata/pisa_2012_student_metadata.json":{"bytes":322247,"sha256":"2d64fcdc1ba1cd62683d3b8c93a9fe3d92c2eca621daac6156255a9476a7ec4c"},"metadata/diccionario_variables_por_ciclo.csv":{"bytes":4675879,"sha256":"9bfa3ccb7cc8d0d58b4caaf0d32fa49f4c97b90dda573a33c3d4e33642e41de4"},"metadata/pisa_2006_student_metadata.json":{"bytes":161975,"sha256":"3cc5f2b4d3d32e429d0f31e2ceb002276da32553b836a49f066e8bbe9c45c32d"},"metadata/manifest-data.json":{"bytes":6556,"sha256":"47b4fa41abf49d7ed2fcdad1835c9f085138b65d24d0af8d682fbb8bcf7865c8"},"metadata/pisa_2022_student_metadata.json":{"bytes":867258,"sha256":"b4810868a8b321cb4d0d137a58e07974e8654169521871187c17bbb341df4534"},"metadata/pisa_2018_student_metadata.json":{"bytes":731381,"sha256":"2fd48415b781c2f43d388e96b4fa420eb3953bfe2bba82c117e812a14ac37d6f"},"metadata/cooked_correspondencias_historicas.csv":{"bytes":58290,"sha256":"c46ca12c1e20e18d8489545ad3087a6c12e22ae371233b5d6885def2424d82e5"},"metadata/AGENTS.md":{"bytes":5270,"sha256":"a25a17ab5db889aea6f6ea8248a87acb6377294939ba56d6ac1134aafdcd0936"},"metadata/pisa_2000_student_metadata.json":{"bytes":233826,"sha256":"4afe9cbb6fe7a9a277628c12b275eecb60ad2b23553fef23df6e3ef96cbca802"},"metadata/ANALYSIS_GUIDE.md":{"bytes":6298,"sha256":"06f68d765ffaef0363177d7647c305dbc237f9b76c2c4c5389ac680ef32c3668"},"metadata/validacion_datos.json":{"bytes":2360,"sha256":"d0907a7c522a82fbc2c37ae9f9950af9d19d24ae1293483960651782c1f7c75f"}}}</script>
+  <script>
+    (() => {
+      'use strict';
+      const $ = (selector) => document.querySelector(selector);
+      const embedded = (() => {
+        try { return JSON.parse($('#manifest-data').textContent || '{}'); }
+        catch (_) { return {}; }
+      })();
+      let manifest = embedded;
+      let selectedQuestion = '';
+
+      const text = (value, fallback = 'No indicado') =>
+        value === undefined || value === null || value === '' ? fallback : String(value);
+      const number = (value) => value !== undefined && value !== null && value !== '' && Number.isFinite(Number(value))
+        ? new Intl.NumberFormat('es-ES').format(Number(value)) : 'No indicado';
+      const bytes = (value) => {
+        if (!Number.isFinite(Number(value))) return 'Tamaño no indicado';
+        const units = ['B', 'KB', 'MB', 'GB'];
+        let amount = Number(value), unit = 0;
+        while (amount >= 1000 && unit < units.length - 1) { amount /= 1000; unit++; }
+        return `${new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 }).format(amount)} ${units[unit]}`;
+      };
+      const safeHref = (value) => {
+        if (!value) return '#';
+        try {
+          const url = new URL(value, window.location.href);
+          return ['http:', 'https:', 'file:'].includes(url.protocol) ? url.href : '#';
+        } catch (_) { return '#'; }
+      };
+      const setText = (selector, value, fallback) => { $(selector).textContent = text(value, fallback); };
+
+      function currentPrompt() {
+        const base = text(manifest.prompt, 'Analiza los datos PISA de España. Consulta primero AGENTS.md y manifest.json, cita los archivos utilizados y documenta los supuestos.');
+        return selectedQuestion ? `${base.trim()}\n\nMi pregunta: ${selectedQuestion}` : base.trim();
+      }
+
+      function renderFile(key, label, purpose) {
+        const file = manifest.files?.[key] || {};
+        const href = safeHref(file.url);
+        const disabled = href === '#';
+        const article = document.createElement('article');
+        article.className = 'file';
+        const kicker = document.createElement('div');
+        kicker.className = 'file-kicker';
+        kicker.textContent = purpose;
+        const title = document.createElement('h3');
+        title.textContent = label;
+        const description = document.createElement('p');
+        description.className = 'file-description';
+        description.textContent = text(file.description, 'Descripción pendiente en el manifiesto.');
+        const stats = document.createElement('div');
+        stats.className = 'statline';
+        [
+          `Filas: ${number(file.rows)}`,
+          `Columnas: ${number(file.columns)}`,
+          `Peso: ${bytes(file.bytes)}`
+        ].forEach((value) => { const span = document.createElement('span'); span.textContent = value; stats.appendChild(span); });
+        const link = document.createElement('a');
+        link.className = 'download';
+        link.href = href;
+        link.textContent = disabled ? 'Archivo no publicado' : `Descargar ${text(file.filename, label)}`;
+        if (!disabled) link.setAttribute('download', text(file.filename, ''));
+        else { link.setAttribute('aria-disabled', 'true'); link.addEventListener('click', (event) => event.preventDefault()); }
+        article.append(kicker, title, description, stats, link);
+        if (file.sha256) {
+          const hash = document.createElement('div');
+          hash.className = 'file-hash';
+          const hashLabel = document.createElement('span'); hashLabel.textContent = 'SHA-256';
+          const hashValue = document.createElement('code'); hashValue.textContent = String(file.sha256);
+          hash.append(hashLabel, hashValue); article.appendChild(hash);
+        }
+        return article;
+      }
+
+      function renderMetadata() {
+        const labels = {
+          agents: ['AGENTS.md', 'Instrucciones para agentes'],
+          guide: ['Guía de uso', 'Método'],
+          manifest: ['Manifest', 'Archivos y hashes'],
+          coverage: ['Cobertura', 'Ciclos y variables'],
+          dictionary: ['Diccionario', 'Código de variables']
+        };
+        const list = $('#metadata');
+        list.replaceChildren();
+        Object.entries(labels).forEach(([key, [name, note]]) => {
+          const href = safeHref(manifest.metadata?.[key]);
+          if (href === '#') return;
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = href; a.textContent = name;
+          const span = document.createElement('span');
+          span.textContent = note;
+          li.append(a, span); list.appendChild(li);
+        });
+        if (!list.children.length) {
+          const li = document.createElement('li');
+          li.textContent = 'Los enlaces de documentación se publicarán en el manifiesto.';
+          list.appendChild(li);
+        }
+      }
+
+      function render(source) {
+        manifest = source && typeof source === 'object' ? source : {};
+        setText('#page-title', manifest.title, 'PISA España, de la pregunta a la evidencia.');
+        setText('#population', manifest.population, 'Expediente reproducible de estudiantes de España.');
+        const years = Array.isArray(manifest.years) ? manifest.years : [];
+        $('#folio-year').textContent = years.length ? `${years[0]}—${years[years.length - 1]}` : 'cobertura pendiente';
+        const cycles = $('#cycles'); cycles.replaceChildren();
+        if (years.length) years.forEach((year, index) => {
+          const item = document.createElement('span');
+          item.className = `cycle${index === years.length - 1 ? ' latest' : ''}`;
+          item.textContent = year; cycles.appendChild(item);
+        });
+        else { const item = document.createElement('span'); item.className = 'cycle'; item.textContent = 'Cobertura pendiente'; cycles.appendChild(item); }
+        const files = $('#files'); files.replaceChildren(
+          renderFile('cooked', 'Cocinado', 'Explorar · empezar aquí'),
+          renderFile('full', 'Completo', 'Inferencia · máxima fidelidad')
+        );
+        renderMetadata();
+        $('#question-preview').textContent = selectedQuestion || 'Elige una pregunta de ejemplo o copia el contexto con tu propia pregunta.';
+      }
+
+      async function copy(value, successMessage) {
+        const fallback = $('#fallback');
+        fallback.hidden = true;
+        try {
+          if (!navigator.clipboard?.writeText) throw new Error('Clipboard API unavailable');
+          await navigator.clipboard.writeText(value);
+          $('#copy-status').textContent = successMessage;
+        } catch (_) {
+          const area = $('#manual-copy');
+          area.value = value;
+          fallback.hidden = false;
+          area.focus(); area.select();
+          $('#copy-status').textContent = 'Selecciona y copia el texto manualmente.';
+        }
+      }
+
+      $('#copy-context').addEventListener('click', () => copy(currentPrompt(), 'Contexto copiado. Ya puedes pegarlo en tu agente.'));
+      $('#copy-link').addEventListener('click', () => copy(window.location.href.split('#')[0], 'Enlace copiado.'));
+      document.querySelectorAll('.chip').forEach((chip) => chip.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach((other) => other.setAttribute('aria-pressed', 'false'));
+        chip.setAttribute('aria-pressed', 'true');
+        selectedQuestion = chip.dataset.question || '';
+        $('#question-preview').textContent = selectedQuestion;
+        $('#copy-status').textContent = 'Pregunta añadida al contexto.';
+      }));
+
+      render(embedded);
+      if (window.location.protocol !== 'file:') {
+        fetch('./manifest.json', { cache: 'no-store' })
+          .then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); })
+          .then((fresh) => { render(fresh); $('#load-state').textContent = 'Expediente verificado desde manifest.json'; })
+          .catch(() => { $('#load-state').textContent = Object.keys(embedded).length ? 'Expediente embebido' : 'Manifiesto no disponible'; });
+      } else {
+        $('#load-state').textContent = Object.keys(embedded).length ? 'Expediente embebido' : 'Manifiesto no disponible';
+      }
+    })();
+  </script>
+</body>
+</html>

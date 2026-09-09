@@ -1,0 +1,189 @@
+{
+  "scope": "Spain PISA student questionnaire PUFs, cycles 2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022 and 2025.",
+  "datasets": {
+    "cooked_80": {
+      "path": "data/pisa_espana_2000_2025_cocinado_80.parquet",
+      "rows": 191254,
+      "columns": 80,
+      "provenance": "pisa_espana_2000_2025.parquet"
+    },
+    "full_student_puf_union": {
+      "path": "data/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet",
+      "rows": 191254,
+      "columns": 4911,
+      "cycles": [
+        2000,
+        2003,
+        2006,
+        2009,
+        2012,
+        2015,
+        2018,
+        2022,
+        2025
+      ],
+      "provenance": {
+        "2000": [
+          "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_read_v3.txt",
+          "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_reading.txt",
+          "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_math_v3.txt",
+          "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_mathematics.txt",
+          "data/Global/pisa/historical_raw/2000/student_questionnaire/intstud_scie_v3.txt",
+          "data/Global/pisa/historical_raw/2000/student_questionnaire/PISA2000_SPSS_student_science.txt"
+        ],
+        "2003": [
+          "data/Global/pisa/historical_raw/2003/student_questionnaire/INT_stui_2003_v2.txt",
+          "data/Global/pisa/historical_raw/2003/student_questionnaire/PISA2003_SPSS_student.txt"
+        ],
+        "2006": [
+          "data/Global/pisa/historical_raw/2006/student_questionnaire/INT_Stu06_Dec07.txt",
+          "data/Global/pisa/historical_raw/2006/student_questionnaire/PISA2006_SPSS_student.txt"
+        ],
+        "2009": [
+          "data/Global/pisa/historical_raw/2009/other/INT_STQ09_DEC11.txt",
+          "data/Global/pisa/historical_raw/2009/student_questionnaire/PISA2009_SPSS_student.txt"
+        ],
+        "2012": [
+          "data/Global/pisa/historical_raw/2012/student_questionnaire/INT_STU12_DEC03.txt",
+          "data/Global/pisa/historical_raw/2012/other/SPSS syntax to read in student questionnaire data file.txt"
+        ],
+        "2015": [
+          "data/Global/pisa/historical_raw/2015/student_questionnaire/CY6_MS_CMB_STU_QQQ.sav"
+        ],
+        "2018": [
+          "data/Global/pisa/historical_raw/2018/student_questionnaire/CY07_MSU_STU_QQQ.sav"
+        ],
+        "2022": [
+          "data/Global/pisa/raw/2022/student_questionnaire/CY08MSP_STU_QQQ.SAV"
+        ],
+        "2025": [
+          "data/Global/pisa/raw/2025/student_questionnaire/CY09_MS_STU_PUF.sav"
+        ]
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "data/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet",
+      "bytes": 160410264,
+      "sha256": "0d813ba684788d2dc294afb57d6fc90d7b460ddb198c8a1d3d97b97d3c77659f"
+    },
+    {
+      "path": "data/pisa_espana_2000_2025_cocinado_80.parquet",
+      "bytes": 11424681,
+      "sha256": "8206a43ad2b746fd2ae4efe031e752489724acbbd7e6f6427b8f7833e06431d8"
+    },
+    {
+      "path": "metadata/diccionario_variables_por_ciclo.csv",
+      "bytes": 5438990,
+      "sha256": "72dcc2d5c308a148f3a84d85ed38d90839a2ad182b80500da3561d981ba44e2b"
+    },
+    {
+      "path": "metadata/esquema_por_ciclo.json",
+      "bytes": 286312,
+      "sha256": "170ae05ad8ae0e90e78944e41e3ff7f6cd79aa8fc1d8ffef15504c14ce6c7c86"
+    },
+    {
+      "path": "metadata/validacion_datos.json",
+      "bytes": 2359,
+      "sha256": "e4bab950fd532ef6ffd515eabc0dfa80e89eaa56415adbffaab44562ada22558"
+    },
+    {
+      "path": "metadata/pisa_2000_student_metadata.json",
+      "bytes": 234119,
+      "sha256": "f07b715cc7db7e8d103c4f9b0d4c5b21cefc779cd6e1b5abcd76844908c2ccce"
+    },
+    {
+      "path": "metadata/pisa_2003_student_metadata.json",
+      "bytes": 113334,
+      "sha256": "d0fee437005afef4b113ec1784dbacc03f3530210d7583886f1594adb57543f1"
+    },
+    {
+      "path": "metadata/pisa_2006_student_metadata.json",
+      "bytes": 162072,
+      "sha256": "fae2758e272fd951ef70a683509ded4aa2854f30afffa84c2cb53f6278c41517"
+    },
+    {
+      "path": "metadata/pisa_2009_student_metadata.json",
+      "bytes": 140070,
+      "sha256": "8406a57423236ac0e1bc3ea51120504bbcce0342e25dc74ba9dd3db59aec22f4"
+    },
+    {
+      "path": "metadata/pisa_2012_student_metadata.json",
+      "bytes": 322344,
+      "sha256": "66ccc16418f536a3eab0f5faf2b2a1758942540b6690b4e5026bc15f61a96aa0"
+    },
+    {
+      "path": "metadata/pisa_2015_student_metadata.json",
+      "bytes": 649214,
+      "sha256": "46d10dfe38e247cdc0d3391428e9757b39e0705fa503fd92782825d18e751ece"
+    },
+    {
+      "path": "metadata/pisa_2018_student_metadata.json",
+      "bytes": 731429,
+      "sha256": "4b332849042acf35e5d60ed732e276ddd0c62d7d83a4b9e9ac4fcd7ec326782c"
+    },
+    {
+      "path": "metadata/pisa_2022_student_metadata.json",
+      "bytes": 867306,
+      "sha256": "dbc992fa7dd413a13daddb6709f8693fa7523cc0df28236a58c3fb2fee4dab5e"
+    },
+    {
+      "path": "metadata/pisa_2025_student_metadata.json",
+      "bytes": 639446,
+      "sha256": "eb359b33e537b6869194d85acb78a652ad6623fee92733632c59a284519a5124"
+    }
+  ],
+  "metadata": {
+    "schema": "metadata/esquema_por_ciclo.json",
+    "dictionary": "metadata/diccionario_variables_por_ciclo.csv",
+    "validation": "metadata/validacion_datos.json"
+  },
+  "metadata_refresh": {
+    "fixed_width_years": [
+      2000,
+      2003,
+      2006,
+      2009,
+      2012
+    ],
+    "purpose": "Corrected label-statement boundaries; data Parquets were not rewritten.",
+    "checks": {
+      "2000": {
+        "rows": 6214,
+        "columns_including_pisa_year": 1216,
+        "labels": 1215,
+        "value_label_dictionaries": 664,
+        "missing_code_declarations": 957
+      },
+      "2003": {
+        "rows": 10791,
+        "columns_including_pisa_year": 405,
+        "labels": 404,
+        "value_label_dictionaries": 240,
+        "missing_code_declarations": 390
+      },
+      "2006": {
+        "rows": 19604,
+        "columns_including_pisa_year": 491,
+        "labels": 490,
+        "value_label_dictionaries": 324,
+        "missing_code_declarations": 356
+      },
+      "2009": {
+        "rows": 25887,
+        "columns_including_pisa_year": 438,
+        "labels": 437,
+        "value_label_dictionaries": 255,
+        "missing_code_declarations": 304
+      },
+      "2012": {
+        "rows": 25313,
+        "columns_including_pisa_year": 635,
+        "labels": 634,
+        "value_label_dictionaries": 405,
+        "missing_code_declarations": 628
+      }
+    }
+  }
+}

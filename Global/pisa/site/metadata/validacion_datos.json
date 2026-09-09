@@ -1,0 +1,67 @@
+{
+  "full_rows": 191254,
+  "full_columns": 4911,
+  "full_row_groups": 9,
+  "counts_by_year": {
+    "2000": 6214,
+    "2003": 10791,
+    "2006": 19604,
+    "2009": 25887,
+    "2012": 25313,
+    "2015": 6736,
+    "2018": 35943,
+    "2022": 30800,
+    "2025": 29966
+  },
+  "respondent_key_checks_by_year": {
+    "2000": true,
+    "2003": true,
+    "2006": true,
+    "2009": true,
+    "2012": true,
+    "2015": true,
+    "2018": true,
+    "2022": true,
+    "2025": true
+  },
+  "all_source_columns_present": {
+    "2000": true,
+    "2003": true,
+    "2006": true,
+    "2009": true,
+    "2012": true,
+    "2015": true,
+    "2018": true,
+    "2022": true,
+    "2025": true
+  },
+  "postwrite_ipc_hashes_by_year": {
+    "2000": "e7da0746722547c1425a7ef68adcde24feee57af08478550e40939900e0082d4",
+    "2003": "a95d7f0df9973d2d786aa9ed92a172c156cc6856c4a4bbc48df066099ee74055",
+    "2006": "3705b18ab8981016808d4d35795f6ee60b29f1702d491f64e01e9fa370e6e64a",
+    "2009": "c96fff3f9a828fd3bc334b17e67795a7f528b04f2fa66e6f65949aa1b76b4c84",
+    "2012": "0fcb9c07d93b2c2cc6b87d6f07bad1dbe928292963d1ddbf9e0ffefc30e11df1",
+    "2015": "0d6306d23b4514326c90bfc38b603e621f6b805833c349ffdf940c4b37225185",
+    "2018": "b12c6562066aec0d4967ce91087a1f75d35cf5c4033cd69bcb5b25629715c506",
+    "2022": "a757741ffd71715c782d7ad67a2065f63c43d75cc53a2ff21ef3a734a1cff2b8",
+    "2025": "db8e73c525e4a5f11612a62fd38f0dedac95bcdb453247fcbf28cfbd66094808"
+  },
+  "expected_ipc_hashes_by_year": {
+    "2000": "e7da0746722547c1425a7ef68adcde24feee57af08478550e40939900e0082d4",
+    "2003": "a95d7f0df9973d2d786aa9ed92a172c156cc6856c4a4bbc48df066099ee74055",
+    "2006": "3705b18ab8981016808d4d35795f6ee60b29f1702d491f64e01e9fa370e6e64a",
+    "2009": "c96fff3f9a828fd3bc334b17e67795a7f528b04f2fa66e6f65949aa1b76b4c84",
+    "2012": "0fcb9c07d93b2c2cc6b87d6f07bad1dbe928292963d1ddbf9e0ffefc30e11df1",
+    "2015": "0d6306d23b4514326c90bfc38b603e621f6b805833c349ffdf940c4b37225185",
+    "2018": "b12c6562066aec0d4967ce91087a1f75d35cf5c4033cd69bcb5b25629715c506",
+    "2022": "a757741ffd71715c782d7ad67a2065f63c43d75cc53a2ff21ef3a734a1cff2b8",
+    "2025": "db8e73c525e4a5f11612a62fd38f0dedac95bcdb453247fcbf28cfbd66094808"
+  },
+  "recent_2022_2025_values_identical_after_union_cast": {
+    "2022": true,
+    "2025": true
+  },
+  "cooked_rows": 191254,
+  "cooked_columns": 80,
+  "status": "passed"
+}
