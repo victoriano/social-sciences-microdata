@@ -1,0 +1,6092 @@
+{
+  "labels": {
+    "OECD": "OECD country",
+    "CNT": "Country code 3-character",
+    "COUNTRY": "Country code ISO 3-digit",
+    "SUBNATIO": "Adjudicated sub-region",
+    "SCHOOLID": "School ID 5-digit",
+    "STIDSTD": "Student ID 5-digit",
+    "ST01Q01": "Grade Q1",
+    "ST02Q01": "Study programme Q2",
+    "ST03Q02": "Month of birth Q3",
+    "ST03Q03": "Year of birth Q3",
+    "ST04Q01": "Gender Q4",
+    "ST05Q01": "Mother ISCO code Q5a",
+    "ST06Q01": "Mother <highest schooling> Q6",
+    "ST07Q01": "Mother <ISCED 5A or 6> Q7a",
+    "ST07Q02": "Mother <ISCED 5B> Q7b",
+    "ST07Q03": "Mother <ISCED 4> Q7c",
+    "ST08Q01": "Father ISCO Code Q8a",
+    "ST09Q01": "Father <highest schooling> Q9",
+    "ST10Q01": "Father <ISCED 5A or 6> Q10a",
+    "ST10Q02": "Father <ISCED 5B> Q10b",
+    "ST10Q03": "Father <ISCED 4> Q10c",
+    "ST11Q01": "Self born in country Q11a",
+    "ST11Q02": "Mother born in country Q11a",
+    "ST11Q03": "Father born in country Q11a",
+    "ST11Q04": "Country arrival age Q11b",
+    "ST12Q01": "Language at home Q12",
+    "ST13Q01": "Possessions desk Q13a",
+    "ST13Q02": "Possessions own room Q13b",
+    "ST13Q03": "Possessions study place Q13c",
+    "ST13Q04": "Possessions computer Q13d",
+    "ST13Q05": "Possessions software Q13e",
+    "ST13Q06": "Possessions Internet Q13f",
+    "ST13Q07": "Possessions calculator Q13g",
+    "ST13Q08": "Possessions literature Q13h",
+    "ST13Q09": "Possessions poetry Q13i",
+    "ST13Q10": "Possessions art Q13j",
+    "ST13Q11": "Possessions textbooks Q13k",
+    "ST13Q12": "Possessions dictionary Q13l",
+    "ST13Q13": "Possessions dishwasher Q13m",
+    "ST13Q14": "Possessions <DVD or VCR> Q13n",
+    "ST13Q15": "Possessions <country-specific item 1> Q13o",
+    "ST13Q16": "Possessions <country-specific item 2> Q13p",
+    "ST13Q17": "Possessions <country-specific item 3> Q13q",
+    "ST14Q01": "How many cell phones Q14a",
+    "ST14Q02": "How many televisions Q14b",
+    "ST14Q03": "How many computers Q14c",
+    "ST14Q04": "How many cars Q14d",
+    "ST15Q01": "How many books at home Q15",
+    "ST16Q01": "Sci enjoyment - Have fun Q16a",
+    "ST16Q02": "Sci enjoyment - Like reading Q16b",
+    "ST16Q03": "Sci enjoyment - Sci problems Q16c",
+    "ST16Q04": "Sci enjoyment - New knowledge Q16d",
+    "ST16Q05": "Sci enjoyment - Learning science Q16e",
+    "ST17Q01": "Sci tasks - Newspaper Q17a",
+    "ST17Q02": "Sci tasks - Earthquakes Q17b",
+    "ST17Q03": "Sci tasks - Antibiotics Q17c",
+    "ST17Q04": "Sci tasks - Garbage Q17d",
+    "ST17Q05": "Sci tasks - Species survival Q17e",
+    "ST17Q06": "Sci tasks - Food labels Q17f",
+    "ST17Q07": "Sci tasks - Life on Mars Q17g",
+    "ST17Q08": "Sci tasks - Acid rain Q17h",
+    "ST18Q01": "Sci value - Living conditions Q18a",
+    "ST18Q02": "Sci value - Natural world Q18b",
+    "ST18Q03": "Sci value - Relate to others Q18c",
+    "ST18Q04": "Sci value - Improve economy Q18d",
+    "ST18Q05": "Sci value - Use as adult Q18e",
+    "ST18Q06": "Sci value - Value to society Q18f",
+    "ST18Q07": "Sci value - Relevant to me Q18g",
+    "ST18Q08": "Sci value - Help understand Q18h",
+    "ST18Q09": "Sci value - Social benefits Q18i",
+    "ST18Q10": "Sci value - Opportunities Q18j",
+    "ST19Q01": "Sci activity - Science TV Q19a",
+    "ST19Q02": "Sci activity - Science books Q19b",
+    "ST19Q03": "Sci activity - Web content Q19c",
+    "ST19Q04": "Sci activity - Science radio Q19d",
+    "ST19Q05": "Sci activity - Science mags Q19e",
+    "ST19Q06": "Sci activity - Science club Q19f",
+    "ST20QA1": "Sci info - Photosynthesis - none Q20a",
+    "ST20QA2": "Sci info - Photosynthesis - school Q20a",
+    "ST20QA3": "Sci info - Photosynthesis - media Q20a",
+    "ST20QA4": "Sci info - Photosynthesis - friends Q20a",
+    "ST20QA5": "Sci info - Photosynthesis - family Q20a",
+    "ST20QA6": "Sci info - Photosynthesis - Internet or books Q20a",
+    "ST20QB1": "Sci info - Continents - none Q20b",
+    "ST20QB2": "Sci info - Continents - school Q20b",
+    "ST20QB3": "Sci info - Continents - media Q20b",
+    "ST20QB4": "Sci info - Continents - friends Q20b",
+    "ST20QB5": "Sci info - Continents - family Q20b",
+    "ST20QB6": "Sci info - Continents - Internet or books Q20b",
+    "ST20QC1": "Sci info - Genes - none Q20c",
+    "ST20QC2": "Sci info - Genes - school Q20c",
+    "ST20QC3": "Sci info - Genes - media Q20c",
+    "ST20QC4": "Sci info - Genes - friends Q20c",
+    "ST20QC5": "Sci info - Genes - family Q20c",
+    "ST20QC6": "Sci info - Genes - Internet or books Q20c",
+    "ST20QD1": "Sci info - Soundproofing - none Q20d",
+    "ST20QD2": "Sci info - Soundproofing - school Q20d",
+    "ST20QD3": "Sci info - Soundproofing - media Q20d",
+    "ST20QD4": "Sci info - Soundproofing - friends Q20d",
+    "ST20QD5": "Sci info - Soundproofing - family Q20d",
+    "ST20QD6": "Sci info - Soundproofing - Internet or books Q20d",
+    "ST20QE1": "Sci info - Climate change - none Q20e",
+    "ST20QE2": "Sci info - Climate change - school Q20e",
+    "ST20QE3": "Sci info - Climate change - media Q20e",
+    "ST20QE4": "Sci info - Climate change - friends Q20e",
+    "ST20QE5": "Sci info - Climate change - family Q20e",
+    "ST20QE6": "Sci info - Climate change - Internet or books Q20e",
+    "ST20QF1": "Sci info - Evolution - none Q20f",
+    "ST20QF2": "Sci info - Evolution - school Q20f",
+    "ST20QF3": "Sci info - Evolution - media Q20f",
+    "ST20QF4": "Sci info - Evolution - friends Q20f",
+    "ST20QF5": "Sci info - Evolution - family Q20f",
+    "ST20QF6": "Sci info - Evolution - Internet or books Q20f",
+    "ST20QG1": "Sci info - Nuclear energy - none Q20g",
+    "ST20QG2": "Sci info - Nuclear energy - school Q20g",
+    "ST20QG3": "Sci info - Nuclear energy - media Q20g",
+    "ST20QG4": "Sci info - Nuclear energy - friends Q20g",
+    "ST20QG5": "Sci info - Nuclear energy - family Q20g",
+    "ST20QG6": "Sci info - Nuclear energy - Internet or books Q20g",
+    "ST20QH1": "Sci info - Health - none Q20h",
+    "ST20QH2": "Sci info - Health - school Q20h",
+    "ST20QH3": "Sci info - Health - media Q20h",
+    "ST20QH4": "Sci info - Health - friends Q20h",
+    "ST20QH5": "Sci info - Health - family Q20h",
+    "ST20QH6": "Sci info - Health - Internet or books Q20h",
+    "ST21Q01": "Sci interest - Physics Q21a",
+    "ST21Q02": "Sci interest - Chemistry Q21b",
+    "ST21Q03": "Sci interest - Plant biology Q21c",
+    "ST21Q04": "Sci interest - Human biology Q21d",
+    "ST21Q05": "Sci interest - Astronomy Q21e",
+    "ST21Q06": "Sci interest - Geology Q21f",
+    "ST21Q07": "Sci interest - Experiments Q21g",
+    "ST21Q08": "Sci interest - Explanations Q21h",
+    "ST22Q01": "Envr aware - Greenhouse Q22a",
+    "ST22Q02": "Envr aware - Genetic modified Q22b",
+    "ST22Q03": "Envr aware - Acid rain Q22c",
+    "ST22Q04": "Envr aware - Nuclear waste Q22d",
+    "ST22Q05": "Envr aware - Forest clearing Q22e",
+    "ST23QA1": "Envr info - Air pollution - none Q23a",
+    "ST23QA2": "Envr info - Air pollution - school Q23a",
+    "ST23QA3": "Envr info - Air pollution - media Q23a",
+    "ST23QA4": "Envr info - Air pollution - friends Q23a",
+    "ST23QA5": "Envr info - Air pollution - family Q23a",
+    "ST23QA6": "Envr info - Air pollution - Internet or books Q23a",
+    "ST23QB1": "Envr info - Energy shortages - none Q23b",
+    "ST23QB2": "Envr info - Energy shortages - school Q23b",
+    "ST23QB3": "Envr info - Energy shortages - media Q23b",
+    "ST23QB4": "Envr info - Energy shortages - friends Q23b",
+    "ST23QB5": "Envr info - Energy shortages - family Q23b",
+    "ST23QB6": "Envr info - Energy shortages - Internet or books Q23b",
+    "ST23QC1": "Envr info - Extinction - none Q23c",
+    "ST23QC2": "Envr info - Extinction - school Q23c",
+    "ST23QC3": "Envr info - Extinction - media Q23c",
+    "ST23QC4": "Envr info - Extinction - friends Q23c",
+    "ST23QC5": "Envr info - Extinction - family Q23c",
+    "ST23QC6": "Envr info - Extinction - Internet or books Q23c",
+    "ST23QD1": "Envr info - Forest clearing - none Q23d",
+    "ST23QD2": "Envr info - Forest clearing - school Q23d",
+    "ST23QD3": "Envr info - Forest clearing - media Q23d",
+    "ST23QD4": "Envr info - Forest clearing - friends Q23d",
+    "ST23QD5": "Envr info - Forest clearing - family Q23d",
+    "ST23QD6": "Envr info - Forest clearing - Internet or books Q23d",
+    "ST23QE1": "Envr info - Water shortages - none Q23e",
+    "ST23QE2": "Envr info - Water shortages - school Q23e",
+    "ST23QE3": "Envr info - Water shortages - media Q23e",
+    "ST23QE4": "Envr info - Water shortages - friends Q23e",
+    "ST23QE5": "Envr info - Water shortages - family Q23e",
+    "ST23QE6": "Envr info - Water shortages - Internet or books Q23e",
+    "ST23QF1": "Envr info - Nuclear waste - none Q23f",
+    "ST23QF2": "Envr info - Nuclear waste - school Q23f",
+    "ST23QF3": "Envr info - Nuclear waste - media Q23f",
+    "ST23QF4": "Envr info - Nuclear waste - friends Q23f",
+    "ST23QF5": "Envr info - Nuclear waste - family Q23f",
+    "ST23QF6": "Envr info - Nuclear waste - Internet or books Q23f",
+    "ST24Q01": "Envr issues - Air pollution Q24a",
+    "ST24Q02": "Envr issues - Energy shortages Q24b",
+    "ST24Q03": "Envr issues - Extinction Q24c",
+    "ST24Q04": "Envr issues - Forest clearing Q24d",
+    "ST24Q05": "Envr issues - Water shortages Q24e",
+    "ST24Q06": "Envr issues - Nuclear waste Q24f",
+    "ST25Q01": "Envr improve - Air pollution Q25a",
+    "ST25Q02": "Envr improve - Energy shortages Q25b",
+    "ST25Q03": "Envr improve - Extinction Q25c",
+    "ST25Q04": "Envr improve - Forest clearing Q25d",
+    "ST25Q05": "Envr improve - Water shortages Q25e",
+    "ST25Q06": "Envr improve - Nuclear waste Q25f",
+    "ST26Q01": "Envr responsibility - Car emissions Q26a",
+    "ST26Q02": "Envr responsibility- Energy wasted Q26b",
+    "ST26Q03": "Envr responsibility- Factory emissions Q26c",
+    "ST26Q04": "Envr responsibility- Plastic pack Q26d",
+    "ST26Q05": "Envr responsibility- Dangerous waste Q26e",
+    "ST26Q06": "Envr responsibility- Endangered Q26f",
+    "ST26Q07": "Envr responsibility- Renewable electricity Q26g",
+    "ST27Q01": "Useful for Science career - School subjects Q27a",
+    "ST27Q02": "Useful for career - Science subjects Q27b",
+    "ST27Q03": "Useful for Science career - My subjects Q27c",
+    "ST27Q04": "Useful for Science career - Teaching Q27d",
+    "ST28Q01": "Science know - Job available Q28a",
+    "ST28Q02": "Science know - Find Where Q28b",
+    "ST28Q03": "Science know - Steps to take Q28c",
+    "ST28Q04": "Science know - Employers Q28d",
+    "ST29Q01": "Sci future - Like career Q29a",
+    "ST29Q02": "Sci future - After <secondary school> Q29b",
+    "ST29Q03": "Sci future - Advanced Q29c",
+    "ST29Q04": "Sci future - Work as adult Q29d",
+    "ST30Q01": "Self expected occupation at 30 ISCO code Q30",
+    "ST31Q01": "Regular lessons - Science Q31a",
+    "ST31Q02": "Out of school - Science Q31b",
+    "ST31Q03": "Self study - Science Q31c",
+    "ST31Q04": "Regular lessons - Mathematics Q31d",
+    "ST31Q05": "Out of school - Mathematics Q31e",
+    "ST31Q06": "Self study - Mathematics Q31f",
+    "ST31Q07": "Regular lessons - Language Q31g",
+    "ST31Q08": "Out of school - Language Q31h",
+    "ST31Q09": "Self study - Language Q31i",
+    "ST31Q10": "Regular lessons - Other Q31j",
+    "ST31Q11": "Out of school - Other Q31k",
+    "ST31Q12": "Self study - Other Q31l",
+    "ST32Q01": "Lessons - School 1-1 Q32a",
+    "ST32Q02": "Lessons - Not school 1-1 Q32b",
+    "ST32Q03": "Lessons - School small Q32c",
+    "ST32Q04": "Lessons - Not school small Q32d",
+    "ST32Q05": "Lessons - School large Q32e",
+    "ST32Q06": "Lessons - Not school large Q32f",
+    "ST33Q11": "Course - Comp Sci last yr Q33a",
+    "ST33Q12": "Course - Comp Sci this yr Q33a",
+    "ST33Q21": "Course - Opt Sci last yr Q33b",
+    "ST33Q22": "Course - Opt Sci this yr Q33b",
+    "ST33Q31": "Course - Comp Bio last yr Q33c",
+    "ST33Q32": "Course - Comp Bio this yr Q33c",
+    "ST33Q41": "Course - Opt Bio last yr Q33d",
+    "ST33Q42": "Course - Opt Bio this yr Q33d",
+    "ST33Q51": "Course - Comp Phy last yr Q33e",
+    "ST33Q52": "Course - Comp Phy this yr Q33e",
+    "ST33Q61": "Course - Opt Phy last yr Q33f",
+    "ST33Q62": "Course - Opt Phy this yr Q33f",
+    "ST33Q71": "Course - Comp Chem last yr Q33g",
+    "ST33Q72": "Course - Comp Chem this yr Q33g",
+    "ST33Q81": "Course - Opt Chem last yr Q33h",
+    "ST33Q82": "Course - Opt Chem this yr Q33h",
+    "ST34Q01": "Learning - Student ideas Q34a",
+    "ST34Q02": "Learning - Experiments Q34b",
+    "ST34Q03": "Learning - Design for lab Q34c",
+    "ST34Q04": "Learning - Apply everyday Q34d",
+    "ST34Q05": "Learning - Student opinion Q34e",
+    "ST34Q06": "Learning - Draw conclusions Q34f",
+    "ST34Q07": "Learning - Differnt phenomena Q34g",
+    "ST34Q08": "Learning - Own experiments Q34h",
+    "ST34Q09": "Learning - Class debate Q34i",
+    "ST34Q10": "Learning - Demonstrations Q34j",
+    "ST34Q11": "Learning - Choose own Q34k",
+    "ST34Q12": "Learning - World outside Q34l",
+    "ST34Q13": "Learning - Discussion Q34m",
+    "ST34Q14": "Learning - Follow instructions Q34n",
+    "ST34Q15": "Learning - Explain relevance Q34o",
+    "ST34Q16": "Learning - Test ideas Q34p",
+    "ST34Q17": "Learning - Society relevance Q34q",
+    "ST35Q01": "Sci future - Help later work Q35a",
+    "ST35Q02": "Sci future - Learn need later Q35b",
+    "ST35Q03": "Sci future - Useful to me Q35c",
+    "ST35Q04": "Sci future - Improve career Q35d",
+    "ST35Q05": "Sci future - Get a job Q35e",
+    "ST36Q01": "Self - Do well Science Q36a",
+    "ST36Q02": "Self - Do well Maths Q36b",
+    "ST36Q03": "Self - Do well Language Q36c",
+    "ST37Q01": "Learning - Advanced easy Q37a",
+    "ST37Q02": "Learning - Good answers Q37b",
+    "ST37Q03": "Learning - Topics quickly Q37c",
+    "ST37Q04": "Learning - Topics easy Q37d",
+    "ST37Q05": "Learning - Understand well Q37e",
+    "ST37Q06": "Learning - New ideas Q37f",
+    "IC01Q01": "Used computer IC1",
+    "IC02Q01": "How long used computers IC2",
+    "IC03Q01": "Use computer at home IC3a",
+    "IC03Q02": "Use computer at school IC3b",
+    "IC03Q03": "Use computer other places IC3c",
+    "IC04Q01": "Browse Internet IC4a",
+    "IC04Q02": "Play games IC4b",
+    "IC04Q03": "Write documents IC4c",
+    "IC04Q04": "Collaborate on Internet IC4d",
+    "IC04Q05": "Use spreadsheets IC4e",
+    "IC04Q06": "Download software IC4f",
+    "IC04Q07": "Graphics programs IC4g",
+    "IC04Q08": "Educational software IC4h",
+    "IC04Q09": "Download music IC4i",
+    "IC04Q10": "Write programs IC4j",
+    "IC04Q11": "E-mail or chat rooms IC4k",
+    "IC05Q01": "How well - Chat IC5a",
+    "IC05Q02": "How well - Virus IC5b",
+    "IC05Q03": "How well - Edit photos IC5c",
+    "IC05Q04": "How well - Database IC5d",
+    "IC05Q05": "How well - Copy data to CD IC5e",
+    "IC05Q06": "How well - Move files IC5f",
+    "IC05Q07": "How well - Search Internet IC5g",
+    "IC05Q08": "How well - Download files IC5h",
+    "IC05Q09": "How well - Attach e-mail IC5i",
+    "IC05Q10": "How well - Word processor IC5j",
+    "IC05Q11": "How well - Spreadsheet IC5k",
+    "IC05Q12": "How well - Presentation IC5l",
+    "IC05Q13": "How well - Download music IC5m",
+    "IC05Q14": "How well - Multi-media IC5n",
+    "IC05Q15": "How well - E-mails IC5o",
+    "IC05Q16": "How well - Web Page IC5p",
+    "ESCS": "Index of economic, social and cultural status PISA 2006 ",
+    "AGE": "Age of student",
+    "BMMJ": "Occupational status Mother (SEI)",
+    "BFMJ": "Occupational status Father (SEI)",
+    "BSMJ": "Occupational status Self (SEI)",
+    "HISEI": "Highest parental occupational status (SEI)",
+    "CLCUSE3A": "Effort A: real",
+    "CLCUSE3B": "Effort B: if counted",
+    "DEFFORT": "Effort B - Effort A",
+    "COBN_F": "Country of birth (Father) 5-digit code",
+    "COBN_M": "Country of birth (Mother) 5-digit code",
+    "COBN_S": "Country of birth (Self) 5-digit code",
+    "PROGN": "Unique national study programme code",
+    "FISCED": "Educational level of father (ISCED)",
+    "HISCED": "Highest educational level of parents (ISCED)",
+    "MSECATEG": "Mother White collar/Blue collar classification",
+    "FSECATEG": "Father White collar/Blue collar classification",
+    "HSECATEG": "Highest parent White collar/Blue collar classification",
+    "IMMIG": "Immigration status",
+    "ISCEDD": "ISCED designation",
+    "ISCEDL": "ISCED level",
+    "ISCEDO": "ISCED orientation",
+    "LANGN": "Language at home (3-digit)",
+    "MISCED": "Educational level of mother (ISCED)",
+    "PARED": "Highest parental education in years",
+    "SRC_M": "Mother science-related career",
+    "SRC_F": "Father science-related career",
+    "SRC_E": "Either parent science-related career",
+    "SRC_S": "Self science-related career at 30",
+    "TESTLANG": "Language of Test (3-char)",
+    "CARINFO": "Student information on science-related careers PISA 2006 (WLE)",
+    "CARPREP": "School preparation for science-related careers PISA 2006 (WLE)",
+    "CULTPOSS": "Cultural possessions at home PISA 2006 (WLE)",
+    "ENVAWARE": "Awareness of environmental issues PISA 2006 (WLE)",
+    "ENVOPT": "Environmental optimism PISA 2006 (WLE)",
+    "ENVPERC": "Perception of environmental issues PISA 2006 (WLE)",
+    "GENSCIE": "General value of science PISA 2006 (WLE)",
+    "HEDRES": "Home educational resources PISA 2006 (WLE)",
+    "HIGHCONF": "Self-confidence in ICT high level tasks PISA 2006 (WLE)",
+    "HOMEPOS": "Index of home possessions PISA 2006 (WLE)",
+    "INSTSCIE": "Instrumental motivation in science PISA 2006 (WLE)",
+    "INTCONF": "Self-confidence in ICT Internet tasks PISA 2006 (WLE)",
+    "INTSCIE": "General interest in learning science PISA 2006 (WLE)",
+    "INTUSE": "ICT Internet/entertainment use PISA 2006 (WLE)",
+    "JOYSCIE": "Enjoyment of science PISA 2006 (WLE)",
+    "PERSCIE": "Personal value of science PISA 2006 (WLE)",
+    "PRGUSE": "ICT program/software use PISA 2006 (WLE)",
+    "RESPDEV": "Responsibility for sustainable development PISA 2006 (WLE)",
+    "SCAPPLY": "Science Teaching - Focus on applications or models PISA 2006 (WLE)",
+    "SCHANDS": "Science Teaching - Hands-on activities PISA 2006 (WLE)",
+    "SCIEACT": "Science activities PISA 2006 (WLE)",
+    "SCIEEFF": "Science self-efficacy PISA 2006 (WLE)",
+    "SCIEFUT": "Future-oriented science motivation PISA 2006 (WLE)",
+    "SCINTACT": "Science Teaching - Interaction PISA 2006 (WLE)",
+    "SCINVEST": "Science Teaching - Student investigations PISA 2006 (WLE)",
+    "SCSCIE": "Science self-concept PISA 2006 (WLE)",
+    "WEALTH": "Family wealth PISA 2006 (WLE)",
+    "PV1MATH": "Plausible value in math",
+    "PV2MATH": "Plausible value in math",
+    "PV3MATH": "Plausible value in math",
+    "PV4MATH": "Plausible value in math",
+    "PV5MATH": "Plausible value in math",
+    "PV1READ": "Plausible value in reading",
+    "PV2READ": "Plausible value in reading",
+    "PV3READ": "Plausible value in reading",
+    "PV4READ": "Plausible value in reading",
+    "PV5READ": "Plausible value in reading",
+    "PV1SCIE": "Plausible value in science",
+    "PV2SCIE": "Plausible value in science",
+    "PV3SCIE": "Plausible value in science",
+    "PV4SCIE": "Plausible value in science",
+    "PV5SCIE": "Plausible value in science",
+    "PV1INTR": "Plausible value in interest in science",
+    "PV2INTR": "Plausible value in interest in science",
+    "PV3INTR": "Plausible value in interest in science",
+    "PV4INTR": "Plausible value in interest in science",
+    "PV5INTR": "Plausible value in interest in science",
+    "PV1SUPP": "Plausible value in support for scientific inquiry",
+    "PV2SUPP": "Plausible value in support for scientific inquiry",
+    "PV3SUPP": "Plausible value in support for scientific inquiry",
+    "PV4SUPP": "Plausible value in support for scientific inquiry",
+    "PV5SUPP": "Plausible value in support for scientific inquiry",
+    "PV1EPS": "Plausible value in explaining phenomena scientifically",
+    "PV2EPS": "Plausible value in explaining phenomena scientifically",
+    "PV3EPS": "Plausible value in explaining phenomena scientifically",
+    "PV4EPS": "Plausible value in explaining phenomena scientifically",
+    "PV5EPS": "Plausible value in explaining phenomena scientifically",
+    "PV1ISI": "Plausible value in identifying scientific issues",
+    "PV2ISI": "Plausible value in identifying scientific issues",
+    "PV3ISI": "Plausible value in identifying scientific issues",
+    "PV4ISI": "Plausible value in identifying scientific issues",
+    "PV5ISI": "Plausible value in identifying scientific issues",
+    "PV1USE": "Plausible value in using scientific evidence",
+    "PV2USE": "Plausible value in using scientific evidence",
+    "PV3USE": "Plausible value in using scientific evidence",
+    "PV4USE": "Plausible value in using scientific evidence",
+    "PV5USE": "Plausible value in using scientific evidence",
+    "W_FSTUWT": "FINAL STUDENT WEIGHT",
+    "W_FSTR1": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT1",
+    "W_FSTR2": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT2",
+    "W_FSTR3": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT3",
+    "W_FSTR4": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT4",
+    "W_FSTR5": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT5",
+    "W_FSTR6": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT6",
+    "W_FSTR7": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT7",
+    "W_FSTR8": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT8",
+    "W_FSTR9": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT9",
+    "W_FSTR10": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT10",
+    "W_FSTR11": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT11",
+    "W_FSTR12": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT12",
+    "W_FSTR13": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT13",
+    "W_FSTR14": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT14",
+    "W_FSTR15": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT15",
+    "W_FSTR16": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT16",
+    "W_FSTR17": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT17",
+    "W_FSTR18": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT18",
+    "W_FSTR19": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT19",
+    "W_FSTR20": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT20",
+    "W_FSTR21": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT21",
+    "W_FSTR22": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT22",
+    "W_FSTR23": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT23",
+    "W_FSTR24": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT24",
+    "W_FSTR25": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT25",
+    "W_FSTR26": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT26",
+    "W_FSTR27": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT27",
+    "W_FSTR28": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT28",
+    "W_FSTR29": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT29",
+    "W_FSTR30": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT30",
+    "W_FSTR31": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT31",
+    "W_FSTR32": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT32",
+    "W_FSTR33": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT33",
+    "W_FSTR34": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT34",
+    "W_FSTR35": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT35",
+    "W_FSTR36": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT36",
+    "W_FSTR37": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT37",
+    "W_FSTR38": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT38",
+    "W_FSTR39": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT39",
+    "W_FSTR40": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT40",
+    "W_FSTR41": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT41",
+    "W_FSTR42": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT42",
+    "W_FSTR43": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT43",
+    "W_FSTR44": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT44",
+    "W_FSTR45": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT45",
+    "W_FSTR46": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT46",
+    "W_FSTR47": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT47",
+    "W_FSTR48": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT48",
+    "W_FSTR49": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT49",
+    "W_FSTR50": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT50",
+    "W_FSTR51": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT51",
+    "W_FSTR52": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT52",
+    "W_FSTR53": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT53",
+    "W_FSTR54": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT54",
+    "W_FSTR55": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT55",
+    "W_FSTR56": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT56",
+    "W_FSTR57": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT57",
+    "W_FSTR58": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT58",
+    "W_FSTR59": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT59",
+    "W_FSTR60": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT60",
+    "W_FSTR61": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT61",
+    "W_FSTR62": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT62",
+    "W_FSTR63": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT63",
+    "W_FSTR64": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT64",
+    "W_FSTR65": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT65",
+    "W_FSTR66": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT66",
+    "W_FSTR67": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT67",
+    "W_FSTR68": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT68",
+    "W_FSTR69": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT69",
+    "W_FSTR70": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT70",
+    "W_FSTR71": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT71",
+    "W_FSTR72": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT72",
+    "W_FSTR73": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT73",
+    "W_FSTR74": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT74",
+    "W_FSTR75": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT75",
+    "W_FSTR76": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT76",
+    "W_FSTR77": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT77",
+    "W_FSTR78": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT78",
+    "W_FSTR79": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT79",
+    "W_FSTR80": "FINAL STUDENT REPLICATE BRR-FAY WEIGHT80",
+    "CNTFAC": "Country weight factor for normalised weights (multi-level)",
+    "SUBFAC": "Adjudicated region weight factor for normalised weights (multi-level)",
+    "WVARSTRR": "RANDOMIZED FINAL VARIANCE STRATUM (1-80)",
+    "RANDUNIT": "FINAL VARIANCE UNIT (1,2,3)",
+    "STRATUM": "Original stratum",
+    "S421Q02": "Deleted science item - Big and Small (Q02)",
+    "S456Q01": "Deleted science item - The Cheetah (Q01)",
+    "S456Q02": "Deleted science item - The Cheetah (Q02)",
+    "VER_STU": "Version student database and date of release"
+  },
+  "value_labels": {
+    "OECD": {
+      "0": "Non-OECD",
+      "1": "OECD"
+    },
+    "CNT": {
+      "\"ARG\"": "Argentina",
+      "\"AUS\"": "Australia",
+      "\"AUT\"": "Austria",
+      "\"AZE\"": "Azerbaijan",
+      "\"BEL\"": "Belgium",
+      "\"BGR\"": "Bulgaria",
+      "\"BRA\"": "Brazil",
+      "\"CAN\"": "Canada",
+      "\"CHE\"": "Switzerland",
+      "\"CHL\"": "Chile",
+      "\"COL\"": "Colombia",
+      "\"CZE\"": "Czech Republic",
+      "\"DEU\"": "Germany",
+      "\"DNK\"": "Denmark",
+      "\"ESP\"": "Spain",
+      "\"EST\"": "Estonia",
+      "\"FIN\"": "Finland",
+      "\"FRA\"": "France",
+      "\"GBR\"": "United Kingdom",
+      "\"GRC\"": "Greece",
+      "\"HKG\"": "Hong Kong-China",
+      "\"HRV\"": "Croatia",
+      "\"HUN\"": "Hungary",
+      "\"IDN\"": "Indonesia",
+      "\"IRL\"": "Ireland",
+      "\"ISL\"": "Iceland",
+      "\"ISR\"": "Israel",
+      "\"ITA\"": "Italy",
+      "\"JOR\"": "Jordan",
+      "\"JPN\"": "Japan",
+      "\"KGZ\"": "Kyrgyzstan",
+      "\"KOR\"": "Korea",
+      "\"LIE\"": "Liechtenstein",
+      "\"LTU\"": "Lithuania",
+      "\"LUX\"": "Luxembourg",
+      "\"LVA\"": "Latvia",
+      "\"MAC\"": "Macao-China",
+      "\"MEX\"": "Mexico",
+      "\"MNE\"": "Montenegro",
+      "\"NLD\"": "Netherlands",
+      "\"NOR\"": "Norway",
+      "\"NZL\"": "New Zealand",
+      "\"POL\"": "Poland",
+      "\"PRT\"": "Portugal",
+      "\"QAT\"": "Qatar",
+      "\"ROU\"": "Romania",
+      "\"RUS\"": "Russian Federation",
+      "\"SRB\"": "Serbia   ",
+      "\"SVK\"": "Slovak Republic",
+      "\"SVN\"": "Slovenia ",
+      "\"SWE\"": "Sweden",
+      "\"TAP\"": "Chinese Taipei",
+      "\"THA\"": "Thailand",
+      "\"TUN\"": "Tunisia",
+      "\"TUR\"": "Turkey",
+      "\"URY\"": "Uruguay",
+      "\"USA\"": "United States"
+    },
+    "COUNTRY": {
+      "\"031\"": "Azerbaijan",
+      "\"032\"": "Argentina",
+      "\"036\"": "Australia",
+      "\"040\"": "Austria",
+      "\"056\"": "Belgium",
+      "\"076\"": "Brazil",
+      "\"100\"": "Bulgaria",
+      "\"124\"": "Canada",
+      "\"152\"": "Chile",
+      "\"158\"": "Chinese Taipei",
+      "\"170\"": "Colombia",
+      "\"191\"": "Croatia",
+      "\"203\"": "Czech Republic",
+      "\"208\"": "Denmark",
+      "\"233\"": "Estonia",
+      "\"246\"": "Finland",
+      "\"250\"": "France",
+      "\"276\"": "Germany",
+      "\"300\"": "Greece",
+      "\"344\"": "Hong Kong-China",
+      "\"348\"": "Hungary",
+      "\"352\"": "Iceland",
+      "\"360\"": "Indonesia",
+      "\"372\"": "Ireland",
+      "\"376\"": "Israel",
+      "\"380\"": "Italy",
+      "\"392\"": "Japan",
+      "\"400\"": "Jordan",
+      "\"410\"": "Korea",
+      "\"417\"": "Kyrgyzstan",
+      "\"428\"": "Latvia",
+      "\"438\"": "Liechtenstein",
+      "\"440\"": "Lithuania",
+      "\"442\"": "Luxembourg",
+      "\"446\"": "Macao-China",
+      "\"484\"": "Mexico",
+      "\"499\"": "Montenegro",
+      "\"528\"": "Netherlands",
+      "\"554\"": "New Zealand",
+      "\"578\"": "Norway",
+      "\"616\"": "Poland",
+      "\"620\"": "Portugal",
+      "\"634\"": "Qatar",
+      "\"642\"": "Romania",
+      "\"643\"": "Russian Federation",
+      "\"688\"": "Serbia",
+      "\"703\"": "Slovak Republic",
+      "\"705\"": "Slovenia",
+      "\"724\"": "Spain",
+      "\"752\"": "Sweden",
+      "\"756\"": "Switzerland",
+      "\"764\"": "Thailand",
+      "\"788\"": "Tunisia",
+      "\"792\"": "Turkey",
+      "\"826\"": "United Kingdom",
+      "\"840\"": "United States",
+      "\"858\"": "Uruguay"
+    },
+    "SUBNATIO": {
+      "\"03100\"": "Azerbaijan",
+      "\"03200\"": "Argentina",
+      "\"03600\"": "Australia",
+      "\"04000\"": "Austria",
+      "\"05601\"": "Belgium: Flemish region",
+      "\"05699\"": "Belgium: French & German regions (not adjudicated)",
+      "\"07600\"": "Brazil",
+      "\"10000\"": "Bulgaria",
+      "\"12400\"": "Canada",
+      "\"15200\"": "Chile",
+      "\"15800\"": "Chinese Taipei",
+      "\"17000\"": "Colombia",
+      "\"19100\"": "Croatia",
+      "\"20300\"": "Czech Republic",
+      "\"20800\"": "Denmark",
+      "\"23300\"": "Estonia",
+      "\"24600\"": "Finland",
+      "\"25000\"": "France",
+      "\"27600\"": "Germany",
+      "\"30000\"": "Greece",
+      "\"34400\"": "Hong Kong-China",
+      "\"34800\"": "Hungary",
+      "\"35200\"": "Iceland",
+      "\"36000\"": "Indonesia",
+      "\"37200\"": "Ireland",
+      "\"37600\"": "Israel",
+      "\"38001\"": "Italy: Region 1",
+      "\"38002\"": "Italy: Region 2",
+      "\"38003\"": "Italy: Region 3",
+      "\"38004\"": "Italy: Region 4",
+      "\"38005\"": "Italy: Region 5",
+      "\"38006\"": "Italy: Region 6",
+      "\"38007\"": "Italy: Region 7",
+      "\"38008\"": "Italy: Region 8",
+      "\"38009\"": "Italy: Region 9",
+      "\"38010\"": "Italy: Region 10",
+      "\"38011\"": "Italy: Region 11",
+      "\"38012\"": "Italy: Region 12",
+      "\"38013\"": "Italy: Region 13",
+      "\"38099\"": "Italy: Region 14 (not adjudicated)",
+      "\"39200\"": "Japan",
+      "\"40000\"": "Jordan",
+      "\"41000\"": "Korea",
+      "\"41700\"": "Kyrgyzstan",
+      "\"42800\"": "Latvia",
+      "\"43800\"": "Liechtenstein",
+      "\"44000\"": "Lithuania",
+      "\"44200\"": "Luxembourg",
+      "\"44600\"": "Macao-China",
+      "\"48400\"": "Mexico",
+      "\"49900\"": "Montenegro",
+      "\"52800\"": "Netherlands",
+      "\"55400\"": "New Zealand",
+      "\"57800\"": "Norway",
+      "\"61600\"": "Poland",
+      "\"62000\"": "Portugal",
+      "\"63400\"": "Qatar",
+      "\"64200\"": "Romania",
+      "\"64300\"": "Russian Federation",
+      "\"68800\"": "Serbia",
+      "\"70300\"": "Slovak Republic",
+      "\"70500\"": "Slovenia",
+      "\"72401\"": "Spain: Andalusia",
+      "\"72402\"": "Spain: Aragon",
+      "\"72403\"": "Spain: Asturias",
+      "\"72406\"": "Spain: Cantabria",
+      "\"72407\"": "Spain: Castile and Leon",
+      "\"72409\"": "Spain: Catalonia",
+      "\"72411\"": "Spain: Galicia",
+      "\"72412\"": "Spain: La Rioja",
+      "\"72415\"": "Spain: Navarre",
+      "\"72416\"": "Spain: Basque Country",
+      "\"72499\"": "The rest of Spain (not adjudicated)",
+      "\"75200\"": "Sweden",
+      "\"75600\"": "Switzerland",
+      "\"76400\"": "Thailand",
+      "\"78800\"": "Tunisia",
+      "\"79200\"": "Turkey",
+      "\"82610\"": "United Kingdom: England, Wales & Northern Ireland",
+      "\"82620\"": "United Kingdom: Scotland",
+      "\"84000\"": "United States",
+      "\"85800\"": "Uruguay"
+    },
+    "STRATUM": {
+      "'03201'": "ARG: COD_PROV02",
+      "'03202'": "ARG: COD_PROV05",
+      "'03203'": "ARG: COD_PROV06",
+      "'03204'": "ARG: COD_PROV10",
+      "'03205'": "ARG: COD_PROV14",
+      "'03206'": "ARG: COD_PROV18",
+      "'03207'": "ARG: COD_PROV22",
+      "'03208'": "ARG: COD_PROV26",
+      "'03209'": "ARG: COD_PROV30",
+      "'03210'": "ARG: COD_PROV34",
+      "'03211'": "ARG: COD_PROV38",
+      "'03212'": "ARG: COD_PROV42",
+      "'03213'": "ARG: COD_PROV46",
+      "'03214'": "ARG: COD_PROV50",
+      "'03215'": "ARG: COD_PROV54",
+      "'03216'": "ARG: COD_PROV58",
+      "'03217'": "ARG: COD_PROV62",
+      "'03218'": "ARG: COD_PROV66",
+      "'03219'": "ARG: COD_PROV70",
+      "'03220'": "ARG: COD_PROV74",
+      "'03221'": "ARG: COD_PROV78",
+      "'03222'": "ARG: COD_PROV82",
+      "'03223'": "ARG: COD_PROV86",
+      "'03224'": "ARG: COD_PROV90",
+      "'03225'": "ARG: COD_PROV94",
+      "'03226'": "ARG: Moderately Small schools",
+      "'03227'": "ARG: Very Small schools",
+      "'03601'": "AUS: ACT",
+      "'03602'": "AUS: NSW",
+      "'03603'": "AUS: NT",
+      "'03604'": "AUS: QLD",
+      "'03605'": "AUS: SA",
+      "'03606'": "AUS: TAS",
+      "'03607'": "AUS: VIC",
+      "'03608'": "AUS: WA",
+      "'04097'": "AUT: Stratum 97",
+      "'03197'": "AZE: Stratum 97",
+      "'05601'": "BEL: Stratum 01",
+      "'05602'": "BEL: Stratum 02",
+      "'05603'": "BEL: Stratum 03",
+      "'05604'": "BEL: Stratum 04",
+      "'05605'": "BEL: Stratum 05",
+      "'05606'": "BEL: Stratum 06",
+      "'05607'": "BEL: Stratum 07",
+      "'05608'": "BEL: Stratum 08",
+      "'05609'": "BEL: Stratum 09",
+      "'05610'": "BEL: Stratum 10",
+      "'05611'": "BEL: Stratum 11",
+      "'05612'": "BEL: Stratum 12",
+      "'05613'": "BEL: Stratum 13",
+      "'05614'": "BEL: Stratum 14",
+      "'05615'": "BEL: Stratum 15",
+      "'05616'": "BEL: Stratum 16",
+      "'05617'": "BEL: Stratum 17",
+      "'10001'": "BGR: Stratum 01",
+      "'10002'": "BGR: Stratum 02",
+      "'10003'": "BGR: Stratum 03",
+      "'10004'": "BGR: Stratum 04",
+      "'10005'": "BGR: Stratum 05",
+      "'10006'": "BGR: Stratum 06",
+      "'10007'": "BGR: Stratum 07",
+      "'10008'": "BGR: Stratum 08",
+      "'10009'": "BGR: Stratum 09",
+      "'10010'": "BGR: Stratum 10",
+      "'10011'": "BGR: Stratum 11",
+      "'10012'": "BGR: Stratum 12",
+      "'10013'": "BGR: Stratum 13",
+      "'07601'": "BRA: Stratum 01",
+      "'07602'": "BRA: Stratum 02",
+      "'07603'": "BRA: Stratum 03",
+      "'07604'": "BRA: Stratum 04",
+      "'07605'": "BRA: Stratum 05",
+      "'07606'": "BRA: Stratum 06",
+      "'07607'": "BRA: Stratum 07",
+      "'07608'": "BRA: Stratum 08",
+      "'07609'": "BRA: Stratum 09",
+      "'07610'": "BRA: Stratum 10",
+      "'07611'": "BRA: Stratum 11",
+      "'07612'": "BRA: Stratum 12",
+      "'07613'": "BRA: Stratum 13",
+      "'07614'": "BRA: Stratum 14",
+      "'07615'": "BRA: Stratum 15",
+      "'07616'": "BRA: Stratum 16",
+      "'07617'": "BRA: Stratum 17",
+      "'07618'": "BRA: Stratum 18",
+      "'07619'": "BRA: Stratum 19",
+      "'07620'": "BRA: Stratum 20",
+      "'07621'": "BRA: Stratum 21",
+      "'07622'": "BRA: Stratum 22",
+      "'07623'": "BRA: Stratum 23",
+      "'07624'": "BRA: Stratum 24",
+      "'07625'": "BRA: Stratum 25",
+      "'07626'": "BRA: Stratum 26",
+      "'07627'": "BRA: Stratum 27",
+      "'07628'": "BRA: Stratum 28",
+      "'07629'": "BRA: Stratum 29",
+      "'07630'": "BRA: Stratum 30",
+      "'12401'": "CAN: Stratum 01",
+      "'12402'": "CAN: Stratum 02",
+      "'12403'": "CAN: Stratum 03",
+      "'12404'": "CAN: Stratum 04",
+      "'12405'": "CAN: Stratum 05",
+      "'12406'": "CAN: Stratum 06",
+      "'12407'": "CAN: Stratum 07",
+      "'12408'": "CAN: Stratum 08",
+      "'12409'": "CAN: Stratum 09",
+      "'12410'": "CAN: Stratum 10",
+      "'12411'": "CAN: Stratum 11",
+      "'12412'": "CAN: Stratum 12",
+      "'12413'": "CAN: Stratum 13",
+      "'12414'": "CAN: Stratum 14",
+      "'12415'": "CAN: Stratum 15",
+      "'12416'": "CAN: Stratum 16",
+      "'12417'": "CAN: Stratum 17",
+      "'12418'": "CAN: Stratum 18",
+      "'12419'": "CAN: Stratum 19",
+      "'12420'": "CAN: Stratum 20",
+      "'12421'": "CAN: Stratum 21",
+      "'12422'": "CAN: Stratum 22",
+      "'12423'": "CAN: Stratum 23",
+      "'12424'": "CAN: Stratum 24",
+      "'12425'": "CAN: Stratum 25",
+      "'12426'": "CAN: Stratum 26",
+      "'12427'": "CAN: Stratum 27",
+      "'12428'": "CAN: Stratum 28",
+      "'12429'": "CAN: Stratum 29",
+      "'12430'": "CAN: Stratum 30",
+      "'12431'": "CAN: Stratum 31",
+      "'12432'": "CAN: Stratum 32",
+      "'12433'": "CAN: Stratum 33",
+      "'12434'": "CAN: Stratum 34",
+      "'12435'": "CAN: Stratum 35",
+      "'12436'": "CAN: Stratum 36",
+      "'12437'": "CAN: Stratum 37",
+      "'12438'": "CAN: Stratum 38",
+      "'12439'": "CAN: Stratum 39",
+      "'12440'": "CAN: Stratum 40",
+      "'12441'": "CAN: Stratum 41",
+      "'12442'": "CAN: Stratum 42",
+      "'12443'": "CAN: Stratum 43",
+      "'12444'": "CAN: Stratum 44",
+      "'75697'": "CHE: Stratum 97",
+      "'15201'": "CHL: Stratum 01",
+      "'15202'": "CHL: Stratum 02",
+      "'15203'": "CHL: Stratum 03",
+      "'15204'": "CHL: Stratum 04",
+      "'15205'": "CHL: Stratum 05",
+      "'15206'": "CHL: Stratum 06",
+      "'15207'": "CHL: Stratum 07",
+      "'15208'": "CHL: Stratum 08",
+      "'15209'": "CHL: Stratum 09",
+      "'15210'": "CHL: Stratum 10",
+      "'15211'": "CHL: Stratum 11",
+      "'15212'": "CHL: Stratum 12",
+      "'15213'": "CHL: Stratum 13",
+      "'15214'": "CHL: Stratum 14",
+      "'15216'": "CHL: Stratum 16",
+      "'15219'": "CHL: Stratum 19",
+      "'15220'": "CHL: Stratum 20",
+      "'17001'": "COL: Stratum 01",
+      "'17002'": "COL: Stratum 02",
+      "'17003'": "COL: Stratum 03",
+      "'20301'": "CZE: PRGM1_RGN1",
+      "'20302'": "CZE: PRGM1_RGN1_MSS",
+      "'20303'": "CZE: PRGM1_RGN1_VSS",
+      "'20304'": "CZE: PRGM1_RGN2",
+      "'20305'": "CZE: PRGM1_RGN2_MSS",
+      "'20306'": "CZE: PRGM1_RGN2_VSS",
+      "'20307'": "CZE: PRGM1_RGN3",
+      "'20308'": "CZE: PRGM1_RGN3_MSS",
+      "'20309'": "CZE: PRGM1_RGN3_VSS",
+      "'20310'": "CZE: PRGM1_RGN4",
+      "'20311'": "CZE: PRGM1_RGN4_MSS",
+      "'20312'": "CZE: PRGM1_RGN4_VSS",
+      "'20313'": "CZE: PRGM1_RGN5",
+      "'20314'": "CZE: PRGM1_RGN5_MSS",
+      "'20315'": "CZE: PRGM1_RGN5_VSS",
+      "'20316'": "CZE: PRGM1_RGN6",
+      "'20317'": "CZE: PRGM1_RGN6_MSS",
+      "'20318'": "CZE: PRGM1_RGN6_VSS",
+      "'20319'": "CZE: PRGM1_RGN7",
+      "'20320'": "CZE: PRGM1_RGN7_MSS",
+      "'20321'": "CZE: PRGM1_RGN7_VSS",
+      "'20322'": "CZE: PRGM1_RGN8",
+      "'20323'": "CZE: PRGM1_RGN8_MSS",
+      "'20324'": "CZE: PRGM1_RGN8_VSS",
+      "'20325'": "CZE: PRGM1_RGN9",
+      "'20326'": "CZE: PRGM1_RGN9_MSS",
+      "'20327'": "CZE: PRGM1_RGN9_VSS",
+      "'20328'": "CZE: PRGM1_RGN10",
+      "'20329'": "CZE: PRGM1_RGN10_MSS",
+      "'20330'": "CZE: PRGM1_RGN10_VSS",
+      "'20331'": "CZE: PRGM1_RGN11",
+      "'20332'": "CZE: PRGM1_RGN11_MSS",
+      "'20333'": "CZE: PRGM1_RGN11_VSS",
+      "'20334'": "CZE: PRGM1_RGN12",
+      "'20335'": "CZE: PRGM1_RGN12_MSS",
+      "'20336'": "CZE: PRGM1_RGN12_VSS",
+      "'20337'": "CZE: PRGM1_RGN13",
+      "'20338'": "CZE: PRGM1_RGN13_MSS",
+      "'20339'": "CZE: PRGM1_RGN13_VSS",
+      "'20340'": "CZE: PRGM1_RGN14",
+      "'20341'": "CZE: PRGM1_RGN14_MSS",
+      "'20342'": "CZE: PRGM1_RGN14_VSS",
+      "'20343'": "CZE: PRGM2_RGN1",
+      "'20345'": "CZE: PRGM2_RGN2",
+      "'20346'": "CZE: PRGM2_RGN2_MSS",
+      "'20347'": "CZE: PRGM2_RGN3",
+      "'20348'": "CZE: PRGM2_RGN3_MSS",
+      "'20349'": "CZE: PRGM2_RGN4",
+      "'20351'": "CZE: PRGM2_RGN5",
+      "'20352'": "CZE: PRGM2_RGN5_SS",
+      "'20353'": "CZE: PRGM2_RGN6",
+      "'20354'": "CZE: PRGM2_RGN6_SS",
+      "'20355'": "CZE: PRGM2_RGN7",
+      "'20356'": "CZE: PRGM2_RGN7_MSS",
+      "'20357'": "CZE: PRGM2_RGN8",
+      "'20358'": "CZE: PRGM2_RGN8_SS",
+      "'20359'": "CZE: PRGM2_RGN9",
+      "'20360'": "CZE: PRGM2_RGN9_MSS",
+      "'20361'": "CZE: PRGM2_RGN10",
+      "'20362'": "CZE: PRGM2_RGN10_MSS",
+      "'20363'": "CZE: PRGM2_RGN11",
+      "'20364'": "CZE: PRGM2_RGN11_MSS",
+      "'20365'": "CZE: PRGM2_RGN12",
+      "'20366'": "CZE: PRGM2_RGN12_SS",
+      "'20367'": "CZE: PRGM2_RGN13",
+      "'20368'": "CZE: PRGM2_RGN13_SS",
+      "'20369'": "CZE: PRGM2_RGN14",
+      "'20370'": "CZE: PRGM2_RGN14_SS",
+      "'20371'": "CZE: PRGM3",
+      "'20372'": "CZE: PRGM4",
+      "'20373'": "CZE: PRGM5",
+      "'20374'": "CZE: PRGM6",
+      "'20375'": "CZE: PRGM3456_MSS",
+      "'20376'": "CZE: PRGM3456_VSS",
+      "'27697'": "DEU: Stratum 97",
+      "'20801'": "DNK: VSS",
+      "'20802'": "DNK: MSS",
+      "'20803'": "DNK: LARGE",
+      "'72401'": "ESP: ANDALUSIA_SCHTYPE1",
+      "'72402'": "ESP: ANDALUSIA_SCHTYPE2",
+      "'72403'": "ESP: ARAGON_SCHTYPE1",
+      "'72404'": "ESP: ARAGON_SCHTYPE2",
+      "'72405'": "ESP: ASTURIAS_SCHTYPE1",
+      "'72406'": "ESP: ASTURIAS_SCHTYPE2",
+      "'72407'": "ESP: BALEARIC_SCHTYPE1",
+      "'72408'": "ESP: BALEARIC_SCHTYPE2",
+      "'72409'": "ESP: CANARY_SCHTYPE1",
+      "'72410'": "ESP: CANARY_SCHTYPE2",
+      "'72411'": "ESP: CANTABRIA_SCHTYPE1",
+      "'72412'": "ESP: CANTABRIA_SCHTYPE2",
+      "'72413'": "ESP: CASTILEyLEON_SCHTYPE1",
+      "'72414'": "ESP: CASTILEyLEON_SCHTYPE2",
+      "'72415'": "ESP: LAMANCHA_SCHTYPE1",
+      "'72416'": "ESP: LAMANCHA_SCHTYPE2",
+      "'72417'": "ESP: CATALONIA_SCHTYPE1",
+      "'72418'": "ESP: CATALONIA_SCHTYPE2",
+      "'72419'": "ESP: EXTRAMADURA_SCHTYPE1",
+      "'72420'": "ESP: EXTRAMADURA_SCHTYPE2",
+      "'72421'": "ESP: GALICIA_SCHTYPE1",
+      "'72422'": "ESP: GALICIA_SCHTYPE2",
+      "'72423'": "ESP: LARIOJA_SCHTYPE1",
+      "'72425'": "ESP: MADRID_SCHTYPE1",
+      "'72426'": "ESP: MADRID_SCHTYPE2",
+      "'72427'": "ESP: MURCIA_SCHTYPE1",
+      "'72428'": "ESP: MURCIA_SCHTYPE2",
+      "'72429'": "ESP: NAVARRA_SCHTYPE1",
+      "'72430'": "ESP: NAVARRA_SCHTYPE2",
+      "'72431'": "ESP: BASQUE_SCHTYPE1",
+      "'72432'": "ESP: BASQUE_SCHTYPE1",
+      "'72433'": "ESP: BASQUE_SCHTYPE1",
+      "'72434'": "ESP: BASQUE_SCHTYPE2",
+      "'72435'": "ESP: BASQUE_SCHTYPE2",
+      "'72436'": "ESP: BASQUE_SCHTYPE2",
+      "'72437'": "ESP: VALENCIA_SCHTYPE1",
+      "'72438'": "ESP: VALENCIA_SCHTYPE2",
+      "'72439'": "ESP: CEUTAyMELILLA_SCHTYPE1",
+      "'72440'": "ESP: CEUTAyMELILLA_SCHTYPE2",
+      "'72441'": "ESP: ANDALUSIA_SS",
+      "'72442'": "ESP: ARAGON_SS",
+      "'72443'": "ESP: ASTURIAS_MSS",
+      "'72444'": "ESP: ASTURIAS_VSS",
+      "'72445'": "ESP: CANTABRIA_MSS",
+      "'72446'": "ESP: CANTABRIA_VSS",
+      "'72447'": "ESP: CASTILEyLEON_MSS",
+      "'72448'": "ESP: CASTILEyLEON_VSS",
+      "'72449'": "ESP: CATALONIA_SS",
+      "'72450'": "ESP: GALICIA_MSS",
+      "'72451'": "ESP: GALICIA_VSS",
+      "'72454'": "ESP: NAVARRA_SS",
+      "'72455'": "ESP: BASQUE_MSS",
+      "'72456'": "ESP: BASQUE_VSS",
+      "'72457'": "ESP: OTHER_SS",
+      "'72458'": "ESP: Certainty stratum",
+      "'23301'": "EST: Estonian Schools",
+      "'23302'": "EST: Russian Schools"
+    },
+    "ST01Q01": {
+      "96": "Ungraded",
+      "99": "Missing"
+    },
+    "ST02Q01": {
+      "99": "Missing"
+    },
+    "ST03Q02": {
+      "\"99\"": "Missing"
+    },
+    "ST03Q03": {
+      "\"99\"": "Missing"
+    },
+    "ST04Q01": {
+      "1": "Female",
+      "2": "Male",
+      "9": "Missing"
+    },
+    "ST06Q01": {
+      "1": "Completed ISCED 3A",
+      "2": "Completed ISCED 3B, 3C",
+      "3": "Completed ISCED 2",
+      "4": "Completed ISCED 1",
+      "5": "Did not complete ISCED 1"
+    },
+    "ST07Q01": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST07Q02": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST07Q03": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST09Q01": {
+      "1": "Completed ISCED 3A",
+      "2": "Completed ISCED 3B, 3C",
+      "3": "Completed ISCED 2",
+      "4": "Completed ISCED 1",
+      "5": "Did not complete ISCED 1"
+    },
+    "ST10Q01": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST10Q02": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST10Q03": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST11Q01": {
+      "1": "Country of test",
+      "2": "Other Country"
+    },
+    "ST11Q02": {
+      "1": "Country of test",
+      "2": "Other Country"
+    },
+    "ST11Q03": {
+      "1": "Country of test",
+      "2": "Other Country"
+    },
+    "ST12Q01": {
+      "1": "Language of test",
+      "2": "Other national language",
+      "3": "Other language"
+    },
+    "ST13Q01": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q02": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q03": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q04": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q05": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q06": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q07": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q08": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q09": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q10": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q11": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q12": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q13": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST13Q14": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST14Q01": {
+      "1": "None",
+      "2": "One",
+      "3": "Two",
+      "4": "Three or more"
+    },
+    "ST14Q02": {
+      "1": "None",
+      "2": "One",
+      "3": "Two",
+      "4": "Three or more"
+    },
+    "ST14Q03": {
+      "1": "None",
+      "2": "One",
+      "3": "Two",
+      "4": "Three or more"
+    },
+    "ST14Q04": {
+      "1": "None",
+      "2": "One",
+      "3": "Two",
+      "4": "Three or more"
+    },
+    "ST15Q01": {
+      "1": "0-10 books",
+      "2": "11-25 books",
+      "3": "26-100 books",
+      "4": "101-200 books",
+      "5": "201-500 books",
+      "6": "More than 500 books"
+    },
+    "ST16Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST16Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST16Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST16Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST16Q05": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST17Q01": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q02": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q03": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q04": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q05": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q06": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q07": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST17Q08": {
+      "1": "Do easily",
+      "2": "With some effort",
+      "3": "Struggle on own",
+      "4": "Couldn"
+    },
+    "ST18Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q05": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q06": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q07": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q08": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q09": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST18Q10": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST19Q01": {
+      "1": "Very often",
+      "2": "Regularly",
+      "3": "Sometimes",
+      "4": "Hardly ever"
+    },
+    "ST19Q02": {
+      "1": "Very often",
+      "2": "Regularly",
+      "3": "Sometimes",
+      "4": "Hardly ever"
+    },
+    "ST19Q03": {
+      "1": "Very often",
+      "2": "Regularly",
+      "3": "Sometimes",
+      "4": "Hardly ever"
+    },
+    "ST19Q04": {
+      "1": "Very often",
+      "2": "Regularly",
+      "3": "Sometimes",
+      "4": "Hardly ever"
+    },
+    "ST19Q05": {
+      "1": "Very often",
+      "2": "Regularly",
+      "3": "Sometimes",
+      "4": "Hardly ever"
+    },
+    "ST19Q06": {
+      "1": "Very often",
+      "2": "Regularly",
+      "3": "Sometimes",
+      "4": "Hardly ever"
+    },
+    "ST20QA1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QA2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QA3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QA4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QA5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QA6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QB1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QB2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QB3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QB4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QB5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QB6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QC1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QC2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QC3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QC4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QC5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QC6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QD1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QD2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QD3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QD4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QD5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QD6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QE1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QE2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QE3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QE4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QE5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QE6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QF1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QF2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QF3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QF4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QF5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QF6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QG1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QG2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QG3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QG4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QG5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QG6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QH1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QH2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QH3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QH4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QH5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST20QH6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST21Q01": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q02": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q03": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q04": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q05": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q06": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q07": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST21Q08": {
+      "1": "High Interest",
+      "2": "Medium Interest",
+      "3": "Low Interest",
+      "4": "No Interest"
+    },
+    "ST22Q01": {
+      "1": "Never heard",
+      "2": "Know a little",
+      "3": "Know something",
+      "4": "Familiar"
+    },
+    "ST22Q02": {
+      "1": "Never heard",
+      "2": "Know a little",
+      "3": "Know something",
+      "4": "Familiar"
+    },
+    "ST22Q03": {
+      "1": "Never heard",
+      "2": "Know a little",
+      "3": "Know something",
+      "4": "Familiar"
+    },
+    "ST22Q04": {
+      "1": "Never heard",
+      "2": "Know a little",
+      "3": "Know something",
+      "4": "Familiar"
+    },
+    "ST22Q05": {
+      "1": "Never heard",
+      "2": "Know a little",
+      "3": "Know something",
+      "4": "Familiar"
+    },
+    "ST23QA1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QA2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QA3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QA4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QA5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QA6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QB1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QB2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QB3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QB4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QB5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QB6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QC1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QC2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QC3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QC4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QC5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QC6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QD1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QD2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QD3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QD4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QD5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QD6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QE1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QE2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QE3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QE4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QE5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QE6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QF1": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QF2": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QF3": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QF4": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QF5": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST23QF6": {
+      "1": "Tick",
+      "2": "No Tick"
+    },
+    "ST24Q01": {
+      "1": "Concern for me",
+      "2": "Concern for others",
+      "3": "Concern other countries",
+      "4": "Not a concern"
+    },
+    "ST24Q02": {
+      "1": "Concern for me",
+      "2": "Concern for others",
+      "3": "Concern other countries",
+      "4": "Not a concern"
+    },
+    "ST24Q03": {
+      "1": "Concern for me",
+      "2": "Concern for others",
+      "3": "Concern other countries",
+      "4": "Not a concern"
+    },
+    "ST24Q04": {
+      "1": "Concern for me",
+      "2": "Concern for others",
+      "3": "Concern other countries",
+      "4": "Not a concern"
+    },
+    "ST24Q05": {
+      "1": "Concern for me",
+      "2": "Concern for others",
+      "3": "Concern other countries",
+      "4": "Not a concern"
+    },
+    "ST24Q06": {
+      "1": "Concern for me",
+      "2": "Concern for others",
+      "3": "Concern other countries",
+      "4": "Not a concern"
+    },
+    "ST25Q01": {
+      "1": "Improve",
+      "2": "Stay same",
+      "3": "Get worse"
+    },
+    "ST25Q02": {
+      "1": "Improve",
+      "2": "Stay same",
+      "3": "Get worse"
+    },
+    "ST25Q03": {
+      "1": "Improve",
+      "2": "Stay same",
+      "3": "Get worse"
+    },
+    "ST25Q04": {
+      "1": "Improve",
+      "2": "Stay same",
+      "3": "Get worse"
+    },
+    "ST25Q05": {
+      "1": "Improve",
+      "2": "Stay same",
+      "3": "Get worse"
+    },
+    "ST25Q06": {
+      "1": "Improve",
+      "2": "Stay same",
+      "3": "Get worse"
+    },
+    "ST26Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST26Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST26Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST26Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST26Q05": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST26Q06": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST26Q07": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST27Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST27Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST27Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST27Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST28Q01": {
+      "1": "Very well informed",
+      "2": "Fairly informed",
+      "3": "Not well informed",
+      "4": "Not informed at all"
+    },
+    "ST28Q02": {
+      "1": "Very well informed",
+      "2": "Fairly informed",
+      "3": "Not well informed",
+      "4": "Not informed at all"
+    },
+    "ST28Q03": {
+      "1": "Very well informed",
+      "2": "Fairly informed",
+      "3": "Not well informed",
+      "4": "Not informed at all"
+    },
+    "ST28Q04": {
+      "1": "Very well informed",
+      "2": "Fairly informed",
+      "3": "Not well informed",
+      "4": "Not informed at all"
+    },
+    "ST29Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST29Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST29Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST29Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST31Q01": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q02": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q03": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q04": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q05": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q06": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q07": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q08": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q09": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q10": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q11": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST31Q12": {
+      "1": "No time",
+      "2": "Less than 2 hours",
+      "3": "2 up to 4 hours",
+      "4": "4 up to 6 hours",
+      "5": "6 or more hours"
+    },
+    "ST32Q01": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST32Q02": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST32Q03": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST32Q04": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST32Q05": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST32Q06": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q11": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q12": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q21": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q22": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q31": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q32": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q41": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q42": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q51": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q52": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q61": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q62": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q71": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q72": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q81": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST33Q82": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "ST34Q01": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q02": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q03": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q04": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q05": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q06": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q07": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q08": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q09": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q10": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q11": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q12": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q13": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q14": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q15": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q16": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST34Q17": {
+      "1": "All lessons",
+      "2": "Most Lessons",
+      "3": "Some lessons",
+      "4": "Hardly ever"
+    },
+    "ST35Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST35Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST35Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST35Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST35Q05": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST36Q01": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Of little importance",
+      "4": "Not important at all"
+    },
+    "ST36Q02": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Of little importance",
+      "4": "Not important at all"
+    },
+    "ST36Q03": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Of little importance",
+      "4": "Not important at all"
+    },
+    "ST37Q01": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST37Q02": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST37Q03": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST37Q04": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST37Q05": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "ST37Q06": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    },
+    "IC01Q01": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "IC02Q01": {
+      "1": "Less than 1 year",
+      "2": "1 to 3 years",
+      "3": "3 to 5 years",
+      "4": "5 years or more"
+    },
+    "IC03Q01": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC03Q02": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC03Q03": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q01": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q02": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q03": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q04": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q05": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q06": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q07": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q08": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q09": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q10": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC04Q11": {
+      "1": "Almost every day",
+      "2": "Once or twice a week",
+      "3": "Few times a month",
+      "4": "Once a month or less",
+      "5": "Never"
+    },
+    "IC05Q01": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q02": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q03": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q04": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q05": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q06": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q07": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q08": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q09": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q10": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q11": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q12": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q13": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q14": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q15": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "IC05Q16": {
+      "1": "Do well by myself",
+      "2": "Do with help",
+      "3": "Know but can",
+      "4": "Don�t know"
+    },
+    "ISCEDL": {
+      "1": "ISCED level 1",
+      "2": "ISCED level 2",
+      "3": "ISCED level 3"
+    },
+    "ISCEDD": {
+      "1": "A",
+      "2": "B",
+      "3": "C",
+      "4": "M"
+    },
+    "ISCEDO": {
+      "1": "General",
+      "2": "Pre-Vocational",
+      "3": "Vocational"
+    },
+    "MISCED": {
+      "0": "None",
+      "1": "ISCED 1",
+      "2": "ISCED 2",
+      "3": "ISCED 3B, C",
+      "4": "ISCED 3A, ISCED 4",
+      "5": "ISCED 5B",
+      "6": "ISCED 5A, 6"
+    },
+    "FISCED": {
+      "0": "None",
+      "1": "ISCED 1",
+      "2": "ISCED 2",
+      "3": "ISCED 3B, C",
+      "4": "ISCED 3A, ISCED 4",
+      "5": "ISCED 5B",
+      "6": "ISCED 5A, 6"
+    },
+    "HISCED": {
+      "0": "None",
+      "1": "ISCED 1",
+      "2": "ISCED 2",
+      "3": "ISCED 3B, C",
+      "4": "ISCED 3A, ISCED 4",
+      "5": "ISCED 5B",
+      "6": "ISCED 5A, 6"
+    },
+    "MSECATEG": {
+      "1": "White collar high skilled",
+      "2": "White collar low skilled",
+      "3": "Blue collar high skilled",
+      "4": "Blue collar low skilled"
+    },
+    "FSECATEG": {
+      "1": "White collar high skilled",
+      "2": "White collar low skilled",
+      "3": "Blue collar high skilled",
+      "4": "Blue collar low skilled"
+    },
+    "HSECATEG": {
+      "1": "White collar high skilled",
+      "2": "White collar low skilled",
+      "3": "Blue collar high skilled",
+      "4": "Blue collar low skilled"
+    },
+    "SRC_M": {
+      "0": "No or indeterminate",
+      "1": "Yes"
+    },
+    "SRC_F": {
+      "0": "No or indeterminate",
+      "1": "Yes"
+    },
+    "SRC_E": {
+      "0": "No or indeterminate",
+      "1": "Yes"
+    },
+    "SRC_S": {
+      "0": "No or indeterminate",
+      "1": "Yes"
+    },
+    "IMMIG": {
+      "1": "Native",
+      "2": "Second-Generation",
+      "3": "First-Generation"
+    },
+    "S421Q02": {
+      "\"0\"": "No credit",
+      "\"1\"": "Full credit",
+      "\"7\"": "Not administered",
+      "\"9\"": "Missing"
+    },
+    "S456Q01": {
+      "\"11\"": "Yes, Yes: Full credit",
+      "\"12\"": "Yes, No: No credit",
+      "\"18\"": "Yes, Invalid: No credit",
+      "\"19\"": "Yes, Missing: No credit",
+      "\"21\"": "No, Yes: No credit",
+      "\"22\"": "No, No: No credit",
+      "\"28\"": "No, Invalid: No credit",
+      "\"29\"": "No, Missing: No credit"
+    },
+    "S456Q02": {
+      "\"1\"": "No credit",
+      "\"2\"": "No credit",
+      "\"3\"": "Full credit",
+      "\"4\"": "No credit",
+      "\"7\"": "Not administered",
+      "\"8\"": "Invalid",
+      "\"9\"": "Missing"
+    },
+    "ST05Q01": {
+      "\"1000\"": "LEGISLATORS, SENIOR OFFICIALS & MANAGERS",
+      "\"1100\"": "LEGISLATORS & SENIOR OFFICIALS",
+      "\"1110\"": "LEGISLATORS [incl. Member of Parliament, Member of Local Council]",
+      "\"1120\"": "SENIOR GOVERNMENT OFFICIALS [incl. Minister, Ambassador]",
+      "\"1130\"": "SENIOR LOCAL GOVERNMENT OFFICIALS",
+      "\"1140\"": "SENIOR OFFICIALS SPECIAL-INTEREST ORGANISATIONS",
+      "\"1141\"": "Senior officials political-party organisations",
+      "\"1142\"": "Senior officials economic-interest organisations",
+      "\"1143\"": "Senior officials special-interest organisations",
+      "\"1200\"": "CORPORATE MANAGERS [LARGE ENTERPRISES]",
+      "\"1210\"": "[LARGE ENTERPRISES] DIRECTORS & CHIEF EXECUTIVES",
+      "\"1220\"": "[LARGE ENTERPRISE OPERATION] DEPARTMENT MANAGERS",
+      "\"1221\"": "Production dep. managers agriculture & fishing",
+      "\"1222\"": "Production dep. managers manufacturing [incl. Factory Manager]",
+      "\"1223\"": "Production dep. managers construction",
+      "\"1224\"": "Production dep. managers wholesale & retail trade",
+      "\"1225\"": "Production dep. managers restaurants & hotels",
+      "\"1226\"": "Production dep. managers transp., storage & communic. ]",
+      "\"1227\"": "Production dep. managers business services [incl. Bank Manager]",
+      "\"1228\"": "Production dep. managers personal care, cleaning etc",
+      "\"1229\"": "Production dep. managers nec [incl. Dean,School Principal]",
+      "\"1230\"": "[LARGE ENTERPRISES] OTHER DEPARTMENT MANAGERS",
+      "\"1231\"": "Finance & admin. department managers [incl. Company Secretary]",
+      "\"1232\"": "Personnel & industrial relations department managers",
+      "\"1233\"": "Sales & marketing department managers",
+      "\"1234\"": "Advertising & public relations department managers",
+      "\"1235\"": "Supply & distribution department managers",
+      "\"1236\"": "Computing services department managers",
+      "\"1237\"": "Research & development department managers",
+      "\"1239\"": "Other department managers nec",
+      "\"1240\"": "OFFICE MANAGERS [incl. Clerical Supervisor]",
+      "\"1250\"": "MILITARY OFFICERS",
+      "\"1251\"": "Higher military officers [Captain and above]",
+      "\"1252\"": "Lower grade commissioned officers [incl. Army Lieutenant]",
+      "\"1300\"": "[SMALL ENTERPRISE] GENERAL MANAGERS",
+      "\"1310\"": "[SMALL ENTERPRISE] GENERAL MANAGERS [incl. Businessman, Trader]",
+      "\"1311\"": "[Small enterprise] General managers agr., forestry & fishing",
+      "\"1312\"": "[Small enterprise] General managers manufacturing",
+      "\"1313\"": "[Small enterprise] General managers constr. [incl. Contractor]",
+      "\"1314\"": "[Small enterprise] General managers wholesale & retail trade",
+      "\"1315\"": "[Small enterprise] General managers restaurants & hotels",
+      "\"1316\"": "[Small enterprise] General managers transp., storage & comm.",
+      "\"1317\"": "[Small enterprise] General managers business services",
+      "\"1318\"": "[Small enterprise] General managers personal care, cleaning etc.",
+      "\"1319\"": "[Small enterprise] General managers nec [incl. Travel, Fitness]",
+      "\"2000\"": "PROFESSIONALS",
+      "\"2100\"": "PHYSICAL, MATHEMATICAL & ENGINEERING SCIENCE PROFESSIONALS",
+      "\"2110\"": "PHYSICISTS, CHEMISTS & RELATED PROFESSIONALS",
+      "\"2111\"": "Physicists & astronomers",
+      "\"2112\"": "Meteorologists",
+      "\"2113\"": "Chemists",
+      "\"2114\"": "Geologists & geophysicists [incl. Geodesist]",
+      "\"2120\"": "MATHEMATICIANS, STATISTICIANS ETC PROFESSIONALS",
+      "\"2121\"": "Mathematicians etc professionals",
+      "\"2122\"": "Statisticians [incl. Actuary]",
+      "\"2130\"": "COMPUTING PROFESSIONALS",
+      "\"2131\"": "Computer systems designers & analysts [incl. Software Engineer]",
+      "\"2132\"": "Computer programmers",
+      "\"2139\"": "Computing professionals nec",
+      "\"2140\"": "ARCHITECTS, ENGINEERS ETC PROFESSIONALS",
+      "\"2141\"": "Architects town & traffic planners [incl. Landscape Architect]",
+      "\"2142\"": "Civil engineers [incl. Construction Engineer]",
+      "\"2143\"": "Electrical engineers",
+      "\"2144\"": "Electronics & telecommunications engineers",
+      "\"2145\"": "Mechanical engineers",
+      "\"2146\"": "Chemical engineers",
+      "\"2147\"": "Mining engineers, metallurgists etc professionals",
+      "\"2148\"": "Cartographers & surveyors",
+      "\"2149\"": "Architects engineers etc professionals nec [incl. Consultant]",
+      "\"2200\"": "LIFE SCIENCE & HEALTH PROFESSIONALS",
+      "\"2210\"": "LIFE SCIENCE PROFESSIONALS",
+      "\"2211\"": "Biologists, botanists zoologists etc professionals",
+      "\"2212\"": "Pharmacologists, pathologists etc profess. [incl. Biochemist]",
+      "\"2213\"": "Agronomists etc professionals",
+      "\"2220\"": "HEALTH PROFESSIONALS (EXCEPT NURSING)",
+      "\"2221\"": "Medical doctors",
+      "\"2222\"": "Dentists",
+      "\"2223\"": "Veterinarians",
+      "\"2224\"": "Pharmacists",
+      "\"2229\"": "Health professionals except nursing nec",
+      "\"2230\"": "NURSING & MIDWIFERY PROFESS. [incl. Registered Nurses, Midwives]",
+      "\"2300\"": "TEACHING PROFESSIONALS",
+      "\"2310\"": "HIGHER EDUCATION TEACHING PROFESSIONALS [incl. Univ. Professor]",
+      "\"2320\"": "SECONDARY EDUCATION TEACHING PROFESSIONALS",
+      "\"2321\"": "[Sec. teachers, academic track] [incl. Middle School Teacher]",
+      "\"2322\"": "[Sec. teachers, vocational track] [incl. Vocational Instructor]",
+      "\"2330\"": "PRIMARY & PRE-PRIMARY EDUCATION TEACHING PROFESSIONALS",
+      "\"2331\"": "Primary education teaching professionals",
+      "\"2332\"": "Pre-primary educ. teaching professionals [incl. Kindergarten]",
+      "\"2340\"": "SPECIAL EDUC. TEACHING PROFESSIONALS [incl. Remedial, Blind]",
+      "\"2350\"": "OTHER TEACHING PROFESSIONALS",
+      "\"2351\"": "Education methods specialists [incl. Curricula Developer]",
+      "\"2352\"": "School inspectors",
+      "\"2359\"": "Other teaching professionals nec",
+      "\"2400\"": "OTHER PROFESSIONALS [incl. Professional nfs, Admin. Professional]",
+      "\"2410\"": "BUSINESS PROFESSIONALS",
+      "\"2411\"": "Accountants [incl. Auditor]",
+      "\"2412\"": "Personnel & careers profess. [incl. Job Analyst, Stud. Couns.]"
+    },
+    "ST08Q01": {
+      "\"1000\"": "LEGISLATORS, SENIOR OFFICIALS & MANAGERS",
+      "\"1100\"": "LEGISLATORS & SENIOR OFFICIALS",
+      "\"1110\"": "LEGISLATORS [incl. Member of Parliament, Member of Local Council]",
+      "\"1120\"": "SENIOR GOVERNMENT OFFICIALS [incl. Minister, Ambassador]",
+      "\"1130\"": "SENIOR LOCAL GOVERNMENT OFFICIALS",
+      "\"1140\"": "SENIOR OFFICIALS SPECIAL-INTEREST ORGANISATIONS",
+      "\"1141\"": "Senior officials political-party organisations",
+      "\"1142\"": "Senior officials economic-interest organisations",
+      "\"1143\"": "Senior officials special-interest organisations",
+      "\"1200\"": "CORPORATE MANAGERS [LARGE ENTERPRISES]",
+      "\"1210\"": "[LARGE ENTERPRISES] DIRECTORS & CHIEF EXECUTIVES",
+      "\"1220\"": "[LARGE ENTERPRISE OPERATION] DEPARTMENT MANAGERS",
+      "\"1221\"": "Production dep. managers agriculture & fishing",
+      "\"1222\"": "Production dep. managers manufacturing [incl. Factory Manager]",
+      "\"1223\"": "Production dep. managers construction",
+      "\"1224\"": "Production dep. managers wholesale & retail trade",
+      "\"1225\"": "Production dep. managers restaurants & hotels",
+      "\"1226\"": "Production dep. managers transp., storage & communic. ]",
+      "\"1227\"": "Production dep. managers business services [incl. Bank Manager]",
+      "\"1228\"": "Production dep. managers personal care, cleaning etc",
+      "\"1229\"": "Production dep. managers nec [incl. Dean,School Principal]",
+      "\"1230\"": "[LARGE ENTERPRISES] OTHER DEPARTMENT MANAGERS",
+      "\"1231\"": "Finance & admin. department managers [incl. Company Secretary]",
+      "\"1232\"": "Personnel & industrial relations department managers",
+      "\"1233\"": "Sales & marketing department managers",
+      "\"1234\"": "Advertising & public relations department managers",
+      "\"1235\"": "Supply & distribution department managers",
+      "\"1236\"": "Computing services department managers",
+      "\"1237\"": "Research & development department managers",
+      "\"1239\"": "Other department managers nec",
+      "\"1240\"": "OFFICE MANAGERS [incl. Clerical Supervisor]",
+      "\"1250\"": "MILITARY OFFICERS",
+      "\"1251\"": "Higher military officers [Captain and above]",
+      "\"1252\"": "Lower grade commissioned officers [incl. Army Lieutenant]",
+      "\"1300\"": "[SMALL ENTERPRISE] GENERAL MANAGERS",
+      "\"1310\"": "[SMALL ENTERPRISE] GENERAL MANAGERS [incl. Businessman, Trader]",
+      "\"1311\"": "[Small enterprise] General managers agr., forestry & fishing",
+      "\"1312\"": "[Small enterprise] General managers manufacturing",
+      "\"1313\"": "[Small enterprise] General managers constr. [incl. Contractor]",
+      "\"1314\"": "[Small enterprise] General managers wholesale & retail trade",
+      "\"1315\"": "[Small enterprise] General managers restaurants & hotels",
+      "\"1316\"": "[Small enterprise] General managers transp., storage & comm.",
+      "\"1317\"": "[Small enterprise] General managers business services",
+      "\"1318\"": "[Small enterprise] General managers personal care, cleaning etc.",
+      "\"1319\"": "[Small enterprise] General managers nec [incl. Travel, Fitness]",
+      "\"2000\"": "PROFESSIONALS",
+      "\"2100\"": "PHYSICAL, MATHEMATICAL & ENGINEERING SCIENCE PROFESSIONALS",
+      "\"2110\"": "PHYSICISTS, CHEMISTS & RELATED PROFESSIONALS",
+      "\"2111\"": "Physicists & astronomers",
+      "\"2112\"": "Meteorologists",
+      "\"2113\"": "Chemists",
+      "\"2114\"": "Geologists & geophysicists [incl. Geodesist]",
+      "\"2120\"": "MATHEMATICIANS, STATISTICIANS ETC PROFESSIONALS",
+      "\"2121\"": "Mathematicians etc professionals",
+      "\"2122\"": "Statisticians [incl. Actuary]",
+      "\"2130\"": "COMPUTING PROFESSIONALS",
+      "\"2131\"": "Computer systems designers & analysts [incl. Software Engineer]",
+      "\"2132\"": "Computer programmers",
+      "\"2139\"": "Computing professionals nec",
+      "\"2140\"": "ARCHITECTS, ENGINEERS ETC PROFESSIONALS",
+      "\"2141\"": "Architects town & traffic planners [incl. Landscape Architect]",
+      "\"2142\"": "Civil engineers [incl. Construction Engineer]",
+      "\"2143\"": "Electrical engineers",
+      "\"2144\"": "Electronics & telecommunications engineers",
+      "\"2145\"": "Mechanical engineers",
+      "\"2146\"": "Chemical engineers",
+      "\"2147\"": "Mining engineers, metallurgists etc professionals",
+      "\"2148\"": "Cartographers & surveyors",
+      "\"2149\"": "Architects engineers etc professionals nec [incl. Consultant]",
+      "\"2200\"": "LIFE SCIENCE & HEALTH PROFESSIONALS",
+      "\"2210\"": "LIFE SCIENCE PROFESSIONALS",
+      "\"2211\"": "Biologists, botanists zoologists etc professionals",
+      "\"2212\"": "Pharmacologists, pathologists etc profess. [incl. Biochemist]",
+      "\"2213\"": "Agronomists etc professionals",
+      "\"2220\"": "HEALTH PROFESSIONALS (EXCEPT NURSING)",
+      "\"2221\"": "Medical doctors",
+      "\"2222\"": "Dentists",
+      "\"2223\"": "Veterinarians",
+      "\"2224\"": "Pharmacists",
+      "\"2229\"": "Health professionals except nursing nec",
+      "\"2230\"": "NURSING & MIDWIFERY PROFESS. [incl. Registered Nurses, Midwives]",
+      "\"2300\"": "TEACHING PROFESSIONALS",
+      "\"2310\"": "HIGHER EDUCATION TEACHING PROFESSIONALS [incl. Univ. Professor]",
+      "\"2320\"": "SECONDARY EDUCATION TEACHING PROFESSIONALS",
+      "\"2321\"": "[Sec. teachers, academic track] [incl. Middle School Teacher]",
+      "\"2322\"": "[Sec. teachers, vocational track] [incl. Vocational Instructor]",
+      "\"2330\"": "PRIMARY & PRE-PRIMARY EDUCATION TEACHING PROFESSIONALS",
+      "\"2331\"": "Primary education teaching professionals",
+      "\"2332\"": "Pre-primary educ. teaching professionals [incl. Kindergarten]",
+      "\"2340\"": "SPECIAL EDUC. TEACHING PROFESSIONALS [incl. Remedial, Blind]",
+      "\"2350\"": "OTHER TEACHING PROFESSIONALS",
+      "\"2351\"": "Education methods specialists [incl. Curricula Developer]",
+      "\"2352\"": "School inspectors",
+      "\"2359\"": "Other teaching professionals nec",
+      "\"2400\"": "OTHER PROFESSIONALS [incl. Professional nfs, Admin. Professional]",
+      "\"2410\"": "BUSINESS PROFESSIONALS",
+      "\"2411\"": "Accountants [incl. Auditor]",
+      "\"2412\"": "Personnel & careers profess. [incl. Job Analyst, Stud. Couns.]"
+    },
+    "ST30Q01": {
+      "\"1000\"": "LEGISLATORS, SENIOR OFFICIALS & MANAGERS",
+      "\"1100\"": "LEGISLATORS & SENIOR OFFICIALS",
+      "\"1110\"": "LEGISLATORS [incl. Member of Parliament, Member of Local Council]",
+      "\"1120\"": "SENIOR GOVERNMENT OFFICIALS [incl. Minister, Ambassador]",
+      "\"1130\"": "SENIOR LOCAL GOVERNMENT OFFICIALS",
+      "\"1140\"": "SENIOR OFFICIALS SPECIAL-INTEREST ORGANISATIONS",
+      "\"1141\"": "Senior officials political-party organisations",
+      "\"1142\"": "Senior officials economic-interest organisations",
+      "\"1143\"": "Senior officials special-interest organisations",
+      "\"1200\"": "CORPORATE MANAGERS [LARGE ENTERPRISES]",
+      "\"1210\"": "[LARGE ENTERPRISES] DIRECTORS & CHIEF EXECUTIVES",
+      "\"1220\"": "[LARGE ENTERPRISE OPERATION] DEPARTMENT MANAGERS",
+      "\"1221\"": "Production dep. managers agriculture & fishing",
+      "\"1222\"": "Production dep. managers manufacturing [incl. Factory Manager]",
+      "\"1223\"": "Production dep. managers construction",
+      "\"1224\"": "Production dep. managers wholesale & retail trade",
+      "\"1225\"": "Production dep. managers restaurants & hotels",
+      "\"1226\"": "Production dep. managers transp., storage & communic. ]",
+      "\"1227\"": "Production dep. managers business services [incl. Bank Manager]",
+      "\"1228\"": "Production dep. managers personal care, cleaning etc",
+      "\"1229\"": "Production dep. managers nec [incl. Dean,School Principal]",
+      "\"1230\"": "[LARGE ENTERPRISES] OTHER DEPARTMENT MANAGERS",
+      "\"1231\"": "Finance & admin. department managers [incl. Company Secretary]",
+      "\"1232\"": "Personnel & industrial relations department managers",
+      "\"1233\"": "Sales & marketing department managers",
+      "\"1234\"": "Advertising & public relations department managers",
+      "\"1235\"": "Supply & distribution department managers",
+      "\"1236\"": "Computing services department managers",
+      "\"1237\"": "Research & development department managers",
+      "\"1239\"": "Other department managers nec",
+      "\"1240\"": "OFFICE MANAGERS [incl. Clerical Supervisor]",
+      "\"1250\"": "MILITARY OFFICERS",
+      "\"1251\"": "Higher military officers [Captain and above]",
+      "\"1252\"": "Lower grade commissioned officers [incl. Army Lieutenant]",
+      "\"1300\"": "[SMALL ENTERPRISE] GENERAL MANAGERS",
+      "\"1310\"": "[SMALL ENTERPRISE] GENERAL MANAGERS [incl. Businessman, Trader]",
+      "\"1311\"": "[Small enterprise] General managers agr., forestry & fishing",
+      "\"1312\"": "[Small enterprise] General managers manufacturing",
+      "\"1313\"": "[Small enterprise] General managers constr. [incl. Contractor]",
+      "\"1314\"": "[Small enterprise] General managers wholesale & retail trade",
+      "\"1315\"": "[Small enterprise] General managers restaurants & hotels",
+      "\"1316\"": "[Small enterprise] General managers transp., storage & comm.",
+      "\"1317\"": "[Small enterprise] General managers business services",
+      "\"1318\"": "[Small enterprise] General managers personal care, cleaning etc.",
+      "\"1319\"": "[Small enterprise] General managers nec [incl. Travel, Fitness]",
+      "\"2000\"": "PROFESSIONALS",
+      "\"2100\"": "PHYSICAL, MATHEMATICAL & ENGINEERING SCIENCE PROFESSIONALS",
+      "\"2110\"": "PHYSICISTS, CHEMISTS & RELATED PROFESSIONALS",
+      "\"2111\"": "Physicists & astronomers",
+      "\"2112\"": "Meteorologists",
+      "\"2113\"": "Chemists",
+      "\"2114\"": "Geologists & geophysicists [incl. Geodesist]",
+      "\"2120\"": "MATHEMATICIANS, STATISTICIANS ETC PROFESSIONALS",
+      "\"2121\"": "Mathematicians etc professionals",
+      "\"2122\"": "Statisticians [incl. Actuary]",
+      "\"2130\"": "COMPUTING PROFESSIONALS",
+      "\"2131\"": "Computer systems designers & analysts [incl. Software Engineer]",
+      "\"2132\"": "Computer programmers",
+      "\"2139\"": "Computing professionals nec",
+      "\"2140\"": "ARCHITECTS, ENGINEERS ETC PROFESSIONALS",
+      "\"2141\"": "Architects town & traffic planners [incl. Landscape Architect]",
+      "\"2142\"": "Civil engineers [incl. Construction Engineer]",
+      "\"2143\"": "Electrical engineers",
+      "\"2144\"": "Electronics & telecommunications engineers",
+      "\"2145\"": "Mechanical engineers",
+      "\"2146\"": "Chemical engineers",
+      "\"2147\"": "Mining engineers, metallurgists etc professionals",
+      "\"2148\"": "Cartographers & surveyors",
+      "\"2149\"": "Architects engineers etc professionals nec [incl. Consultant]",
+      "\"2200\"": "LIFE SCIENCE & HEALTH PROFESSIONALS",
+      "\"2210\"": "LIFE SCIENCE PROFESSIONALS",
+      "\"2211\"": "Biologists, botanists zoologists etc professionals",
+      "\"2212\"": "Pharmacologists, pathologists etc profess. [incl. Biochemist]",
+      "\"2213\"": "Agronomists etc professionals",
+      "\"2220\"": "HEALTH PROFESSIONALS (EXCEPT NURSING)",
+      "\"2221\"": "Medical doctors",
+      "\"2222\"": "Dentists",
+      "\"2223\"": "Veterinarians",
+      "\"2224\"": "Pharmacists",
+      "\"2229\"": "Health professionals except nursing nec",
+      "\"2230\"": "NURSING & MIDWIFERY PROFESS. [incl. Registered Nurses, Midwives]",
+      "\"2300\"": "TEACHING PROFESSIONALS",
+      "\"2310\"": "HIGHER EDUCATION TEACHING PROFESSIONALS [incl. Univ. Professor]",
+      "\"2320\"": "SECONDARY EDUCATION TEACHING PROFESSIONALS",
+      "\"2321\"": "[Sec. teachers, academic track] [incl. Middle School Teacher]",
+      "\"2322\"": "[Sec. teachers, vocational track] [incl. Vocational Instructor]",
+      "\"2330\"": "PRIMARY & PRE-PRIMARY EDUCATION TEACHING PROFESSIONALS",
+      "\"2331\"": "Primary education teaching professionals",
+      "\"2332\"": "Pre-primary educ. teaching professionals [incl. Kindergarten]",
+      "\"2340\"": "SPECIAL EDUC. TEACHING PROFESSIONALS [incl. Remedial, Blind]",
+      "\"2350\"": "OTHER TEACHING PROFESSIONALS",
+      "\"2351\"": "Education methods specialists [incl. Curricula Developer]",
+      "\"2352\"": "School inspectors",
+      "\"2359\"": "Other teaching professionals nec",
+      "\"2400\"": "OTHER PROFESSIONALS [incl. Professional nfs, Admin. Professional]",
+      "\"2410\"": "BUSINESS PROFESSIONALS",
+      "\"2411\"": "Accountants [incl. Auditor]",
+      "\"2412\"": "Personnel & careers profess. [incl. Job Analyst, Stud. Couns.]"
+    },
+    "TESTLANG": {
+      "\"ARA\"": "Arabic",
+      "\"AZE\"": "Azerbaijani",
+      "\"BAQ\"": "Basque",
+      "\"BUL\"": "Bulgarian",
+      "\"CAT\"": "Catalan",
+      "\"CHI\"": "Chinese",
+      "\"CZE\"": "Czech",
+      "\"DAN\"": "Danish",
+      "\"DUT\"": "Dutch",
+      "\"ENG\"": "English",
+      "\"EST\"": "Estonian",
+      "\"FIN\"": "Finnish",
+      "\"FRE\"": "French",
+      "\"GER\"": "German",
+      "\"GLE\"": "Irish",
+      "\"GLG\"": "Galician",
+      "\"GRE\"": "Greek, Modern",
+      "\"HEB\"": "Hebrew",
+      "\"HUN\"": "Hungarian",
+      "\"ICE\"": "Icelandic",
+      "\"IND\"": "Indonesian",
+      "\"ITA\"": "Italian",
+      "\"JPN\"": "Japanese",
+      "\"KIR\"": "Kyrgyz",
+      "\"KOR\"": "Korean",
+      "\"LAV\"": "Latvian",
+      "\"LIT\"": "Lithuanian",
+      "\"NOR\"": "Norwegian",
+      "\"POL\"": "Polish",
+      "\"POR\"": "Portuguese",
+      "\"QMN\"": "Montenegrin",
+      "\"QTU\"": "Arabic dialect (TUN)",
+      "\"QVL\"": "Valencian",
+      "\"RUM\"": "Romanian",
+      "\"RUS\"": "Russian",
+      "\"SCC\"": "Serbian",
+      "\"SCR\"": "Croatian",
+      "\"SLO\"": "Slovak",
+      "\"SLV\"": "Slovenian",
+      "\"SPA\"": "Spanish",
+      "\"SWE\"": "Swedish",
+      "\"THA\"": "Thai",
+      "\"TUR\"": "Turkish",
+      "\"UZB\"": "Uzbek",
+      "\"WEL\"": "Welsh"
+    },
+    "LANGN": {
+      "\"105\"": "Kurdish",
+      "\"108\"": "Tagalog",
+      "\"113\"": "Indonesian",
+      "\"118\"": "Romanian",
+      "\"121\"": "Estonian",
+      "\"133\"": "Romansh",
+      "\"140\"": "Albanian",
+      "\"148\"": "German",
+      "\"156\"": "Spanish",
+      "\"160\"": "Catalan",
+      "\"170\"": "Slovak",
+      "\"192\"": "Bosnian",
+      "\"200\"": "Italian",
+      "\"230\"": "Walloon",
+      "\"232\"": "Portuguese",
+      "\"244\"": "Czech",
+      "\"258\"": "Urdu",
+      "\"264\"": "Danish",
+      "\"266\"": "Croatian",
+      "\"272\"": "Samoan",
+      "\"273\"": "Polish",
+      "\"286\"": "Japanese",
+      "\"301\"": "Korean",
+      "\"313\"": "English",
+      "\"316\"": "Chinese",
+      "\"317\"": "Serbian",
+      "\"322\"": "Dutch",
+      "\"325\"": "Latvian",
+      "\"329\"": "Vietnamese",
+      "\"344\"": "Turkish",
+      "\"351\"": "Bulgarian",
+      "\"363\"": "Kyrgyz",
+      "\"369\"": "Azerbaijani",
+      "\"375\"": "Lithuanian",
+      "\"379\"": "Welsh",
+      "\"381\"": "Romani",
+      "\"382\"": "Scottish Gaelic",
+      "\"412\"": "Panjabi",
+      "\"415\"": "Hindi",
+      "\"420\"": "Finnish",
+      "\"422\"": "Hebrew",
+      "\"434\"": "Irish",
+      "\"442\"": "Slovenian",
+      "\"449\"": "Greek, Modern",
+      "\"451\"": "Basque",
+      "\"463\"": "Australian Indigenous languages",
+      "\"465\"": "Maori",
+      "\"467\"": "Icelandic",
+      "\"471\"": "Uzbek",
+      "\"474\"": "Galician",
+      "\"492\"": "Macedonian",
+      "\"493\"": "French",
+      "\"494\"": "Swedish",
+      "\"495\"": "Russian",
+      "\"496\"": "Hungarian",
+      "\"500\"": "Arabic",
+      "\"507\"": "Letzeburgesch",
+      "\"514\"": "Ukrainian",
+      "\"523\"": "Norwegian",
+      "\"540\"": "Sami",
+      "\"555\"": "Thai",
+      "\"600\"": "Yugoslavian - Serbian, Croatian, etc",
+      "\"602\"": "National Minorities languages and Bulgarian dialects (BGR)",
+      "\"604\"": "Italian (CHE)",
+      "\"605\"": "Other European Languages (QSC)",
+      "\"606\"": "Western European languages",
+      "\"607\"": "Regional languages (FRA)",
+      "\"608\"": "Valencian",
+      "\"609\"": "Chinese dialects or languages (HKG)",
+      "\"610\"": "Another language officially recognised in Italy",
+      "\"611\"": "A dialect (ITA)",
+      "\"612\"": "German (CHE)",
+      "\"614\"": "Languages of the former USSR",
+      "\"615\"": "Eastern European languages",
+      "\"616\"": "National dialects or languages (THA)",
+      "\"617\"": "Arabic dialect (TUN)",
+      "\"620\"": "Dialect of Slovak (SVK)",
+      "\"621\"": "Flemish dialect (BEL)",
+      "\"622\"": "Serbian of a yekavian variant or Montenegrin",
+      "\"623\"": "Other European Languages (NLD)",
+      "\"624\"": "Another language spoken in a European Union country (ITA)",
+      "\"625\"": "Cantonese",
+      "\"626\"": "Ulster Scots",
+      "\"627\"": "Other national dialects or languages (ROU)",
+      "\"628\"": "Taiwanese dialect (TWN)",
+      "\"629\"": "Indigenous  language (ARG)",
+      "\"638\"": "German (LIE)",
+      "\"639\"": "Languages of other republics in the former Yugoslavia (SVN)",
+      "\"640\"": "German dialect (BEL)",
+      "\"641\"": "Mandarin",
+      "\"642\"": "Local language in Indonesia (IDN)",
+      "\"650\"": "Aboriginal dialect (TWN)",
+      "\"661\"": "Hakka dialect (TWN)",
+      "\"800\"": "Other languages (ARG)",
+      "\"801\"": "Other languages (AUS)",
+      "\"802\"": "Other languages (AUT)",
+      "\"803\"": "Other languages (AZE)",
+      "\"804\"": "Other languages (BEL)",
+      "\"805\"": "Other languages (BRA)",
+      "\"806\"": "Other languages (BGR)",
+      "\"807\"": "Other languages (CAN)",
+      "\"808\"": "Other languages (CHL)",
+      "\"809\"": "Other languages (TWN)",
+      "\"810\"": "Other languages (COL)",
+      "\"811\"": "Other languages (HRV)",
+      "\"812\"": "Other languages (CZE)",
+      "\"813\"": "Other languages (DNK)",
+      "\"814\"": "Other languages (EST)",
+      "\"815\"": "Other languages (FIN)",
+      "\"816\"": "Other languages (FRA)",
+      "\"818\"": "Other languages (DEU)",
+      "\"819\"": "Other languages (GRC)",
+      "\"820\"": "Other languages (HKG)",
+      "\"821\"": "Other languages (HUN)",
+      "\"822\"": "Other languages (ISL)",
+      "\"823\"": "Other languages (IDN)",
+      "\"824\"": "Other languages (IRL)",
+      "\"825\"": "Other languages (ISR)",
+      "\"826\"": "Other languages (ITA)",
+      "\"827\"": "Other languages (JPN)",
+      "\"828\"": "Other languages (JOR)",
+      "\"830\"": "Other languages (KGZ)",
+      "\"831\"": "Other languages (LVA)",
+      "\"833\"": "Other languages (LTU)",
+      "\"834\"": "Other languages (LUX)",
+      "\"835\"": "Other languages (MAC)",
+      "\"836\"": "Other languages (MEX)",
+      "\"837\"": "Other languages (MNE)",
+      "\"838\"": "Other languages (NLD)",
+      "\"839\"": "Other languages (NZL)",
+      "\"840\"": "Other languages (NOR)",
+      "\"842\"": "Other languages (POL)",
+      "\"843\"": "Other languages (PRT)",
+      "\"844\"": "Other languages (QAT)",
+      "\"845\"": "Other languages (KOR)",
+      "\"846\"": "Other languages (ROU)",
+      "\"847\"": "Other languages (RUS)",
+      "\"848\"": "Other languages (GBR-QSC)",
+      "\"850\"": "Other languages (SVK)",
+      "\"851\"": "Other languages (SVN)",
+      "\"852\"": "Other languages (ESP)",
+      "\"853\"": "Other languages (SWE)",
+      "\"854\"": "Other languages (CHE)",
+      "\"855\"": "Other languages (THA)",
+      "\"856\"": "Other languages (TUN)",
+      "\"857\"": "Other languages (TUR)",
+      "\"858\"": "Other languages (GBR-QUK)",
+      "\"859\"": "Other languages (USA)",
+      "\"860\"": "Other languages (URY)",
+      "\"861\"": "Other languages (SRB)"
+    },
+    "PROGN": {
+      "\"0310001\"": "AZE: PROGRAMME OF BASIC GENERAL EDUCATION (LOWER SECONDARY)",
+      "\"0310002\"": "AZE: PROGRAMME OF SECONDARY GENERAL EDUCATION (UPPER SECONDARY)",
+      "\"0310003\"": "AZE: PROGRAMME OF INITIAL PROFESSIONAL EDUC. (PROF. SCHOOLS, ETC.)",
+      "\"0310004\"": "AZE: PROGRAMME OF SEC. PROF. EDUCATION (TECHNIKUM, COLLEGE, ETC.)",
+      "\"0320001\"": "ARG: PRIMARY - 7TH YEAR (OLD)",
+      "\"0320002\"": "ARG: GENERAL PROGRAMME WITH 3RD CYCLE - LOWER SECONDARY (NEW)",
+      "\"0320003\"": "ARG: GENERAL PROGR. - ONLY GBE 3RD CYCLE - LOWER SEC. (NEW)",
+      "\"0320004\"": "ARG: ARTISTIC, EGB AND POLIMODAL - LOWER SECONDARY- 7TH TO 9TH YEAR",
+      "\"0320005\"": "ARG: ARTISTIC-EGB & POLIMODAL - GENERAL UPPER SEC. - YEAR 1-3 (NEW)",
+      "\"0320006\"": "ARG: GENERAL PROGRAMME - LOWER SEC., CORDOBA, YEAR 1-3 (NEW)",
+      "\"0320007\"": "ARG: GENERAL PROGRAMME - YEAR 4-6 UPPER SEC., CORDOBA - (NEW)"
+    },
+    "COBN_M": {
+      "\"00020\"": "Africa",
+      "\"00021\"": "A Sub-Saharan country (Africa excl. Maghreb)",
+      "\"00080\"": "Albania",
+      "\"00110\"": "Cap Verde (in Western Africa)",
+      "\"00150\"": "North African country (Maghreb)",
+      "\"00290\"": "Caribbean",
+      "\"00310\"": "Azerbaijan",
+      "\"00320\"": "Argentina",
+      "\"00360\"": "Australia",
+      "\"00361\"": "England",
+      "\"00400\"": "Austria",
+      "\"00500\"": "Bangladesh",
+      "\"00560\"": "Belgium",
+      "\"00680\"": "Bolivia",
+      "\"00700\"": "Bosnia and Herzegovina",
+      "\"00760\"": "Brazil",
+      "\"01000\"": "Bulgaria",
+      "\"01120\"": "Belarus",
+      "\"01240\"": "Canada",
+      "\"01451\"": "Middle Eastern country",
+      "\"01510\"": "An Eastern European country",
+      "\"01520\"": "Chile",
+      "\"01560\"": "China",
+      "\"01561\"": "China (incl. HongKong)",
+      "\"01580\"": "Chinese Taipei",
+      "\"01700\"": "Colombia",
+      "\"01910\"": "Croatia",
+      "\"02030\"": "Czech Republic",
+      "\"02080\"": "Denmark",
+      "\"02330\"": "Estonia",
+      "\"02460\"": "Finland",
+      "\"02500\"": "France",
+      "\"02750\"": "Occupied Palestinian Territory",
+      "\"02760\"": "Germany",
+      "\"03000\"": "Greece",
+      "\"03440\"": "Hong Kong-China",
+      "\"03480\"": "Hungary",
+      "\"03520\"": "Iceland",
+      "\"03560\"": "India",
+      "\"03600\"": "Indonesia",
+      "\"03720\"": "Republic of Ireland",
+      "\"03760\"": "Israel",
+      "\"03800\"": "Italy",
+      "\"03920\"": "Japan",
+      "\"04000\"": "Jordan",
+      "\"04100\"": "Republic of Korea",
+      "\"04170\"": "Kyrgyzstan",
+      "\"04280\"": "Latvia",
+      "\"04380\"": "Liechtenstein",
+      "\"04400\"": "Lithuania",
+      "\"04420\"": "Luxembourg",
+      "\"04460\"": "Macao-China",
+      "\"04461\"": "Mainland China",
+      "\"04580\"": "Malaysia",
+      "\"04840\"": "Mexico",
+      "\"05280\"": "Netherlands",
+      "\"05540\"": "New Zealand",
+      "\"05780\"": "Norway",
+      "\"05860\"": "Pakistan",
+      "\"06000\"": "Paraguay",
+      "\"06080\"": "Philippines",
+      "\"06160\"": "Poland",
+      "\"06200\"": "Portugal",
+      "\"06340\"": "Qatar",
+      "\"06420\"": "Romania",
+      "\"06430\"": "Russian Federation",
+      "\"07020\"": "Singapore",
+      "\"07030\"": "Slovakia",
+      "\"07050\"": "Slovenia",
+      "\"07100\"": "South Africa",
+      "\"07240\"": "Spain",
+      "\"07241\"": "Andalusia (in Spain)",
+      "\"07242\"": "Aragon (in Spain)",
+      "\"07243\"": "Asturias (in Spain)",
+      "\"07244\"": "Balearic Islands (in Spain)",
+      "\"07245\"": "Canary Islands (in Spain)",
+      "\"07246\"": "Cantabria (in Spain)",
+      "\"07247\"": "Castile-La Mancha (in Spain)",
+      "\"07248\"": "Castile and Leon (in Spain)",
+      "\"07249\"": "Catalonia (in Spain)",
+      "\"07251\"": "Extremadura (in Spain)",
+      "\"07252\"": "Galicia (in Spain)",
+      "\"07253\"": "La Rioja (in Spain)",
+      "\"07254\"": "Madrid (in Spain)",
+      "\"07255\"": "Murcia (in Spain)",
+      "\"07256\"": "Navarre (in Spain)",
+      "\"07257\"": "Basque Country (in Spain)",
+      "\"07258\"": "Valencian Community (in Spain)",
+      "\"07259\"": "Ceuta and Melilla (in Spain)",
+      "\"07520\"": "Sweden",
+      "\"07560\"": "Switzerland",
+      "\"07620\"": "Tajikistan",
+      "\"07640\"": "Thailand",
+      "\"07880\"": "Tunisia",
+      "\"07920\"": "Turkey",
+      "\"08040\"": "Ukraine",
+      "\"08070\"": "Former Yugoslav Republic of Macedonia",
+      "\"08100\"": "A former USSR republic",
+      "\"08101\"": "Another former USSR republic (RUS)",
+      "\"08102\"": "Another former USSR republic (EST)",
+      "\"08180\"": "Egypt",
+      "\"08260\"": "United Kingdom",
+      "\"08261\"": "United Kingdom (excl.Scotland)",
+      "\"08262\"": "United Kingdom (Scotland)",
+      "\"08263\"": "Northern Ireland",
+      "\"08264\"": "Great Britain",
+      "\"08400\"": "United States",
+      "\"08580\"": "Uruguay",
+      "\"08600\"": "Uzbekistan",
+      "\"08820\"": "Samoa",
+      "\"08870\"": "Yemen",
+      "\"08900\"": "A former Yugoslav republic",
+      "\"08910\"": "Serbia-Montenegro",
+      "\"08911\"": "Serbia",
+      "\"08912\"": "Montenegro",
+      "\"10560\"": "Other Western European country (BEL)",
+      "\"11910\"": "Another former Yugoslav republic (HRV)",
+      "\"13800\"": "Other European Union Country (ITA)",
+      "\"14420\"": "Other European Union Country (LUX)",
+      "\"15280\"": "Other European country (NLD)",
+      "\"16200\"": "African country with Portuguese as the official language",
+      "\"18262\"": "Other European country (QSC)",
+      "\"18911\"": "One of the other former Yugoslav republics (SRB)",
+      "\"23800\"": "A European country that is not a member of the European Union",
+      "\"26200\"": "Other European Union Country (PRT)",
+      "\"36200\"": "An Eastern European country outside the EU",
+      "\"90310\"": "Other countries (AZE)",
+      "\"90320\"": "Other countries (ARG)",
+      "\"90360\"": "Other countries (AUS)",
+      "\"90400\"": "Other countries (AUT)",
+      "\"90560\"": "Other countries (BEL)",
+      "\"90760\"": "Other countries (BRA)",
+      "\"91000\"": "Other countries (BGR)",
+      "\"91240\"": "Other countries (CAN)",
+      "\"91520\"": "Other countries (CHL)",
+      "\"91580\"": "Other countries (TAP)",
+      "\"91700\"": "Other countries (COL)",
+      "\"91910\"": "Other countries (HRV)",
+      "\"92030\"": "Other countries (CZE)",
+      "\"92080\"": "Other countries (DNK)",
+      "\"92330\"": "Other countries (EST)",
+      "\"92460\"": "Other countries (FIN)",
+      "\"92500\"": "Other countries (FRA)",
+      "\"92760\"": "Other countries (DEU)",
+      "\"93000\"": "Other countries (GRC)",
+      "\"93440\"": "Other countries (HKG)",
+      "\"93480\"": "Other countries (HUN)",
+      "\"93520\"": "Other countries (ISL)",
+      "\"93600\"": "Other countries (IDN)",
+      "\"93720\"": "Other countries (IRL)",
+      "\"93760\"": "Other countries (ISR)",
+      "\"93800\"": "Other countries (ITA)",
+      "\"93920\"": "Other countries (JPN)",
+      "\"94000\"": "Other countries (JOR)",
+      "\"94100\"": "Other countries (KOR)",
+      "\"94170\"": "Other countries (KGZ)",
+      "\"94280\"": "Other countries (LVA)",
+      "\"94400\"": "Other countries (LTU)",
+      "\"94420\"": "Other countries (LUX)",
+      "\"94460\"": "Other countries (MAC)",
+      "\"94840\"": "Other countries (MEX)",
+      "\"95280\"": "Other countries (NLD)",
+      "\"95540\"": "Other countries (NZL)",
+      "\"95780\"": "Other countries (NOR)",
+      "\"96160\"": "Other countries (POL)",
+      "\"96200\"": "Other countries (PRT)",
+      "\"96340\"": "Other countries (QAT)",
+      "\"96420\"": "Other countries (ROU)",
+      "\"96430\"": "Other countries (RUS)",
+      "\"97030\"": "Other countries (SVK)",
+      "\"97050\"": "Other countries (SVN)",
+      "\"97240\"": "Other countries (ESP)",
+      "\"97520\"": "Other countries (SWE)",
+      "\"97560\"": "Other countries (CHE)",
+      "\"97640\"": "Other countries (THA)",
+      "\"97770\"": "Other countries (URY)",
+      "\"97880\"": "Other countries (TUN)",
+      "\"97920\"": "Other countries (TUR)",
+      "\"98260\"": "Other countries (GBR-QUK)",
+      "\"98262\"": "Other countries (GBR-QSC)",
+      "\"98400\"": "Other countries (USA)",
+      "\"98911\"": "Other countries (SRB)",
+      "\"98912\"": "Other countries (MNE)"
+    },
+    "COBN_F": {
+      "\"00020\"": "Africa",
+      "\"00021\"": "A Sub-Saharan country (Africa excl. Maghreb)",
+      "\"00080\"": "Albania",
+      "\"00110\"": "Cap Verde (in Western Africa)",
+      "\"00150\"": "North African country (Maghreb)",
+      "\"00290\"": "Caribbean",
+      "\"00310\"": "Azerbaijan",
+      "\"00320\"": "Argentina",
+      "\"00360\"": "Australia",
+      "\"00361\"": "England",
+      "\"00400\"": "Austria",
+      "\"00500\"": "Bangladesh",
+      "\"00560\"": "Belgium",
+      "\"00680\"": "Bolivia",
+      "\"00700\"": "Bosnia and Herzegovina",
+      "\"00760\"": "Brazil",
+      "\"01000\"": "Bulgaria",
+      "\"01120\"": "Belarus",
+      "\"01240\"": "Canada",
+      "\"01451\"": "Middle Eastern country",
+      "\"01510\"": "An Eastern European country",
+      "\"01520\"": "Chile",
+      "\"01560\"": "China",
+      "\"01561\"": "China (incl. HongKong)",
+      "\"01580\"": "Chinese Taipei",
+      "\"01700\"": "Colombia",
+      "\"01910\"": "Croatia",
+      "\"02030\"": "Czech Republic",
+      "\"02080\"": "Denmark",
+      "\"02330\"": "Estonia",
+      "\"02460\"": "Finland",
+      "\"02500\"": "France",
+      "\"02750\"": "Occupied Palestinian Territory",
+      "\"02760\"": "Germany",
+      "\"03000\"": "Greece",
+      "\"03440\"": "Hong Kong-China",
+      "\"03480\"": "Hungary",
+      "\"03520\"": "Iceland",
+      "\"03560\"": "India",
+      "\"03600\"": "Indonesia",
+      "\"03720\"": "Republic of Ireland",
+      "\"03760\"": "Israel",
+      "\"03800\"": "Italy",
+      "\"03920\"": "Japan",
+      "\"04000\"": "Jordan",
+      "\"04100\"": "Republic of Korea",
+      "\"04170\"": "Kyrgyzstan",
+      "\"04280\"": "Latvia",
+      "\"04380\"": "Liechtenstein",
+      "\"04400\"": "Lithuania",
+      "\"04420\"": "Luxembourg",
+      "\"04460\"": "Macao-China",
+      "\"04461\"": "Mainland China",
+      "\"04580\"": "Malaysia",
+      "\"04840\"": "Mexico",
+      "\"05280\"": "Netherlands",
+      "\"05540\"": "New Zealand",
+      "\"05780\"": "Norway",
+      "\"05860\"": "Pakistan",
+      "\"06000\"": "Paraguay",
+      "\"06080\"": "Philippines",
+      "\"06160\"": "Poland",
+      "\"06200\"": "Portugal",
+      "\"06340\"": "Qatar",
+      "\"06420\"": "Romania",
+      "\"06430\"": "Russian Federation",
+      "\"07020\"": "Singapore",
+      "\"07030\"": "Slovakia",
+      "\"07050\"": "Slovenia",
+      "\"07100\"": "South Africa",
+      "\"07240\"": "Spain",
+      "\"07241\"": "Andalusia (in Spain)",
+      "\"07242\"": "Aragon (in Spain)",
+      "\"07243\"": "Asturias (in Spain)",
+      "\"07244\"": "Balearic Islands (in Spain)",
+      "\"07245\"": "Canary Islands (in Spain)",
+      "\"07246\"": "Cantabria (in Spain)",
+      "\"07247\"": "Castile-La Mancha (in Spain)",
+      "\"07248\"": "Castile and Leon (in Spain)",
+      "\"07249\"": "Catalonia (in Spain)",
+      "\"07251\"": "Extremadura (in Spain)",
+      "\"07252\"": "Galicia (in Spain)",
+      "\"07253\"": "La Rioja (in Spain)",
+      "\"07254\"": "Madrid (in Spain)",
+      "\"07255\"": "Murcia (in Spain)",
+      "\"07256\"": "Navarre (in Spain)",
+      "\"07257\"": "Basque Country (in Spain)",
+      "\"07258\"": "Valencian Community (in Spain)",
+      "\"07259\"": "Ceuta and Melilla (in Spain)",
+      "\"07520\"": "Sweden",
+      "\"07560\"": "Switzerland",
+      "\"07620\"": "Tajikistan",
+      "\"07640\"": "Thailand",
+      "\"07880\"": "Tunisia",
+      "\"07920\"": "Turkey",
+      "\"08040\"": "Ukraine",
+      "\"08070\"": "Former Yugoslav Republic of Macedonia",
+      "\"08100\"": "A former USSR republic",
+      "\"08101\"": "Another former USSR republic (RUS)",
+      "\"08102\"": "Another former USSR republic (EST)",
+      "\"08180\"": "Egypt",
+      "\"08260\"": "United Kingdom",
+      "\"08261\"": "United Kingdom (excl.Scotland)",
+      "\"08262\"": "United Kingdom (Scotland)",
+      "\"08263\"": "Northern Ireland",
+      "\"08264\"": "Great Britain",
+      "\"08400\"": "United States",
+      "\"08580\"": "Uruguay",
+      "\"08600\"": "Uzbekistan",
+      "\"08820\"": "Samoa",
+      "\"08870\"": "Yemen",
+      "\"08900\"": "A former Yugoslav republic",
+      "\"08910\"": "Serbia-Montenegro",
+      "\"08911\"": "Serbia",
+      "\"08912\"": "Montenegro",
+      "\"10560\"": "Other Western European country (BEL)",
+      "\"11910\"": "Another former Yugoslav republic (HRV)",
+      "\"13800\"": "Other European Union Country (ITA)",
+      "\"14420\"": "Other European Union Country (LUX)",
+      "\"15280\"": "Other European country (NLD)",
+      "\"16200\"": "African country with Portuguese as the official language",
+      "\"18262\"": "Other European country (QSC)",
+      "\"18911\"": "One of the other former Yugoslav republics (SRB)",
+      "\"23800\"": "A European country that is not a member of the European Union",
+      "\"26200\"": "Other European Union Country (PRT)",
+      "\"36200\"": "An Eastern European country outside the EU",
+      "\"90310\"": "Other countries (AZE)",
+      "\"90320\"": "Other countries (ARG)",
+      "\"90360\"": "Other countries (AUS)",
+      "\"90400\"": "Other countries (AUT)",
+      "\"90560\"": "Other countries (BEL)",
+      "\"90760\"": "Other countries (BRA)",
+      "\"91000\"": "Other countries (BGR)",
+      "\"91240\"": "Other countries (CAN)",
+      "\"91520\"": "Other countries (CHL)",
+      "\"91580\"": "Other countries (TAP)",
+      "\"91700\"": "Other countries (COL)",
+      "\"91910\"": "Other countries (HRV)",
+      "\"92030\"": "Other countries (CZE)",
+      "\"92080\"": "Other countries (DNK)",
+      "\"92330\"": "Other countries (EST)",
+      "\"92460\"": "Other countries (FIN)",
+      "\"92500\"": "Other countries (FRA)",
+      "\"92760\"": "Other countries (DEU)",
+      "\"93000\"": "Other countries (GRC)",
+      "\"93440\"": "Other countries (HKG)",
+      "\"93480\"": "Other countries (HUN)",
+      "\"93520\"": "Other countries (ISL)",
+      "\"93600\"": "Other countries (IDN)",
+      "\"93720\"": "Other countries (IRL)",
+      "\"93760\"": "Other countries (ISR)",
+      "\"93800\"": "Other countries (ITA)",
+      "\"93920\"": "Other countries (JPN)",
+      "\"94000\"": "Other countries (JOR)",
+      "\"94100\"": "Other countries (KOR)",
+      "\"94170\"": "Other countries (KGZ)",
+      "\"94280\"": "Other countries (LVA)",
+      "\"94400\"": "Other countries (LTU)",
+      "\"94420\"": "Other countries (LUX)",
+      "\"94460\"": "Other countries (MAC)",
+      "\"94840\"": "Other countries (MEX)",
+      "\"95280\"": "Other countries (NLD)",
+      "\"95540\"": "Other countries (NZL)",
+      "\"95780\"": "Other countries (NOR)",
+      "\"96160\"": "Other countries (POL)",
+      "\"96200\"": "Other countries (PRT)",
+      "\"96340\"": "Other countries (QAT)",
+      "\"96420\"": "Other countries (ROU)",
+      "\"96430\"": "Other countries (RUS)",
+      "\"97030\"": "Other countries (SVK)",
+      "\"97050\"": "Other countries (SVN)",
+      "\"97240\"": "Other countries (ESP)",
+      "\"97520\"": "Other countries (SWE)",
+      "\"97560\"": "Other countries (CHE)",
+      "\"97640\"": "Other countries (THA)",
+      "\"97770\"": "Other countries (URY)",
+      "\"97880\"": "Other countries (TUN)",
+      "\"97920\"": "Other countries (TUR)",
+      "\"98260\"": "Other countries (GBR-QUK)",
+      "\"98262\"": "Other countries (GBR-QSC)",
+      "\"98400\"": "Other countries (USA)",
+      "\"98911\"": "Other countries (SRB)",
+      "\"98912\"": "Other countries (MNE)"
+    },
+    "COBN_S": {
+      "\"00020\"": "Africa",
+      "\"00021\"": "A Sub-Saharan country (Africa excl. Maghreb)",
+      "\"00080\"": "Albania",
+      "\"00110\"": "Cap Verde (in Western Africa)",
+      "\"00150\"": "North African country (Maghreb)",
+      "\"00290\"": "Caribbean",
+      "\"00310\"": "Azerbaijan",
+      "\"00320\"": "Argentina",
+      "\"00360\"": "Australia",
+      "\"00361\"": "England",
+      "\"00400\"": "Austria",
+      "\"00500\"": "Bangladesh",
+      "\"00560\"": "Belgium",
+      "\"00680\"": "Bolivia",
+      "\"00700\"": "Bosnia and Herzegovina",
+      "\"00760\"": "Brazil",
+      "\"01000\"": "Bulgaria",
+      "\"01120\"": "Belarus",
+      "\"01240\"": "Canada",
+      "\"01451\"": "Middle Eastern country",
+      "\"01510\"": "An Eastern European country",
+      "\"01520\"": "Chile",
+      "\"01560\"": "China",
+      "\"01561\"": "China (incl. HongKong)",
+      "\"01580\"": "Chinese Taipei",
+      "\"01700\"": "Colombia",
+      "\"01910\"": "Croatia",
+      "\"02030\"": "Czech Republic",
+      "\"02080\"": "Denmark",
+      "\"02330\"": "Estonia",
+      "\"02460\"": "Finland",
+      "\"02500\"": "France",
+      "\"02750\"": "Occupied Palestinian Territory",
+      "\"02760\"": "Germany",
+      "\"03000\"": "Greece",
+      "\"03440\"": "Hong Kong-China",
+      "\"03480\"": "Hungary",
+      "\"03520\"": "Iceland",
+      "\"03560\"": "India",
+      "\"03600\"": "Indonesia",
+      "\"03720\"": "Republic of Ireland",
+      "\"03760\"": "Israel",
+      "\"03800\"": "Italy",
+      "\"03920\"": "Japan",
+      "\"04000\"": "Jordan",
+      "\"04100\"": "Republic of Korea",
+      "\"04170\"": "Kyrgyzstan",
+      "\"04280\"": "Latvia",
+      "\"04380\"": "Liechtenstein",
+      "\"04400\"": "Lithuania",
+      "\"04420\"": "Luxembourg",
+      "\"04460\"": "Macao-China",
+      "\"04461\"": "Mainland China",
+      "\"04580\"": "Malaysia",
+      "\"04840\"": "Mexico",
+      "\"05280\"": "Netherlands",
+      "\"05540\"": "New Zealand",
+      "\"05780\"": "Norway",
+      "\"05860\"": "Pakistan",
+      "\"06000\"": "Paraguay",
+      "\"06080\"": "Philippines",
+      "\"06160\"": "Poland",
+      "\"06200\"": "Portugal",
+      "\"06340\"": "Qatar",
+      "\"06420\"": "Romania",
+      "\"06430\"": "Russian Federation",
+      "\"07020\"": "Singapore",
+      "\"07030\"": "Slovakia",
+      "\"07050\"": "Slovenia",
+      "\"07100\"": "South Africa",
+      "\"07240\"": "Spain",
+      "\"07241\"": "Andalusia (in Spain)",
+      "\"07242\"": "Aragon (in Spain)",
+      "\"07243\"": "Asturias (in Spain)",
+      "\"07244\"": "Balearic Islands (in Spain)",
+      "\"07245\"": "Canary Islands (in Spain)",
+      "\"07246\"": "Cantabria (in Spain)",
+      "\"07247\"": "Castile-La Mancha (in Spain)",
+      "\"07248\"": "Castile and Leon (in Spain)",
+      "\"07249\"": "Catalonia (in Spain)",
+      "\"07251\"": "Extremadura (in Spain)",
+      "\"07252\"": "Galicia (in Spain)",
+      "\"07253\"": "La Rioja (in Spain)",
+      "\"07254\"": "Madrid (in Spain)",
+      "\"07255\"": "Murcia (in Spain)",
+      "\"07256\"": "Navarre (in Spain)",
+      "\"07257\"": "Basque Country (in Spain)",
+      "\"07258\"": "Valencian Community (in Spain)",
+      "\"07259\"": "Ceuta and Melilla (in Spain)",
+      "\"07520\"": "Sweden",
+      "\"07560\"": "Switzerland",
+      "\"07620\"": "Tajikistan",
+      "\"07640\"": "Thailand",
+      "\"07880\"": "Tunisia",
+      "\"07920\"": "Turkey",
+      "\"08040\"": "Ukraine",
+      "\"08070\"": "Former Yugoslav Republic of Macedonia",
+      "\"08100\"": "A former USSR republic",
+      "\"08101\"": "Another former USSR republic (RUS)",
+      "\"08102\"": "Another former USSR republic (EST)",
+      "\"08180\"": "Egypt",
+      "\"08260\"": "United Kingdom",
+      "\"08261\"": "United Kingdom (excl.Scotland)",
+      "\"08262\"": "United Kingdom (Scotland)",
+      "\"08263\"": "Northern Ireland",
+      "\"08264\"": "Great Britain",
+      "\"08400\"": "United States",
+      "\"08580\"": "Uruguay",
+      "\"08600\"": "Uzbekistan",
+      "\"08820\"": "Samoa",
+      "\"08870\"": "Yemen",
+      "\"08900\"": "A former Yugoslav republic",
+      "\"08910\"": "Serbia-Montenegro",
+      "\"08911\"": "Serbia",
+      "\"08912\"": "Montenegro",
+      "\"10560\"": "Other Western European country (BEL)",
+      "\"11910\"": "Another former Yugoslav republic (HRV)",
+      "\"13800\"": "Other European Union Country (ITA)",
+      "\"14420\"": "Other European Union Country (LUX)",
+      "\"15280\"": "Other European country (NLD)",
+      "\"16200\"": "African country with Portuguese as the official language",
+      "\"18262\"": "Other European country (QSC)",
+      "\"18911\"": "One of the other former Yugoslav republics (SRB)",
+      "\"23800\"": "A European country that is not a member of the European Union",
+      "\"26200\"": "Other European Union Country (PRT)",
+      "\"36200\"": "An Eastern European country outside the EU",
+      "\"90310\"": "Other countries (AZE)",
+      "\"90320\"": "Other countries (ARG)",
+      "\"90360\"": "Other countries (AUS)",
+      "\"90400\"": "Other countries (AUT)",
+      "\"90560\"": "Other countries (BEL)",
+      "\"90760\"": "Other countries (BRA)",
+      "\"91000\"": "Other countries (BGR)",
+      "\"91240\"": "Other countries (CAN)",
+      "\"91520\"": "Other countries (CHL)",
+      "\"91580\"": "Other countries (TAP)",
+      "\"91700\"": "Other countries (COL)",
+      "\"91910\"": "Other countries (HRV)",
+      "\"92030\"": "Other countries (CZE)",
+      "\"92080\"": "Other countries (DNK)",
+      "\"92330\"": "Other countries (EST)",
+      "\"92460\"": "Other countries (FIN)",
+      "\"92500\"": "Other countries (FRA)",
+      "\"92760\"": "Other countries (DEU)",
+      "\"93000\"": "Other countries (GRC)",
+      "\"93440\"": "Other countries (HKG)",
+      "\"93480\"": "Other countries (HUN)",
+      "\"93520\"": "Other countries (ISL)",
+      "\"93600\"": "Other countries (IDN)",
+      "\"93720\"": "Other countries (IRL)",
+      "\"93760\"": "Other countries (ISR)",
+      "\"93800\"": "Other countries (ITA)",
+      "\"93920\"": "Other countries (JPN)",
+      "\"94000\"": "Other countries (JOR)",
+      "\"94100\"": "Other countries (KOR)",
+      "\"94170\"": "Other countries (KGZ)",
+      "\"94280\"": "Other countries (LVA)",
+      "\"94400\"": "Other countries (LTU)",
+      "\"94420\"": "Other countries (LUX)",
+      "\"94460\"": "Other countries (MAC)",
+      "\"94840\"": "Other countries (MEX)",
+      "\"95280\"": "Other countries (NLD)",
+      "\"95540\"": "Other countries (NZL)",
+      "\"95780\"": "Other countries (NOR)",
+      "\"96160\"": "Other countries (POL)",
+      "\"96200\"": "Other countries (PRT)",
+      "\"96340\"": "Other countries (QAT)",
+      "\"96420\"": "Other countries (ROU)",
+      "\"96430\"": "Other countries (RUS)",
+      "\"97030\"": "Other countries (SVK)",
+      "\"97050\"": "Other countries (SVN)",
+      "\"97240\"": "Other countries (ESP)",
+      "\"97520\"": "Other countries (SWE)",
+      "\"97560\"": "Other countries (CHE)",
+      "\"97640\"": "Other countries (THA)",
+      "\"97770\"": "Other countries (URY)",
+      "\"97880\"": "Other countries (TUN)",
+      "\"97920\"": "Other countries (TUR)",
+      "\"98260\"": "Other countries (GBR-QUK)",
+      "\"98262\"": "Other countries (GBR-QSC)",
+      "\"98400\"": "Other countries (USA)",
+      "\"98911\"": "Other countries (SRB)",
+      "\"98912\"": "Other countries (MNE)"
+    },
+    "ST13Q15": {
+      "\"031001\"": "AZE: Satellite Dish",
+      "\"031002\"": "AZE: No Satellite Dish",
+      "\"032001\"": "ARG: Cable TV (Direct TV, Cablevision, etc.)",
+      "\"032002\"": "ARG: No Cable TV (Direct TV, Cablevision, etc.)"
+    },
+    "ST13Q16": {
+      "\"031001\"": "AZE: Video Camera",
+      "\"031002\"": "AZE: No Video Camera",
+      "\"032001\"": "ARG: Telephone Line",
+      "\"032002\"": "ARG: No Telephone Line",
+      "\"036001\"": "AUS: Digital Camera",
+      "\"036002\"": "AUS: No Digital Camera",
+      "\"040001\"": "AUT: Digital Camera",
+      "\"040002\"": "AUT: No Digital Camera",
+      "\"056011\"": "QBL: Alarm System",
+      "\"056012\"": "QBL: No Alarm System",
+      "\"056961\"": "QBF: Alarm System",
+      "\"056962\"": "QBF: No Alarm System",
+      "\"076001\"": "BRA: Cable TV",
+      "\"076002\"": "BRA: No Cable TV",
+      "\"100001\"": "BGR: Freezer",
+      "\"100002\"": "BGR: No Freezer",
+      "\"124001\"": "CAN: Subscription to a Daily Newspaper",
+      "\"124002\"": "CAN: No Subscription to a Daily Newspaper",
+      "\"152001\"": "CHL: Washing Machine",
+      "\"152002\"": "CHL: No Washing Machine",
+      "\"158001\"": "TAP: iPod",
+      "\"158002\"": "TAP: No iPod",
+      "\"170001\"": "COL: Cable TV or Direct to Home TV",
+      "\"170002\"": "COL: No Cable TV or Direct to Home TV",
+      "\"191001\"": "HRV: Clothes Dryer",
+      "\"191002\"": "HRV: No Clothes Dryer",
+      "\"203001\"": "CZE: Digital Video Camera",
+      "\"203002\"": "CZE: No Digital Video Camera",
+      "\"208001\"": "DNK: MP3 Player",
+      "\"208002\"": "DNK: No MP3 Player",
+      "\"233001\"": "EST: Hi-Fi",
+      "\"233002\"": "EST: No Hi-Fi",
+      "\"246001\"": "FIN: Wide Screen TV",
+      "\"246002\"": "FIN: No Wide Screen TV",
+      "\"250001\"": "FRA: Digital Camera (not part of a mobile phone)",
+      "\"250002\"": "FRA: No Digital Camera (not part of a mobile phone)",
+      "\"276001\"": "DEU: Video Camera",
+      "\"276002\"": "DEU: No Video Camera",
+      "\"300001\"": "GRC: Cable TV (Nova, Filmnet,etc.)",
+      "\"300002\"": "GRC: No Cable TV (Nova, Filmnet,etc.)",
+      "\"344001\"": "HKG: Musical Instrument (e.g. piano, violin)",
+      "\"344002\"": "HKG: No Musical Instrument (e.g. piano, violin)",
+      "\"348001\"": "HUN: Video Camera",
+      "\"348002\"": "HUN: No Video Camera",
+      "\"352001\"": "ISL: Satellite Dish",
+      "\"352002\"": "ISL: No Satellite Dish",
+      "\"360001\"": "IDN: Motorcycle",
+      "\"360002\"": "IDN: No Motorcycle",
+      "\"372001\"": "IRL: Bedroom with an En-suite Bathroom",
+      "\"372002\"": "IRL: No Bedroom with an En-suite Bathroom",
+      "\"376001\"": "ISR: Digital Camera",
+      "\"376002\"": "ISR: No Digital Camera",
+      "\"380001\"": "ITA: Plasma TV Set",
+      "\"380002\"": "ITA: No Plasma TV Set"
+    },
+    "ST13Q17": {
+      "\"031001\"": "AZE: Colour Printer",
+      "\"031002\"": "AZE: No Colour Printer",
+      "\"032001\"": "ARG: Refrigerator with Freezer",
+      "\"032002\"": "ARG: No Refrigerator with Freezer",
+      "\"036001\"": "AUS: Plasma TV",
+      "\"036002\"": "AUS: No Plasma TV",
+      "\"040001\"": "AUT: Digital Video Camera",
+      "\"040002\"": "AUT: No Digital Video Camera",
+      "\"056011\"": "QBL: Plasma or LCD TV",
+      "\"056012\"": "QBL: No Plasma or LCD TV",
+      "\"056961\"": "QBF: Housekeeper",
+      "\"056962\"": "QBF: No Housekeeper",
+      "\"076001\"": "BRA: Video Game",
+      "\"076002\"": "BRA: No Video Game",
+      "\"100001\"": "BGR: Digital Camera",
+      "\"100002\"": "BGR: No Digital Camera",
+      "\"124001\"": "CAN: Central Air Conditioning",
+      "\"124002\"": "CAN: No Central Air Conditioning",
+      "\"152001\"": "CHL: Digital Video Camera",
+      "\"152002\"": "CHL: No Digital Video Camera",
+      "\"158001\"": "TAP: Jacuzzi Bath",
+      "\"158002\"": "TAP: No Jacuzzi Bath",
+      "\"170001\"": "COL: Encyclopedia",
+      "\"170002\"": "COL: No Encyclopedia",
+      "\"191001\"": "HRV: Air Conditioning",
+      "\"191002\"": "HRV: No Air Conditioning",
+      "\"203001\"": "CZE: Personal Discman or MP3 Player",
+      "\"203002\"": "CZE: No Personal Discman or MP3 Player",
+      "\"208001\"": "DNK: Digital Camera",
+      "\"208002\"": "DNK: No Digital Camera",
+      "\"233001\"": "EST: Broadband Internet Connection",
+      "\"233002\"": "EST: No Broadband Internet Connection",
+      "\"246001\"": "FIN: Fitness Equipment (e.g. exercise bike, rowing machine)",
+      "\"246002\"": "FIN: No Fitness Equipment (e.g. exercise bike, rowing machine)",
+      "\"250001\"": "FRA: Laptop Computer",
+      "\"250002\"": "FRA: No Laptop Computer",
+      "\"276001\"": "DEU: ISDN Connection",
+      "\"276002\"": "DEU: No ISDN Connection",
+      "\"300001\"": "GRC: Alarm System",
+      "\"300002\"": "GRC: No Alarm System",
+      "\"344001\"": "HKG: Pay TV Channel",
+      "\"344002\"": "HKG: No Pay TV Channel",
+      "\"348001\"": "HUN: Digital Camera (not part of a mobile phone)",
+      "\"348002\"": "HUN: No Digital Camera (not part of a mobile phone)",
+      "\"352001\"": "ISL: Plasma TV or TV Projector",
+      "\"352002\"": "ISL: No Plasma TV or TV Projector",
+      "\"360001\"": "IDN: Air Conditioning",
+      "\"360002\"": "IDN: No Air Conditioning",
+      "\"372001\"": "IRL: Premium Cable TV Package (e.g. Sky Movies, Sky Sports)",
+      "\"372002\"": "IRL: No Premium Cable TV Package (e.g. Sky Movies, Sky Sports)",
+      "\"376001\"": "ISR: Home Movie Theatre",
+      "\"376002\"": "ISR: No Home Movie Theatre",
+      "\"380001\"": "ITA: Air Conditioning",
+      "\"380002\"": "ITA: No Air Conditioning",
+      "\"392001\"": "JPN: Clothing Dryer",
+      "\"392002\"": "JPN: No Clothing Dryer",
+      "\"400001\"": "JOR: Digital Camera",
+      "\"400002\"": "JOR: No Digital Camera",
+      "\"410001\"": "KOR: Water Purifier",
+      "\"410002\"": "KOR: No Water Purifier",
+      "\"417001\"": "KGZ: Imported Clothes Washing Machine such as Ariston or Indesit",
+      "\"417002\"": "KGZ: No Imported Clothes Washing Machine such as Ariston or Indesit",
+      "\"428001\"": "LVA: Digital Camera",
+      "\"428002\"": "LVA: No Digital Camera",
+      "\"438001\"": "LIE: Digital Video Camera",
+      "\"438002\"": "LIE: No Digital Video Camera",
+      "\"440001\"": "LTU: MP3 Player",
+      "\"440002\"": "LTU: No MP3 Player",
+      "\"442001\"": "LUX: Flat Screen TV",
+      "\"442002\"": "LUX: No Flat Screen TV",
+      "\"446001\"": "MAC: MP3 Player",
+      "\"446002\"": "MAC: No MP3 Player",
+      "\"484001\"": "MEX: Microwave Oven",
+      "\"484002\"": "MEX: No Microwave Oven",
+      "\"499001\"": "MNE: Digital Camera",
+      "\"499002\"": "MNE: No Digital Camera",
+      "\"528001\"": "NLD: Laptop",
+      "\"528002\"": "NLD: No Laptop",
+      "\"554001\"": "NZL: Clothes Dryer",
+      "\"554002\"": "NZL: No Clothes Dryer",
+      "\"578001\"": "NOR: Spa Bath",
+      "\"578002\"": "NOR: No Spa Bath",
+      "\"616001\"": "POL: Telescope or Microscope",
+      "\"616002\"": "POL: No Telescope or Microscope",
+      "\"620001\"": "PRT: Central Heating or Air Conditioning Equipment",
+      "\"620002\"": "PRT: No Central Heating or Air Conditioning Equipment",
+      "\"634001\"": "QAT: X-Box",
+      "\"634002\"": "QAT: No X-Box",
+      "\"642001\"": "ROU: Air Conditioning",
+      "\"642002\"": "ROU: No Air Conditioning",
+      "\"643001\"": "RUS: Satellite Antenna",
+      "\"643002\"": "RUS: No Satellite Antenna",
+      "\"688001\"": "SRB: Cable TV",
+      "\"688002\"": "SRB: No Cable TV",
+      "\"703001\"": "SVK: Satellite Receiver or Cable TV",
+      "\"703002\"": "SVK: No Satellite Receiver or Cable TV",
+      "\"705001\"": "SVN: Sauna",
+      "\"705002\"": "SVN: No Sauna",
+      "\"724001\"": "ESP: Home Cinema Set",
+      "\"724002\"": "ESP: No Home Cinema Set",
+      "\"752001\"": "SWE: Wall TV",
+      "\"752002\"": "SWE: No Wall TV",
+      "\"756001\"": "CHE: Digital Video Camera",
+      "\"756002\"": "CHE: No Digital Video Camera",
+      "\"764001\"": "THA: Microwave Oven",
+      "\"764002\"": "THA: No Microwave Oven",
+      "\"788001\"": "TUN: Washing Machine",
+      "\"788002\"": "TUN: No Washing Machine",
+      "\"792001\"": "TUR: Home Cinema System (5+1)",
+      "\"792002\"": "TUR: No Home Cinema System (5+1)",
+      "\"826101\"": "QUK: Swimming Pool",
+      "\"826102\"": "QUK: No Swimming Pool",
+      "\"826201\"": "QSC: Broadband Internet Connection",
+      "\"826202\"": "QSC: No Broadband Internet Connection",
+      "\"840001\"": "USA: iPod or MP3 Player",
+      "\"840002\"": "USA: No iPod or MP3 Player",
+      "\"858001\"": "URY: Microwave Oven",
+      "\"858002\"": "URY: No Microwave Oven"
+    }
+  },
+  "missing_codes": {
+    "ST11Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST11Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST11Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST04Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST06Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST07Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST07Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST07Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST09Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST10Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST10Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST10Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST12Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q09": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q10": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q11": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q12": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q13": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q14": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST14Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST14Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST14Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST14Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST15Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST16Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST16Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST16Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST16Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST16Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST17Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q09": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST18Q10": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST19Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST19Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST19Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST19Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST19Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST19Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QA1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QA2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QA3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QA4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QA5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QA6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QB1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QB2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QB3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QB4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QB5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QB6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QC1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QC2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QC3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QC4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QC5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QC6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QD1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QD2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QD3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QD4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QD5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QD6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QE1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QE2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QE3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QE4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QE5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QE6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QF1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QF2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QF3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QF4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QF5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QF6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QG1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QG2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QG3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QG4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QG5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QG6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QH1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QH2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QH3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QH4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QH5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST20QH6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST21Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST22Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST22Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST22Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST22Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST22Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QA1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QA2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QA3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QA4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QA5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QA6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QB1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QB2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QB3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QB4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QB5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QB6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QC1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QC2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QC3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QC4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QC5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QC6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QD1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QD2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QD3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QD4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QD5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QD6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QE1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QE2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QE3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QE4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QE5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QE6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QF1": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QF2": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QF3": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QF4": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QF5": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST23QF6": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST24Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST24Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST24Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST24Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST24Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST24Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST25Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST25Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST25Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST25Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST25Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST25Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST26Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST27Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST27Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST27Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST27Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST28Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST28Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST28Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST28Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST29Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST29Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST29Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST29Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q09": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q10": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q11": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST31Q12": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST32Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST32Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST32Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST32Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST32Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST32Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q11": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q12": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q21": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q22": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q31": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q32": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q41": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q42": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q51": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q52": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q61": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q62": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q71": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q72": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q81": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST33Q82": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q09": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q10": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q11": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q12": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q13": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q14": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q15": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q16": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST34Q17": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST35Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST35Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST35Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST35Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST35Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST36Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST36Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST36Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST37Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST37Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST37Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST37Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST37Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST37Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC01Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC02Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC03Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC03Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC03Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q09": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q10": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC04Q11": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q01": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q02": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q03": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q04": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q05": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q06": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q07": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q08": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q09": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q10": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q11": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q12": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q13": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q14": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q15": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IC05Q16": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ST13Q15": [
+      "\"999997\"",
+      "\"999998\"",
+      "\"999999\""
+    ],
+    "ST13Q16": [
+      "\"999997\"",
+      "\"999998\"",
+      "\"999999\""
+    ],
+    "ST13Q17": [
+      "\"999997\"",
+      "\"999998\"",
+      "\"999999\""
+    ],
+    "ST01Q01": [
+      "96",
+      "99"
+    ],
+    "ST02Q01": [
+      "96",
+      "99"
+    ],
+    "ST03Q02": [
+      "'97'",
+      "'98'",
+      "'99'"
+    ],
+    "ST03Q03": [
+      "'97'",
+      "'98'",
+      "'99'"
+    ],
+    "ST05Q01": [
+      "'9997'",
+      "'9998'",
+      "'9999'"
+    ],
+    "ST08Q01": [
+      "'9997'",
+      "'9998'",
+      "'9999'"
+    ],
+    "ST30Q01": [
+      "'9997'",
+      "'9998'",
+      "'9999'"
+    ],
+    "ST11Q04": [
+      "97",
+      "98",
+      "99"
+    ],
+    "ISCEDL": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ISCEDD": [
+      "7",
+      "8",
+      "9"
+    ],
+    "ISCEDO": [
+      "7",
+      "8",
+      "9"
+    ],
+    "MISCED": [
+      "7",
+      "8",
+      "9"
+    ],
+    "FISCED": [
+      "7",
+      "8",
+      "9"
+    ],
+    "HISCED": [
+      "7",
+      "8",
+      "9"
+    ],
+    "IMMIG": [
+      "7",
+      "8",
+      "9"
+    ],
+    "AGE": [
+      "97",
+      "98",
+      "99"
+    ],
+    "BMMJ": [
+      "97",
+      "98",
+      "99"
+    ],
+    "BFMJ": [
+      "97",
+      "98",
+      "99"
+    ],
+    "BSMJ": [
+      "97",
+      "98",
+      "99"
+    ],
+    "HISEI": [
+      "97",
+      "98",
+      "99"
+    ],
+    "PARED": [
+      "97",
+      "98",
+      "99"
+    ],
+    "MSECATEG": [
+      "7",
+      "8",
+      "9"
+    ],
+    "FSECATEG": [
+      "7",
+      "8",
+      "9"
+    ],
+    "HSECATEG": [
+      "7",
+      "8",
+      "9"
+    ],
+    "SRC_M": [
+      "7",
+      "8",
+      "9"
+    ],
+    "SRC_F": [
+      "7",
+      "8",
+      "9"
+    ],
+    "SRC_E": [
+      "7",
+      "8",
+      "9"
+    ],
+    "SRC_S": [
+      "7",
+      "8",
+      "9"
+    ],
+    "CLCUSE3A": [
+      "997",
+      "998",
+      "999"
+    ],
+    "CLCUSE3B": [
+      "997",
+      "998",
+      "999"
+    ],
+    "DEFFORT": [
+      "997",
+      "998",
+      "999"
+    ],
+    "ESCS": [
+      "997",
+      "999"
+    ],
+    "CARINFO": [
+      "997",
+      "999"
+    ],
+    "CARPREP": [
+      "997",
+      "999"
+    ],
+    "CULTPOSS": [
+      "997",
+      "999"
+    ],
+    "ENVAWARE": [
+      "997",
+      "999"
+    ],
+    "ENVOPT": [
+      "997",
+      "999"
+    ],
+    "ENVPERC": [
+      "997",
+      "999"
+    ],
+    "GENSCIE": [
+      "997",
+      "999"
+    ],
+    "HEDRES": [
+      "997",
+      "999"
+    ],
+    "HIGHCONF": [
+      "997",
+      "999"
+    ],
+    "HOMEPOS": [
+      "997",
+      "999"
+    ],
+    "INSTSCIE": [
+      "997",
+      "999"
+    ],
+    "INTCONF": [
+      "997",
+      "999"
+    ],
+    "INTSCIE": [
+      "997",
+      "999"
+    ],
+    "INTUSE": [
+      "997",
+      "999"
+    ],
+    "JOYSCIE": [
+      "997",
+      "999"
+    ],
+    "PERSCIE": [
+      "997",
+      "999"
+    ],
+    "PRGUSE": [
+      "997",
+      "999"
+    ],
+    "RESPDEV": [
+      "997",
+      "999"
+    ],
+    "SCAPPLY": [
+      "997",
+      "999"
+    ],
+    "SCHANDS": [
+      "997",
+      "999"
+    ],
+    "SCIEACT": [
+      "997",
+      "999"
+    ],
+    "SCIEEFF": [
+      "997",
+      "999"
+    ],
+    "SCIEFUT": [
+      "997",
+      "999"
+    ],
+    "SCINTACT": [
+      "997",
+      "999"
+    ],
+    "SCINVEST": [
+      "997",
+      "999"
+    ],
+    "SCSCIE": [
+      "997",
+      "999"
+    ],
+    "WEALTH": [
+      "997",
+      "999"
+    ],
+    "PV1READ": [
+      "9997"
+    ],
+    "PV2READ": [
+      "9997"
+    ],
+    "PV3READ": [
+      "9997"
+    ],
+    "PV4READ": [
+      "9997"
+    ],
+    "PV5READ": [
+      "9997"
+    ],
+    "S421Q02": [
+      "\"7\""
+    ],
+    "S456Q01": [
+      "\"77\"",
+      "\"71\""
+    ],
+    "S456Q02": [
+      "\"7\""
+    ]
+  },
+  "source_files": [
+    "data/Global/pisa/historical_raw/2006/student_questionnaire/INT_Stu06_Dec07.txt",
+    "data/Global/pisa/historical_raw/2006/student_questionnaire/PISA2006_SPSS_student.txt"
+  ],
+  "parser": "fixed-width values read as published; declared missing codes are retained",
+  "year": 2006,
+  "rows": 19604,
+  "source_columns": [
+    "SUBNATIO",
+    "SCHOOLID",
+    "STIDSTD",
+    "CNT",
+    "COUNTRY",
+    "OECD",
+    "ST01Q01",
+    "ST02Q01",
+    "ST03Q02",
+    "ST03Q03",
+    "ST04Q01",
+    "ST05Q01",
+    "ST06Q01",
+    "ST07Q01",
+    "ST07Q02",
+    "ST07Q03",
+    "ST08Q01",
+    "ST09Q01",
+    "ST10Q01",
+    "ST10Q02",
+    "ST10Q03",
+    "ST11Q01",
+    "ST11Q02",
+    "ST11Q03",
+    "ST11Q04",
+    "ST12Q01",
+    "ST13Q01",
+    "ST13Q02",
+    "ST13Q03",
+    "ST13Q04",
+    "ST13Q05",
+    "ST13Q06",
+    "ST13Q07",
+    "ST13Q08",
+    "ST13Q09",
+    "ST13Q10",
+    "ST13Q11",
+    "ST13Q12",
+    "ST13Q13",
+    "ST13Q14",
+    "ST13Q15",
+    "ST13Q16",
+    "ST13Q17",
+    "ST14Q01",
+    "ST14Q02",
+    "ST14Q03",
+    "ST14Q04",
+    "ST15Q01",
+    "ST16Q01",
+    "ST16Q02",
+    "ST16Q03",
+    "ST16Q04",
+    "ST16Q05",
+    "ST17Q01",
+    "ST17Q02",
+    "ST17Q03",
+    "ST17Q04",
+    "ST17Q05",
+    "ST17Q06",
+    "ST17Q07",
+    "ST17Q08",
+    "ST18Q01",
+    "ST18Q02",
+    "ST18Q03",
+    "ST18Q04",
+    "ST18Q05",
+    "ST18Q06",
+    "ST18Q07",
+    "ST18Q08",
+    "ST18Q09",
+    "ST18Q10",
+    "ST19Q01",
+    "ST19Q02",
+    "ST19Q03",
+    "ST19Q04",
+    "ST19Q05",
+    "ST19Q06",
+    "ST20QA1",
+    "ST20QA2",
+    "ST20QA3",
+    "ST20QA4",
+    "ST20QA5",
+    "ST20QA6",
+    "ST20QB1",
+    "ST20QB2",
+    "ST20QB3",
+    "ST20QB4",
+    "ST20QB5",
+    "ST20QB6",
+    "ST20QC1",
+    "ST20QC2",
+    "ST20QC3",
+    "ST20QC4",
+    "ST20QC5",
+    "ST20QC6",
+    "ST20QD1",
+    "ST20QD2",
+    "ST20QD3",
+    "ST20QD4",
+    "ST20QD5",
+    "ST20QD6",
+    "ST20QE1",
+    "ST20QE2",
+    "ST20QE3",
+    "ST20QE4",
+    "ST20QE5",
+    "ST20QE6",
+    "ST20QF1",
+    "ST20QF2",
+    "ST20QF3",
+    "ST20QF4",
+    "ST20QF5",
+    "ST20QF6",
+    "ST20QG1",
+    "ST20QG2",
+    "ST20QG3",
+    "ST20QG4",
+    "ST20QG5",
+    "ST20QG6",
+    "ST20QH1",
+    "ST20QH2",
+    "ST20QH3",
+    "ST20QH4",
+    "ST20QH5",
+    "ST20QH6",
+    "ST21Q01",
+    "ST21Q02",
+    "ST21Q03",
+    "ST21Q04",
+    "ST21Q05",
+    "ST21Q06",
+    "ST21Q07",
+    "ST21Q08",
+    "ST22Q01",
+    "ST22Q02",
+    "ST22Q03",
+    "ST22Q04",
+    "ST22Q05",
+    "ST23QA1",
+    "ST23QA2",
+    "ST23QA3",
+    "ST23QA4",
+    "ST23QA5",
+    "ST23QA6",
+    "ST23QB1",
+    "ST23QB2",
+    "ST23QB3",
+    "ST23QB4",
+    "ST23QB5",
+    "ST23QB6",
+    "ST23QC1",
+    "ST23QC2",
+    "ST23QC3",
+    "ST23QC4",
+    "ST23QC5",
+    "ST23QC6",
+    "ST23QD1",
+    "ST23QD2",
+    "ST23QD3",
+    "ST23QD4",
+    "ST23QD5",
+    "ST23QD6",
+    "ST23QE1",
+    "ST23QE2",
+    "ST23QE3",
+    "ST23QE4",
+    "ST23QE5",
+    "ST23QE6",
+    "ST23QF1",
+    "ST23QF2",
+    "ST23QF3",
+    "ST23QF4",
+    "ST23QF5",
+    "ST23QF6",
+    "ST24Q01",
+    "ST24Q02",
+    "ST24Q03",
+    "ST24Q04",
+    "ST24Q05",
+    "ST24Q06",
+    "ST25Q01",
+    "ST25Q02",
+    "ST25Q03",
+    "ST25Q04",
+    "ST25Q05",
+    "ST25Q06",
+    "ST26Q01",
+    "ST26Q02",
+    "ST26Q03",
+    "ST26Q04",
+    "ST26Q05",
+    "ST26Q06",
+    "ST26Q07",
+    "ST27Q01",
+    "ST27Q02",
+    "ST27Q03",
+    "ST27Q04",
+    "ST28Q01",
+    "ST28Q02",
+    "ST28Q03",
+    "ST28Q04",
+    "ST29Q01",
+    "ST29Q02",
+    "ST29Q03",
+    "ST29Q04",
+    "ST30Q01",
+    "ST31Q01",
+    "ST31Q02",
+    "ST31Q03",
+    "ST31Q04",
+    "ST31Q05",
+    "ST31Q06",
+    "ST31Q07",
+    "ST31Q08",
+    "ST31Q09",
+    "ST31Q10",
+    "ST31Q11",
+    "ST31Q12",
+    "ST32Q01",
+    "ST32Q02",
+    "ST32Q03",
+    "ST32Q04",
+    "ST32Q05",
+    "ST32Q06",
+    "ST33Q11",
+    "ST33Q12",
+    "ST33Q21",
+    "ST33Q22",
+    "ST33Q31",
+    "ST33Q32",
+    "ST33Q41",
+    "ST33Q42",
+    "ST33Q51",
+    "ST33Q52",
+    "ST33Q61",
+    "ST33Q62",
+    "ST33Q71",
+    "ST33Q72",
+    "ST33Q81",
+    "ST33Q82",
+    "ST34Q01",
+    "ST34Q02",
+    "ST34Q03",
+    "ST34Q04",
+    "ST34Q05",
+    "ST34Q06",
+    "ST34Q07",
+    "ST34Q08",
+    "ST34Q09",
+    "ST34Q10",
+    "ST34Q11",
+    "ST34Q12",
+    "ST34Q13",
+    "ST34Q14",
+    "ST34Q15",
+    "ST34Q16",
+    "ST34Q17",
+    "ST35Q01",
+    "ST35Q02",
+    "ST35Q03",
+    "ST35Q04",
+    "ST35Q05",
+    "ST36Q01",
+    "ST36Q02",
+    "ST36Q03",
+    "ST37Q01",
+    "ST37Q02",
+    "ST37Q03",
+    "ST37Q04",
+    "ST37Q05",
+    "ST37Q06",
+    "IC01Q01",
+    "IC02Q01",
+    "IC03Q01",
+    "IC03Q02",
+    "IC03Q03",
+    "IC04Q01",
+    "IC04Q02",
+    "IC04Q03",
+    "IC04Q04",
+    "IC04Q05",
+    "IC04Q06",
+    "IC04Q07",
+    "IC04Q08",
+    "IC04Q09",
+    "IC04Q10",
+    "IC04Q11",
+    "IC05Q01",
+    "IC05Q02",
+    "IC05Q03",
+    "IC05Q04",
+    "IC05Q05",
+    "IC05Q06",
+    "IC05Q07",
+    "IC05Q08",
+    "IC05Q09",
+    "IC05Q10",
+    "IC05Q11",
+    "IC05Q12",
+    "IC05Q13",
+    "IC05Q14",
+    "IC05Q15",
+    "IC05Q16",
+    "AGE",
+    "ISCEDL",
+    "ISCEDD",
+    "ISCEDO",
+    "PROGN",
+    "BMMJ",
+    "BFMJ",
+    "BSMJ",
+    "HISEI",
+    "MSECATEG",
+    "FSECATEG",
+    "HSECATEG",
+    "SRC_M",
+    "SRC_F",
+    "SRC_E",
+    "SRC_S",
+    "MISCED",
+    "FISCED",
+    "HISCED",
+    "PARED",
+    "COBN_M",
+    "COBN_F",
+    "COBN_S",
+    "IMMIG",
+    "LANGN",
+    "CARINFO",
+    "CARPREP",
+    "CULTPOSS",
+    "ENVAWARE",
+    "ENVOPT",
+    "ENVPERC",
+    "GENSCIE",
+    "HEDRES",
+    "HOMEPOS",
+    "INSTSCIE",
+    "INTSCIE",
+    "JOYSCIE",
+    "PERSCIE",
+    "RESPDEV",
+    "SCAPPLY",
+    "SCHANDS",
+    "SCIEACT",
+    "SCIEEFF",
+    "SCIEFUT",
+    "SCINTACT",
+    "SCINVEST",
+    "SCSCIE",
+    "WEALTH",
+    "HIGHCONF",
+    "INTCONF",
+    "INTUSE",
+    "PRGUSE",
+    "ESCS",
+    "PV1MATH",
+    "PV2MATH",
+    "PV3MATH",
+    "PV4MATH",
+    "PV5MATH",
+    "PV1READ",
+    "PV2READ",
+    "PV3READ",
+    "PV4READ",
+    "PV5READ",
+    "PV1SCIE",
+    "PV2SCIE",
+    "PV3SCIE",
+    "PV4SCIE",
+    "PV5SCIE",
+    "PV1INTR",
+    "PV2INTR",
+    "PV3INTR",
+    "PV4INTR",
+    "PV5INTR",
+    "PV1SUPP",
+    "PV2SUPP",
+    "PV3SUPP",
+    "PV4SUPP",
+    "PV5SUPP",
+    "PV1EPS",
+    "PV2EPS",
+    "PV3EPS",
+    "PV4EPS",
+    "PV5EPS",
+    "PV1ISI",
+    "PV2ISI",
+    "PV3ISI",
+    "PV4ISI",
+    "PV5ISI",
+    "PV1USE",
+    "PV2USE",
+    "PV3USE",
+    "PV4USE",
+    "PV5USE",
+    "W_FSTUWT",
+    "W_FSTR1",
+    "W_FSTR2",
+    "W_FSTR3",
+    "W_FSTR4",
+    "W_FSTR5",
+    "W_FSTR6",
+    "W_FSTR7",
+    "W_FSTR8",
+    "W_FSTR9",
+    "W_FSTR10",
+    "W_FSTR11",
+    "W_FSTR12",
+    "W_FSTR13",
+    "W_FSTR14",
+    "W_FSTR15",
+    "W_FSTR16",
+    "W_FSTR17",
+    "W_FSTR18",
+    "W_FSTR19",
+    "W_FSTR20",
+    "W_FSTR21",
+    "W_FSTR22",
+    "W_FSTR23",
+    "W_FSTR24",
+    "W_FSTR25",
+    "W_FSTR26",
+    "W_FSTR27",
+    "W_FSTR28",
+    "W_FSTR29",
+    "W_FSTR30",
+    "W_FSTR31",
+    "W_FSTR32",
+    "W_FSTR33",
+    "W_FSTR34",
+    "W_FSTR35",
+    "W_FSTR36",
+    "W_FSTR37",
+    "W_FSTR38",
+    "W_FSTR39",
+    "W_FSTR40",
+    "W_FSTR41",
+    "W_FSTR42",
+    "W_FSTR43",
+    "W_FSTR44",
+    "W_FSTR45",
+    "W_FSTR46",
+    "W_FSTR47",
+    "W_FSTR48",
+    "W_FSTR49",
+    "W_FSTR50",
+    "W_FSTR51",
+    "W_FSTR52",
+    "W_FSTR53",
+    "W_FSTR54",
+    "W_FSTR55",
+    "W_FSTR56",
+    "W_FSTR57",
+    "W_FSTR58",
+    "W_FSTR59",
+    "W_FSTR60",
+    "W_FSTR61",
+    "W_FSTR62",
+    "W_FSTR63",
+    "W_FSTR64",
+    "W_FSTR65",
+    "W_FSTR66",
+    "W_FSTR67",
+    "W_FSTR68",
+    "W_FSTR69",
+    "W_FSTR70",
+    "W_FSTR71",
+    "W_FSTR72",
+    "W_FSTR73",
+    "W_FSTR74",
+    "W_FSTR75",
+    "W_FSTR76",
+    "W_FSTR77",
+    "W_FSTR78",
+    "W_FSTR79",
+    "W_FSTR80",
+    "CNTFAC",
+    "SUBFAC",
+    "WVARSTRR",
+    "RANDUNIT",
+    "STRATUM",
+    "TESTLANG",
+    "CLCUSE3A",
+    "CLCUSE3B",
+    "DEFFORT",
+    "S421Q02",
+    "S456Q01",
+    "S456Q02",
+    "VER_STU"
+  ],
+  "respondent_keys": [
+    "SCHOOLID",
+    "STIDSTD"
+  ],
+  "source_sha256": {
+    "/Users/victoriano/Code/social-sciences-microdata/data/Global/pisa/historical_raw/2006/student_questionnaire/INT_Stu06_Dec07.txt": "e8d880e480a0deba086135098959f3f316f373fe511a9734345b125ad496e7f5",
+    "/Users/victoriano/Code/social-sciences-microdata/data/Global/pisa/historical_raw/2006/student_questionnaire/PISA2006_SPSS_student.txt": "5c45cf5b2cb391e292c9cca1a30554af2118cd396d048aea7f0cc926190fa060"
+  }
+}
