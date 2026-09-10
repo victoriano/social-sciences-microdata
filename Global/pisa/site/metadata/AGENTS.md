@@ -11,7 +11,7 @@ Estas reglas son obligatorias al usar los datos públicos de PISA España.
 - Descarga la metadata antes de analizar. Inspecciona nombres, tipos, etiquetas,
   cobertura por ciclo y códigos de faltantes; no inventes columnas por analogía
   con otro ciclo o con documentación antigua.
-- Usa primero el dataset `cooked` pequeño (191.254 filas, 80 columnas) para
+- Usa primero el dataset `cooked` pequeño (191.254 filas, 228 columnas) para
   prototipos. Para inferencia, usa el dataset completo con los valores plausibles
   y pesos de réplica que declare el manifest.
 - Proyecta columnas y procesa por lotes/streaming. No cargues un JSON o un PUF
@@ -64,6 +64,21 @@ Estas reglas son obligatorias al usar los datos públicos de PISA España.
   significan que no se midió o no se integró; nunca los conviertas en 0.
 - Mantén los códigos y etiquetas originales además de cualquier variable
   armonizada. Documenta transformaciones y conserva la categoría “Sin dato”.
+
+## Accionabilidad y agregados de centro
+
+- Cada fila de `cooked_diccionario.csv` incluye `accionabilidad_padres`
+  (alta/media/baja/nula): cuánto puede una familia actuar sobre esa variable.
+  alta = acción directa en casa (hábitos, acompañamiento, recursos);
+  media = influencia indirecta (conversar, elegir actividades o centro);
+  baja = depende del centro o del sistema; nula = diseño muestral, IDs, pesos
+  o resultados. Es orientativa para priorizar, no una recomendación.
+- Las columnas `centro_*` son agregados ponderados por `W_FSTUWT` de la
+  composición del centro (`centro_escs_medio`, `centro_pct_inmigrantes`,
+  `centro_pct_repetidores`, `centro_pct_ausentismo`) más
+  `centro_alumnos_muestra`. Sirven para análisis de segregación escolar.
+  Filtra centros con pocos alumnos en muestra (regla práctica: >= 10) y
+  recuerda que describen la muestra del centro, no el centro completo.
 
 ## Inferencia, privacidad y comunicación
 
