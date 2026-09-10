@@ -18,6 +18,15 @@ versión del manifest añade `metadata_url` o `schema` dentro de la entrada,
 inspeccione. El dataset completo está pensado para análisis que necesiten todas
 las variables PUF y los pesos replicados.
 
+## Campo accionabilidad_padres
+
+El diccionario `cooked_diccionario.csv` clasifica cada variable por su
+accionabilidad para las familias: alta (acción directa en casa), media
+(influencia indirecta: conversar, elegir actividades o centro), baja (depende
+del centro o del sistema educativo) y nula (diseño muestral, identificadores,
+pesos o resultados). Es una guía de priorización orientativa, no una
+recomendación educativa.
+
 ## Prompt de arranque
 
 ```text

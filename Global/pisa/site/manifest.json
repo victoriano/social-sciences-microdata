@@ -1,153 +1,164 @@
 {
-  "title": "PISA España · 2000–2025",
-  "version": "2026-09-09-v1",
-  "population": "Alumnado PISA de España; cortes transversales independientes",
-  "years": [
-    2000,
-    2003,
-    2006,
-    2009,
-    2012,
-    2015,
-    2018,
-    2022,
-    2025
-  ],
-  "rows": 191254,
-  "files": {
-    "cooked": {
-      "id": "cooked",
-      "format": "parquet",
-      "url": "https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado_80.parquet",
-      "filename": "pisa_espana_2000_2025_cocinado_80.parquet",
-      "rows": 191254,
-      "columns": 80,
-      "bytes": 11424681,
-      "sha256": "8206a43ad2b746fd2ae4efe031e752489724acbbd7e6f6427b8f7833e06431d8",
-      "description": "80 columnas: selección y armonización para explorar en Graphext o con un agente. Cobertura variable según el ciclo."
+    "title": "PISA España · 2000–2025",
+    "version": "2026-09-10-v3",
+    "population": "Alumnado PISA de España; cortes transversales independientes",
+    "years": [
+        2000,
+        2003,
+        2006,
+        2009,
+        2012,
+        2015,
+        2018,
+        2022,
+        2025
+    ],
+    "rows": 191254,
+    "files": {
+        "cooked": {
+            "id": "cooked",
+            "format": "parquet",
+            "url": "https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado.parquet",
+            "filename": "pisa_espana_2000_2025_cocinado.parquet",
+            "rows": 191254,
+            "columns": 246,
+            "bytes": 17707578,
+            "sha256": "882973fe3033256d26d082cbdbdf97d6a79e731fa34a75c96ea4fc24cd125860",
+            "description": "246 columnas: 80 originales + 143 variables nuevas de hogar, familia, aula, convivencia, bienestar, financiacion, creatividad, ciencia y ambiente, 5 agregados de composicion del centro (segregacion) y 18 variables del cuestionario de centro (cen_*) integradas en los 9 ciclos. Cada variable lleva accionabilidad_padres (alta/media/baja/nula). Cobertura por ciclo en cooked_cobertura_por_ciclo.csv."
+        },
+        "full": {
+            "id": "full",
+            "format": "parquet",
+            "url": "https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet",
+            "filename": "pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet",
+            "rows": 191254,
+            "columns": 4911,
+            "bytes": 160410264,
+            "sha256": "0d813ba684788d2dc294afb57d6fc90d7b460ddb198c8a1d3d97b97d3c77659f",
+            "description": "Unión de todas las columnas de los ficheros de alumnado disponibles para España. Incluye valores plausibles y pesos; no armoniza significados entre ciclos."
+        },
+        "centros": {
+            "id": "centros",
+            "format": "parquet",
+            "url": "https://data.pisa.victoriano.me/pisa_espana_2000_2025_centros.parquet",
+            "filename": "pisa_espana_2000_2025_centros.parquet",
+            "rows": 6257,
+            "columns": 20,
+            "bytes": 144877,
+            "sha256": "d84550b00cc9b354c7196f3579faa498f119dcb6ca0cdb91a282e852edd431a6",
+            "description": "Una fila por centro y ciclo (6.257 centros-ciclo): las 18 variables cen_* del cuestionario de centro, clave (pisa_year, CNTSCHID)."
+        }
     },
-    "full": {
-      "id": "full",
-      "format": "parquet",
-      "url": "https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet",
-      "filename": "pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet",
-      "rows": 191254,
-      "columns": 4911,
-      "bytes": 160410264,
-      "sha256": "0d813ba684788d2dc294afb57d6fc90d7b460ddb198c8a1d3d97b97d3c77659f",
-      "description": "Unión de todas las columnas de los ficheros de alumnado disponibles para España. Incluye valores plausibles y pesos; no armoniza significados entre ciclos."
+    "metadata": {
+        "agents": "https://pisa.victoriano.me/metadata/AGENTS.md",
+        "guide": "https://pisa.victoriano.me/metadata/ANALYSIS_GUIDE.md",
+        "manifest": "https://pisa.victoriano.me/manifest.json",
+        "coverage": "https://pisa.victoriano.me/metadata/cooked_cobertura_por_ciclo.csv",
+        "dictionary": "https://pisa.victoriano.me/metadata/cooked_diccionario.csv",
+        "full_dictionary": "https://pisa.victoriano.me/metadata/diccionario_variables_por_ciclo.csv",
+        "schema": "https://pisa.victoriano.me/metadata/esquema_por_ciclo.json",
+        "validation": "https://pisa.victoriano.me/metadata/validacion_datos.json",
+        "example": "https://pisa.victoriano.me/analysis_example.py",
+        "cycles": {
+            "2000": "https://pisa.victoriano.me/metadata/pisa_2000_student_metadata.json",
+            "2003": "https://pisa.victoriano.me/metadata/pisa_2003_student_metadata.json",
+            "2006": "https://pisa.victoriano.me/metadata/pisa_2006_student_metadata.json",
+            "2009": "https://pisa.victoriano.me/metadata/pisa_2009_student_metadata.json",
+            "2012": "https://pisa.victoriano.me/metadata/pisa_2012_student_metadata.json",
+            "2015": "https://pisa.victoriano.me/metadata/pisa_2015_student_metadata.json",
+            "2018": "https://pisa.victoriano.me/metadata/pisa_2018_student_metadata.json",
+            "2022": "https://pisa.victoriano.me/metadata/pisa_2022_student_metadata.json",
+            "2025": "https://pisa.victoriano.me/metadata/pisa_2025_student_metadata.json"
+        }
+    },
+    "prompt": "Quiero analizar PISA España con los datos de https://pisa.victoriano.me/.\n\nAntes de empezar, pregúntame cuál es mi pregunta de investigación y, si hace falta para acotarla, qué ciclos o materias me interesan. No analices nada hasta que te la dé.\n\nCuando la tengas, empieza leyendo https://pisa.victoriano.me/manifest.json y https://pisa.victoriano.me/metadata/AGENTS.md. Después consulta la guía, los diccionarios y la cobertura por ciclo enlazados allí. Descarga o lee por columnas el Parquet cooked para explorar; usa full con todos los valores plausibles y pesos replicados para inferencia. No necesitas una cuenta ni claves para estos enlaces.\n\nSon nueve ciclos (2000–2025), no un panel. Comprueba nombres, etiquetas, códigos de faltantes y comparabilidad antes de analizar. ESCS no es renta en euros. IA solo está observada en 2025. En 2025 MALE=0 es femenino/otra categoría, no exclusivamente niñas. No publiques Cataluña 2025 separada; advierte las incidencias de España 2018. No uses IDs/pesos como predictores ni conviertas no medido en cero. Una asociación no prueba causalidad.\n\nEntrega código reproducible, gráficos claros, estimaciones ponderadas, intervalos apropiados al diseño PISA y limitaciones. Ejemplo de arranque: https://pisa.victoriano.me/analysis_example.py.\n\nSi no puedes descargar los datos (por ejemplo, tu entorno de código no tiene acceso a internet, como el intérprete de ChatGPT), NO uses fuentes alternativas ni tabulaciones oficiales: dilo claramente y pídeme que te adjunte los archivos Parquet. Pásame estos enlaces de descarga directa para que los baje y te los suba: https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado_80.parquet (cocinado, ~11 MB, recomendado) y https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet (completo, ~160 MB). No inventes resultados.\n",
+    "attribution": "Programme for International Student Assessment (PISA) Organisation for Economic Co-operation and Development (OECD), Paris",
+    "publication_permission": "El editor confirma que dispone de permiso de redistribución. Esta publicación no concede derechos adicionales sobre los datos de la OCDE. No intentar reidentificar alumnado ni centros.",
+    "scope": "Ficheros de alumnado de España; no incluye todos los países, respuestas a ítems cognitivos ni cuestionarios de centros independientes.",
+    "metadata_checksums": {
+        "metadata/esquema_por_ciclo.json": {
+            "bytes": 285431,
+            "sha256": "c88408f6e20634d9795582ea13a59cae339950b5fa2eca54364c91f47559496a"
+        },
+        "metadata/cooked_fuentes.json": {
+            "bytes": 99305,
+            "sha256": "88ff90740c5901acbe5678d75bfa198722a39fc47103abeae0b0939c51c52b14"
+        },
+        "metadata/PROMPT_TEMPLATE.md": {
+            "bytes": 1414,
+            "sha256": "8f7c0281b0d693a807c787149a874c59a89a05b6311dd729405f9aac49ce97ce"
+        },
+        "metadata/pisa_2009_student_metadata.json": {
+            "bytes": 139973,
+            "sha256": "3e76faf8c059dcd98d8f6041188038b9e724ac3d83db93133b67bc7ab0c23861"
+        },
+        "metadata/pisa_2025_student_metadata.json": {
+            "bytes": 639398,
+            "sha256": "2cee680f393ee29748807980a10ce00d750a1151dcc9f4850230e1083f935e97"
+        },
+        "metadata/pisa_2015_student_metadata.json": {
+            "bytes": 649166,
+            "sha256": "95ac0532bdc4e7b2b9b7587b1e59a09a0470ce7c0147e5687563fb189909a5fa"
+        },
+        "metadata/pisa_2003_student_metadata.json": {
+            "bytes": 113237,
+            "sha256": "39b79a47302ed5bcf7fcb0e20388bfbeb4648839177f00b369a87191ed910802"
+        },
+        "metadata/cooked_cobertura_por_ciclo.csv": {
+            "bytes": 64658,
+            "sha256": "e32cf2f0e42a7baf8e1da96917ad4390efad3b03fdbc159a1353a98c0f3cacbe"
+        },
+        "metadata/cooked_diccionario.csv": {
+            "bytes": 54024,
+            "sha256": "0c78beff3dfce2e33f1b228a0170a8b97f0a1cdf4559c81becfb082179052baa"
+        },
+        "metadata/README.md": {
+            "bytes": 5201,
+            "sha256": "decfccf842ab13a5d3f545275bc6e99a8a2b7804764a0f6b2e65bc4ce3c0ecc0"
+        },
+        "metadata/pisa_2012_student_metadata.json": {
+            "bytes": 322247,
+            "sha256": "2d64fcdc1ba1cd62683d3b8c93a9fe3d92c2eca621daac6156255a9476a7ec4c"
+        },
+        "metadata/diccionario_variables_por_ciclo.csv": {
+            "bytes": 4675879,
+            "sha256": "9bfa3ccb7cc8d0d58b4caaf0d32fa49f4c97b90dda573a33c3d4e33642e41de4"
+        },
+        "metadata/pisa_2006_student_metadata.json": {
+            "bytes": 161975,
+            "sha256": "3cc5f2b4d3d32e429d0f31e2ceb002276da32553b836a49f066e8bbe9c45c32d"
+        },
+        "metadata/manifest-data.json": {
+            "bytes": 6556,
+            "sha256": "47b4fa41abf49d7ed2fcdad1835c9f085138b65d24d0af8d682fbb8bcf7865c8"
+        },
+        "metadata/pisa_2022_student_metadata.json": {
+            "bytes": 867258,
+            "sha256": "b4810868a8b321cb4d0d137a58e07974e8654169521871187c17bbb341df4534"
+        },
+        "metadata/pisa_2018_student_metadata.json": {
+            "bytes": 731381,
+            "sha256": "2fd48415b781c2f43d388e96b4fa420eb3953bfe2bba82c117e812a14ac37d6f"
+        },
+        "metadata/cooked_correspondencias_historicas.csv": {
+            "bytes": 58290,
+            "sha256": "c46ca12c1e20e18d8489545ad3087a6c12e22ae371233b5d6885def2424d82e5"
+        },
+        "metadata/AGENTS.md": {
+            "bytes": 6181,
+            "sha256": "e27ba29c34a894d93d9d801a5419cc8e604ce2f27afa910e45b572255b0a4c89"
+        },
+        "metadata/pisa_2000_student_metadata.json": {
+            "bytes": 233826,
+            "sha256": "4afe9cbb6fe7a9a277628c12b275eecb60ad2b23553fef23df6e3ef96cbca802"
+        },
+        "metadata/ANALYSIS_GUIDE.md": {
+            "bytes": 6298,
+            "sha256": "06f68d765ffaef0363177d7647c305dbc237f9b76c2c4c5389ac680ef32c3668"
+        },
+        "metadata/validacion_datos.json": {
+            "bytes": 2360,
+            "sha256": "d0907a7c522a82fbc2c37ae9f9950af9d19d24ae1293483960651782c1f7c75f"
+        }
     }
-  },
-  "metadata": {
-    "agents": "https://pisa.victoriano.me/metadata/AGENTS.md",
-    "guide": "https://pisa.victoriano.me/metadata/ANALYSIS_GUIDE.md",
-    "manifest": "https://pisa.victoriano.me/manifest.json",
-    "coverage": "https://pisa.victoriano.me/metadata/cooked_cobertura_por_ciclo.csv",
-    "dictionary": "https://pisa.victoriano.me/metadata/cooked_diccionario.csv",
-    "full_dictionary": "https://pisa.victoriano.me/metadata/diccionario_variables_por_ciclo.csv",
-    "schema": "https://pisa.victoriano.me/metadata/esquema_por_ciclo.json",
-    "validation": "https://pisa.victoriano.me/metadata/validacion_datos.json",
-    "example": "https://pisa.victoriano.me/analysis_example.py",
-    "cycles": {
-      "2000": "https://pisa.victoriano.me/metadata/pisa_2000_student_metadata.json",
-      "2003": "https://pisa.victoriano.me/metadata/pisa_2003_student_metadata.json",
-      "2006": "https://pisa.victoriano.me/metadata/pisa_2006_student_metadata.json",
-      "2009": "https://pisa.victoriano.me/metadata/pisa_2009_student_metadata.json",
-      "2012": "https://pisa.victoriano.me/metadata/pisa_2012_student_metadata.json",
-      "2015": "https://pisa.victoriano.me/metadata/pisa_2015_student_metadata.json",
-      "2018": "https://pisa.victoriano.me/metadata/pisa_2018_student_metadata.json",
-      "2022": "https://pisa.victoriano.me/metadata/pisa_2022_student_metadata.json",
-      "2025": "https://pisa.victoriano.me/metadata/pisa_2025_student_metadata.json"
-    }
-  },
-  "prompt": "Quiero analizar PISA España con los datos de https://pisa.victoriano.me/.\n\nAntes de empezar, pregúntame cuál es mi pregunta de investigación y, si hace falta para acotarla, qué ciclos o materias me interesan. No analices nada hasta que te la dé.\n\nCuando la tengas, empieza leyendo https://pisa.victoriano.me/manifest.json y https://pisa.victoriano.me/metadata/AGENTS.md. Después consulta la guía, los diccionarios y la cobertura por ciclo enlazados allí. Descarga o lee por columnas el Parquet cooked para explorar; usa full con todos los valores plausibles y pesos replicados para inferencia. No necesitas una cuenta ni claves para estos enlaces.\n\nSon nueve ciclos (2000–2025), no un panel. Comprueba nombres, etiquetas, códigos de faltantes y comparabilidad antes de analizar. ESCS no es renta en euros. IA solo está observada en 2025. En 2025 MALE=0 es femenino/otra categoría, no exclusivamente niñas. No publiques Cataluña 2025 separada; advierte las incidencias de España 2018. No uses IDs/pesos como predictores ni conviertas no medido en cero. Una asociación no prueba causalidad.\n\nEntrega código reproducible, gráficos claros, estimaciones ponderadas, intervalos apropiados al diseño PISA y limitaciones. Ejemplo de arranque: https://pisa.victoriano.me/analysis_example.py.\n\nSi no puedes descargar los datos (por ejemplo, tu entorno de código no tiene acceso a internet, como el intérprete de ChatGPT), NO uses fuentes alternativas ni tabulaciones oficiales: dilo claramente y pídeme que te adjunte los archivos Parquet. Pásame estos enlaces de descarga directa para que los baje y te los suba: https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado_80.parquet (cocinado, ~11 MB, recomendado) y https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet (completo, ~160 MB). No inventes resultados.\n",
-  "attribution": "Programme for International Student Assessment (PISA) Organisation for Economic Co-operation and Development (OECD), Paris",
-  "publication_permission": "El editor confirma que dispone de permiso de redistribución. Esta publicación no concede derechos adicionales sobre los datos de la OCDE. No intentar reidentificar alumnado ni centros.",
-  "scope": "Ficheros de alumnado de España; no incluye todos los países, respuestas a ítems cognitivos ni cuestionarios de centros independientes.",
-  "metadata_checksums": {
-    "metadata/esquema_por_ciclo.json": {
-      "bytes": 285431,
-      "sha256": "c88408f6e20634d9795582ea13a59cae339950b5fa2eca54364c91f47559496a"
-    },
-    "metadata/cooked_fuentes.json": {
-      "bytes": 99305,
-      "sha256": "88ff90740c5901acbe5678d75bfa198722a39fc47103abeae0b0939c51c52b14"
-    },
-    "metadata/PROMPT_TEMPLATE.md": {
-      "bytes": 1414,
-      "sha256": "8f7c0281b0d693a807c787149a874c59a89a05b6311dd729405f9aac49ce97ce"
-    },
-    "metadata/pisa_2009_student_metadata.json": {
-      "bytes": 139973,
-      "sha256": "3e76faf8c059dcd98d8f6041188038b9e724ac3d83db93133b67bc7ab0c23861"
-    },
-    "metadata/pisa_2025_student_metadata.json": {
-      "bytes": 639398,
-      "sha256": "2cee680f393ee29748807980a10ce00d750a1151dcc9f4850230e1083f935e97"
-    },
-    "metadata/pisa_2015_student_metadata.json": {
-      "bytes": 649166,
-      "sha256": "95ac0532bdc4e7b2b9b7587b1e59a09a0470ce7c0147e5687563fb189909a5fa"
-    },
-    "metadata/pisa_2003_student_metadata.json": {
-      "bytes": 113237,
-      "sha256": "39b79a47302ed5bcf7fcb0e20388bfbeb4648839177f00b369a87191ed910802"
-    },
-    "metadata/cooked_cobertura_por_ciclo.csv": {
-      "bytes": 21730,
-      "sha256": "ec7cfc585d3886226455cd0d2d207ac92e1b2f2304eef0427e953e55f57133d4"
-    },
-    "metadata/cooked_diccionario.csv": {
-      "bytes": 32032,
-      "sha256": "d96360f07fd87520225b24a57a1e4a1d5915d28ba35a6289af10d127e595fed3"
-    },
-    "metadata/README.md": {
-      "bytes": 4771,
-      "sha256": "665ec87866cd1dbf642fac87a48b1d6de3487f5221b3e92c98baba0a0d788eb3"
-    },
-    "metadata/pisa_2012_student_metadata.json": {
-      "bytes": 322247,
-      "sha256": "2d64fcdc1ba1cd62683d3b8c93a9fe3d92c2eca621daac6156255a9476a7ec4c"
-    },
-    "metadata/diccionario_variables_por_ciclo.csv": {
-      "bytes": 4675879,
-      "sha256": "9bfa3ccb7cc8d0d58b4caaf0d32fa49f4c97b90dda573a33c3d4e33642e41de4"
-    },
-    "metadata/pisa_2006_student_metadata.json": {
-      "bytes": 161975,
-      "sha256": "3cc5f2b4d3d32e429d0f31e2ceb002276da32553b836a49f066e8bbe9c45c32d"
-    },
-    "metadata/manifest-data.json": {
-      "bytes": 6556,
-      "sha256": "47b4fa41abf49d7ed2fcdad1835c9f085138b65d24d0af8d682fbb8bcf7865c8"
-    },
-    "metadata/pisa_2022_student_metadata.json": {
-      "bytes": 867258,
-      "sha256": "b4810868a8b321cb4d0d137a58e07974e8654169521871187c17bbb341df4534"
-    },
-    "metadata/pisa_2018_student_metadata.json": {
-      "bytes": 731381,
-      "sha256": "2fd48415b781c2f43d388e96b4fa420eb3953bfe2bba82c117e812a14ac37d6f"
-    },
-    "metadata/cooked_correspondencias_historicas.csv": {
-      "bytes": 58290,
-      "sha256": "c46ca12c1e20e18d8489545ad3087a6c12e22ae371233b5d6885def2424d82e5"
-    },
-    "metadata/AGENTS.md": {
-      "bytes": 5270,
-      "sha256": "a25a17ab5db889aea6f6ea8248a87acb6377294939ba56d6ac1134aafdcd0936"
-    },
-    "metadata/pisa_2000_student_metadata.json": {
-      "bytes": 233826,
-      "sha256": "4afe9cbb6fe7a9a277628c12b275eecb60ad2b23553fef23df6e3ef96cbca802"
-    },
-    "metadata/ANALYSIS_GUIDE.md": {
-      "bytes": 6298,
-      "sha256": "06f68d765ffaef0363177d7647c305dbc237f9b76c2c4c5389ac680ef32c3668"
-    },
-    "metadata/validacion_datos.json": {
-      "bytes": 2360,
-      "sha256": "d0907a7c522a82fbc2c37ae9f9950af9d19d24ae1293483960651782c1f7c75f"
-    }
-  }
 }
