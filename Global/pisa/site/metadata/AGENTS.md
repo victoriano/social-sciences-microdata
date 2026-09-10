@@ -99,3 +99,21 @@ Estas reglas son obligatorias al usar los datos públicos de PISA España.
 - Publica únicamente agregados que respeten las reglas de supresión de la
   metadata y la privacidad del PUF. No muestres filas individuales, hashes de
   identificadores combinados ni intentos de reidentificación.
+
+## Dataset internacional (todos los países)
+
+Además de los archivos de España, el manifest incluye `files.internacional`: un Parquet por ciclo (2000-2025; 2009 pendiente) con todo el alumnado de todos los países participantes (3,88 M filas en total), más `pisa_internacional_centros.parquet` (una fila por centro y ciclo, 9 ciclos).
+
+- Esquema armonizado igual al cocinado de España: `pais`, `CNTSCHID`, `CNTSTUID`, `W_FSTUWT`, núcleo derivado (`sexo`, `origen`, `repeticion`, `educacion_familiar`, `nivel_socioeconomico` — cuartiles de ESCS ponderados dentro de cada país y ciclo), `math/read/scie_exploracion` (medias de PV, solo exploración), PV individuales (PV1-5 antes de 2015, PV1-10 desde 2015), pesos replicados BRR (`W_FSTR*`; en 2025 `W_FSTURWT1-80`, en un archivo compañero por límite de tamaño — une por pais+CNTSCHID+CNTSTUID), variables de centro `cen_*` y agregados de composición (`cen_escs_media`, `cen_pct_inmigrantes`, `cen_pct_repetidores`, `cen_alumnos_pisa`).
+- Los identificadores de centro/alumno solo son únicos dentro de país y ciclo: agrupa o une siempre por (pisa_year, pais, CNTSCHID).
+- Inferencia: pesos W_FSTUWT + réplicas BRR por país; nunca mezcles países en una estimación sin ponderar por país.
+- 2000: AGE en años (original en meses); pesos por materia (PESO_MATH/PESO_SCIE; W_FSTUWT es el de lectura). 2003 no mide repetición. Cobertura exacta por ciclo en `internacional_cobertura_por_ciclo.csv`; diccionario en `internacional_diccionario.csv`.
+
+### Partes de los ciclos grandes (2018, 2022, 2025)
+
+Los ciclos 2018, 2022 y 2025 se publican en dos ficheros de filas (`_a`/`_b`)
+por el límite práctico de subida del navegador (~160-200 MB por objeto). Se
+unen sin más transformación: `pyarrow.concat_tables([pq.read_table(a),
+pq.read_table(b)])` — mismo esquema y orden de columnas, división solo de
+filas (primera mitad / segunda mitad). El manifest marca cada ciclo dividido
+con `dividido_en_partes: true` y lista `partes` con url/bytes/sha256/filas.

@@ -1,0 +1,361 @@
+columna,tipo,descripcion,ciclos
+ADAPTIVITY,double,Adaptación de la instrucción percibida (WLE 2018).,2018
+ADDSCIIN,double,Número de materias de ciencias con instrucción adicional (2015).,2015
+ADINST,double,Adaptación de la enseñanza (WLE 2015).,2015
+AGE,double,"Edad del estudiante en años. Años con valores integrados: 2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2000,2003,2006,2012,2015,2018,2022,2025"
+ANXMAT,double,"Índice original: misma denominación no garantiza equivalencia de escala entre ciclos. OCDE 2022: Mathematics Anxiety (WLE). Años con valores integrados: 2003, 2012, 2022. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2003,2012,2022"
+ANXTEST,double,Ansiedad ante los exámenes (WLE 2015).,2015
+ASSERAGR,double,Asertividad (WLE 2022).,2022
+ATTIMM,double,Actitud del alumnado hacia los inmigrantes (WLE 2018).,2018
+ATTLNACT,double,Actitud hacia las actividades de aprendizaje (WLE 2012/2018).,2018
+BELONG,double,"Índice WLE de pertenencia al centro; comprobar comparabilidad de escala entre ciclos. Años con valores integrados: 2000, 2003, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2000,2003,2012,2015,2018,2022,2025"
+BODYIMA,double,Imagen corporal (WLE 2018/2022).,"2018,2022"
+BSMJ,double,"Índice original: misma denominación no garantiza equivalencia de escala entre ciclos. OCDE 2022: Expected occupation status (free response)- 4 digits. OCDE 2025: Expected occupation status (ISEI). Años con valores integrados: 2006, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2003,2006,2015,2018,2022,2025"
+CNTSCHID,int64,ID del centro (único dentro de país y ciclo).,"2000,2003,2006,2012,2015,2018,2022,2025"
+CNTSTUID,int64,ID del alumno (único dentro de país y ciclo).,"2000,2003,2006,2012,2015,2018,2022,2025"
+COGACMCO,double,Activación cognitiva en mates: fomentar el pensamiento (WLE 2022).,2022
+COGACRCO,double,Activación cognitiva en mates: fomentar el razonamiento (WLE 2022).,2022
+COGACSC,double,Activación cognitiva en ciencias (WLE 2025).,2025
+COGFLEX,double,Flexibilidad/adaptabilidad cognitiva (WLE 2018).,2018
+COLLENEFF,double,Eficacia colectiva ambiental (WLE 2025).,2025
+COMPETE,double,Competitividad (WLE 2018).,2018
+COOPAGR,double,Cooperación (WLE 2022).,2022
+COOPERATE,double,Disposición a la colaboración: disfrutar cooperando (WLE 2015).,2015
+CPSVALUE,double,Disposición a la colaboración: valorar la cooperación (WLE 2015).,2015
+CREATAS,double,Actividades creativas en el centro (WLE 2022).,2022
+CREATEFF,double,Autoeficacia creativa (WLE 2022).,2022
+CREATFAM,double,Entorno creativo de iguales y familia (WLE 2022).,2022
+CREATOOS,double,Actividades creativas fuera del centro (WLE 2022).,2022
+CREATSCH,double,Entorno escolar y de aula creativo (WLE 2022).,2022
+CULTPOSS,double,"Posesiones culturales del hogar (WLE): libros, arte, instrumentos. Proxy del capital cultural familiar.","2015,2018"
+CURIOAGR,double,Curiosidad (WLE 2022).,2022
+CURSUPP,double,"Apoyo parental actual al aprendizaje en casa (WLE, PAQ 2015).","2015,2018,2022"
+DIRINS,double,Instrucción dirigida por el profesor (WLE 2018).,2018
+DISCLIM,double,Clima disciplinario en matemáticas (WLE 2022; también existe con datos en 2003). No comparar con DISCLIMA.,2022
+DISCLIMA,double,"Clima disciplinario (WLE 2000/2009/2012/2018; la materia de referencia varía por ciclo: general 2000, lengua 2009/2018, mates 2012).",2018
+DISCRIM,double,Clima discriminatorio en el centro (WLE 2018).,2018
+DURECEC,string,Duración de la educación infantil previa (ECEC) antes de primaria (2015/2018/2022).,"2015,2018,2022"
+EFFORT1,double,"Esfuerzo declarado en la prueba PISA, 1-10 (2018/2022/2025). Técnica: interpretar caídas de rendimiento.","2018,2022,2025"
+EMOCOAGR,double,Control emocional (WLE 2022).,2022
+EMOSUPS,double,"Apoyo emocional de los padres percibido por el alumno (WLE, 2015/2018).","2015,2018"
+EMPATAGR,double,Empatía (WLE 2022).,2022
+ENGSCIPR,double,Implicación del alumnado en prácticas científicas (WLE 2025).,2025
+ENVAPART,double,Participación en actividades ambientales (WLE 2025).,2025
+ENVAWARE,double,Conciencia ambiental (WLE 2006/2015/2025; comparabilidad limitada entre ciclos).,"2015,2025"
+ENVCAPCH,double,Creencia en la propia capacidad de generar cambio ambiental (WLE 2025).,2025
+ENVOPT,double,Optimismo ambiental (WLE 2006/2015).,2015
+EPIST,double,Creencias epistemológicas sobre la ciencia (WLE 2015).,2015
+ESCS,double,"Índice de estatus económico, social y cultural. No es renta monetaria. Revisar la comparabilidad entre ciclos antes de interpretar diferencias absolutas. Años con valores integrados: 2003, 2006, 2009, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2000,2003,2006,2012,2015,2018,2022,2025"
+EUDMO,double,"Sentido y propósito en la vida (eudaimonía, WLE 2018).",2018
+EXPECEDU,string,Nivel educativo máximo que el alumno espera completar (2022/2025).,"2022,2025"
+EXPO21ST,double,Exposición a tareas de razonamiento matemático y s. XXI (WLE 2022).,2022
+EXPOFA,double,Exposición a tareas de mates formales y aplicadas (WLE 2022).,2022
+EXPWB,double,Bienestar experimentado el día anterior (WLE 2022). Cobertura parcial (submuestra).,2022
+FCFMLRTY,double,"Familiaridad con conceptos financieros (nº de conceptos aprendidos, 2018/2022).","2018,2022"
+FLCONFIN,double,Confianza en asuntos financieros (WLE 2018/2022).,"2018,2022"
+FLCONICT,double,Confianza financiera con dispositivos digitales (WLE 2018/2022).,"2018,2022"
+FLFAMILY,double,Implicación parental en temas financieros (WLE 2018/2022).,"2018,2022"
+FLSCHOOL,double,Educación financiera recibida en el centro (WLE 2018/2022).,"2018,2022"
+GCAWARE,double,Conciencia de temas globales (WLE 2018).,2018
+GCSELFEFF,double,Autoeficacia ante temas globales (WLE 2018).,2018
+GFOFAIL,double,"Miedo general al fracaso (WLE 2018). Ojo: es el indicador de mentalidad de crecimiento de 2018, no comparable con GROSAGR de 2022.",2018
+GLOBMIND,double,Mentalidad global (WLE 2018).,2018
+GRADE,double,"Curso del estudiante respecto al curso modal nacional; no es una nota académica. Años con valores integrados: 2003, 2009, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2003,2012,2015,2018,2022,2025"
+GROSAGR,double,Mentalidad de crecimiento (WLE 2022).,2022
+HADDINST,double,Horas totales de instrucción adicional (refuerzo) por semana (2015).,2015
+HEDRES,double,"Recursos educativos del hogar (WLE): escritorio, lugar tranquilo de estudio, libros de texto, diccionarios.","2015,2018"
+HISEI,double,"Mayor estatus ocupacional parental en la escala ISEI. No equivale al salario familiar. Años con valores integrados: 2000, 2003, 2006, 2009, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2000,2003,2006,2012,2015,2018,2022,2025"
+HOMEPOS,double,"Índice WLE de posesiones del hogar; revisar definición y comparabilidad por ciclo. Años con valores integrados: 2003, 2006, 2009, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2003,2006,2012,2015,2018,2022,2025"
+HOMESCH,double,Uso de TIC fuera del centro para tareas escolares (WLE 2015/2018).,"2015,2018"
+IBTEACH,double,Enseñanza de ciencias por indagación (WLE 2015).,2015
+ICTRES,double,"Índice original: misma denominación no garantiza equivalencia de escala entre ciclos. OCDE 2022: ICT Resources (WLE). OCDE 2025: ICT resources (WLE). Años con valores integrados: 2009, 2015, 2018, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2015,2018,2022,2025"
+INFOCAR,double,Búsqueda de información sobre carreras futuras (WLE 2018).,2018
+INSTSCIE,double,Motivación instrumental por la ciencia (WLE 2006/2015).,2015
+INTBRSCI,double,Interés por temas amplios de ciencia (WLE 2015).,2015
+INTCULT,double,Interés por otras culturas (WLE 2018).,2018
+JOYREAD,double,Gusto por la lectura (WLE 2000/2009/2018).,2018
+LEARRES,double,Recursos de aprendizaje usados con el centro cerrado (WLE 2022; submuestra).,2022
+LIFESAT,double,Satisfacción con la vida por dominios (WLE 2022).,2022
+LMINS,double,Minutos semanales de clase de lengua (2009-2018).,"2015,2018"
+MASTGOAL,double,Orientación a metas de maestría (WLE 2018).,2018
+MATHEASE,string,Percepción de las mates como más fáciles que otras materias (2022).,2022
+MATHEF21,double,Autoeficacia en mates: razonamiento y habilidades s. XXI (WLE 2022).,2022
+MATHEFF,double,Autoeficacia en matemáticas (WLE 2003/2012/2022; opciones de respuesta invertidas en 2022).,2022
+MATHMOT,string,Motivación comparada hacia las matemáticas (2022).,2022
+MATHPERS,double,Esfuerzo y persistencia en matemáticas (WLE 2022).,2022
+METASPAM,double,Metacognición: evaluar credibilidad de fuentes (2018).,2018
+METASUM,double,Metacognición lectora: resumir (2009/2018).,2018
+MISSSC,string,Haber faltado al colegio más de 3 meses alguna vez (2022; sin datos para España: la columna solo contiene códigos de falta).,2022
+MMINS,double,Minutos semanales de clase de matemáticas (2000-2018).,"2015,2018"
+MOTIVAT,double,Motivación de logro (WLE 2015).,2015
+OPENART,double,Apertura al arte y la reflexión (WLE 2022).,2022
+OPENVLRN,double,Oportunidades de aprendizaje ambiental en clase (WLE 2025).,2025
+OUTHOURS,double,Horas semanales de estudio o clases fuera del horario escolar (2012/2015).,2015
+PARED,double,,"2003,2006,2012"
+PAREDINT,double,"Años de educación del progenitor o tutor con mayor nivel educativo, según la definición del ciclo. Años con valores integrados: 2003, 2006, 2009, 2012, 2015, 2018, 2022, 2025. Ausencia puede ser falta de medición o de correspondencia validada; no equivale a cero.","2015,2018"
+PERCOMP,double,Percepción de competitividad en el centro (WLE 2018).,2018
+PERCOOP,double,Percepción de cooperación en el centro (WLE 2018).,2018
+PERFEED,double,Feedback percibido del profesor (WLE 2015/2018).,"2015,2018"
+PERSEVAGR,double,Perseverancia (WLE 2022).,2022
+PERSPECT,double,Toma de perspectiva (WLE 2018).,2018
+PESO_MATH,double,Peso del fichero de matemáticas de 2000 (peso por materia; en el resto de ciclos usar W_FSTUWT).,2000
+PESO_SCIE,double,Peso del fichero de ciencias de 2000.,2000
+PISADIFF,double,Percepción de dificultad de la prueba PISA (WLE 2018). Técnica.,2018
+PQENPERC,double,"Preocupación de los padres por temas ambientales (WLE, PAQ 2015).","2015,2025"
+PQENVOPT,double,"Visión de los padres sobre los temas ambientales del futuro (WLE, PAQ 2015).","2015,2025"
+PQGENSCI,double,"Visión de los padres sobre la ciencia (WLE, PAQ 2015).","2015,2025"
+PQSCHOOL,double,"Calidad del centro percibida por los padres (WLE, cuestionario de padres; en España solo 2015 con datos).","2015,2018,2022,2025"
+PRESUPP,double,"Actividades científicas pasadas del hijo según los padres (WLE, PAQ 2015).","2015,2018,2025"
+PROBSELF,double,Problemas con el aprendizaje autodirigido (WLE 2022; submuestra).,2022
+PSYCHSYM,double,Síntomas psicosomáticos (WLE 2022; más alto = más síntomas).,2022
+PV10MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV10READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV10SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV1MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV1READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV1SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV2MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV2READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV2SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV3MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV3READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV3SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV4MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV4READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV4SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV5MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV5READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV5SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2000,2003,2006,2012,2015,2018,2022,2025"
+PV6MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV6READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV6SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV7MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV7READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV7SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV8MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV8READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV8SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV9MATH,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV9READ,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+PV9SCIE,double,Valor plausible (uso inferencial con pesos; nunca tratar como nota individual).,"2015,2018,2022,2025"
+RELATST,double,Calidad de la relación alumno-profesor (WLE 2022).,2022
+RESILIENCE,double,Resiliencia percibida ante dificultades (WLE 2018).,2018
+RESPECT,double,Respeto por personas de otras culturas (WLE 2018).,2018
+SCIEACT,double,Actividades científicas (WLE 2006/2015).,2015
+SDLEFF,double,Autoeficacia en aprendizaje autodirigido (WLE 2022; submuestra).,2022
+SMINS,double,Minutos semanales de clase de ciencias (2000-2018).,"2015,2018"
+SOCCON,double,Conexiones sociales: facilidad para comunicar preocupaciones (WLE 2022).,2022
+SOCONPA,double,"Conexión social con los padres: facilidad para hablar de preocupaciones (WLE, 2018/2022).","2018,2022"
+SOIAICT,double,Las TIC como tema de interacción social (WLE 2015/2018/2025).,"2015,2018,2025"
+ST296Q01JA,string,Tiempo diario de deberes de matemáticas (2022).,2022
+ST296Q02JA,string,Tiempo diario de deberes de lengua (2022).,2022
+ST296Q03JA,string,Tiempo diario de deberes de ciencias (2022/2025).,"2022,2025"
+STUDYHMW,string,Días por semana estudiando o haciendo deberes fuera del horario (2022).,2022
+SWBP,double,Bienestar subjetivo: afecto positivo (WLE 2018).,2018
+TDTEACH,double,Enseñanza de ciencias dirigida por el profesor (WLE 2015).,2015
+TEACHINT,double,Interés percibido del profesor (WLE 2018).,2018
+TMINS,double,Minutos semanales totales de instrucción (2003/2015/2018).,"2015,2018"
+UNDREM,double,Metacognición lectora: comprender y recordar (2009/2018).,2018
+USESCH,double,Uso de TIC en el centro (WLE 2009-2018).,"2015,2018"
+WEALTH,double,Riqueza familiar (WLE). Posesiones materiales del hogar; no es renta en euros. Comparabilidad entre ciclos limitada.,"2015,2018"
+WORKHOME,string,Días por semana en tareas del hogar o cuidando familiares (2022).,2022
+WORKMAST,double,Ética de trabajo y esfuerzo (WLE 2018).,2018
+WORKPAY,string,Días por semana trabajando remunerado fuera del horario escolar (2022/2025).,"2022,2025"
+W_FSTR1,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR10,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR11,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR12,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR13,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR14,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR15,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR16,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR17,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR18,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR19,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR2,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR20,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR21,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR22,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR23,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR24,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR25,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR26,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR27,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR28,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR29,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR3,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR30,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR31,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR32,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR33,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR34,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR35,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR36,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR37,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR38,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR39,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR4,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR40,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR41,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR42,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR43,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR44,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR45,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR46,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR47,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR48,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR49,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR5,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR50,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR51,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR52,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR53,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR54,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR55,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR56,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR57,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR58,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR59,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR6,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR60,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR61,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR62,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR63,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR64,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR65,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR66,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR67,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR68,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR69,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR7,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR70,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR71,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR72,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR73,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR74,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR75,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR76,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR77,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR78,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR79,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR8,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR80,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTR9,double,Peso replicado BRR/Fay para errores estándar según diseño PISA.,"2000,2003,2006,2012"
+W_FSTURWT1,double,,"2015,2018,2022,2025"
+W_FSTURWT10,double,,"2015,2018,2022,2025"
+W_FSTURWT11,double,,"2015,2018,2022,2025"
+W_FSTURWT12,double,,"2015,2018,2022,2025"
+W_FSTURWT13,double,,"2015,2018,2022,2025"
+W_FSTURWT14,double,,"2015,2018,2022,2025"
+W_FSTURWT15,double,,"2015,2018,2022,2025"
+W_FSTURWT16,double,,"2015,2018,2022,2025"
+W_FSTURWT17,double,,"2015,2018,2022,2025"
+W_FSTURWT18,double,,"2015,2018,2022,2025"
+W_FSTURWT19,double,,"2015,2018,2022,2025"
+W_FSTURWT2,double,,"2015,2018,2022,2025"
+W_FSTURWT20,double,,"2015,2018,2022,2025"
+W_FSTURWT21,double,,"2015,2018,2022,2025"
+W_FSTURWT22,double,,"2015,2018,2022,2025"
+W_FSTURWT23,double,,"2015,2018,2022,2025"
+W_FSTURWT24,double,,"2015,2018,2022,2025"
+W_FSTURWT25,double,,"2015,2018,2022,2025"
+W_FSTURWT26,double,,"2015,2018,2022,2025"
+W_FSTURWT27,double,,"2015,2018,2022,2025"
+W_FSTURWT28,double,,"2015,2018,2022,2025"
+W_FSTURWT29,double,,"2015,2018,2022,2025"
+W_FSTURWT3,double,,"2015,2018,2022,2025"
+W_FSTURWT30,double,,"2015,2018,2022,2025"
+W_FSTURWT31,double,,"2015,2018,2022,2025"
+W_FSTURWT32,double,,"2015,2018,2022,2025"
+W_FSTURWT33,double,,"2015,2018,2022,2025"
+W_FSTURWT34,double,,"2015,2018,2022,2025"
+W_FSTURWT35,double,,"2015,2018,2022,2025"
+W_FSTURWT36,double,,"2015,2018,2022,2025"
+W_FSTURWT37,double,,"2015,2018,2022,2025"
+W_FSTURWT38,double,,"2015,2018,2022,2025"
+W_FSTURWT39,double,,"2015,2018,2022,2025"
+W_FSTURWT4,double,,"2015,2018,2022,2025"
+W_FSTURWT40,double,,"2015,2018,2022,2025"
+W_FSTURWT41,double,,"2015,2018,2022,2025"
+W_FSTURWT42,double,,"2015,2018,2022,2025"
+W_FSTURWT43,double,,"2015,2018,2022,2025"
+W_FSTURWT44,double,,"2015,2018,2022,2025"
+W_FSTURWT45,double,,"2015,2018,2022,2025"
+W_FSTURWT46,double,,"2015,2018,2022,2025"
+W_FSTURWT47,double,,"2015,2018,2022,2025"
+W_FSTURWT48,double,,"2015,2018,2022,2025"
+W_FSTURWT49,double,,"2015,2018,2022,2025"
+W_FSTURWT5,double,,"2015,2018,2022,2025"
+W_FSTURWT50,double,,"2015,2018,2022,2025"
+W_FSTURWT51,double,,"2015,2018,2022,2025"
+W_FSTURWT52,double,,"2015,2018,2022,2025"
+W_FSTURWT53,double,,"2015,2018,2022,2025"
+W_FSTURWT54,double,,"2015,2018,2022,2025"
+W_FSTURWT55,double,,"2015,2018,2022,2025"
+W_FSTURWT56,double,,"2015,2018,2022,2025"
+W_FSTURWT57,double,,"2015,2018,2022,2025"
+W_FSTURWT58,double,,"2015,2018,2022,2025"
+W_FSTURWT59,double,,"2015,2018,2022,2025"
+W_FSTURWT6,double,,"2015,2018,2022,2025"
+W_FSTURWT60,double,,"2015,2018,2022,2025"
+W_FSTURWT61,double,,"2015,2018,2022,2025"
+W_FSTURWT62,double,,"2015,2018,2022,2025"
+W_FSTURWT63,double,,"2015,2018,2022,2025"
+W_FSTURWT64,double,,"2015,2018,2022,2025"
+W_FSTURWT65,double,,"2015,2018,2022,2025"
+W_FSTURWT66,double,,"2015,2018,2022,2025"
+W_FSTURWT67,double,,"2015,2018,2022,2025"
+W_FSTURWT68,double,,"2015,2018,2022,2025"
+W_FSTURWT69,double,,"2015,2018,2022,2025"
+W_FSTURWT7,double,,"2015,2018,2022,2025"
+W_FSTURWT70,double,,"2015,2018,2022,2025"
+W_FSTURWT71,double,,"2015,2018,2022,2025"
+W_FSTURWT72,double,,"2015,2018,2022,2025"
+W_FSTURWT73,double,,"2015,2018,2022,2025"
+W_FSTURWT74,double,,"2015,2018,2022,2025"
+W_FSTURWT75,double,,"2015,2018,2022,2025"
+W_FSTURWT76,double,,"2015,2018,2022,2025"
+W_FSTURWT77,double,,"2015,2018,2022,2025"
+W_FSTURWT78,double,,"2015,2018,2022,2025"
+W_FSTURWT79,double,,"2015,2018,2022,2025"
+W_FSTURWT8,double,,"2015,2018,2022,2025"
+W_FSTURWT80,double,,"2015,2018,2022,2025"
+W_FSTURWT9,double,,"2015,2018,2022,2025"
+W_FSTUWT,double,Peso final del alumno (pondera a la población de 15 años del país).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_admision_expediente,null,"Frecuencia con que el centro considera el expediente académico al admitir alumnado (selectividad). 2000/2009/2012/2015/2018/2022/2025 (2003/2006 usan otra escala, no comparable).","2000,2003,2006,2012,2015,2018,2022,2025"
+cen_alumnos,double,Tamaño del centro: alumnado total matriculado. Todos los ciclos salvo 2025.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_alumnos_pisa,int64,"Número de alumnado PISA muestreado en el centro (composición, no tamaño oficial).","2000,2003,2006,2012,2015,2018,2022,2025"
+cen_autonomia,double,Autonomía del centro (WLE 2022).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_competencia,null,Competencia con otros centros por el alumnado de la zona (director/a). Solo 2012/2015*/2018/2022/2025 (*2015 sin dato).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_comunidad,null,"Entorno del centro según tamaño del municipio (director/a). Todos los ciclos (2000-2025; en 2000-2012 con 5 categorías, sin megaciudad).","2000,2003,2006,2012,2015,2018,2022,2025"
+cen_escasez_material,double,Escasez de material educativo (WLE; alto = más escasez). 2015-2025.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_escasez_personal,double,Escasez de personal docente (WLE; alto = más escasez). 2015-2025.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_escs_media,double,ESCS medio ponderado del alumnado del centro en ese ciclo.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_fin_cuotas_pct,double,% de la financiación anual de cuotas pagadas por las familias. Todos los ciclos salvo 2025.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_fin_gobierno_pct,double,% de la financiación anual del centro de fondos públicos. Todos los ciclos salvo 2025.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_liderazgo_educativo,double,Liderazgo educativo del equipo directivo (WLE 2022/2025).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_liderazgo_instruccional,double,Liderazgo instruccional (WLE 2022).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_ordenadores_alumno,double,Ordenadores disponibles por alumno. 2015/2018/2022.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_padres_inmigrantes_pct,double,% de alumnado del curso modal con padres inmigrantes según el director/a (2022).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_participacion_prof,double,Participación del profesorado en decisiones (WLE 2022).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_pct_inmigrantes,double,% ponderado del alumnado del centro de primera o segunda generación.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_pct_repetidores,double,% ponderado del alumnado del centro que ha repetido.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_profesorado_certificado,double,Proporción de profesorado con certificación completa (0-1). Todos los ciclos salvo 2006 (sin dato).,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_publico,null,Centro público o privado según el director/a. Todos los ciclos.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_stratio,double,Ratio alumnos por profesor del centro (STRATIO). Todos los ciclos.,"2000,2003,2006,2012,2015,2018,2022,2025"
+cen_tipo,null,"Tipo de centro: público, privado concertado o privado independiente. Todos los ciclos (SCHLTYPE/SCHTYPE).","2000,2003,2006,2012,2015,2018,2022,2025"
+educacion_familiar,null,Nivel educativo más alto de los progenitores (HISCED armonizado).,"2000,2003,2006,2012,2015,2018,2022,2025"
+fila_origen,int64,Fila base cero en el extracto original del ciclo.,"2000,2003,2006,2012,2015,2018,2022,2025"
+lengua_casa,string,Lengua hablada en casa la mayor parte del tiempo: lengua del examen u otra (2015-2025).,"2015,2018,2022,2025"
+math_exploracion,double,Media de los valores plausibles de matemáticas (exploración; nula si falta alguno). Para inferencia usa los PV individuales.,"2000,2003,2006,2012,2015,2018,2022,2025"
+nivel_socioeconomico,string,Cuartil de ESCS ponderado dentro de su país y ciclo (Q1 menor - Q4 mayor).,"2000,2003,2006,2012,2015,2018,2022,2025"
+numero_pv_math,int64,"Número de PV de matemáticas por diseño (5 antes de 2015, 10 después).","2000,2003,2006,2012,2015,2018,2022,2025"
+numero_pv_read,int64,Número de PV de lectura por diseño.,"2000,2003,2006,2012,2015,2018,2022,2025"
+numero_pv_scie,int64,Número de PV de ciencias por diseño.,"2000,2003,2006,2012,2015,2018,2022,2025"
+origen,null,Estatus migratorio: Origen nativo / Primera generación / Segunda generación / Sin dato.,"2000,2003,2006,2012,2015,2018,2022,2025"
+pais,string,País o economía participante (nombre en español).,"2000,2003,2006,2012,2015,2018,2022,2025"
+pisa_year,int64,Ciclo PISA (2000-2025).,"2000,2003,2006,2012,2015,2018,2022,2025"
+read_exploracion,double,Media de los valores plausibles de lectura (exploración).,"2000,2003,2006,2012,2015,2018,2022,2025"
+repeticion,null,Ha repetido algún curso alguna vez: Repetidor / No repetidor / Sin dato.,"2000,2006,2012,2015,2018,2022,2025"
+scie_exploracion,double,Media de los valores plausibles de ciencias (exploración).,"2000,2003,2006,2012,2015,2018,2022,2025"
+sexo,string,"Sexo del alumnado: Varón / No varón. En 2025 (MALE) ""No varón"" no equivale exactamente a niña.","2000,2003,2006,2012,2015,2018,2022,2025"

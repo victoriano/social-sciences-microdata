@@ -1,6 +1,6 @@
 {
   "title": "PISA España · 2000–2025",
-  "version": "2026-09-10-v4",
+  "version": "2026-09-10-v5",
   "population": "Alumnado PISA de España; cortes transversales independientes",
   "years": [
     2000,
@@ -47,6 +47,178 @@
       "bytes": 144877,
       "sha256": "d84550b00cc9b354c7196f3579faa498f119dcb6ca0cdb91a282e852edd431a6",
       "description": "Una fila por centro y ciclo (6.257 centros-ciclo): las 18 variables cen_* del cuestionario de centro, clave (pisa_year, CNTSCHID)."
+    },
+    "internacional": {
+      "id": "internacional",
+      "format": "parquet",
+      "description": "Dataset internacional completo: todo el alumnado de todos los países participantes, 8 ciclos (2000-2025; 2009 pendiente: la OCDE retiró el fichero de alumnado y no hay copia pública archivada). Un archivo por ciclo (los ciclos 2018, 2022 y 2025 van divididos en dos partes de filas por límites de subida; se unen con pyarrow.concat_tables) con esquema armonizado coherente con el cocinado de España: identificadores, núcleo sociodemográfico derivado (sexo, origen migratorio, repetición, educación familiar, nivel socioeconómico por cuartiles ponderados dentro de país y ciclo), valores plausibles individuales (PV1-5 antes de 2015, PV1-10 desde 2015), pesos replicados BRR, variables del cuestionario de centro (cen_*) y agregados de composición escolar. 3.884.676 alumnos en total.",
+      "rows": 3884676,
+      "cycles": [
+        2000,
+        2003,
+        2006,
+        2012,
+        2015,
+        2018,
+        2022,
+        2025
+      ],
+      "pendiente": "2009: fichero de alumnado retirado por la OCDE de su web y sin snapshot público en web.archive.org; en búsqueda activa (IHSN/Banco Mundial).",
+      "archivos": [
+        {
+          "ciclo": 2000,
+          "url": "https://data.pisa.victoriano.me/pisa_internacional_2000.parquet",
+          "filename": "pisa_internacional_2000.parquet",
+          "rows": 228784,
+          "columns": 140,
+          "bytes": 16217896,
+          "sha256": "ada36f6472bda7f6a35f276dc6af0a4247b6b307baba0c090e883e60e04e78a0",
+          "format": "parquet"
+        },
+        {
+          "ciclo": 2003,
+          "url": "https://data.pisa.victoriano.me/pisa_internacional_2003.parquet",
+          "filename": "pisa_internacional_2003.parquet",
+          "rows": 276165,
+          "columns": 142,
+          "bytes": 26180756,
+          "sha256": "aa4ad2bcb2d890313eeb74fa009fd70b5d538be2f10be7852faba076a74718fd",
+          "format": "parquet"
+        },
+        {
+          "ciclo": 2006,
+          "url": "https://data.pisa.victoriano.me/pisa_internacional_2006.parquet",
+          "filename": "pisa_internacional_2006.parquet",
+          "rows": 398750,
+          "columns": 140,
+          "bytes": 64000501,
+          "sha256": "4703c0ec1cec26a5c4a5d2cbeb6bb4bf90f679ae7d5c92fc0b2e193d0f8bbfcf",
+          "format": "parquet"
+        },
+        {
+          "ciclo": 2012,
+          "url": "https://data.pisa.victoriano.me/pisa_internacional_2012.parquet",
+          "filename": "pisa_internacional_2012.parquet",
+          "rows": 480174,
+          "columns": 142,
+          "bytes": 82341073,
+          "sha256": "0acd4687ca366a5addbc5dcb537af61aae14594b7ca995711f262599aca04166",
+          "format": "parquet"
+        },
+        {
+          "ciclo": 2015,
+          "url": "https://data.pisa.victoriano.me/pisa_internacional_2015.parquet",
+          "filename": "pisa_internacional_2015.parquet",
+          "rows": 519334,
+          "columns": 194,
+          "bytes": 160681279,
+          "sha256": "873e5cd16bc40138da97fac752484a7f2bd428dc7ec36a39aac9d6d34009f35c",
+          "format": "parquet"
+        },
+        {
+          "ciclo": 2018,
+          "rows": 612004,
+          "columns": 212,
+          "bytes": 256510854,
+          "format": "parquet",
+          "dividido_en_partes": true,
+          "nota": "Descargar las dos partes y unirlas por filas: pyarrow.concat_tables([pq.read_table(a), pq.read_table(b)]). Misma estructura y orden de columnas; la división es solo de filas.",
+          "partes": [
+            {
+              "url": "https://data.pisa.victoriano.me/pisa_internacional_2018_a.parquet",
+              "filename": "pisa_internacional_2018_a.parquet",
+              "rows": 306002,
+              "bytes": 135390730,
+              "sha256": "57fa7578140db7d61a6b777fe97bc5d6d25763d3bee3e62f2a77553ea5be4b4a",
+              "format": "parquet"
+            },
+            {
+              "url": "https://data.pisa.victoriano.me/pisa_internacional_2018_b.parquet",
+              "filename": "pisa_internacional_2018_b.parquet",
+              "rows": 306002,
+              "bytes": 121120124,
+              "sha256": "b3422a5f208e73268975d4f851bfed43b0c77794dc27de797b960b8f1016505d",
+              "format": "parquet"
+            }
+          ]
+        },
+        {
+          "ciclo": 2022,
+          "rows": 613744,
+          "columns": 209,
+          "bytes": 313346049,
+          "format": "parquet",
+          "dividido_en_partes": true,
+          "nota": "Descargar las dos partes y unirlas por filas: pyarrow.concat_tables([pq.read_table(a), pq.read_table(b)]). Misma estructura y orden de columnas; la división es solo de filas.",
+          "partes": [
+            {
+              "url": "https://data.pisa.victoriano.me/pisa_internacional_2022_a.parquet",
+              "filename": "pisa_internacional_2022_a.parquet",
+              "rows": 306872,
+              "bytes": 157909813,
+              "sha256": "93b60a25e5f74c514a6f306950cc4c5bb6ded39d82db1a6e0042f21c5f9b35be",
+              "format": "parquet"
+            },
+            {
+              "url": "https://data.pisa.victoriano.me/pisa_internacional_2022_b.parquet",
+              "filename": "pisa_internacional_2022_b.parquet",
+              "rows": 306872,
+              "bytes": 155436236,
+              "sha256": "dacb8eb95596b18fa9d5e7c0433141a51ed8149507cbf13ffa8a778191d945ab",
+              "format": "parquet"
+            }
+          ]
+        },
+        {
+          "ciclo": 2025,
+          "rows": 755721,
+          "columns": 95,
+          "bytes": 266819496,
+          "format": "parquet",
+          "dividido_en_partes": true,
+          "nota": "Descargar las dos partes y unirlas por filas: pyarrow.concat_tables([pq.read_table(a), pq.read_table(b)]). Misma estructura y orden de columnas; la división es solo de filas.",
+          "partes": [
+            {
+              "url": "https://data.pisa.victoriano.me/pisa_internacional_2025_a.parquet",
+              "filename": "pisa_internacional_2025_a.parquet",
+              "rows": 377860,
+              "bytes": 134242936,
+              "sha256": "e57aa9d9dbedc383c8479ae219043188b4cde7faaa1cee52f7fa0269b23061bf",
+              "format": "parquet"
+            },
+            {
+              "url": "https://data.pisa.victoriano.me/pisa_internacional_2025_b.parquet",
+              "filename": "pisa_internacional_2025_b.parquet",
+              "rows": 377861,
+              "bytes": 132576560,
+              "sha256": "50c6d169a9ece16c5acb161e2d542bf6f58df79e39b4eb40b7a11ebbc0aed7b7",
+              "format": "parquet"
+            }
+          ]
+        },
+        {
+          "ciclo": 2025,
+          "url": "https://data.pisa.victoriano.me/pisa_internacional_2025_pesos_replica.parquet",
+          "filename": "pisa_internacional_2025_pesos_replica.parquet",
+          "rows": 755721,
+          "columns": 84,
+          "bytes": 96120874,
+          "sha256": "51beb245c6415c4ec1c542a2e0032a6c62d03e2875ffdd6893dbba841715df3e",
+          "format": "parquet",
+          "description": "Pesos replicados BRR/Fay del ciclo 2025 (W_FSTURWT1-80) más claves (pais, CNTSCHID, CNTSTUID) y W_FSTUWT, para errores estándar. Unir por (pais, CNTSTUID) con pisa_internacional_2025_a/b."
+        }
+      ],
+      "centros": {
+        "url": "https://data.pisa.victoriano.me/pisa_internacional_centros.parquet",
+        "filename": "pisa_internacional_centros.parquet",
+        "rows": 156389,
+        "columns": 25,
+        "bytes": 4718451,
+        "sha256": "2f7dc335be1ee63ce8d271a0d6694fccb34bcb517a3bb7f86f3db4c64bbf8c11",
+        "format": "parquet",
+        "description": "Una fila por centro y ciclo (156.389 centros-ciclo, 9 ciclos incl. escuelas 2009): variables cen_* del cuestionario de centro + agregados del alumnado (ESCS medio, % inmigrantes, % repetidores, n PISA). Clave: (pisa_year, pais, CNTSCHID)."
+      },
+      "bytes_total": 1286937229
     }
   },
   "metadata": {
@@ -69,12 +241,14 @@
       "2018": "https://pisa.victoriano.me/metadata/pisa_2018_student_metadata.json",
       "2022": "https://pisa.victoriano.me/metadata/pisa_2022_student_metadata.json",
       "2025": "https://pisa.victoriano.me/metadata/pisa_2025_student_metadata.json"
-    }
+    },
+    "international_dictionary": "https://pisa.victoriano.me/metadata/internacional_diccionario.csv",
+    "international_coverage": "https://pisa.victoriano.me/metadata/internacional_cobertura_por_ciclo.csv"
   },
   "prompt": "Quiero analizar PISA España con los datos de https://pisa.victoriano.me/.\n\nAntes de empezar, pregúntame cuál es mi pregunta de investigación y, si hace falta para acotarla, qué ciclos o materias me interesan. No analices nada hasta que te la dé.\n\nCuando la tengas, empieza leyendo https://pisa.victoriano.me/manifest.json y https://pisa.victoriano.me/metadata/AGENTS.md. Después consulta la guía, los diccionarios y la cobertura por ciclo enlazados allí. Descarga o lee por columnas el Parquet cooked para explorar; usa full con todos los valores plausibles y pesos replicados para inferencia. Para análisis a nivel de centro (segregación, tipo de centro, ratios) usa el Parquet centros indicado por el manifest. No necesitas una cuenta ni claves para estos enlaces.\n\nSon nueve ciclos (2000–2025), no un panel. Comprueba nombres, etiquetas, códigos de faltantes y comparabilidad antes de analizar. ESCS no es renta en euros. IA solo está observada en 2025. En 2025 MALE=0 es femenino/otra categoría, no exclusivamente niñas. No publiques Cataluña 2025 separada; advierte las incidencias de España 2018. No uses IDs/pesos como predictores ni conviertas no medido en cero. Una asociación no prueba causalidad.\n\nEntrega código reproducible, gráficos claros, estimaciones ponderadas, intervalos apropiados al diseño PISA y limitaciones. Ejemplo de arranque: https://pisa.victoriano.me/analysis_example.py.\n\nSi no puedes descargar los datos (por ejemplo, tu entorno de código no tiene acceso a internet, como el intérprete de ChatGPT), NO uses fuentes alternativas ni tabulaciones oficiales: dilo claramente y pídeme que te adjunte los archivos Parquet. Pásame estos enlaces de descarga directa para que los baje y te los suba: https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado.parquet (cocinado, ~18 MB, recomendado) y https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet (completo, ~160 MB). No inventes resultados.\n",
   "attribution": "Programme for International Student Assessment (PISA) Organisation for Economic Co-operation and Development (OECD), Paris",
   "publication_permission": "El editor confirma que dispone de permiso de redistribución. Esta publicación no concede derechos adicionales sobre los datos de la OCDE. No intentar reidentificar alumnado ni centros.",
-  "scope": "Ficheros de alumnado de España; no incluye todos los países, respuestas a ítems cognitivos ni cuestionarios de centros independientes.",
+  "scope": "Ficheros de alumnado de España (cocinado/completo/centros) y dataset internacional de todos los países por ciclo (8 de 9 ciclos; 2009 pendiente). No incluye respuestas a ítems cognitivos.",
   "metadata_checksums": {
     "metadata/esquema_por_ciclo.json": {
       "bytes": 285431,
