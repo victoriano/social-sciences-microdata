@@ -183,7 +183,7 @@
       <div class="eyebrow" id="human-note-title">¿Tu agente no puede descargar los datos? Descárgalos tú y súbelos</div>
       <p>Algunos agentes no pueden descargar archivos de internet (por ejemplo, ChatGPT). Si es tu caso, baja los archivos desde aquí y adjúntaselos en la conversación:</p>
       <p class="human-note-links">
-        <a class="download" href="https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado_80.parquet" download>Cocinado · ~11 MB · recomendado</a>
+        <a class="download" href="https://data.pisa.victoriano.me/pisa_espana_2000_2025_cocinado.parquet" download>Cocinado · ~18 MB · recomendado</a>
         <a class="download" href="https://data.pisa.victoriano.me/pisa_espana_2000_2025_estudiantes_todas_las_columnas.parquet" download>Completo · ~160 MB</a>
       </p>
     </div>
@@ -350,7 +350,8 @@
         else { const item = document.createElement('span'); item.className = 'cycle'; item.textContent = 'Cobertura pendiente'; cycles.appendChild(item); }
         const files = $('#files'); files.replaceChildren(
           renderFile('cooked', 'Cocinado', 'Explorar · empezar aquí'),
-          renderFile('full', 'Completo', 'Inferencia · máxima fidelidad')
+          renderFile('full', 'Completo', 'Inferencia · máxima fidelidad'),
+          renderFile('centros', 'Centros', 'Segregación · nivel de centro')
         );
         renderMetadata();
         $('#question-preview').textContent = selectedQuestion || 'Elige una pregunta de ejemplo o copia el contexto con tu propia pregunta.';
